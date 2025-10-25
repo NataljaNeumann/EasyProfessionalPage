@@ -1,0 +1,2178 @@
+/* ###################################################################
+
+	#######    ######     ######       ######     ######     ######
+	##         ##   ##    ##   ##     ##    ##   ##    ##   ##    ##
+	##         ##   ##    ##   ##     ##         ##         ##
+	####       ######     ######      ##          ######     ######
+	##         ##         ##          ##               ##         ##
+	##         ##         ##          ##    ##   ##    ##   ##    ##
+	#######    ##         ##     ##    ######     ######     ######
+
+   ###################################################################
+	
+MIT License
+
+Copyright (c) 2025 NataljaNeumann@gmx.de
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
+*/
+
+
+/* FREE FONTS FREE FONTS FREE FONTS FREE FONTS FREE FONTS */
+
+/* =================== SERIF FONTS ======================== */
+
+/* Download: https://fonts.google.com/specimen/Merriweather */
+@font-face {
+	font-family: 'Merriweather';
+	src: url('fonts/Merriweather-Regular.woff2') format('woff2'), url('fonts/Merriweather-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Playfair+Display */
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('fonts/PlayfairDisplay-Regular.woff2') format('woff2'), url('fonts/PlayfairDisplay-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Lora */
+@font-face {
+	font-family: 'Lora';
+	src: url('fonts/Lora-Regular.woff2') format('woff2'), url('fonts/Lora-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Crimson+Pro */
+@font-face {
+	font-family: 'Crimson Pro';
+	src: url('fonts/CrimsonPro-Regular.woff2') format('woff2'), url('fonts/CrimsonPro-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Cormorant+Garamond */
+@font-face {
+	font-family: 'Cormorant Garamond';
+	src: url('fonts/CormorantGaramond-Regular.woff2') format('woff2'), url('fonts/CormorantGaramond-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* ======================= SANS SERIF ======================= */
+
+
+/* Download: https://fonts.google.com/specimen/Roboto */
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/Roboto-Regular.woff2') format('woff2'), url('fonts/Roboto-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Open+Sans */
+@font-face {
+	font-family: 'Open Sans';
+	src: url('fonts/OpenSans-Regular.woff2') format('woff2'), url('fonts/OpenSans-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Inter */
+@font-face {
+	font-family: 'Inter';
+	src: url('fonts/Inter-Regular.woff2') format('woff2'), url('fonts/Inter-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+/* Download: https://fonts.google.com/specimen/Poppins */
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Regular.woff2') format('woff2'), url('fonts/Poppins-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Work+Sans */
+@font-face {
+	font-family: 'Work Sans';
+	src: url('fonts/WorkSans-Regular.woff2') format('woff2'), url('fonts/WorkSans-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* =============== HANDWRITING AND DECO =================== */
+
+
+/* Download: https://fonts.google.com/specimen/Pacifico */
+@font-face {
+	font-family: 'Pacifico';
+	src: url('fonts/Pacifico-Regular.woff2') format('woff2'), url('fonts/Pacifico-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Dancing+Script */
+@font-face {
+	font-family: 'Dancing Script';
+	src: url('fonts/DancingScript-Regular.woff2') format('woff2'), url('fonts/DancingScript-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Amatic+SC */
+@font-face {
+	font-family: 'Amatic SC';
+	src: url('fonts/AmaticSC-Regular.woff2') format('woff2'), url('fonts/AmaticSC-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Shadows+Into+Light */
+@font-face {
+	font-family: 'Shadows Into Light';
+	src: url('fonts/ShadowsIntoLight-Regular.woff2') format('woff2'), url('fonts/ShadowsIntoLight-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Satisfy */
+@font-face {
+	font-family: 'Satisfy';
+	src: url('fonts/Satisfy-Regular.woff2') format('woff2'), url('fonts/Satisfy-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* =============== MONOTYPE FONTS ===================== */
+
+/* Download: https://fonts.google.com/specimen/Fira+Code */
+@font-face {
+	font-family: 'Fira Code';
+	src: url('fonts/FiraCode-Regular.woff2') format('woff2'), url('fonts/FiraCode-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+/* Download: https://fonts.google.com/specimen/Source+Code+Pro */
+@font-face {
+	font-family: 'Source Code Pro';
+	src: url('fonts/SourceCodePro-Regular.woff2') format('woff2'), url('fonts/SourceCodePro-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/JetBrains+Mono */
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2'), url('fonts/JetBrainsMono-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* =================== SPECIAL FONTS ========================= */
+
+/* Download: https://fonts.google.com/specimen/Bebas+Neue */
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('fonts/BebasNeue-Regular.woff2') format('woff2'), url('fonts/BebasNeue-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* Download: https://fonts.google.com/specimen/Oswald */
+@font-face {
+	font-family: 'Oswald';
+	src: url('fonts/Oswald-Regular.woff2') format('woff2'), url('fonts/Oswald-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+/* ================================
+   Fonts and sizes definition
+   ================================ */
+
+:root {
+	/* Common font definitions. fonts need to be downloaded
+	   and font-faces need to be defined */
+	--font-merriweather: 'Merriweather', Georgia, serif;
+	--font-playfair: 'Playfair Display', 'Times New Roman', serif;
+	--font-lora: 'Lora', Cambria, serif;
+	--font-crimson: 'Crimson Pro', 'Palatino Linotype', serif;
+	--font-cormorant: 'Cormorant Garamond', Garamond, serif;
+	--font-roboto: 'Roboto', Arial, sans-serif;
+	--font-open-sans: 'Open Sans', Helvetica, sans-serif;
+	--font-inter: 'Inter', 'Segoe UI', sans-serif;
+	--font-poppins: 'Poppins', 'Trebuchet MS', sans-serif;
+	--font-work-sans: 'Work Sans', Verdana, sans-serif;
+	--font-pacifico: 'Pacifico', cursive, sans-serif;
+	--font-dancing-script: 'Dancing Script', cursive, sans-serif;
+	--font-amatic: 'Amatic SC', cursive, sans-serif;
+	--font-shadows: 'Shadows Into Light', cursive, sans-serif;
+	--font-satisfy: 'Satisfy', cursive, sans-serif;
+	--font-fira-code: 'Fira Code', 'Courier New', monospace;
+	--font-source-code: 'Source Code Pro', Consolas, monospace;
+	--font-jetbrains: 'JetBrains Mono', Menlo, monospace;
+	--font-bebas: 'Bebas Neue', Impact, sans-serif;
+	--font-oswald: 'Oswald', 'Franklin Gothic Medium', sans-serif;
+
+	/* Page specific fonts and sizes */
+	--font-primary: 'Segoe UI', 'Roboto', sans-serif;
+	--font-secondary: 'Georgia', serif;
+	--spacing-element: 1.875rem;
+	--padding-box: 1.5rem;
+	--width-desktop: 60rem;
+	--width-tablet: 40rem;
+	--width-mobile: 100%;
+	--width-box-grid: 29rem;
+	--width-half-column: 45%;
+	--width-half-column2: 50%;
+	--line-thin: 0.125rem;
+	--line-medium: 0.187rem;
+	--grid-box-width: 15rem;
+	--grid-box-padding: 1rem;
+	--grid-box-gap: 1rem;
+	--grid-box-radius: 0.5rem;
+	--rounded-radius: 0.5rem;
+}
+
+/* ================================
+   Standard: Light color scheme
+   ================================ */
+:root {
+	/* main colors: the text and the background of text */
+	--color-bg-main: #f5f7fa;
+	--color-text-main: #2c3e50;
+	--color-marker-main: var(--color-text-main);
+
+	/* tables in normal text */
+	--table-header-bg: #d0d6dd; 
+	--table-header-text: var(--color-text-main);
+	--table-body-odd-bg: #f5f7fa;
+	--table-body-odd-text:var(--color-text-main);
+	--table-body-even-bg: #e0e6ed;
+	--table-body-even-text:var(--color-text-main);
+
+	/* input in normal text */
+	--input-bg-default: #ffffff;
+	--input-text-default: #333333;
+	--input-border-default: #cccccc;
+	--input-focus-border-default: #666666;
+
+	/* colors in gray boxes */
+	--color-box-gray-bg: #e0e6ed;
+	--color-box-gray-text: #2c3e50;
+	--color-box-gray-marker: #2c3e50;
+	--color-box-gray-header: #34495e;
+	--color-box-gray-divider: #95a5a6;
+
+	/* input colors in gray boxes */
+	--input-bg-gray: #f9f9f9;
+	--input-text-gray: #2c3e50;
+	--input-marker-gray: #2c3e50;
+	--input-border-gray: #bdc3c7;
+	--input-focus-border-gray: #7f8c8d;
+
+	/* accent colors */
+	--color-accent: #6c9a8b;
+	--color-accent-alt: #d8a3b3;
+
+	/* colors in accent-colored boxes */
+	--color-box-accent-bg: #dbece6;
+	--color-box-accent-text: #1c3d2e;
+	--color-box-accent-marker: #1c3d2e;
+	--color-box-accent-header: #145c4c;
+	--color-box-accent-divider: #8fb9b3;
+
+	/* input-colors in accent-coloured boxes */
+	--input-bg-accent: #e6f2f0;
+	--input-text-accent: #145c4c;
+	--input-border-accent: #8fb9b3;
+	--input-focus-border-accent: #2c8c7c;
+
+	/* colours for the coloured boxes with alternative accent */
+	--color-box-accent-alt-header: #8c2c4c; 
+	--color-box-accent-alt-divider: #d8a3b3; 
+	--color-box-accent-alt-bg: #f5e3e8; 
+	--color-box-accent-alt-text: #4c1f2c; 
+	--color-box-accent-alt-marker: #4c1f2c; 
+
+	/* Input-colors in altrnatively coloured boxes */
+	--input-bg-accent-alt: #f9eef1; 
+	--input-text-accent-alt: #8c2c4c; 
+	--input-marker-accent-alt: #8c2c4c; 
+	--input-border-accent-alt: #d8a3b3; 
+	--input-focus-border-accent-alt: #b34c6d;
+
+	/* === menu colors === */
+	--menu-bg: #2c3e50;
+	--menu-text: #ecf0f1;
+	--menu-hover-bg: #34495e;
+	--menu-hover-text: #ffffff;
+	--menu-active-bg: #1abc9c;
+	--menu-active-text: #ffffff;
+	--menu-border: #1f2d3a;
+
+	/* Submenu colors */
+	--submenu-bg: #3b4a59;
+	--submenu-text: #ecf0f1;
+	--submenu-hover-bg: #4b5a69;
+	--submenu-hover-text: #ffffff;
+	--submenu-border: #2c3e50;
+
+	/* grid-boxess */
+	--grid-box-bg: var(--color-box-gray-bg);
+	--grid-box-border: var(--color-box-gray-bg);
+	--grid-box-text: var(--color-box-accent-text);
+	--grid-box-marker: var(--color-box-accent-text);
+	--grid-box-header: var(--color-box-gray-header);
+	--grid-box-accent-bg: var(--color-box-accent-bg);
+	--grid-box-accent-border: var(--color-box-accent-bg);
+	--grid-box-accent-text: var(--color-box-accent-text);
+	--grid-box-accent-marker: var(--color-box-accent-text);
+	--grid-box-accent-header: var(--color-box-accent-header);
+	--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+	--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+	--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+	--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+	--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+	--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+	
+	/* link-colors */
+	--link-color: var(--color-accent);
+	--color-box-gray-link-color: var(--color-accent);
+	--color-box-accent-link-color: var(--color-accent);
+	--color-box-accent-alt-link-color: var(--color-accent-alt);
+}
+
+/* ================================
+   Dark-coloured scheme
+   ================================ */
+@media (prefers-color-scheme: Dark) {
+	:root {
+		/* main colors: the text and the background of text */
+		--color-bg-main: #1e1e1e;
+		--color-text-main: #e0e0e0;
+		--color-marker-main: #e0e0e0;
+
+		/* input in normal text */
+		--input-bg-default: #2c3e50;
+		--input-text-default: #ecf0f1; 
+		--input-marker-default: #ecf0f1; 
+		--input-border-default: #7f8c8d; 
+		--input-focus-border-default: #1abc9c;
+
+		/* colors in gray boxes */
+		--color-box-gray-bg: #2c2c2c;
+		--color-box-gray-text: #dddddd;
+		--color-box-gray-marker: #dddddd;
+		--color-box-gray-header: #ecf0f1; 
+		--color-box-gray-divider: #7f8c8d;
+
+		/* input colors in gray boxes */
+		--input-bg-gray: #34495e;
+		--input-text-gray: #ecf0f1;
+		--input-border-gray: #95a5a6;
+		--input-focus-border-gray: #1abc9c;
+
+		/* accent colors */
+		--color-accent: #8fb9b3;
+		--color-accent-alt: #b38fa3;
+
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: #145c4c;
+		--color-box-accent-text: #e6f2f0;
+		--color-box-accent-marker: #e6f2f0;
+		--color-box-accent-header: #e6f2f0;
+		--color-box-accent-divider: #2c8c7c;
+
+		/* input colors in accent-colored boxes */
+		--input-bg-accent: #145c4c;
+		--input-text-accent: #ffffff;
+		--input-border-accent: #2c8c7c;
+		--input-focus-border-accent: #1abc9c;
+
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-bg: #4c1432; 
+		--color-box-accent-alt-text: #f2e6ec; 
+		--color-box-accent-alt-marker: #f2e6ec; 
+		--color-box-accent-alt-header: #f2e6ec; 
+		--color-box-accent-alt-divider: #8c2c5c;
+
+		/* input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: #4c1432;
+		--input-text-accent-alt: #ffffff;
+		--input-border-accent-alt: #8c2c5c;
+		--input-focus-border-accent-alt: #c94c7f;
+
+		/* menu colors */
+		--menu-bg: #1f2d3a;
+		--menu-text: #ecf0f1;
+		--menu-hover-bg: #34495e;
+		--menu-hover-text: #ffffff;
+		--menu-active-bg: #16a085;
+		--menu-active-text: #ffffff;
+		--menu-border: #34495e;
+
+		/* submenu colors */
+		--submenu-bg: #2c3e50;
+		--submenu-text: #ecf0f1;
+		--submenu-hover-bg: #3b4a59;
+		--submenu-hover-text: #ffffff;
+		--submenu-border: #1f2d3a;
+
+		/* grid-boxes */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-marker: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-marker: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+		
+		/* link colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);		
+	}
+}
+
+@media (forced-colors: active) {
+	:root {
+		/* main colors: the text and the background of text */
+		--color-bg-main: Canvas;
+		--color-text-main: CanvasText;
+		--color-marker-main: var(--color-text-main);
+
+		/* tables in normal text */
+		--table-header-bg: CanvasText; 
+		--table-header-text: Canvas;
+		--table-body-odd-bg: Canvas;
+		--table-body-odd-text:CanvasText;
+		--table-body-even-bg: Canvas;
+		--table-body-even-text:CanvasText;
+
+		/* input in normal text */
+		--input-bg-default: Canvas;
+		--input-text-default: CanvasText;
+		--input-border-default: CanvasText;
+		--input-focus-border-default: CanvasText;
+
+		/* colors in gray boxes */
+		--color-box-gray-bg: Canvas;
+		--color-box-gray-text: CanvasText;
+		--color-box-gray-marker: CanvasText;
+		--color-box-gray-header: CanvasText;
+		--color-box-gray-divider: CanvasText;
+
+		/* input colors in gray boxes */
+		--input-bg-gray: Canvas;
+		--input-text-gray: CanvasText;
+		--input-marker-gray: CanvasText;
+		--input-border-gray: CanvasText;
+		--input-focus-border-gray: CanvasText;
+
+		/* accent colors */
+		--color-accent: CanvasText;
+		--color-accent-alt: CanvasText;
+
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: Canvas;
+		--color-box-accent-text: CanvasText;
+		--color-box-accent-marker: CanvasText;
+		--color-box-accent-header: CanvasText;
+		--color-box-accent-divider: CanvasText;
+
+		/* input-colors in accent-coloured boxes */
+		--input-bg-accent: Canvas;
+		--input-text-accent: CanvasText;
+		--input-border-accent: CanvasText;
+		--input-focus-border-accent: CanvasText;
+
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-header: CanvasText;
+		--color-box-accent-alt-divider: CanvasText;
+		--color-box-accent-alt-bg: Canvas;
+		--color-box-accent-alt-text: CanvasText;
+		--color-box-accent-alt-marker: CanvasText;
+
+		/* Input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: Canvas;
+		--input-text-accent-alt: CanvasText;
+		--input-marker-accent-alt: CanvasText;
+		--input-border-accent-alt: CanvasText;
+		--input-focus-border-accent-alt: CanvasText;
+
+		/* menu colors */
+		--menu-bg: CanvasText;
+		--menu-text: Canvas;
+		--menu-hover-bg: Canvas;
+		--menu-hover-text: CanvasText;
+		--menu-active-bg: Canvas;
+		--menu-active-text: CanvasText;
+		--menu-border: CanvasText;
+
+		/* Submenu colors */
+		--submenu-bg: CanvasText;
+		--submenu-text: Canvas;
+		--submenu-hover-bg: Canvas;
+		--submenu-hover-text: CanvasText;
+		--submenu-border: CanvasText;
+
+		/* grid-boxess */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-marker: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-marker: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+
+		/* link-colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
+	}
+}
+
+/* ================================
+   Specify colors for printing
+   ================================ */
+@media print {
+	:root {
+		/* main colors: the text and the background of text */
+		--color-bg-main: #ffffff;
+		--color-text-main: #000000;
+		--color-marker-main: #000000;
+
+		/* input in normal text */
+		--input-bg-default: #ffffff;
+		--input-text-default: #333333;
+		--input-border-default: #cccccc;
+		--input-focus-border-default: #666666;
+
+		/* colors in gray boxes */
+		--color-box-gray-bg: #f0f0f0;
+		--color-box-gray-text: #333333;
+		--color-box-gray-marker: #333333;
+		--color-box-gray-header: #34495e;
+		--color-box-gray-divider: #95a5a6;
+
+		/* input colors in gray boxes */
+		--input-bg-gray: #f9f9f9;
+		--input-text-gray: #2c3e50;
+		--input-border-gray: #bdc3c7;
+		--input-focus-border-gray: #7f8c8d;
+
+		/* accent colors */
+		--color-accent: #6c9a8b;
+		--color-accent-alt: #d8a7b1;
+
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: #e6f2f0;
+		--color-box-accent-text: #145c4c;
+		--color-box-accent-marker: #145c4c;
+		--color-box-accent-header: #145c4c;
+		--color-box-accent-divider: #8fb9b3;
+
+		/* input colors in accent-colored boxes */
+		--input-bg-accent: #e6f2f0;
+		--input-text-accent: #145c4c;
+		--input-border-accent: #8fb9b3;
+		--input-focus-border-accent: #2c8c7c;
+
+		/* colors in accent-colored boxes with alternative accent */
+		--color-box-accent-alt-bg: #f5eaf0; 
+		--color-box-accent-alt-text: #4c1f2e;
+		--color-box-accent-alt-marker: #4c1f2e;
+		--color-box-accent-alt-header: #4c1f2e;
+		--color-box-accent-alt-divider: #a36c8c;
+
+		/* input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: #f9f1f4;
+		--input-text-accent-alt: #4c1f2e;
+		--input-border-accent-alt: #a36c8c;
+		--input-focus-border-accent-alt: #c94c7f;
+
+		/* === menu colors === */
+		--menu-bg: #2c3e50;
+		--menu-text: #ecf0f1;
+		--menu-hover-bg: #34495e;
+		--menu-hover-text: #ffffff;
+		--menu-active-bg: #1abc9c;
+		--menu-active-text: #ffffff;
+		--menu-border: #1f2d3a;
+
+		/* submenu colors */
+		--submenu-bg: #3b4a59;
+		--submenu-text: #ecf0f1;
+		--submenu-hover-bg: #4b5a69;
+		--submenu-hover-text: #ffffff;
+		--submenu-border: #2c3e50;
+
+		/* grid-boxes */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+		
+		/* link colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
+	}
+}
+
+
+/* ================================
+   Clearfix  
+   ================================	*/
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* ============================= */
+/* BODY mit with outer area      */
+/* ============================= */
+body {
+	font-family: var(--font-primary);
+	background-color: var(--color-box-gray-bg);
+	color: var(--color-text-main);
+	margin: 0;
+	padding: 0;
+
+}
+
+li::marker {
+	color: var(--color-marker-main);
+}
+
+/* print-media optimization */
+@media print {
+	body {
+		background-color: white;
+	}
+}
+
+
+/* ============================= */
+/* main area (centered)          */
+/* ============================= */
+.main {
+	background-color: var(--color-bg-main);
+	max-width: var(--width-desktop);
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--spacing-element);
+	min-height: 100vh;
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* print-media optimization */
+@media print {
+	.main {	
+		background-color: white;
+		max-width: 100%;
+	}
+}
+
+
+/* ================================
+   Staandard elements
+   ================================ */
+
+p {
+	margin-bottom: var(--spacing-element);
+}
+
+
+h1, h2, h3, h4 {
+	font-family: var(--font-secondary);
+	color: var(--color-accent);
+	margin-top: var(--spacing-element);
+	margin-bottom: 0.5em;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+ul, ol {
+	margin-bottom: var(--spacing-element);
+	padding-inline-start: 2em;
+}
+
+li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+@media print {
+	a {
+		text-decoration: underline;
+	}
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+hr {
+	border: none;
+	border-top: var(--line-thin) solid var(--color-accent);
+	margin: var(--spacing-element) 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: var(--spacing-element);
+}
+
+th, td {
+	padding: 0.75em;
+	border: 0px solid var(--color-bg-main);
+	text-align: inline-start;
+}
+
+@media screen and (forced-colors: active) {
+	tr {
+		border-bottom-width: var(--line-medium);
+		border-color: var(--table-body-even-text);
+		border-style: solid;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-bottom: var(--spacing-element);
+}
+
+span {
+	display: inline;
+}
+
+blockquote {
+	margin: var(--spacing-element) 0;
+	padding-inline-start: 1em;
+	border-inline-start: var(--line-medium) solid var(--color-accent);
+	color: var(--color-text-main);
+	font-style: italic;
+}
+
+blockquote li::marker {
+	color: var(--color-marker-main);
+}
+
+/* Style the header row */
+table thead tr {
+	background-color: var(--table-header-bg);
+	color: var(--table-header-text);
+}
+
+/* Style odd rows */
+table tbody tr:nth-child(odd) {
+	background-color: var(--table-body-odd-bg);
+	color: var(--table-body-odd-text);
+}
+
+/* Style even rows */
+table tbody tr:nth-child(even) {
+	background-color: var(--table-body-even-bg);
+	color: var(--table-body-even-text);
+}
+
+/* print-media optimization */
+@media print {
+	/* style all rows */
+	tr {
+		border-width:0;
+		border-bottom-width: var(--line-medium);
+		border-color: var(--table-header-text);
+		border-style: solid;
+	}
+
+	/* style odd rows */
+	table tbody tr:nth-child(odd) {
+		border-color: var(--table-body-odd-bg);
+	}
+
+	/* Style even rows */
+	table tbody tr:nth-child(even) {
+		border-color: var(--table-body-even-bg);
+	}
+}
+
+
+/* =========================
+   Rounded borders
+   ========================= */
+
+/* only upper corners rounded */
+.rounded-top {
+	border-top-left-radius: var(--rounded-radius);
+	border-top-right-radius: var(--rounded-radius);
+}
+
+/* only lower corners rounded */
+.rounded-bottom {
+	border-bottom-left-radius: var(--rounded-radius);
+	border-bottom-right-radius: var(--rounded-radius);
+}
+
+/* all corners rounded */
+.rounded {
+	border-radius: var(--rounded-radius);
+}
+
+
+/* ================================
+   Horizontal rules
+   ================================ */
+
+/* thin horizontal rule */
+.hr-thin {
+	border: none;
+	border-top: var(--line-thin) solid var(--color-accent);
+	margin: var(--spacing-element) 0;
+}
+
+/* thin horizontal rule with alternative color */
+.hr-thin-alt {
+	border: none;
+	border-top: var(--line-thin) solid var(--color-accent-alt);
+	margin: var(--spacing-element) 0;
+}
+
+/* medium horizontal rule */
+.hr-medium {
+	border: none;
+	border-top: var(--line-medium) solid var(--color-accent);
+	margin: var(--spacing-element) 0;
+}
+
+/* medium horizontal rule with alternative color */
+.hr-medium-alt {
+	border: none;
+	border-top: var(--line-medium) solid var(--color-accent-alt);
+	margin: var(--spacing-element) 0;
+}
+
+/* half-width horizontal rule */
+.hr-half {
+	border: none;
+	border-top: var(--line-medium) solid var(--color-accent);
+	width: 50%;
+	margin: var(--spacing-element) auto;
+}
+
+/* half-width horizontal rule with alternative color */
+.hr-half-alt {
+	border: none;
+	border-top: var(--line-medium) solid var(--color-accent-alt);
+	width: 50%;
+	margin: var(--spacing-element) auto;
+}
+
+
+
+/* ================================
+   Images
+   ================================ */
+
+/* image that takes full width	 */
+.img-full {
+	width: calc(100% + 2 * var(--spacing-element));
+	height: auto;
+	display: block;
+	margin-bottom: var(--spacing-element);
+	margin-left: calc(-1 * var(--spacing-element));
+	margin-right: calc(-1 * var(--spacing-element));
+	max-width: calc(100% + 2 * var(--spacing-element));
+}
+
+@media print {
+	.img-full {
+		margin-left: unset;
+		margin-right: unset;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+/* half-width image at left side */
+.img-left {
+	float: inline-start;
+	width: var(--width-half-column2);
+	margin-top: 0;
+	margin-inline-end: var(--spacing-element);
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: 0;
+}
+
+/* half-width image at right side */
+.img-right {
+	float: inline-end;
+	width: var(--width-half-column2);
+	margin-top: 0;
+	margin-inline-end: 0;
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: var(--spacing-element);
+}
+
+/* main image */
+.img-main {
+	display: block;
+	margin: 0 auto var(--spacing-element);
+	max-width: 100%;
+	height: auto;
+	border: var(--line-thin) solid var(--color-box-gray-bg);
+}
+
+/* print-media optimization */
+@media print {
+	img {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+}
+
+/* =======================
+   Callout boxes 
+   ======================= */
+.callout-box,
+.callout-box-alt {
+	width: var(--width-half-column2);
+	padding: var(--padding-box);
+	border-inline-start: var(--line-medium) solid var(--color-accent);
+	box-sizing: border-box;
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+.callout-box-left,
+.callout-box-right,
+.callout-box-alt-left,
+.callout-box-alt-right {
+	width: var(--width-half-column2);
+	padding: var(--padding-box);
+	border-inline-start: var(--line-medium) solid var(--color-accent);
+	box-sizing: border-box;
+	margin-bottom: var(--spacing-element);
+}
+
+.callout-box-left,
+.callout-box-alt-left {
+	float: inline-start;
+	margin-inline-end: var(--spacing-element);
+	clear: inline-start;
+}
+
+.callout-box-right,
+.callout-box-alt-right {
+	float: inline-end;
+	margin-inline-start: var(--spacing-element);
+	clear: inline-end;
+}
+
+.callout-box-alt,
+.callout-box-alt-left,
+.callout-box-alt-right {
+	border-inline-start: var(--line-medium) solid var(--color-accent-alt);
+}
+
+/* print-media optimization */
+@media print {
+	.callout-box-left,
+	.callout-box-right {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+}
+
+
+/* ================================
+   gray boxes
+   ================================ */
+
+/* full-width gray box */
+.box-gray,
+.box-gray-full,
+.box-gray-left,
+.box-gray-right,
+.box-accent,
+.box-accent-full,
+.box-accent-left,
+.box-accent-right,
+.box-accent-alt,
+.box-accent-alt-full,
+.box-accent-alt-left,
+.box-accent-alt-right {
+	background-color: var(--color-box-gray-bg);
+	color: var(--color-box-gray-text);
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+
+
+/* half-width gray box at left side */
+.box-gray-left,
+.box-accent-left,
+.box-accent-alt-left {
+	float: inline-start;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-inline-end: var(--spacing-element);
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: 0;
+	clear: inline-start;
+}
+
+/* half-width gray box at right side */
+.box-gray-right,
+.box-accent-right,
+.box-accent-alt-right {
+	float: inline-end;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-inline-end: 0;
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: var(--spacing-element);
+	clear: inline-end;
+}
+
+/* link colors in gray boxes */
+.box-gray-right a,
+.box-gray-left a,
+.box-gray-full a,
+.box-gray a {
+	color: var(--box-gray-link-color);
+}
+
+
+pre.box-gray-left,
+pre.box-gray-right,
+pre.box-accent-left,
+pre.box-accent-right,
+pre.box-accent-alt-left,
+pre.box-accent-alt-right {
+	min-width: var(--width-half-column);
+	max-width: fit-content;
+	width: auto;
+}
+
+/* screen-media optimization */
+@media screen and (forced-colors: none) {
+	.box-accent-full,
+	.box-accent-alt-full,
+	.box-gray-full {
+		margin-left: calc(-1 * var(--spacing-element));
+		margin-right: calc(-1 * var(--spacing-element));
+		max-width: calc(100% + 2 * var(--spacing-element));
+		padding-left: var(--spacing-element);
+		padding-right: var(--spacing-element);
+	}
+}
+
+
+/* ================================
+   Colored boxes in accent colors
+   ================================ */
+
+/* colors of colored box in accent color */
+.box-accent,
+.box-accent-full,
+.box-accent-left,
+.box-accent-right {
+	background-color: var(--color-box-accent-bg);
+	color: var(--color-box-accent-text);
+}
+
+/* colors of colored box in accent alt color */
+.box-accent-alt,
+.box-accent-alt-full,
+.box-accent-alt-left,
+.box-accent-alt-right {
+	background-color: var(--color-box-accent-alt-bg);
+	color: var(--color-box-accent-alt-text);
+}
+
+
+/* markers in gray boxes */
+.box-gray li::marker,
+.box-gray-full li::marker,
+.box-gray-left li::marker,
+.box-gray-right li::marker {
+	color: var(--color-box-gray-marker);
+}
+
+/* markers in colored boxes */
+.box-accent li::marker,
+.box-accent-full li::marker,
+.box-accent-left li::marker,
+.box-accent-right li::marker {
+	color: var(--color-box-accent-text);
+}
+
+/* markers in colored boxes with accent alt color */
+.box-accent-alt li::marker,
+.box-accent-alt-full li::marker,
+.box-accent-alt-left li::marker,
+.box-accent-alt-right li::marker {
+	color: var(--color-box-accent-alt-text);
+}
+
+
+/* print optimization */
+@media print {
+	.box-gray,
+	.box-gray-right,
+	.box-gray-left {
+		border: var(--line-thin) solid var(--color-box-gray-bg)
+	}
+
+	.box-accent,
+	.box-accent-left,
+	.box-accent-right {
+		border: var(--line-thin) solid var(--color-box-accent-bg)
+	}
+
+	.box-accent-alt,
+	.box-accent-alt-left,
+	.box-accent-alt-right {
+		border: var(--line-thin) solid var(--color-box-accent-alt-bg)
+	}
+
+	.box-gray-full {
+		border-top: var(--line-thin) solid var(--color-box-gray-bg);
+		border-bottom: var(--line-thin) solid var(--color-box-gray-bg);
+	}
+
+	.box-accent-full {
+		border-top: var(--line-thin) solid var(--color-box-accent-bg);
+		border-bottom: var(--line-thin) solid var(--color-box-accent-bg);
+	}
+
+	.box-accent-alt-full {
+		border-top: var(--line-thin) solid var(--color-box-accent-alt-bg);
+		border-bottom: var(--line-thin) solid var(--color-box-accent-alt-bg);
+	}
+
+	.box-gray-right,
+	.box-gray-left,
+	.box-accent-left,
+	.box-accent-alt-left,
+	.box-accent-right,
+	.box-accent-alt-right {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+}
+
+/* Border instead of full boxes for forced color schemas */
+@media (forced-colors: active)
+{
+	.box-gray,
+	.box-gray-right,
+	.box-gray-left,
+	.box-accent,
+	.box-accent-left,
+	.box-accent-right,
+	.box-accent-alt,
+	.box-accent-alt-left,
+	.box-accent-alt-right,
+	.box-gray-full,
+	.box-accent-full,
+	.box-accent-alt-full{
+		border: var(--line-thin) solid var(--color-text-main);
+	}
+}
+
+/* ================================
+   styles for headers in gray boxes
+   ================================ */
+.box-grid-item h1,
+.box-grid-item h2,
+.box-grid-item h3,
+.box-grid-item h4,
+.box-gray-full h1,
+.box-gray-full h2,
+.box-gray-full h3,
+.box-gray-full h4,
+.box-gray h1,
+.box-gray h2,
+.box-gray h3,
+.box-gray h4,
+.box-gray-left h1,
+.box-gray-left h2,
+.box-gray-left h3,
+.box-gray-left h4,
+.box-gray-right h1,
+.box-gray-right h2,
+.box-gray-right h3,
+.box-gray-right h4 {
+	color: var(--color-box-gray-header);
+}
+
+
+/* horizontal rules in gray boxes */
+.box-grid-item hr,
+.box-gray-full hr,
+.box-gray hr,
+.box-gray-left hr,
+.box-gray-right hr {
+	border: none;
+	border-top: var(--line-thin) solid var(--color-box-gray-divider);
+	margin: var(--spacing-element) 0;
+}
+
+
+/* ================================
+   colors for headers in colored boxes
+   ================================ */
+.box-grid-item-accent h1,
+.box-grid-item-accent h2,
+.box-grid-item-accent h3,
+.box-grid-item-accent h4,
+.box-accent-full h1,
+.box-accent-full h2,
+.box-accent-full h3,
+.box-accent-full h4,
+.box-accent h1,
+.box-accent h2,
+.box-accent h3,
+.box-accent h4,
+.box-accent-left h1,
+.box-accent-left h2,
+.box-accent-left h3,
+.box-accent-left h4,
+.box-accent-right h1,
+.box-accent-right h2,
+.box-accent-right h3,
+.box-accent-right h4 {
+	color: var(--color-box-accent-header);
+}
+
+/* colors for headers in colored boxes with accent alt color */
+.box-grid-item-accent-alt h1,
+.box-grid-item-accent-alt h2,
+.box-grid-item-accent-alt h3,
+.box-grid-item-accent-alt h4,
+.box-accent-alt-full h1,
+.box-accent-alt-full h2,
+.box-accent-alt-full h3,
+.box-accent-alt-full h4,
+.box-accent-alt h1,
+.box-accent-alt h2,
+.box-accent-alt h3,
+.box-accent-alt h4,
+.box-accent-alt-left h1,
+.box-accent-alt-left h2,
+.box-accent-alt-left h3,
+.box-accent-alt-left h4,
+.box-accent-alt-right h1,
+.box-accent-alt-right h2,
+.box-accent-alt-right h3,
+.box-accent-alt-right h4 {
+	color: var(--color-box-accent-alt-header);
+}
+
+/* horizontal rules in colored boxes */
+.box-grid-item-accent hr,
+.box-accent-full hr,
+.box-accent hr,
+.box-accent-left hr,
+.box-accent-right hr {
+	border-top-color: var(--color-box-accent-divider);
+	margin: var(--spacing-element) 0;
+}
+
+/* horizontal rules in colored boxes with accent alt color */	
+.box-grid-item-accent-alt hr,
+.box-accent-alt hr,
+.box-accent-alt-full hr,
+.box-accent-alt-left hr,
+.box-accent-alt-right hr {
+	border-top-color: var(--color-box-accent-alt-divider);
+	margin: var(--spacing-element) 0;
+}
+
+
+/* ===================================
+   Link colors in colored boxes	  
+   =================================== */   
+.box-grid-item-accent a,
+.box-accent-right a,
+.box-accnet-left a,
+.box-accent-full a,
+.box-accent a {
+	color: var(--color-box-accent-link-color);
+}
+
+/* link colors in colored boxes with accent alt color */
+.box-grid-item-accent-alt a,
+.box-accent-alt-right a,
+.box-accnet-alt-left a,
+.box-accent-alt-full a,
+.box-accent-alt a {
+	color: var(--color-box-accent-alt-link-color);
+}
+
+/* ================================
+   Responsive design (≤1024px)
+   ================================ */
+@media screen and (max-width: 40rem) {
+	.box-gray-left,
+	.box-gray-right,
+	.box-accent-left,
+	.box-accent-right,
+	.box-accent-alt-left,
+	.box-accent-alt-right,
+	.img-left,
+	.img-right {
+		float: none;
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* ================================
+   Responsive design: mobile devices (≤768px)
+   ================================ */
+@media screen and (max-width: 30rem) {
+	.box-gray-left,
+	.box-gray-right,
+	.box-accent-left,
+	.box-accent-right,
+	.box-accent-alt-left,
+	.box-accent-alt-right,
+	.img-left,
+	.img-right {
+		float: none;
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* optional change of the font size */
+	body {
+		font-size: 1rem;
+	}
+}
+
+/* ================================
+   Notches – boxes with a notch
+   ================================ */
+
+/* Standard-Notch: medium-width border left and up */
+.notch {
+	border-top: var(--line-medium) solid var(--color-accent);
+	border-inline-start: var(--line-medium) solid var(--color-accent);
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+/* alternative notch: medium-width border left and up in alt color */
+.notch-alt {
+	border-top: var(--line-medium) solid var(--color-accent-alt);
+	border-inline-start: var(--line-medium) solid var(--color-accent-alt);
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+
+/* strong notch: strong border left and medium border up */
+.notch-strong {
+	border-top: var(--line-medium) solid var(--color-accent);
+	border-inline-start: var(--padding-box) solid var(--color-accent);
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+/* alternative strong notch: strong border left and medium border up in alt color */
+.notch-alt-strong {
+	border-top: var(--line-medium) solid var(--color-accent-alt);
+	border-inline-start: var(--padding-box) solid var(--color-accent-alt);
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+
+/* ================================
+   input styles	
+   ================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	background-color: var(--input-bg-default);
+	color: var(--input-text-default);
+	border: var(--line-thin) solid var(--input-border-default);
+	padding: 0.5rem;
+	font-size: 1rem;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* focused */
+input:focus,
+textarea:focus,
+select:focus {
+	border-color: var(--input-focus-border-default);
+	outline: none;
+}
+
+
+/* input styles in gray boxes */
+.box-gray-full input,
+.box-gray-full textarea,
+.box-gray-full select,
+.box-gray input,
+.box-gray textarea,
+.box-gray select,
+.box-gray-left input,
+.box-gray-left textarea,
+.box-gray-left select,
+.box-gray-right input,
+.box-gray-right textarea,
+.box-gray-right select {
+	background-color: var(--input-bg-gray);
+	color: var(--input-text-gray);
+	border: var(--line-thin) solid var(--input-border-gray);
+}
+
+/* focused styles */
+.box-gray input:focus,
+.box-gray-full input:focus,
+.box-gray-left input:focus,
+.box-gray-right input:focus,
+.box-gray textarea:focus,
+.box-gray-full textarea:focus,
+.box-gray-left textarea:focus,
+.box-gray-right textarea:focus,
+.box-gray select:focus,
+.box-gray-full select:focus,
+.box-gray-left select:focus,
+.box-gray-right select:focus {
+	border-color: var(--input-focus-border-gray);
+}
+
+/* input styles in colored boxes */
+.box-accent input,
+.box-accent textarea,
+.box-accent select,
+.box-accent-full input,
+.box-accent-full textarea,
+.box-accent-full select,
+.box-accent-left input,
+.box-accent-left textarea,
+.box-accent-left select,
+.box-accent-right input,
+.box-accent-right textarea,
+.box-accent-right select {
+	background-color: var(--input-bg-accent);
+	color: var(--input-text-accent);
+	border: var(--line-thin) solid var(--input-border-accent);
+}
+
+/* input styles in colored boxes with accent alt color */
+.box-accent-alt input,
+.box-accent-alt textarea,
+.box-accent-alt select,
+.box-accent-alt-full input,
+.box-accent-alt-full textarea,
+.box-accent-alt-full select,
+.box-accent-alt-left input,
+.box-accent-alt-left textarea,
+.box-accent-alt-left select,
+.box-accent-alt-right input,
+.box-accent-alt-right textarea,
+.box-accent-alt-right select {
+	background-color: var(--input-bg-accent-alt);
+	color: var(--input-text-accent-alt);
+	border: var(--line-thin) solid var(--input-border-accent-alt);
+}
+
+
+/* focused styles */
+.box-accent input:focus,
+.box-accent-full input:focus,
+.box-accent-left input:focus,
+.box-accent-right input:focus,
+.box-accent textarea:focus,
+.box-accent-full textarea:focus,
+.box-accent-left textarea:focus,
+.box-accent-right textarea:focus,
+.box-accent select:focus,
+.box-accent-full select:focus,
+.box-accent-left select:focus,
+.box-accent-right select:focus {
+	border-color: var(--input-focus-border-accent);
+}
+
+/* focused styles in boxes with alternative accent color */
+.box-accent-alt input:focus,
+.box-accent-alt-full input:focus,
+.box-accent-alt-left input:focus,
+.box-accent-alt-right input:focus,
+.box-accent-alt textarea:focus,
+.box-accent-alt-full textarea:focus,
+.box-accent-alt-left textarea:focus,
+.box-accent-alt-right textarea:focus,
+.box-accent-alt select:focus,
+.box-accent-alt-full select:focus,
+.box-accent-alt-left select:focus,
+.box-accent-alt-right select:focus {
+	border-color: var(--input-focus-border-accent-alt);
+
+}
+
+/* ================================
+   menu styles
+   ================================ */
+nav.menu {
+	background-color: var(--menu-bg);
+	border-bottom: var(--line-thin) solid var(--menu-border);
+}
+
+nav.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+nav.menu li {
+	position: relative;
+}
+
+nav.menu a {
+	display: block;
+	padding: 0.75rem 1.25rem;
+	color: var(--menu-text);
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* hover styles */
+nav.menu a:hover {
+	background-color: var(--menu-hover-bg);
+	color: var(--menu-hover-text);
+}
+
+/* active styles */
+nav.menu a.active {
+	background-color: var(--menu-active-bg);
+	color: var(--menu-active-text);
+}
+
+/* submenu */
+nav.menu li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	inset-inline-start: 0;
+	background-color: var(--submenu-bg);
+	border: var(--line-thin) solid var(--submenu-border);
+	min-width: 12rem;
+	z-index: 1000;
+	flex-direction: column;
+}
+
+nav.menu li:hover > ul {
+	display: block;
+}
+
+nav.menu li ul li {
+	width: 100%;
+}
+
+nav.menu li ul a {
+	padding: 0.5rem 1rem;
+	color: var(--submenu-text);
+	background-color: var(--submenu-bg);
+	display: block;
+	text-decoration: none;
+}
+
+nav.menu li ul a:hover {
+	background-color: var(--submenu-hover-bg);
+	color: var(--submenu-hover-text);
+}
+
+/* =======================================
+	Image boxes with overlay content or credits
+	======================================= */
+.image-box {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	max-width: 100%;
+	overflow: hidden;
+	margin-bottom: var(--spacing-element);
+}
+
+.image-content {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	max-width: 100%;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+.image-overlay {
+	position: absolute;
+	top: 0;
+	inset-inline-start: 0;
+	inset-inline-end: 0;
+	bottom: 0;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+}
+
+
+/* sub-elements with half-transparent backgrounds */
+.image-overlay-content {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 0.4em 0.8em;
+	border-radius: 0;
+	font-size: 0.9rem;
+	pointer-events: auto;
+}
+
+
+.image-box-left {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	float: inline-start;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-inline-end: var(--spacing-element);
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: 0;
+}
+
+.image-box-right {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	float: inline-end;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-inline-end: 0;
+	margin-bottom: var(--spacing-element);
+	margin-inline-start: var(--spacing-element);
+}
+
+@media print {
+	.image-box,
+	.image-box-right,
+	.image-box-left {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+}
+
+.image-box img,
+.image-box-left img,
+.image-box-right img {
+	width: 100%;
+	display: block;
+	margin-bottom: 0;
+}
+
+
+.image-content:has(.image-credits)::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30%;
+	z-index: 1;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent);
+}
+
+@media print {
+	.image-content:has(.image-credits)::after {
+		display: none;
+	}
+}
+
+/* credits shall be over the image */
+.image-credits {
+	position: absolute;
+	bottom: var(--padding-box);
+	inset-inline-end: var(--padding-box);
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 0.2em 0.6em;
+	border-radius: 999em;
+	font-size: 0.8rem;
+	z-index: 10;
+	font-style: italic;
+}
+
+/* Adaptation to dark scheme */
+@media (prefers-color-scheme: Dark) {
+
+	.image-overlay-content {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	.image-content:has(.image-credits)::after {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+	}
+
+	.image-credits {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+}
+
+
+
+
+
+/* image caption shall stay under picture */
+.image-caption {
+	margin-bottom: 0;
+	inset-inline-start: var(--padding-box);
+	padding: 0.2em var(--padding-box);
+}
+
+.image-caption * {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* print-media optimization */
+@media print {
+
+	.image-overlay {
+		position: static;
+		background: none;
+		margin: 0;
+	}
+
+	.image-credits {
+		position: static;
+		background: none;
+		padding: 0.2em var(--padding-box);
+		inset-inline-start: var(--padding-box);
+		margin: 0;
+	}
+
+	.image-caption {
+		position: static;
+		background: none;
+		padding: 0.2em var(--padding-box);
+		inset-inline-start: var(--padding-box);
+		margin: 0;
+	}
+}
+
+
+
+
+/* ==== box grid ====== */
+
+.box-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--grid-box-width), 1fr));
+	gap: var(--grid-box-gap);
+	clear: both;
+	margin-bottom: var(--spacing-element);
+}
+
+.box-grid-item {
+	padding: var(--grid-box-padding);
+	box-sizing: border-box;
+}
+
+.box-grid-item-bg {
+	background-color: var(--color-bg-main);
+	border: var(--line-thin) solid var(--color-bg-main);
+	padding: var(--grid-box-padding);
+	border-radius: var(--grid-box-radius);
+	box-sizing: border-box;
+}
+
+
+.box-grid-item-gray {
+	background-color: var(--grid-box-bg);
+	border: var(--line-thin) solid var(--grid-box-border);
+	color: var(--grid-box-text);
+	padding: var(--grid-box-padding);
+	border-radius: var(--grid-box-radius);
+	box-sizing: border-box;
+}
+
+.box-grid-item-accent {
+	background-color: var(--grid-box-accent-bg);
+	border: var(--line-thin) solid var(--grid-box-accent-border);
+	color: var(--grid-box-accent-text);
+	padding: var(--grid-box-padding);
+	border-radius: var(--grid-box-radius);
+	box-sizing: border-box;
+}
+
+.box-grid-item-accent-alt {
+	background-color: var(--grid-box-accent-alt-bg);
+	border: var(--line-thin) solid var(--grid-box-accent-alt-border);
+	color: var(--grid-box-accent-alt-text);
+	padding: var(--grid-box-padding);
+	border-radius: var(--grid-box-radius);
+	box-sizing: border-box;
+}
+
+.box-grid-item-image {
+	border-radius: var(--grid-box-radius);
+	box-sizing: border-box;
+}
+
+.box-grid-item-image img {
+	border-radius: var(--rounded-radius);
+	margin: 0;
+}
+
+.box-grid-item-gray li::marker {
+	color: var(--grid-box-marker);
+}
+
+.box-grid-item-accent li::marker {
+	color: var(--grid-box-accent-marker);
+}
+
+.box-grid-item-accent-alt li::marker {
+	color: var(--grid-box-accent-alt-marker);
+}
+
+/* print-media optimization */
+@media print {
+	.box-grid {
+		/* display: block;*/
+	}
+
+	.box-grid-item,
+	.box-grid-item-bg,
+	.box-grid-item-gray,
+	.box-grid-item-accent,
+	.box-grid-item-accent-alt {
+		page-break-inside: avoid;
+		break-inside: avoid;
+		margin-bottom: var(--grid-box-gap);
+	}
+}
+
+
+
+
+/* removes top margin from heading when it is the first element in boxes */
+.notch > *:first-child,
+.notch-strong > *:first-child,
+.callout-box-left > *:first-child,
+.callout-box-right > *:first-child,
+.callout-box > *:first-child,
+.box-grid-item > *:first-child,
+.box-grid-item-bg > *:first-child,
+.box-grid-item-gray > *:first-child,
+.box-grid-item-accent > *:first-child,
+.box-grid-item-accent-alt > *:first-child,
+.box-gray > *:first-child,
+.box-gray-full > *:first-child,
+.box-gray-left > *:first-child,
+.box-gray-right > *:first-child,
+.box-accent > *:first-child,
+.box-accent-full > *:first-child,
+.box-accent-left > *:first-child,
+.box-accent-right > *:first-child,
+.box-accent-alt > *:first-child,
+.box-accent-alt-full > *:first-child,
+.box-accent-alt-left > *:first-child,
+.box-accent-alt-right > *:first-child {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* removes top margin from elements following a left-aligned or right-aligned element */
+.notch > [class*="-left"] + *,
+.notch-strong > [class*="-left"] + *,
+.callout-box-left > [class*="-left"] + *,
+.callout-box-right > [class*="-left"] + *,
+.callout-box > [class*="-left"] + *,
+.box-grid-item > [class*="-left"] + *,
+.box-grid-item-bg > [class*="-left"] + *,
+.box-grid-item-gray > [class*="-left"] + *,
+.box-grid-item-accent > [class*="-left"] + *,
+.box-grid-item-accent-alt > [class*="-left"] + *,
+.box-gray > [class*="-left"] + *,
+.box-gray-full > [class*="-left"] + *,
+.box-gray-left > [class*="-left"] + *,
+.box-gray-right > [class*="-left"] + *,
+.box-accent > [class*="-left"] + *,
+.box-accent-full > [class*="-left"] + *,
+.box-accent-left > [class*="-left"] + *,
+.box-accent-right > [class*="-left"] + *
+.box-accent-alt > [class*="-left"] + *,
+.box-accent-alt-full > [class*="-left"] + *,
+.box-accent-alt-left > [class*="-left"] + *,
+.box-accent-alt-right > [class*="-left"] + *,
+.notch > [class*="-right"] + *,
+.notch-strong > [class*="-right"] + *,
+.callout-box-left > [class*="-right"] + *,
+.callout-box-right > [class*="-right"] + *,
+.callout-box-full > [class*="-right"] + *,
+.callout-box > [class*="-right"] + *,
+.box-grid-item > [class*="-right"] + *,
+.box-grid-item-bg > [class*="-right"] + *,
+.box-grid-item-gray > [class*="-right"] + *,
+.box-grid-item-accent > [class*="-right"] + *,
+.box-grid-item-accent-alt > [class*="-right"] + *,
+.box-gray > [class*="-right"] + *,
+.box-gray-full > [class*="-right"] + *,
+.box-gray-left > [class*="-right"] + *,
+.box-gray-right > [class*="-right"] + *,
+.box-accent > [class*="-right"] + *,
+.box-accent-full > [class*="-right"] + *,
+.box-accent-left > [class*="-right"] + *,
+.box-accent-alt-right > [class*="-right"] + *,
+.box-accent-alt > [class*="-right"] + *,
+.box-accent-alt-full > [class*="-right"] + *,
+.box-accent-alt-left > [class*="-right"] + *,
+.box-accent-alt-right > [class*="-right"] + * {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+
+/* removes bottom margin and padding from last element in boxes */
+.notch > *:last-child,
+.notch-strong > *:last-child,
+.callout-box-left > *:last-child,
+.callout-box-right > *:last-child,
+.callout-box-full > *:last-child,
+.callout-box > *:last-child,
+.box-grid-item > *:last-child,
+.box-grid-item-bg > *:last-child,
+.box-grid-item-gray > *:last-child,
+.box-grid-item-accent > *:last-child,
+.box-grid-item-accent-alt > *:last-child,
+.box-gray > *:last-child,
+.box-gray-full > *:last-child,
+.box-gray-left > *:last-child,
+.box-gray-right > *:last-child,
+.box-accent > *:last-child,
+.box-accent-full > *:last-child,
+.box-accent-left > *:last-child,
+.box-accent-right > *:last-child,
+.box-accent-alt > *:last-child,
+.box-accent-alt-full > *:last-child,
+.box-accent-alt-left > *:last-child,
+.box-accent-alt-right > *:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* removes bottom margin from second-last left-aligned 
+   or right-aligned element that are followed by <p> elements */
+.notch > [class*="-right"]:has(+ p:last-child),
+.notch-strong > [class*="-right"]:has(+ p:last-child),
+.callout-box-left > [class*="-right"]:has(+ p:last-child),
+.callout-box-right > [class*="-right"]:has(+ p:last-child),
+.callout-box > [class*="-right"]:has(+ p:last-child),
+.box-grid-item > [class*="-right"]:has(+ p:last-child),
+.box-grid-item-bg > [class*="-right"]:has(+ p:last-child),
+.box-grid-item-gray > [class*="-right"]:has(+ p:last-child),
+.box-grid-item-accent > [class*="-right"]:has(+ p:last-child),
+.box-grid-item-accent-alt > [class*="-right"]:has(+ p:last-child),
+.box-gray > [class*="-right"]:has(+ p:last-child),
+.box-gray-full > [class*="-right"]:has(+ p:last-child),
+.box-gray-left > [class*="-right"]:has(+ p:last-child),
+.box-gray-right > [class*="-right"]:has(+ p:last-child),
+.box-accent > [class*="-right"]:has(+ p:last-child),
+.box-accent-full > [class*="-right"]:has(+ p:last-child),
+.box-accent-left > [class*="-right"]:has(+ p:last-child),
+.box-accent-right > [class*="-right"]:has(+ p:last-child),
+.box-accent-alt > [class*="-right"]:has(+ p:last-child),
+.box-accent-alt-full > [class*="-right"]:has(+ p:last-child),
+.box-accent-alt-left > [class*="-right"]:has(+ p:last-child),
+.box-accent-alt-right > [class*="-right"]:has(+ p:last-child),
+.notch > [class*="-left"]:has(+ p:last-child),
+.notch-strong > [class*="-left"]:has(+ p:last-child),
+.callout-box-left > [class*="-left"]:has(+ p:last-child),
+.callout-box-right > [class*="-left"]:has(+ p:last-child),
+.callout-box-full > [class*="-left"]:has(+ p:last-child),
+.callout-box > [class*="-left"]:has(+ p:last-child),
+.box-grid-item > [class*="-left"]:has(+ p:last-child),
+.box-grid-item-bg > [class*="-left"]:has(+ p:last-child),
+.box-grid-item-gray > [class*="-left"]:has(+ p:last-child),
+.box-grid-item-accent > [class*="-left"]:has(+ p:last-child),
+.box-grid-item-accent-alt > [class*="-left"]:has(+ p:last-child),
+.box-gray > [class*="-left"]:has(+ p:last-child),
+.box-gray-full > [class*="-left"]:has(+ p:last-child),
+.box-gray-left > [class*="-left"]:has(+ p:last-child),
+.box-gray-right > [class*="-left"]:has(+ p:last-child),
+.box-accent > [class*="-left"]:has(+ p:last-child),
+.box-accent-full > [class*="-left"]:has(+ p:last-child),
+.box-accent-left > [class*="-left"]:has(+ p:last-child),
+.box-accent-right > [class*="-left"]:has(+ p:last-child),
+.box-accent-alt > [class*="-left"]:has(+ p:last-child),
+.box-accent-alt-full > [class*="-left"]:has(+ p:last-child),
+.box-accent-alt-left > [class*="-left"]:has(+ p:last-child),
+.box-accent-alt-right > [class*="-left"]:has(+ p:last-child) {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* ensures clearfix at the end for all boxes,
+   so that boxes with floated elements inside
+   get the correct height
+*/
+.notch::after,
+.notch-strong::after,
+.callout-box-left::after,
+.callout-box-right::after,
+.callout-box::after,
+.box-grid-item::after,
+.box-grid-item-bg::after,
+.box-grid-item-gray::after,
+.box-grid-item-accent::after,
+.box-grid-item-accent-alt::after,
+.box-gray::after,
+.box-gray-full::after,
+.box-gray-left::after,
+.box-gray-right::after,
+.box-accent::after,
+.box-accent-full::after,
+.box-accent-left::after,
+.box-accent-right::after,
+.box-accent-alt::after,
+.box-accent-alt-full::after,
+.box-accent-alt-left::after,
+.box-accent-alt-right::after {
+	content: "";
+	display: block;
+	clear: both;
+}

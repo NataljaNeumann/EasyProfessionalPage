@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructions for epp.css</title>
+    <link rel="stylesheet" href="epp.css" />
+    <script>  
+        window.onload = function () {
+            setTimeout(function () {
+                // Detect page language from <html> or <body>
+                const pageLang = document.documentElement.lang || document.body.lang || 'en';
+
+                // Detect user's browser language
+                const userLang = navigator.language || navigator.userLanguage;
+                const userLangCode = userLang.split('-')[0];
+
+                // Redirect to Google Translate if languages differ
+                if (userLangCode !== pageLang) {
+                    const currentUrl = window.location.href;
+                    const translateUrl = `https://translate.google.com/translate?sl=${pageLang}&tl=${userLangCode}&u=${encodeURIComponent(currentUrl)}`;
+
+                    // Ask for confirmation before redirecting
+                    const shouldTranslate = confirm(`This page is in "${pageLang}". Would you like to translate it to "${userLangCode}"?`);
+                    if (shouldTranslate) {
+                        window.location.href = translateUrl;
+                    }
+                }
+            }, 2000); // Delay by 2000 milliseconds (2 seconds)
+        };
+    </script>
+</head>
+<body lang="en">
+    <div class="main">
+        <h1>Instructions for an easy web page creation with help of <span lang="" dir="ltr">epp.css</span></h1>
+        <nav class="menu" lang="en" dir="auto">
+            <ul lang="en" dir="auto">
+                <li lang="en" dir="auto"><a href="#start" lang="en" dir="auto">Html</a></li>
+                <li lang="en" dir="auto">
+                    <a href="#vars" lang="en" dir="auto">Variables</a>
+                    <ul lang="en" dir="auto">
+                        <li lang="en" dir="auto"><a href="#vars-fonts" lang="en" dir="auto">Fonts</a></li>
+                        <li lang="en" dir="auto"><a href="#vars-sizes" lang="en" dir="auto">Sizes</a></li>
+                        <li lang="en" dir="auto"><a href="#vars-colors" lang="en" dir="auto">Colors</a></li>
+                    </ul>
+                </li>
+                <li lang="en" dir="auto">
+                    <a href="#elements" lang="en" dir="auto">Elements</a>
+                    <ul lang="en" dir="auto">
+                        <li lang="en" dir="auto"><a href="#elements-std" lang="en" dir="auto">Standard</a></li>
+                        <li lang="en" dir="auto"><a href="#produkt-b" lang="en" dir="auto">Produkt B</a></li>
+                        <li lang="en" dir="auto"><a href="#produkt-c" lang="en" dir="auto">Produkt C</a></li>
+                    </ul>
+                </li>
+                <li lang="en" dir="auto"><a href="#licence" lang="en" dir="auto">Licence</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="start" lang="en" dir="auto">Basic Structure of HTML Document</h2>
+        <pre class="box-gray-right" lang="" dir="ltr">
+&lt;!DOCTYPE html>
+&lt;html lang="<span lang="en" dir="auto">..your language abbreviation..</span>">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title><span lang="en" dir="auto">..Your title for the page..</span>/title>
+    &lt;link rel="stylesheet" href="epp.css" />
+&lt;/head>
+&lt;body dir="ltr">
+    &lt;div class="main">
+
+    &lt;/div>
+&lt;/body>
+&lt;/html>
+</pre>
+        <p lang="en" dir="auto">To create an empty HTML document with the needed structure and styles, follow these steps:</p>
+        <ul lang="en" dir="auto">
+            <li lang="en" dir="auto">Start with the doctype declaration to define the document as HTML5</li>
+            <li lang="en" dir="auto">
+                tag and specify the language (e.g.,
+                <ul lang="en" dir="auto">
+                    <li lang="en" dir="auto">en <span lang="en" dir="auto">for English</span></li>
+                    <li lang="en" dir="auto">fr <span lang="en" dir="auto">for French</span></li>
+                    <li lang="en" dir="auto">es <span lang="en" dir="auto">for Spanish</span></li>
+                    <li lang="en" dir="auto">pt <span lang="en" dir="auto">for Portuguese</span></li>
+                    <li lang="en" dir="auto">de <span lang="en" dir="auto">for German</span></li>
+                    <li lang="en" dir="auto">it <span lang="en" dir="auto">for Italian</span></li>
+                    <li lang="en" dir="auto">zh <span lang="en" dir="auto">for Chinese</span></li>
+                    <li lang="en" dir="auto">ja <span lang="en" dir="auto">for Japanese</span></li>
+                    <li lang="en" dir="auto">ru <span lang="en" dir="auto">for Russian</span></li>
+                    <li lang="en" dir="auto">ar <span lang="en" dir="auto">for Arabic</span></li>
+                    <li lang="en" dir="auto">hi <span lang="en" dir="auto">for Hindi</span></li>
+                    <li lang="en" dir="auto">and so on, you can find a complete list in Internet...</li>
+                </ul>
+            </li>
+            <li lang="en" dir="auto">
+                Include a header specification, including following elements:
+                <ul lang="en" dir="auto">
+                    <li lang="en" dir="auto">Character encoding (usually <span lang="" dir="ltr">UTF-8</span>)</li>
+                    <li lang="en" dir="auto">Title for the page</li>
+                    <li lang="en" dir="auto">Link to an external CSS file named <span lang="" dir="ltr">epp.css</span></li>
+                </ul>
+            <li lang="en" dir="auto">
+                Include a body section with:
+                <ul lang="en" dir="auto">
+                    <li lang="en" dir="auto">Set the text direction in the dir attribute, e.g.  <span lang="" dir="ltr">"ltr"</span> for left-to-right or  <span lang="" dir="ltr">"rtl"</span> for right-to-left</li>
+                    <li lang="en" dir="auto">Optionally, set the language of the body using the lang attribute</li>
+                    <li lang="en" dir="auto">Include a <span lang="" dir="ltr">&lt;div&gt;</span> element with style="main" to contain the main content of the page</li>
+                </ul>
+            </li>
+            <li lang="en" dir="auto">Close the HTML document by writing <span lang="" dir="ltr">&lt;/div>&lt;body>&lt;html></span></li>
+        </ul>
+        <h3>What the Page Will Look Like</h3>
+        With the provided CSS variables and styles, here's how the page will appear:
+        <ul>
+            <li>Body uses the primary font defined by "--font-primary" variable</li>
+            <li>Background color that is to the left and right of the main area is set to "--color-box-gray-bg"</li>
+            <li>Text color is "--color-text-main"</li>
+            <li>No default margin or padding (clean edge-to-edge layout)</li>
+        </ul>
+
+        Main Content Area has
+        <ul>
+            <li>Background color is set to "--color-bg-main"</li>
+            <li>Width is limited to "--width-desktop" (e.g., 1200 pixel or similar)</li>
+            <li>Horizontally centered</li>
+            <li>Padding inside the main area is defined by "--spacing-element" variable</li>
+            <li>Takes up at least the full height of the viewport, ensuring it fills the screen even with no content</li>
+        </ul>
+        <h2 id="vars-fonts" lang="en" dir="auto" id="vars">Font Variables</h2>
+        <pre class="box-gray-left" lang="" dir="ltr">
+/* <span lang="en">Font Variables</span> */
+--font-merriweather: 'Merriweather', Georgia, serif;
+--font-playfair: 'Playfair Display', 'Times New Roman', serif;
+--font-lora: 'Lora', Cambria, serif;
+--font-crimson: 'Crimson Pro', 'Palatino Linotype', serif;
+--font-cormorant: 'Cormorant Garamond', Garamond, serif;
+--font-roboto: 'Roboto', Arial, sans-serif;
+--font-open-sans: 'Open Sans', Helvetica, sans-serif;
+--font-inter: 'Inter', 'Segoe UI', sans-serif;
+--font-poppins: 'Poppins', 'Trebuchet MS', sans-serif;
+--font-work-sans: 'Work Sans', Verdana, sans-serif;
+--font-pacifico: 'Pacifico', cursive, sans-serif;
+--font-dancing-script: 'Dancing Script', cursive, sans-serif;
+--font-amatic: 'Amatic SC', cursive, sans-serif;
+--font-shadows: 'Shadows Into Light', cursive, sans-serif;
+--font-satisfy: 'Satisfy', cursive, sans-serif;
+--font-fira-code: 'Fira Code', 'Courier New', monospace;
+--font-source-code: 'Source Code Pro', Consolas, monospace;
+--font-jetbrains: 'JetBrains Mono', Menlo, monospace;
+--font-bebas: 'Bebas Neue', Impact, sans-serif;
+--font-oswald: 'Oswald', 'Franklin Gothic Medium', sans-serif;
+
+/* <span lang="en">Primary and Secondary Fonts for the web page</span> */
+--font-primary: 'Segoe UI', 'Roboto', sans-serif;
+--font-secondary: 'Georgia', serif;
+</pre>
+        <p lang="en" dir="auto">
+            You can customize the fonts used in your web page by modifying CSS variables in the <span lang="" dir="ltr">epp.css</span> file.
+            If you include <span lang="" dir="ltr">@font-face</span> rules in your CSS, you can use custom fonts as well.
+            The page uses the following font variables:
+        </p>
+        <p lang="en" dir="auto">
+            --font-primary: Main font for body text and most elements.<br />
+            --font-secondary: Secondary font for headings and special elements.
+        </p>
+        <p lang="en" dir="auto">
+            By defining these variables, you can easily change the overall typography of your web page, however you can also change
+            fonts of specific elements, by specification of the fonts in the styles of these elements. You can also define a font
+            by using another font variable. The stylesheet already defines some fonts that you can use, when you include and
+            install the corresponding fonts. Please have a look at the licence of the fonts.
+        </p>
+        <p lang="en" dir="auto">Finally you can use the font variables on the elements themselves, by adding <cite lang="" dir="ltr">style</cite> attribute</p>
+<pre class="box-gray-right" lang="" dir="ltr">
+/* <span lang="en" dir="auto">Using a variable for defining another variable in CSS</span> */
+  --font-primary: var(--font-playfair);
+</pre>
+<pre class="box-gray-right" lang="" dir="ltr">
+/* <span lang="en" dir="auto">specification of specific font for main header in CSS</span> */
+h1 {
+  font-family: var(--font-playfair);
+  font-weight: bold;
+}
+</pre>
+<pre class="box-gray-right" lang="" dir="ltr">
+&lt;!-- <span lang="en" dir="auto">specification of specific font for a div in HTML,
+    in this case the primary font </span> -->
+
+&lt;div style="font-family: var(--font-primary);">
+    This text uses the primary font.
+&lt;/div>
+</pre>
+        <h2 id="vars-sizes" lang="en" dir="auto">Size variables</h2>
+        <p lang="en" dir="auto">In CSS, em and <span lang="" dir="ltr">rem</span> are relative units used for sizing elements like fonts, margins, and padding. Both are scalable, making them ideal for responsive design.</p>
+        <p lang="en" dir="auto">The em unit is relative to the font size of the element’s parent. For example, if a parent element has a font size of 16px, then 1em equals 16px, and 2em equals 32px. However, since em is relative to its parent, nested elements can compound sizes, which may lead to unexpected results if not managed carefully.</p>
+        <p lang="en" dir="auto">
+            The <span lang="" dir="ltr">rem</span> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html>
+            element. If the root font size is 16px (the browser default), then <span lang="" dir="ltr">1rem</span> equals 16px regardless of nesting. This makes <span lang="" dir="ltr">rem</span> more predictable and easier to maintain in large projects.
+        </p>
+
+        <h3 lang="en" dir="auto">Typical Sizes by Device (assuming 1rem = 16px):</h3>
+        <ul lang="en" dir="auto">
+            <li lang="en" dir="auto">Mobile phones: <span lang="" dir="ltr">14–16px (0.875rem–1rem)</span></li>
+            <li lang="en" dir="auto">Tablets: <span lang="" dir="ltr">16–18px (1rem–1.125rem)</span></li>
+            <li lang="en" dir="auto">Desktops: <span lang="" dir="ltr">16–20px (1rem–1.25rem)</span></li>
+        </ul>
+
+        <p lang="en" dir="auto">
+            Using rem for base font sizes and em for spacing or component-specific scaling is a common best practice.
+            This approach ensures consistency while allowing flexibility across different screen sizes and user settings, however the CSS uses mostly
+            <span lang="" dir="ltr">rem</span> units for spacings, so the spacings don't change with font size
+        </p>
+
+        <h3 lang="en" dir="auto">Layout & Spacing Variables</h3>
+        <ul lang="en" dir="auto">
+            <li lang="en" dir="auto">--spacing-element - General spacing between elements (e.g. margins, vertical rhythm). 1.875rem is equivalent to 30px if root font size is 16px.</li>
+            <li lang="en" dir="auto">--padding-box - Internal padding for containers or boxes. 1.5rem is about 24px.</li>
+            <li lang="en" dir="auto">--grid-box-padding - Padding inside grid items or cards. 1rem is about 16px.</li>
+            <li lang="en" dir="auto">--grid-box-gap - Gap between grid items. Helps define spacing between grid cards.</li>
+            <li lang="en" dir="auto">--width-desktop - Max width for desktop layouts. 60rem ~ 960px.</li>
+            <li lang="en" dir="auto">--width-tablet	- Max width for tablet layouts. 40rem ~ 640px.</li>
+            <li lang="en" dir="auto">--width-box-grid - Width of a grid cards container or content box. 29rem ~ 464px.</li>
+            <li lang="en" dir="auto">--width-half-column - Used for half-width elements, aligned left or right.</li>
+            <li lang="en" dir="auto">--line-thin - Thin border or divider line. 0.125rem ~ 2px.</li>
+            <li lang="en" dir="auto">--line-medium - Medium-weight line. 0.187rem ~ 3px.</li>
+            <li lang="en" dir="auto">--grid-box-radius - Border-radius for grid boxes or cards. 0.5rem ~ 8px.</li>
+            <li lang="en" dir="auto">--rounded-radius - Generic rounded corners for UI elements. Likely reused across buttons, inputs, etc. 0.5rem ~ 8px</li>
+            <li lang="en" dir="auto">--grid-box-width - Fixed width for individual grid cards. 15rem ~ 240px</li>
+        </ul>
+        <p>You can change the spacings, as you want, as well as any other content, since this CSS is provided under MIT license.</p>
+        <h2 lang="en" dir="auto" id="vars-colors">Color variables</h2>
+        <p lang="en" dir="auto">Modern CSS supports automatic adaptation to the user's preferred color scheme using the prefers-color-scheme media query. This allows developers to define separate styles for light and dark modes.</p>
+        <pre class="box-gray-right" lang="" dir="ltr">
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+</pre>
+        <h3 lang="en" dir="auto">Light Mode</h3>
+        <p lang="en" dir="auto">In light mode, the background is typically light (e.g., white or soft gray), and text is dark for readability. It's the default for most websites and resembles usual experience with black text on white paper that users have in everyday life.</p>
+        <pre class="box-gray-left">
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+</pre>
+        <h3 lang="en" dir="auto">Dark Mode</h3>
+        <p lang="en" dir="auto">
+            Dark mode uses dark backgrounds (e.g., black or deep gray) with light text. It reduces eye strain in low-light environments and saves battery on OLED screens.
+            Some users also prefer dark color schemes.
+        </p>
+        <pre class="box-gray-right">
+@media print {
+  body {
+    background: none;
+    color: black;
+    font-size: 0.75rem;
+  }
+
+  nav, footer {
+    display: none;
+  }
+}
+</pre>
+        <h3 lang="en" dir="auto">Print Media Styling</h3>
+        <p lang="en" dir="auto">
+            CSS also allows customization for printed output using the @media print query. This ensures that pages look clean and readable when printed.<br />
+            Backgrounds: Many browsers ignore background colors/images when printing unless explicitly enabled. Use background: none; or avoid heavy backgrounds.<br />
+            Color to Grayscale: Colors may be converted to grayscale when printing. Avoid relying on color alone to convey meaning (e.g., red for errors).<br />
+            Ink Efficiency: Use high-contrast, ink-friendly colors. Avoid saturated backgrounds or gradients.
+        </p>
+        <p>The CSS allows you to define following color variables that are automatically used throughot the page:</p>
+        <h3>Main Text and Background Colors</h3>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tr><td>--color-bg-main</td><td>The default background color for the main content area</td></tr>
+            <tr><td>--color-text-main</td><td>The primary text color</td></tr>
+            <tr><td>--color-marker-main</td><td>The color used for markers (e.g., bullets, highlights) in main content</td></tr>
+        </table>
+        <h4>Input Fields (Default Context)</h4>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--input-bg-default</td><td>Background color of standard input fields</td></tr>
+                <tr><td>--input-text-default</td><td>Text color inside inputs</td></tr>
+                <tr><td>--input-border-default</td><td>Default border color</td></tr>
+                <tr><td>--input-focus-border-default</td><td>Border color when input is focused</td></tr>
+            </tbody>
+        </table>
+        <h3>Gray Box Styling</h3>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--color-box-gray-bg</td><td>Background of gray-themed boxes</td></tr>
+                <tr><td>--color-box-gray-text</td><td>Text color inside gray boxes</td></tr>
+                <tr><td>--color-box-gray-marker</td><td>Marker color in gray boxes</td></tr>
+                <tr><td>--color-box-gray-header</td><td>Header color in gray boxes</td></tr>
+                <tr><td>--color-box-gray-divider</td><td>Divider line color</td></tr>
+            </tbody>
+        </table>
+        <h4>Inputs in Gray Boxes</h4>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--input-bg-gray</td><td>Input background in gray boxes</td></tr>
+                <tr><td>--input-text-gray</td><td>Input text color</td></tr>
+                <tr><td>--input-marker-gray</td><td>Marker color in inputs</td></tr>
+                <tr><td>--input-border-gray</td><td>Border color</td></tr>
+                <tr><td>--input-focus-border-gray</td><td>Focus border</td></tr>
+            </tbody>
+        </table>
+        <h3>Accent Colors</h3>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--color-accent</td><td>Primary accent for highlights.</td></tr>
+                <tr><td>--color-accent-alt</td><td>Alternative accent for variation or thematic contrast.</td></tr>
+            </tbody>
+        </table>
+        <h3>Accent-Colored Boxes</h3>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--color-box-accent-bg</td><td>Background of accent boxes</td></tr>
+                <tr><td>--color-box-accent-text</td><td>Text color</td></tr>
+                <tr><td>--color-box-accent-marker</td><td>Marker color</td></tr>
+                <tr><td>--color-box-accent-header</td><td>Header color</td></tr>
+                <tr><td>--color-box-accent-divider</td><td>Divider color</td></tr>
+            </tbody>
+        </table>
+        <h4>Inputs in Accent Boxes</h4>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--input-bg-accent:</td><td>Input background — pale teal.</td></tr>
+                <tr><td>--input-text-accent:</td><td>Input text — deep teal.</td></tr>
+                <tr><td>--input-border-accent:</td><td>Border — soft teal-gray.</td></tr>
+                <tr><td>--input-focus-border-accent:</td><td>Focus border — vibrant teal for clarity.</td></tr>
+            </tbody>
+        </table>
+        <h3>Alternative Accent-Colored Boxes</h3>
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--color-box-accent-alt-bg</td><td>Background</td></tr>
+                <tr><td>--color-box-accent-alt-text</td><td>Text.</td></tr>
+                <tr><td>--color-box-accent-alt-marker</td><td>Marker</td></tr>
+                <tr><td>--color-box-accent-alt-header</td><td>Header</td></tr>
+                <tr><td>--color-box-accent-alt-divider</td><td>Divider</td></tr>
+            </tbody>
+        </table>
+        <h4>Inputs in Alternative Accent Boxes</h4>
+        
+        <table>
+            <thead>
+                <tr><td>Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>--input-bg-accent-alt</td><td>Input background</td></tr>
+                <tr><td>--input-text-accent-alt</td><td>Input text</td></tr>
+                <tr><td>--input-marker-accent-alt</td><td>Marker</td></tr>
+                <tr><td>--input-border-accent-alt</td><td>Border</td></tr>
+                <tr><td>--input-focus-border-accent-alt</td><td>Focus border</td></tr>
+            </tbody>
+        </table>
+        <div class="clearfix"></div>
+        <h2 lang="en" dir="auto" id="licence">MIT License</h2>
+
+        <p>Copyright (c) 2025 NataljaNeumann@gmx.de</p>
+
+        <p>
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+        </p>
+
+        <p>
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+        </p>
+
+        <p>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+        </p>
+
+
+    </div>
+</body>
+</html>
+
