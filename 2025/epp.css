@@ -279,12 +279,20 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--rounded-radius: 0.5rem;
 }
 
+/* force stacking grid cards on small screens */
+@media (max-width: 30rem) {
+	:root {
+		--grid-box-width: 100%; 
+	}
+}
+
 /* ================================
    Standard: Light color scheme
    ================================ */
 :root {
 	/* main colors: the text and the background of text */
 	--color-bg-main: #f5f7fa;
+	--color-bg-outside: #e0e6ed;
 	--color-text-main: #2c3e50;
 	--color-marker-main: var(--color-text-main);
 
@@ -395,8 +403,17 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: #1e1e1e;
+		--color-bg-outside: #2c2c2c;
 		--color-text-main: #e0e0e0;
 		--color-marker-main: #e0e0e0;
+
+		/* colors for tables in the normal text */
+		--table-header-bg: #2c2c2c;
+		--table-header-text: #e0e0e0;
+		--table-body-odd-bg: #252525;
+		--table-body-odd-text: #e0e0e0;
+		--table-body-even-bg: #1e1e1e;
+		--table-body-even-text: #e0e0e0;
 
 		/* input in normal text */
 		--input-bg-default: #2c3e50;
@@ -494,6 +511,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: Canvas;
+		--color-bg-outside: Canvas;
 		--color-text-main: CanvasText;
 		--color-marker-main: var(--color-text-main);
 
@@ -605,8 +623,17 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: #ffffff;
+		--color-bg-outside: #ffffff;
 		--color-text-main: #000000;
 		--color-marker-main: #000000;
+
+		/* tables in normal text */
+		--table-header-bg: #e0e0e0; 
+		--table-header-text: var(--color-text-main);
+		--table-body-odd-bg: #f5f5f5;
+		--table-body-odd-text:var(--color-text-main);
+		--table-body-even-bg: #eaeaea;
+		--table-body-even-text:var(--color-text-main);
 
 		/* input in normal text */
 		--input-bg-default: #ffffff;
@@ -712,11 +739,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 /* ============================= */
 body {
 	font-family: var(--font-primary);
-	background-color: var(--color-box-gray-bg);
+	background-color: var(--color-bg-outside);
 	color: var(--color-text-main);
 	margin: 0;
 	padding: 0;
-
 }
 
 li::marker {
@@ -1292,6 +1318,13 @@ pre.box-accent-alt-right {
 	.box-accent-full,
 	.box-accent-alt-full{
 		border: var(--line-thin) solid var(--color-text-main);
+	}
+}
+/* Prevent page break in and after headers */
+@media print {
+	h1, h2, h3, h4 {
+		page-break-after: avoid;
+		page-break-inside: avoid;
 	}
 }
 
@@ -1968,6 +2001,7 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt li::marker {
 	color: var(--grid-box-accent-alt-marker);
 }
+
 
 /* print-media optimization */
 @media print {
