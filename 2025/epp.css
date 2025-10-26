@@ -785,8 +785,11 @@ li::marker {
    Staandard elements
    ================================ */
 
-p {
+p:not(p *) {
 	margin-bottom: var(--spacing-element);
+	overflow-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 
@@ -818,9 +821,12 @@ ul, ol {
 	padding-inline-start: 2em;
 }
 
-li {
+li:not(li *) {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 strong, b {
@@ -834,6 +840,8 @@ i {
 a {
 	color: var(--link-color);
 	text-decoration: none;
+	overflow-wrap: break-word;
+	word-break: break-word;
 }
 
 @media print {
