@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <title>Instructions for epp.css</title>
@@ -28,8 +28,56 @@
             }, 2000); // Delay by 2000 milliseconds (2 seconds)
         };
     </script>
+    <script>
+        /**
+         * This script uses a MutationObserver to detect when the `lang` attribute on the `<html>` element changes.
+         * This is a reliable way to catch browser-initiated translations, especially in browsers like Firefox.
+         * When a change is detected, it checks if the new language is one of the known RTL languages
+         * and sets the `dir` attribute on the `<html>` tag accordingly.
+         */
+
+        // A comprehensive list of RTL language codes
+        const rtlLanguages = [
+            'ar', 'ara',   // Arabic
+            'azb',         // South Azerbaijani (often uses Arabic script in Iran)
+            'dv', 'div',   // Dhivehi
+            'fa', 'fas',   // Persian / Farsi
+            'he', 'iw',    // Hebrew
+            'ku', 'kur',   // Kurdish (Sorani dialect)
+            'ckb',         // Central Kurdish (Sorani)
+            'nqo',         // N'Ko
+            'ps', 'pus',   // Pashto
+            'rhg',         // Rohingya
+            'sd', 'snd',   // Sindhi
+            'syr',         // Syriac
+            'ug', 'uig',   // Uyghur
+            'ur', 'urd',   // Urdu
+            'yi', 'yid'    // Yiddish
+        ];
+
+        const html = document.documentElement;
+        const originalLang = html.lang;
+
+        // Create a new MutationObserver instance
+        const observer = new MutationObserver(() => {
+            // Check if the language has changed from the original
+            if (html.lang && html.lang !== originalLang) {
+                const langCode = html.lang.substring(0, 2); // Get the two-letter language code
+
+                // Check if the current language is in our RTL list
+                if (rtlLanguages.includes(langCode)) {
+                    html.dir = 'rtl';
+                } else {
+                    html.dir = 'ltr';
+                }
+            }
+        });
+
+        // Start observing the <html> element for changes to its attributes, specifically 'lang'
+        observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
+    </script>
 </head>
-<body lang="en">
+<body>
     <div class="main">
         <h1>Instructions for an easy web page creation with help of <bdo lang="" translate="no" dir="ltr">epp.css</bdo></h1>
         <nav class="menu" lang="en" >
@@ -60,13 +108,13 @@
         <h2 id="start" lang="en" >Basic Structure of HTML Document</h2>
         <pre class="box-gray-right" lang="" dir="ltr">
 &lt;!DOCTYPE html>
-&lt;html lang="<bdi lang="en" >..your language abbreviation..</bdi>">
+&lt;html lang="<bdi lang="en" >..your language abbreviation..</bdi>" dir="<bdi lang="en">..your text writing direction..</bdi>">
 &lt;head>
     &lt;meta charset="UTF-8">
     &lt;title><bdi lang="en" >..Your title for the page..</bdi>/title>
     &lt;link rel="stylesheet" href="epp.css" />
 &lt;/head>
-&lt;body dir="ltr">
+&lt;body>
     &lt;div class="main">
 
     &lt;/div>
@@ -320,7 +368,7 @@
                 <tr lang="en" ><td lang="" translate="no" dir="ltr">--color-box-gray-divider</td><td lang="en" >Divider line color</td></tr>
             </tbody>
         </table>
-        <h4 lang="en" >Inputs in Gray Boxes</h4>
+        <h4 lang="en" >Colors of Input Field Elements in Gray Boxes</h4>
         <table lang="en" >
             <colgroup>
                 <col style="width: 30%;">
@@ -351,7 +399,7 @@
                 <tr lang="en" ><td lang="" translate="no" dir="ltr">--color-accent-alt</td><td lang="en" >Alternative accent for variation or thematic contrast.</td></tr>
             </tbody>
         </table>
-        <h3 lang="en" >Accent-Colored Boxes</h3>
+        <h3 lang="en" >Colors of Accent-Colored Boxes</h3>
         <table lang="en" >
             <colgroup>
                 <col style="width: 30%;">
@@ -368,7 +416,7 @@
                 <tr lang="en" ><td lang="" translate="no" dir="ltr">--color-box-accent-divider</td><td lang="en" >Divider color</td></tr>
             </tbody>
         </table>
-        <h4 lang="en" >Inputs in Accent Boxes</h4>
+        <h4 lang="en">Colors of Input Field Elements in Accent Boxes</h4>
         <table>
             <colgroup>
                 <col style="width: 30%;">
@@ -384,7 +432,7 @@
                 <tr lang="en" ><td lang="" translate="no" dir="ltr">--input-focus-border-accent:</td><td lang="en" >Focus border</td></tr>
             </tbody>
         </table>
-        <h3 lang="en" >Alternative Accent-Colored Boxes</h3>
+        <h3 lang="en" >Colors of Alternatively Accent-Colored Boxes</h3>
         <table lang="en" >
             <colgroup>
                 <col style="width: 30%;">
@@ -401,7 +449,7 @@
                 <tr lang="en" ><td lang="" translate="no" dir="ltr">--color-box-accent-alt-divider</td><td lang="en" >Divider</td></tr>
             </tbody>
         </table>
-        <h4 lang="en" >Inputs in Alternative Accent Boxes</h4>
+        <h4 lang="en" >Colors of Input Field Elements in Alternative Accent Boxes</h4>
         <table lang="en" >
             <colgroup>
                 <col style="width: 30%;">
