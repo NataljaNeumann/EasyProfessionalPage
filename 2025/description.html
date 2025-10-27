@@ -108,7 +108,8 @@
         <h2 id="start" lang="en" >Basic Structure of HTML Document</h2>
         <pre class="box-gray-right" lang="" dir="ltr">
 <bdo dir="ltr" translate="no" class="notranslate" lang="">&lt;!DOCTYPE html>
-&lt;html lang="</bdo><bdi lang="en" >..your language abbreviation..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">" dir="</bdo><bdi lang="en">..your text writing direction..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">">
+&lt;html lang="</bdo><bdi lang="en" >..your language abbreviation..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">"
+       dir="</bdo><bdi lang="en">..your text writing direction..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">">
 &lt;head>
     &lt;meta charset="UTF-8">
     &lt;title></bdo><bdi lang="en" >..Your title for the page..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">/title>
@@ -540,18 +541,15 @@
             </tbody>
         </table>
         <p lang="en" >
-            Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able
-            to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
+            Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
         </p>
         <h2 id="elements-images">Image classes</h2>
         <p lang="en" >
-            The CSS defines classes for image elements that you can use for modification of the appearance of image elements. After the discussion of image
-            classes will will also discuss image boxes that allow you to lay other content over the image. Image classes aren't compatible with image boxes.
-            For each picture you need to use the one or the other.
+            The CSS defines classes for image elements that you can use for modification of the appearance of image elements. After the discussion of image classes will will also discuss image boxes that allow you to lay other content over the image. Image classes aren't compatible with image boxes. For each picture you need to use the one or the other.
         </p>
 
-        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Full width image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-full"></bdo></pre>
-        <h3 lang="" translate="no" dir="ltr">.img-full</h3>
+        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Full width image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-full"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-full</bdo></h3>
         <p lang="en" >Purpose: Displays the image at full width, extending slightly beyond the container’s padding.</p>
         <p lang="en" >
             <b>Behavior:</b><br />
@@ -560,8 +558,8 @@
             Automatically adjusts height to maintain aspect ratio.<br />
         </p>
 
-        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Left-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-left"></bdo></pre>
-        <h3 lang="" translate="no" dir="ltr">.img-left</h3>
+        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Left-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-left"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-left</bdo></h3>
         <p lang="en" >Purpose: Displays a half-width image floated to the left (or start of the inline direction).</p>
 
         <p lang="en" >
@@ -571,8 +569,8 @@
             Adds spacing to the right <bdo lang="" translate="no" dir="ltr">(margin-inline-end)</bdo> and bottom.<br />
         </p>
 
-        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Right-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-right"></bdo></pre>
-        <h3 lang="" translate="no" dir="ltr">.img-right</h3>
+        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Right-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-right"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-right</bdo></h3>
         <p lang="en" >Purpose: Displays a half-width image floated to the right (or end of the inline direction).</p>
 
         <p lang="en" >
@@ -582,8 +580,8 @@
             Adds spacing to the left (margin-inline-start) and bottom.<br />
         </p>
 
-        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Main image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-main"></bdo></pre>
-        <h3 lang="" translate="no" dir="ltr">.img-main</h3>
+        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Main image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-main"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-main</bdo></h3>
         <p lang="en" >Purpose: Displays a centered main image with a border and responsive sizing.</p>
 
         <p lang="en" >
@@ -596,14 +594,11 @@
         </p>
         <h2 id="elements-boxes">Boxes</h2>
         <p lang="en" >
-            The CSS provides several boxes: Callout boxes, gray boxes, colored boxes with 2 possible accent colors. Furtherore the CSS
-            allows to put the boxes to the right side, to the left side and at normal size. Some boxes can also be expanded to the full width,
-            so to the borders of the outer area. But let's start with image boxes.
+            The CSS provides several boxes: Callout boxes, gray boxes, colored boxes with 2 possible accent colors. Furtherore the CSS allows to put the boxes to the right side, to the left side and at normal size. Some boxes can also be expanded to the full width, so to the borders of the outer area. But let's start with image boxes.
         </p>
         <h3 lang="en" >Image boxes</h3>
         <p lang="en" >
-            Image boxes are available in two main configurations that are incompatible to each other. One configuration can have image
-            credits and title, the other can have any content, but it looks differently.
+            Image boxes are available in two main configurations that are incompatible to each other. One configuration can have image credits and title, the other can have any content, but it looks differently.
         </p>
         <pre class="box-gray" lang="" dir="ltr">
 &lt;!-- <bdi lang="en" >Image box with credits</bdi> -->
@@ -636,33 +631,27 @@
 </pre>
         <h2 lang="en" >Gray and accent-colored boxes</h2>
         <p lang="en" >
-            There ar also other variants of boxes with a background color, either in gray or
-            in accent colors. You can specify the used gray and accent colors in the CSS.
+            There ar also other variants of boxes with a background color, either in gray or in accent colors. You can specify the used gray and accent colors in the CSS.
         </p>
         <pre class="box-accent" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="callout-box"></bdo><bdi lang="en">Some text with accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent"></bdo><bdi lang="en">Some text with accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
 </pre>
         <pre class="box-accent-alt" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="callout-box"></bdo><bdi lang="en" >Some text with alternative accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-alt"></bdo><bdi lang="en" >Some text with alternative accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
 </pre>
         <p lang="en" >
-            Additionally there are different variants of the boxes, e.g. normal that have no appendix in
-            name, there are boxes that are aligned to the left with <bdo dir="ltr" lang="">-left</bdo> in the name,
-            as well as with <bdo dir="ltr" lang="">-right</bdo> in the name that are alligned to the right.
+            Additionally there are different variants of the boxes, e.g. normal that have no appendix in name, there are boxes that are aligned to the left with <bdo dir="ltr" lang="">-left</bdo> in the name, as well as with <bdo dir="ltr" lang="">-right</bdo> in the name that are alligned to the right.
         </p>
         <p lang="en" >
-            A variant with <bdo dir="ltr" lang="">-full</bdo> in the name will take the full width up to the
-            outer area of the page. Not all boxes support the full variant, e.g. callout boxes don't.
+            A variant with <bdo dir="ltr" lang="">-full</bdo> in the name will take the full width up to the outer area of the page. Not all boxes support the full variant, e.g. callout boxes don't.
         </p>
 
         <p lang="en" >
-            In this page you have seen many gray boxes, that are centered, aligned to left or right. This is
-            how it looks like.
+            In this page you have seen many gray boxes, that are centered, aligned to left or right. This is how it looks like.
         </p>
         <h2 id="elements-notches" lang="en" >Notches</h2>
         <p lang="en" >
-            Notches are boxes with a visible border on two sides. For western raders that have left-to-right
-            writing direction the notch will be in left-upper corner.
+            Notches are boxes with a visible border on two sides of a corner. For western raders that have left-to-right writing direction the notch will be in left-upper corner.
         </p>
         <pre class="notch" lang="" dir="ltr">
 <bdo dir="ltr" translate="no" lang="">&lt;div class="notch"></bdo><bdi lang="en" >Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
@@ -673,11 +662,7 @@
 </pre>
         <h2 id="elements-cards" lang="en" >Grid cards</h2>
         <p lang="en" >
-            You can put some content on smaller cards and let the browser place the cards
-            on a grid, responsive to the size of visitor's viewport. In this special example
-            it doesn't work, when you make the width of the window very small,
-            because of other elements that prevent the page to become smaller, but you
-            get a glipse of how it works.
+            You can put some content on smaller cards and let the browser place the cards on a grid, responsive to the size of visitor's viewport. In this special example it doesn't work, when you make the width of the window very small, because of other elements that prevent the page to become smaller, but you get a feeling of how it works.
         </p>
 
         <div class="box-grid">
