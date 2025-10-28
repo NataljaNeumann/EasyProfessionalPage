@@ -1134,13 +1134,16 @@ table tbody tr:nth-child(even) {
 /* full-width gray box */
 .box-gray,
 .box-gray-full,
+.box-gray-wide,
 .box-gray-left,
 .box-gray-right,
 .box-accent,
+.box-accent-wide,
 .box-accent-full,
 .box-accent-left,
 .box-accent-right,
 .box-accent-alt,
+.box-accent-alt-wide,
 .box-accent-alt-full,
 .box-accent-alt-left,
 .box-accent-alt-right {
@@ -1180,6 +1183,8 @@ table tbody tr:nth-child(even) {
 .box-gray-right a,
 .box-gray-left a,
 .box-gray-full a,
+.box-gray-wide a,
+.box-gray-wide a,
 .box-gray a {
 	color: var(--box-gray-link-color);
 }
@@ -1209,6 +1214,19 @@ pre.box-accent-alt-right {
 	}
 }
 
+/* screen-media optimization */
+@media screen and (forced-colors: none) {
+	.box-accent-wide,
+	.box-accent-alt-wide,
+	.box-gray-wide {
+		margin-left: calc(-100% - var(--spacing-element));
+		margin-right: calc(-100% - var(--spacing-element));
+		max-width: calc(300% + 2 * var(--spacing-element));
+		padding-left: calc( 100% + var(--spacing-element));
+		padding-right: calc( 100% + var(--spacing-element));
+	}
+}
+
 
 /* ================================
    Colored boxes in accent colors
@@ -1217,6 +1235,7 @@ pre.box-accent-alt-right {
 /* colors of colored box in accent color */
 .box-accent,
 .box-accent-full,
+.box-accent-wide,
 .box-accent-left,
 .box-accent-right {
 	background-color: var(--color-box-accent-bg);
@@ -1226,6 +1245,7 @@ pre.box-accent-alt-right {
 /* colors of colored box in accent alt color */
 .box-accent-alt,
 .box-accent-alt-full,
+.box-accent-alt-wide,
 .box-accent-alt-left,
 .box-accent-alt-right {
 	background-color: var(--color-box-accent-alt-bg);
@@ -1236,6 +1256,7 @@ pre.box-accent-alt-right {
 /* markers in gray boxes */
 .box-gray li::marker,
 .box-gray-full li::marker,
+.box-gray-wide li::marker,
 .box-gray-left li::marker,
 .box-gray-right li::marker {
 	color: var(--color-box-gray-marker);
@@ -1244,6 +1265,7 @@ pre.box-accent-alt-right {
 /* markers in colored boxes */
 .box-accent li::marker,
 .box-accent-full li::marker,
+.box-accent-wide li::marker,
 .box-accent-left li::marker,
 .box-accent-right li::marker {
 	color: var(--color-box-accent-text);
@@ -1252,6 +1274,7 @@ pre.box-accent-alt-right {
 /* markers in colored boxes with accent alt color */
 .box-accent-alt li::marker,
 .box-accent-alt-full li::marker,
+.box-accent-alt-wide li::marker,
 .box-accent-alt-left li::marker,
 .box-accent-alt-right li::marker {
 	color: var(--color-box-accent-alt-text);
@@ -1278,17 +1301,20 @@ pre.box-accent-alt-right {
 		border: var(--line-thin) solid var(--color-box-accent-alt-bg)
 	}
 
-	.box-gray-full {
+	.box-gray-full,
+	.box-gray-wide {
 		border-top: var(--line-thin) solid var(--color-box-gray-bg);
 		border-bottom: var(--line-thin) solid var(--color-box-gray-bg);
 	}
 
-	.box-accent-full {
+	.box-accent-full,
+	.box-accent-wide {
 		border-top: var(--line-thin) solid var(--color-box-accent-bg);
 		border-bottom: var(--line-thin) solid var(--color-box-accent-bg);
 	}
 
-	.box-accent-alt-full {
+	.box-accent-alt-full,
+	.box-accent-alt-wide {
 		border-top: var(--line-thin) solid var(--color-box-accent-alt-bg);
 		border-bottom: var(--line-thin) solid var(--color-box-accent-alt-bg);
 	}
@@ -1317,8 +1343,11 @@ pre.box-accent-alt-right {
 	.box-accent-alt-left,
 	.box-accent-alt-right,
 	.box-gray-full,
+	.box-gray-wide,
 	.box-accent-full,
-	.box-accent-alt-full{
+	.box-accent-wide,
+	.box-accent-alt-full,
+	.box-accent-alt-wide {
 		border: var(--line-thin) solid var(--color-text-main);
 	}
 }
@@ -1341,6 +1370,10 @@ pre.box-accent-alt-right {
 .box-gray-full h2,
 .box-gray-full h3,
 .box-gray-full h4,
+.box-gray-wide h1,
+.box-gray-wide h2,
+.box-gray-wide h3,
+.box-gray-wide h4,
 .box-gray h1,
 .box-gray h2,
 .box-gray h3,
@@ -1360,6 +1393,7 @@ pre.box-accent-alt-right {
 /* horizontal rules in gray boxes */
 .box-grid-item hr,
 .box-gray-full hr,
+.box-gray-wide hr,
 .box-gray hr,
 .box-gray-left hr,
 .box-gray-right hr {
@@ -1380,6 +1414,10 @@ pre.box-accent-alt-right {
 .box-accent-full h2,
 .box-accent-full h3,
 .box-accent-full h4,
+.box-accent-wide h1,
+.box-accent-wide h2,
+.box-accent-wide h3,
+.box-accent-wide h4,
 .box-accent h1,
 .box-accent h2,
 .box-accent h3,
@@ -1404,6 +1442,10 @@ pre.box-accent-alt-right {
 .box-accent-alt-full h2,
 .box-accent-alt-full h3,
 .box-accent-alt-full h4,
+.box-accent-alt-wide h1,
+.box-accent-alt-wide h2,
+.box-accent-alt-wide h3,
+.box-accent-alt-wide h4,
 .box-accent-alt h1,
 .box-accent-alt h2,
 .box-accent-alt h3,
@@ -1422,6 +1464,7 @@ pre.box-accent-alt-right {
 /* horizontal rules in colored boxes */
 .box-grid-item-accent hr,
 .box-accent-full hr,
+.box-accent-wide hr,
 .box-accent hr,
 .box-accent-left hr,
 .box-accent-right hr {
@@ -1429,9 +1472,10 @@ pre.box-accent-alt-right {
 	margin: var(--spacing-element) 0;
 }
 
-/* horizontal rules in colored boxes with accent alt color */	
+/* horizontal rules in colored boxes with accent alt color */
 .box-grid-item-accent-alt hr,
 .box-accent-alt hr,
+.box-accent-alt-wide hr,
 .box-accent-alt-full hr,
 .box-accent-alt-left hr,
 .box-accent-alt-right hr {
@@ -1442,11 +1486,12 @@ pre.box-accent-alt-right {
 
 /* ===================================
    Link colors in colored boxes	  
-   =================================== */   
+   =================================== */
 .box-grid-item-accent a,
 .box-accent-right a,
 .box-accnet-left a,
 .box-accent-full a,
+.box-accent-wide a,
 .box-accent a {
 	color: var(--color-box-accent-link-color);
 }
@@ -1456,6 +1501,7 @@ pre.box-accent-alt-right {
 .box-accent-alt-right a,
 .box-accnet-alt-left a,
 .box-accent-alt-full a,
+.box-accent-alt-wide a,
 .box-accent-alt a {
 	color: var(--color-box-accent-alt-link-color);
 }
@@ -1575,6 +1621,9 @@ select:focus {
 .box-gray-full input,
 .box-gray-full textarea,
 .box-gray-full select,
+.box-gray-wide input,
+.box-gray-wide textarea,
+.box-gray-wide select,
 .box-gray input,
 .box-gray textarea,
 .box-gray select,
@@ -1591,17 +1640,21 @@ select:focus {
 
 /* focused styles */
 .box-gray input:focus,
-.box-gray-full input:focus,
 .box-gray-left input:focus,
 .box-gray-right input:focus,
 .box-gray textarea:focus,
-.box-gray-full textarea:focus,
 .box-gray-left textarea:focus,
 .box-gray-right textarea:focus,
 .box-gray select:focus,
-.box-gray-full select:focus,
 .box-gray-left select:focus,
-.box-gray-right select:focus {
+.box-gray-right select:focus,
+.box-gray-full input:focus,
+.box-gray-full textarea:focus,
+.box-gray-full select:focus,
+.box-gray-wide input:focus,
+.box-gray-wide textarea:focus,
+.box-gray-wide select:focus
+{
 	border-color: var(--input-focus-border-gray);
 }
 
@@ -1612,6 +1665,9 @@ select:focus {
 .box-accent-full input,
 .box-accent-full textarea,
 .box-accent-full select,
+.box-accent-wide input,
+.box-accent-wide textarea,
+.box-accent-wide select,
 .box-accent-left input,
 .box-accent-left textarea,
 .box-accent-left select,
@@ -1630,6 +1686,9 @@ select:focus {
 .box-accent-alt-full input,
 .box-accent-alt-full textarea,
 .box-accent-alt-full select,
+.box-accent-alt-wide input,
+.box-accent-alt-wide textarea,
+.box-accent-alt-wide select,
 .box-accent-alt-left input,
 .box-accent-alt-left textarea,
 .box-accent-alt-left select,
@@ -1644,35 +1703,42 @@ select:focus {
 
 /* focused styles */
 .box-accent input:focus,
-.box-accent-full input:focus,
 .box-accent-left input:focus,
 .box-accent-right input:focus,
 .box-accent textarea:focus,
-.box-accent-full textarea:focus,
 .box-accent-left textarea:focus,
 .box-accent-right textarea:focus,
 .box-accent select:focus,
-.box-accent-full select:focus,
 .box-accent-left select:focus,
-.box-accent-right select:focus {
+.box-accent-right select:focus,
+.box-accent-full input:focus,
+.box-accent-full textarea:focus,
+.box-accent-full select:focus,
+.box-accent-wide input:focus,
+.box-accent-wide textarea:focus,
+.box-accent-wide select:focus
+{
 	border-color: var(--input-focus-border-accent);
 }
 
 /* focused styles in boxes with alternative accent color */
 .box-accent-alt input:focus,
-.box-accent-alt-full input:focus,
 .box-accent-alt-left input:focus,
 .box-accent-alt-right input:focus,
 .box-accent-alt textarea:focus,
-.box-accent-alt-full textarea:focus,
 .box-accent-alt-left textarea:focus,
 .box-accent-alt-right textarea:focus,
 .box-accent-alt select:focus,
-.box-accent-alt-full select:focus,
 .box-accent-alt-left select:focus,
-.box-accent-alt-right select:focus {
+.box-accent-alt-right select:focus,
+.box-accent-alt-full input:focus,
+.box-accent-alt-full textarea:focus,
+.box-accent-alt-full select:focus,
+.box-accent-alt-wide input:focus,
+.box-accent-alt-wide textarea:focus,
+.box-accent-alt-wide select:focus
+{
 	border-color: var(--input-focus-border-accent-alt);
-
 }
 
 /* ================================
@@ -2069,14 +2135,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > *:first-child,
 .box-gray > *:first-child,
 .box-gray-full > *:first-child,
+.box-gray-wide > *:first-child,
 .box-gray-left > *:first-child,
 .box-gray-right > *:first-child,
 .box-accent > *:first-child,
 .box-accent-full > *:first-child,
+.box-accent-wide > *:first-child,
 .box-accent-left > *:first-child,
 .box-accent-right > *:first-child,
 .box-accent-alt > *:first-child,
 .box-accent-alt-full > *:first-child,
+.box-accent-alt-wide > *:first-child,
 .box-accent-alt-left > *:first-child,
 .box-accent-alt-right > *:first-child {
 	margin-top: 0;
@@ -2096,14 +2165,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > [class*="-left"] + *,
 .box-gray > [class*="-left"] + *,
 .box-gray-full > [class*="-left"] + *,
+.box-gray-wide > [class*="-left"] + *,
 .box-gray-left > [class*="-left"] + *,
 .box-gray-right > [class*="-left"] + *,
 .box-accent > [class*="-left"] + *,
 .box-accent-full > [class*="-left"] + *,
+.box-accent-wide > [class*="-left"] + *,
 .box-accent-left > [class*="-left"] + *,
 .box-accent-right > [class*="-left"] + *
 .box-accent-alt > [class*="-left"] + *,
 .box-accent-alt-full > [class*="-left"] + *,
+.box-accent-alt-wide > [class*="-left"] + *,
 .box-accent-alt-left > [class*="-left"] + *,
 .box-accent-alt-right > [class*="-left"] + *,
 .notch > [class*="-right"] + *,
@@ -2119,14 +2191,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > [class*="-right"] + *,
 .box-gray > [class*="-right"] + *,
 .box-gray-full > [class*="-right"] + *,
+.box-gray-wide > [class*="-right"] + *,
 .box-gray-left > [class*="-right"] + *,
 .box-gray-right > [class*="-right"] + *,
 .box-accent > [class*="-right"] + *,
 .box-accent-full > [class*="-right"] + *,
+.box-accent-wide > [class*="-right"] + *,
 .box-accent-left > [class*="-right"] + *,
 .box-accent-alt-right > [class*="-right"] + *,
 .box-accent-alt > [class*="-right"] + *,
 .box-accent-alt-full > [class*="-right"] + *,
+.box-accent-alt-wide > [class*="-right"] + *,
 .box-accent-alt-left > [class*="-right"] + *,
 .box-accent-alt-right > [class*="-right"] + * {
 	margin-top: 0;
@@ -2148,14 +2223,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > *:last-child,
 .box-gray > *:last-child,
 .box-gray-full > *:last-child,
+.box-gray-wide > *:last-child,
 .box-gray-left > *:last-child,
 .box-gray-right > *:last-child,
 .box-accent > *:last-child,
 .box-accent-full > *:last-child,
+.box-accent-wide > *:last-child,
 .box-accent-left > *:last-child,
 .box-accent-right > *:last-child,
 .box-accent-alt > *:last-child,
 .box-accent-alt-full > *:last-child,
+.box-accent-alt-wide > *:last-child,
 .box-accent-alt-left > *:last-child,
 .box-accent-alt-right > *:last-child {
 	margin-bottom: 0;
@@ -2176,14 +2254,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > [class*="-right"]:has(+ p:last-child),
 .box-gray > [class*="-right"]:has(+ p:last-child),
 .box-gray-full > [class*="-right"]:has(+ p:last-child),
+.box-gray-wide > [class*="-right"]:has(+ p:last-child),
 .box-gray-left > [class*="-right"]:has(+ p:last-child),
 .box-gray-right > [class*="-right"]:has(+ p:last-child),
 .box-accent > [class*="-right"]:has(+ p:last-child),
 .box-accent-full > [class*="-right"]:has(+ p:last-child),
+.box-accent-wide > [class*="-right"]:has(+ p:last-child),
 .box-accent-left > [class*="-right"]:has(+ p:last-child),
 .box-accent-right > [class*="-right"]:has(+ p:last-child),
 .box-accent-alt > [class*="-right"]:has(+ p:last-child),
 .box-accent-alt-full > [class*="-right"]:has(+ p:last-child),
+.box-accent-alt-wide > [class*="-right"]:has(+ p:last-child),
 .box-accent-alt-left > [class*="-right"]:has(+ p:last-child),
 .box-accent-alt-right > [class*="-right"]:has(+ p:last-child),
 .notch > [class*="-left"]:has(+ p:last-child),
@@ -2199,14 +2280,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt > [class*="-left"]:has(+ p:last-child),
 .box-gray > [class*="-left"]:has(+ p:last-child),
 .box-gray-full > [class*="-left"]:has(+ p:last-child),
+.box-gray-wide > [class*="-left"]:has(+ p:last-child),
 .box-gray-left > [class*="-left"]:has(+ p:last-child),
 .box-gray-right > [class*="-left"]:has(+ p:last-child),
 .box-accent > [class*="-left"]:has(+ p:last-child),
 .box-accent-full > [class*="-left"]:has(+ p:last-child),
+.box-accent-wide > [class*="-left"]:has(+ p:last-child),
 .box-accent-left > [class*="-left"]:has(+ p:last-child),
 .box-accent-right > [class*="-left"]:has(+ p:last-child),
 .box-accent-alt > [class*="-left"]:has(+ p:last-child),
 .box-accent-alt-full > [class*="-left"]:has(+ p:last-child),
+.box-accent-alt-wide > [class*="-left"]:has(+ p:last-child),
 .box-accent-alt-left > [class*="-left"]:has(+ p:last-child),
 .box-accent-alt-right > [class*="-left"]:has(+ p:last-child) {
 	margin-bottom: 0;
@@ -2229,14 +2313,17 @@ nav.menu li ul a:hover {
 .box-grid-item-accent-alt::after,
 .box-gray::after,
 .box-gray-full::after,
+.box-gray-wide::after,
 .box-gray-left::after,
 .box-gray-right::after,
 .box-accent::after,
 .box-accent-full::after,
+.box-accent-wide::after,
 .box-accent-left::after,
 .box-accent-right::after,
 .box-accent-alt::after,
 .box-accent-alt-full::after,
+.box-accent-alt-wide::after,
 .box-accent-alt-left::after,
 .box-accent-alt-right::after {
 	content: "";
