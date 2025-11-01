@@ -1190,6 +1190,18 @@ table tbody tr:nth-child(even) {
 }
 
 
+pre.borderbox-gray-left,
+pre.borderbox-gray-right,
+pre.borderbox-alt-left,
+pre.borderbox-alt-right,
+pre.borderbox-left,
+pre.borderbox-right,
+pre.borderbox-gray-strong-left,
+pre.borderbox-gray-strong-right,
+pre.borderbox-alt-strong-left,
+pre.borderbox-alt-strong-right,
+pre.borderbox-strong-left,
+pre.borderbox-strong-right,
 pre.box-gray-left,
 pre.box-gray-right,
 pre.box-accent-left,
@@ -1506,6 +1518,130 @@ pre.box-accent-alt-right {
 	color: var(--color-box-accent-alt-link-color);
 }
 
+/* ===================================
+   Border boxes – boxes with a border
+   =================================== */
+
+/* Standard border-box: medium-width border on all sides */
+.borderbox,
+.borderbox-left,
+.borderbox-right {
+	border: var(--line-medium) solid var(--color-accent);
+}
+
+/* alternative border-box: medium-width border in alt color */
+.borderbox-alt,
+.borderbox-alt-left,
+.borderbox-alt-right {
+	border: var(--line-medium) solid var(--color-accent-alt);
+}
+
+/* gray border-box: medium-width border in alt color */
+.borderbox-gray,
+.borderbox-gray-left,
+.borderbox-gray-right {
+	border: var(--line-medium) solid var(--color-box-gray-bg);
+}
+
+/* strong border-box: strong border */
+.borderbox-strong,
+.borderbox-strong-left,
+.borderbox-strong-right {
+	border: var(--padding-box) solid var(--color-accent);
+}
+
+/* alternative strong border-box: strong border in alt color */
+.borderbox-alt-strong,
+.borderbox-alt-strong-left,
+.borderbox-alt-strong-right {
+	border: var(--padding-box) solid var(--color-accent-alt);
+}
+
+/* strong gray border-box: strong border */
+.borderbox-gray-strong,
+.borderbox-gray-strong-left,
+.borderbox-gray-strong-right {
+	border: var(--padding-box) solid var(--color-box-gray-bg);
+}
+
+
+/* other parameters of the border-box */
+.borderbox,
+.borderbox-left,
+.borderbox-right,
+.borderbox-gray,
+.borderbox-gray-left,
+.borderbox-gray-right,
+.borderbox-alt,
+.borderbox-alt-left,
+.borderbox-alt-right,
+.borderbox-strong,
+.borderbox-strong-left,
+.borderbox-strong-right,
+.borderbox-gray-strong,
+.borderbox-gray-strong-left,
+.borderbox-gray-strong-right,
+.borderbox-alt-strong,
+.borderbox-alt-strong-left,
+.borderbox-alt-strong-right {
+	padding: var(--padding-box);
+	margin-bottom: var(--spacing-element);
+	clear: both;
+}
+
+.borderbox-left,
+.borderbox-strong-left,
+.borderbox-alt-left,
+.borderbox-alt-strong-left,
+.borderbox-gray-left,
+.borderbox-gray-strong-left {
+	float: inline-start;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-bottom: var(--spacing-element);
+	clear: inline-start;
+}
+
+.borderbox-right,
+.borderbox-strong-right,
+.borderbox-alt-right,
+.borderbox-alt-strong-right,
+.borderbox-gray-right,
+.borderbox-gray-strong-right {
+	float: inline-end;
+	width: var(--width-half-column);
+	margin-top: 0;
+	margin-bottom: var(--spacing-element);
+	clear: inline-end;
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+/* forced colors optimization */
+@media (forced-colors: active) {
+	.borderbox,
+	.borderbox-left,
+	.borderbox-right,
+	.borderbox-gray,
+	.borderbox-gray-left,
+	.borderbox-gray-right,
+	.borderbox-alt,
+	.borderbox-alt-left,
+	.borderbox-alt-right,
+	.borderbox-strong,
+	.borderbox-strong-left,
+	.borderbox-strong-right,
+	.borderbox-gray-strong,
+	.borderbox-gray-strong-left,
+	.borderbox-gray-strong-right,
+	.borderbox-alt-strong,
+	.borderbox-alt-strong-left,
+	.borderbox-alt-strong-right {
+		border-color: var(--color-text-main);
+	}
+}
+
+
 /* ================================
    Responsive design (≤1024px)
    ================================ */
@@ -1517,7 +1653,19 @@ pre.box-accent-alt-right {
 	.box-accent-alt-left,
 	.box-accent-alt-right,
 	.img-left,
-	.img-right {
+	.img-right,
+	.borderbox-left,
+	.borderbox-strong-left,
+	.borderbox-alt-left,
+	.borderbox-alt-strong-left,
+	.borderbox-gray-left,
+	.borderbox-gray-strong-left,
+	.borderbox-right,
+	.borderbox-strong-right,
+	.borderbox-alt-right,
+	.borderbox-alt-strong-right,
+	.borderbox-gray-right,
+	.borderbox-gray-strong-right {
 		float: none;
 		width: auto;
 		margin-left: auto;
@@ -1529,20 +1677,6 @@ pre.box-accent-alt-right {
    Responsive design: mobile devices (≤768px)
    ================================ */
 @media screen and (max-width: 30rem) {
-	.box-gray-left,
-	.box-gray-right,
-	.box-accent-left,
-	.box-accent-right,
-	.box-accent-alt-left,
-	.box-accent-alt-right,
-	.img-left,
-	.img-right {
-		float: none;
-		width: auto;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
 	/* optional change of the font size */
 	body {
 		font-size: 1rem;
@@ -2093,6 +2227,18 @@ nav.menu li ul a:hover {
 :dir(rtl) > .callout-box-right,
 :dir(rtl) > .callout-box-alt-right,
 :dir(rtl) > .image-box-right,
+:dir(rtl) > .borderbox-gray-right,
+:dir(rtl) > .borderbox-gray-strong-right,
+:dir(rtl) > .borderbox-right,
+:dir(rtl) > .borderbox-strong-right,
+:dir(rtl) > .borderbox-alt-right,
+:dir(rtl) > .borderbox-alt-strong-right,
+:dir(ltr) > .borderbox-gray-left,
+:dir(ltr) > .borderbox-gray-strong-left,
+:dir(ltr) > .borderbox-left,
+:dir(ltr) > .borderbox-strong-left,
+:dir(ltr) > .borderbox-alt-left,
+:dir(ltr) > .borderbox-alt-strong-left,
 :dir(ltr) > .box-gray-left,
 :dir(ltr) > .box-accent-left,
 :dir(ltr) > .box-accent-alt-left,
@@ -2109,6 +2255,18 @@ nav.menu li ul a:hover {
 :dir(ltr) > .callout-box-right,
 :dir(ltr) > .callout-box-alt-right,
 :dir(ltr) > .image-box-right,
+:dir(ltr) > .borderbox-gray-right,
+:dir(ltr) > .borderbox-gray-strong-right,
+:dir(ltr) > .borderbox-right,
+:dir(ltr) > .borderbox-strong-right,
+:dir(ltr) > .borderbox-alt-right,
+:dir(ltr) > .borderbox-alt-strong-right,
+:dir(rtl) > .borderbox-gray-left,
+:dir(rtl) > .borderbox-gray-strong-left,
+:dir(rtl) > .borderbox-left,
+:dir(rtl) > .borderbox-strong-left,
+:dir(rtl) > .borderbox-alt-left,
+:dir(rtl) > .borderbox-alt-strong-left,
 :dir(rtl) > .box-gray-left,
 :dir(rtl) > .box-accent-left,
 :dir(rtl) > .box-accent-alt-left,
@@ -2125,9 +2283,14 @@ nav.menu li ul a:hover {
 /* removes top margin from heading when it is the first element in boxes */
 .notch > *:first-child,
 .notch-strong > *:first-child,
+.notch-alt > *:first-child,
+.notch-alt-strong > *:first-child,
 .callout-box-left > *:first-child,
 .callout-box-right > *:first-child,
 .callout-box > *:first-child,
+.callout-box-alt-left > *:first-child,
+.callout-box-alt-right > *:first-child,
+.callout-box-alt > *:first-child,
 .box-grid-item > *:first-child,
 .box-grid-item-bg > *:first-child,
 .box-grid-item-gray > *:first-child,
@@ -2138,6 +2301,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > *:first-child,
 .box-gray-left > *:first-child,
 .box-gray-right > *:first-child,
+.borderbox > *:first-child,
+.borderbox-strong > *:first-child,
+.borderbox-gray > *:first-child,
+.borderbox-gray-strong > *:first-child,
+.borderbox-alt > *:first-child,
+.borderbox-alt-strong > *:first-child,
+.borderbox-gray-left > *:first-child,
+.borderbox-gray-strong-left > *:first-child,
+.borderbox-alt-left > *:first-child,
+.borderbox-alt-strong-left > *:first-child,
+.borderbox-left > *:first-child,
+.borderbox-strong-left > *:first-child,
+.borderbox-gray-right > *:first-child,
+.borderbox-gray-strong-right > *:first-child,
+.borderbox-alt-right > *:first-child,
+.borderbox-alt-strong-right > *:first-child,
+.borderbox-right > *:first-child,
+.borderbox-strong-right > *:first-child,
 .box-accent > *:first-child,
 .box-accent-full > *:first-child,
 .box-accent-wide > *:first-child,
@@ -2155,9 +2336,14 @@ nav.menu li ul a:hover {
 /* removes top margin from elements following a left-aligned or right-aligned element */
 .notch > [class*="-left"] + *,
 .notch-strong > [class*="-left"] + *,
+.notch-alt > [class*="-left"] + *,
+.notch-alt-strong > [class*="-left"] + *,
 .callout-box-left > [class*="-left"] + *,
 .callout-box-right > [class*="-left"] + *,
 .callout-box > [class*="-left"] + *,
+.callout-box-alt-left > [class*="-left"] + *,
+.callout-box-alt-right > [class*="-left"] + *,
+.callout-box-alt > [class*="-left"] + *,
 .box-grid-item > [class*="-left"] + *,
 .box-grid-item-bg > [class*="-left"] + *,
 .box-grid-item-gray > [class*="-left"] + *,
@@ -2168,6 +2354,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > [class*="-left"] + *,
 .box-gray-left > [class*="-left"] + *,
 .box-gray-right > [class*="-left"] + *,
+.borderbox > [class*="-left"] + *,
+.borderbox-strong > [class*="-left"] + *,
+.borderbox-gray > [class*="-left"] + *,
+.borderbox-gray-strong > [class*="-left"] + *,
+.borderbox-alt > [class*="-left"] + *,
+.borderbox-alt-strong > [class*="-left"] + *,
+.borderbox-gray-right > [class*="-left"] + *,
+.borderbox-gray-strong-right > [class*="-left"] + *,
+.borderbox-gray-left > [class*="-left"] + *,
+.borderbox-gray-strong-left > [class*="-left"] + *,
+.borderbox-right > [class*="-left"] + *,
+.borderbox-strong-right > [class*="-left"] + *,
+.borderbox-left > [class*="-left"] + *,
+.borderbox-strong-left > [class*="-left"] + *,
+.borderbox-alt-right > [class*="-left"] + *,
+.borderbox-alt-strong-right > [class*="-left"] + *,
+.borderbox-alt-left > [class*="-left"] + *,
+.borderbox-alt-strong-left > [class*="-left"] + *,
 .box-accent > [class*="-left"] + *,
 .box-accent-full > [class*="-left"] + *,
 .box-accent-wide > [class*="-left"] + *,
@@ -2180,10 +2384,14 @@ nav.menu li ul a:hover {
 .box-accent-alt-right > [class*="-left"] + *,
 .notch > [class*="-right"] + *,
 .notch-strong > [class*="-right"] + *,
+.notch-alt > [class*="-right"] + *,
+.notch-alt-strong > [class*="-right"] + *,
 .callout-box-left > [class*="-right"] + *,
 .callout-box-right > [class*="-right"] + *,
-.callout-box-full > [class*="-right"] + *,
 .callout-box > [class*="-right"] + *,
+.callout-box-alt-left > [class*="-right"] + *,
+.callout-box-alt-right > [class*="-right"] + *,
+.callout-box-alt > [class*="-right"] + *,
 .box-grid-item > [class*="-right"] + *,
 .box-grid-item-bg > [class*="-right"] + *,
 .box-grid-item-gray > [class*="-right"] + *,
@@ -2194,6 +2402,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > [class*="-right"] + *,
 .box-gray-left > [class*="-right"] + *,
 .box-gray-right > [class*="-right"] + *,
+.borderbox > [class*="-right"] + *,
+.borderbox-strong > [class*="-right"] + *,
+.borderbox-alt > [class*="-right"] + *,
+.borderbox-alt-strong > [class*="-right"] + *,
+.borderbox-gray > [class*="-right"] + *,
+.borderbox-gray-strong > [class*="-right"] + *,
+.borderbox-gray-right > [class*="-right"] + *,
+.borderbox-gray-strong-right > [class*="-right"] + *,
+.borderbox-gray-left > [class*="-right"] + *,
+.borderbox-gray-strong-left > [class*="-right"] + *,
+.borderbox-right > [class*="-right"] + *,
+.borderbox-strong-right > [class*="-right"] + *,
+.borderbox-left > [class*="-right"] + *,
+.borderbox-strong-left > [class*="-right"] + *,
+.borderbox-alt-right > [class*="-right"] + *,
+.borderbox-alt-strong-right > [class*="-right"] + *,
+.borderbox-alt-left > [class*="-right"] + *,
+.borderbox-alt-strong-left > [class*="-right"] + *,
 .box-accent > [class*="-right"] + *,
 .box-accent-full > [class*="-right"] + *,
 .box-accent-wide > [class*="-right"] + *,
@@ -2212,10 +2438,14 @@ nav.menu li ul a:hover {
 /* removes bottom margin and padding from last element in boxes */
 .notch > *:last-child,
 .notch-strong > *:last-child,
+.notch-alt > *:last-child,
+.notch-alt-strong > *:last-child,
 .callout-box-left > *:last-child,
 .callout-box-right > *:last-child,
-.callout-box-full > *:last-child,
 .callout-box > *:last-child,
+.callout-box-alt-left > *:last-child,
+.callout-box-alt-right > *:last-child,
+.callout-box-alt > *:last-child,
 .box-grid-item > *:last-child,
 .box-grid-item-bg > *:last-child,
 .box-grid-item-gray > *:last-child,
@@ -2226,6 +2456,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > *:last-child,
 .box-gray-left > *:last-child,
 .box-gray-right > *:last-child,
+.borderbox > *:last-child,
+.borderbox-strong > *:last-child,
+.borderbox-alt > *:last-child,
+.borderbox-alt-strong > *:last-child,
+.borderbox-gray > *:last-child,
+.borderbox-gray-strong > *:last-child,
+.borderbox-gray-right > *:last-child,
+.borderbox-gray-left > *:last-child,
+.borderbox-gray-strong-right > *:last-child,
+.borderbox-gray-strong-left > *:last-child,
+.borderbox-right > *:last-child,
+.borderbox-left > *:last-child,
+.borderbox-strong-right > *:last-child,
+.borderbox-strong-left > *:last-child,
+.borderbox-alt-right > *:last-child,
+.borderbox-alt-left > *:last-child,
+.borderbox-alt-strong-right > *:last-child,
+.borderbox-alt-strong-left > *:last-child,
 .box-accent > *:last-child,
 .box-accent-full > *:last-child,
 .box-accent-wide > *:last-child,
@@ -2244,9 +2492,14 @@ nav.menu li ul a:hover {
    or right-aligned element that are followed by <p> elements */
 .notch > [class*="-right"]:has(+ p:last-child),
 .notch-strong > [class*="-right"]:has(+ p:last-child),
+.notch-alt > [class*="-right"]:has(+ p:last-child),
+.notch-alt-strong > [class*="-right"]:has(+ p:last-child),
 .callout-box-left > [class*="-right"]:has(+ p:last-child),
 .callout-box-right > [class*="-right"]:has(+ p:last-child),
 .callout-box > [class*="-right"]:has(+ p:last-child),
+.callout-box-alt-left > [class*="-right"]:has(+ p:last-child),
+.callout-box-alt-right > [class*="-right"]:has(+ p:last-child),
+.callout-box-alt > [class*="-right"]:has(+ p:last-child),
 .box-grid-item > [class*="-right"]:has(+ p:last-child),
 .box-grid-item-bg > [class*="-right"]:has(+ p:last-child),
 .box-grid-item-gray > [class*="-right"]:has(+ p:last-child),
@@ -2257,6 +2510,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > [class*="-right"]:has(+ p:last-child),
 .box-gray-left > [class*="-right"]:has(+ p:last-child),
 .box-gray-right > [class*="-right"]:has(+ p:last-child),
+.borderbox > [class*="-right"]:has(+ p:last-child),
+.borderbox-strong > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt-strong > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray-strong > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray-strong-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray-left > [class*="-right"]:has(+ p:last-child),
+.borderbox-gray-strong-left > [class*="-right"]:has(+ p:last-child),
+.borderbox-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-strong-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-left > [class*="-right"]:has(+ p:last-child),
+.borderbox-strong-left > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt-strong-right > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt-left > [class*="-right"]:has(+ p:last-child),
+.borderbox-alt-strong-left > [class*="-right"]:has(+ p:last-child),
 .box-accent > [class*="-right"]:has(+ p:last-child),
 .box-accent-full > [class*="-right"]:has(+ p:last-child),
 .box-accent-wide > [class*="-right"]:has(+ p:last-child),
@@ -2269,10 +2540,14 @@ nav.menu li ul a:hover {
 .box-accent-alt-right > [class*="-right"]:has(+ p:last-child),
 .notch > [class*="-left"]:has(+ p:last-child),
 .notch-strong > [class*="-left"]:has(+ p:last-child),
+.notch-alt > [class*="-left"]:has(+ p:last-child),
+.notch-alt-strong > [class*="-left"]:has(+ p:last-child),
 .callout-box-left > [class*="-left"]:has(+ p:last-child),
 .callout-box-right > [class*="-left"]:has(+ p:last-child),
-.callout-box-full > [class*="-left"]:has(+ p:last-child),
 .callout-box > [class*="-left"]:has(+ p:last-child),
+.callout-box-alt-left > [class*="-left"]:has(+ p:last-child),
+.callout-box-alt-right > [class*="-left"]:has(+ p:last-child),
+.callout-box-alt > [class*="-left"]:has(+ p:last-child),
 .box-grid-item > [class*="-left"]:has(+ p:last-child),
 .box-grid-item-bg > [class*="-left"]:has(+ p:last-child),
 .box-grid-item-gray > [class*="-left"]:has(+ p:last-child),
@@ -2283,6 +2558,24 @@ nav.menu li ul a:hover {
 .box-gray-wide > [class*="-left"]:has(+ p:last-child),
 .box-gray-left > [class*="-left"]:has(+ p:last-child),
 .box-gray-right > [class*="-left"]:has(+ p:last-child),
+.borderbox > [class*="-left"]:has(+ p:last-child),
+.borderbox-strong > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt-strong > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray-strong > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray-strong-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray-left > [class*="-left"]:has(+ p:last-child),
+.borderbox-gray-strong-left > [class*="-left"]:has(+ p:last-child),
+.borderbox-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-strong-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-left > [class*="-left"]:has(+ p:last-child),
+.borderbox-strong-left > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt-strong-right > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt-left > [class*="-left"]:has(+ p:last-child),
+.borderbox-alt-strong-left > [class*="-left"]:has(+ p:last-child),
 .box-accent > [class*="-left"]:has(+ p:last-child),
 .box-accent-full > [class*="-left"]:has(+ p:last-child),
 .box-accent-wide > [class*="-left"]:has(+ p:last-child),
@@ -2303,9 +2596,14 @@ nav.menu li ul a:hover {
 */
 .notch::after,
 .notch-strong::after,
+.notch-alt::after,
+.notch-alt-strong::after,
 .callout-box-left::after,
 .callout-box-right::after,
 .callout-box::after,
+.callout-box-alt-left::after,
+.callout-box-alt-right::after,
+.callout-box-alt::after,
 .box-grid-item::after,
 .box-grid-item-bg::after,
 .box-grid-item-gray::after,
@@ -2316,6 +2614,24 @@ nav.menu li ul a:hover {
 .box-gray-wide::after,
 .box-gray-left::after,
 .box-gray-right::after,
+.borderbox::after,
+.borderbox-strong::after,
+.borderbox-alt::after,
+.borderbox-alt-strong::after,
+.borderbox-gray::after,
+.borderbox-gray-strong::after,
+.borderbox-gray-right::after,
+.borderbox-gray-strong-right::after,
+.borderbox-gray-left::after,
+.borderbox-gray-strong-left::after,
+.borderbox-right::after,
+.borderbox-strong-right::after,
+.borderbox-left::after,
+.borderbox-strong-left::after,
+.borderbox-alt-right::after,
+.borderbox-alt-strong-right::after,
+.borderbox-alt-left::after,
+.borderbox-alt-strong-left::after,
 .box-accent::after,
 .box-accent-full::after,
 .box-accent-wide::after,
