@@ -774,9 +774,10 @@ li::marker {
 
 /* print-media optimization */
 @media print {
-	.main {	
+	.main {
 		background-color: white;
 		max-width: 100%;
+		font-size: 0.75rem;
 	}
 }
 
