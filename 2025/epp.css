@@ -2137,21 +2137,18 @@ nav.menu li ul a:hover {
 		margin: 0;
 	}
 
-	.image-credits {
+	.image-caption:not(.image-content .image-caption),
+	.image-content .image-caption,
+	.image-credits:not(.image-content .image-credits),
+	.image-content .image-credits {
+		font-size: unset;
 		position: static;
 		background: none;
-		padding: 0.2em var(--padding-box);
-		inset-inline-start: var(--padding-box);
+		padding: 0.2em 0;
+		inset-inline-start: 0;
 		margin: 0;
 	}
 
-	.image-caption {
-		position: static;
-		background: none;
-		padding: 0.2em var(--padding-box);
-		inset-inline-start: var(--padding-box);
-		margin: 0;
-	}
 }
 
 
