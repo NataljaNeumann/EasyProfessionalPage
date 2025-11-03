@@ -26,6 +26,44 @@
                     }
                 }
             }, 2000); // Delay by 2000 milliseconds (2 seconds)
+
+            // Init images in a random way
+            const aImages = [
+                '../Images/DarkImage1.jpg',
+                '../Images/DarkImage2.jpg',
+                '../Images/LightImage1.jpg',
+                '../Images/LightImage2.jpg',
+                '../Images/LightImage3.jpg',
+                '../Images/ColorImage1.jpg',
+                '../Images/ColorImage2.jpg',
+                '../Images/ColorImage3.jpg',
+            ];
+
+            const dtmNow = new Date();
+            const dtmStartOfDay = new Date(dtmNow.getFullYear(), dtmNow.getMonth(), dtmNow.getDate(), 0, 0, 0, 0);
+            let nSeconds = Math.floor((dtmNow.getTime() - dtmStartOfDay.getTime()) / 1000);
+            while (--nSeconds > 0) {
+                let dblIgnore = Math.random();
+            }
+
+
+            const aAllImages = document.querySelectorAll('img');
+            let strPrevImage = "";
+            let strRandomImage = "";
+
+            aAllImages.forEach(imgElement => {
+                do {
+                    strRandomImage = aImages[Math.floor(Math.random() * aImages.length)];
+                    dblIgnore = Math.random();
+                    dblIgnore = Math.random();
+                } while (strRandomImage === strPrevImage);
+
+                imgElement.src = strRandomImage;
+                strPrevImage = strRandomImage;
+            });
+
+
+
         };
     </script>
     <script>
