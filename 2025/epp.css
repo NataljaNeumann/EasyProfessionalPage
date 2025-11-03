@@ -1991,7 +1991,7 @@ nav.menu li ul a:hover {
 /* sub-elements with half-transparent backgrounds */
 .image-overlay-content {
 	background-color: rgba(255, 255, 255, 0.7);
-	padding: 0.4em 0.8em;
+	padding: 0.4em var(--padding-box) 0.3rem var(--padding-box);
 	border-radius: 0;
 	font-size: 0.9rem;
 	pointer-events: auto;
