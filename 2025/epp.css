@@ -2053,8 +2053,8 @@ nav.menu li ul a:hover {
 	}
 }
 
-/* credits shall be over the image */
-.image-credits {
+/* credits, if over the image */
+.image-content  .image-credits {
 	position: absolute;
 	bottom: var(--padding-box);
 	inset-inline-end: var(--padding-box);
@@ -2077,27 +2077,56 @@ nav.menu li ul a:hover {
 		background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
 	}
 
-	.image-credits {
+	.image-content .image-credits {
 		background-color: rgba(0, 0, 0, 0.7);
 	}
 }
 
 
-
-
-
-/* image caption shall stay under picture */
-.image-caption {
+/* image credits, if under the picture */
+.image-credits:not(.image-content .image-credits) {
 	margin-bottom: 0;
 	inset-inline-start: var(--padding-box);
 	padding: 0.2em var(--padding-box);
 }
 
-.image-caption * {
+.image-credits:not(.image-content .image-credits) * {
 	margin: 0;
 	padding: 0;
 }
 
+
+
+/* image caption, if under the picture */
+.image-caption:not(.image-content .image-caption) {
+	margin-bottom: 0;
+	inset-inline-start: var(--padding-box);
+	padding: 0.2em var(--padding-box);
+}
+
+.image-caption:not(.image-content .image-caption) * {
+	margin: 0;
+	padding: 0;
+}
+
+/* image caption, if over the picture */
+.image-content > .image-caption {
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
+	z-index: 10;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: var(--padding-box);
+	padding-top: 10%;
+	font-size: 2rem;
+}
+
+@media (prefers-color-scheme: Dark) {
+	.image-content .image-caption {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+	}
+}
 
 /* print-media optimization */
 @media print {
