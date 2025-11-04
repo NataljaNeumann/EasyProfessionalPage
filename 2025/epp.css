@@ -297,12 +297,12 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--color-marker-main: var(--color-text-main);
 
 	/* tables in normal text */
-	--table-header-bg: #d0d6dd; 
+	--table-header-bg: #d0d6dd;
 	--table-header-text: var(--color-text-main);
 	--table-body-odd-bg: #f5f7fa;
-	--table-body-odd-text:var(--color-text-main);
+	--table-body-odd-text: var(--color-text-main);
 	--table-body-even-bg: #e0e6ed;
-	--table-body-even-text:var(--color-text-main);
+	--table-body-even-text: var(--color-text-main);
 
 	/* input in normal text */
 	--input-bg-default: #ffffff;
@@ -312,6 +312,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 	/* colors in gray boxes */
 	--color-box-gray-bg: #e0e6ed;
+	--color-box-gray-bg-overlay: #e0e6eda0;
 	--color-box-gray-text: #2c3e50;
 	--color-box-gray-marker: #2c3e50;
 	--color-box-gray-header: #34495e;
@@ -330,6 +331,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 	/* colors in accent-colored boxes */
 	--color-box-accent-bg: #dbece6;
+	--color-box-accent-bg-overlay: #dbece6a0;
 	--color-box-accent-text: #1c3d2e;
 	--color-box-accent-marker: #1c3d2e;
 	--color-box-accent-header: #145c4c;
@@ -342,17 +344,18 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--input-focus-border-accent: #2c8c7c;
 
 	/* colours for the coloured boxes with alternative accent */
-	--color-box-accent-alt-header: #8c2c4c; 
-	--color-box-accent-alt-divider: #d8a3b3; 
-	--color-box-accent-alt-bg: #f5e3e8; 
-	--color-box-accent-alt-text: #4c1f2c; 
-	--color-box-accent-alt-marker: #4c1f2c; 
+	--color-box-accent-alt-header: #8c2c4c;
+	--color-box-accent-alt-divider: #d8a3b3;
+	--color-box-accent-alt-bg: #f5e3e8;
+	--color-box-accent-alt-bg-overlay: #f5e3e8a0;
+	--color-box-accent-alt-text: #4c1f2c;
+	--color-box-accent-alt-marker: #4c1f2c;
 
 	/* Input-colors in altrnatively coloured boxes */
-	--input-bg-accent-alt: #f9eef1; 
-	--input-text-accent-alt: #8c2c4c; 
-	--input-marker-accent-alt: #8c2c4c; 
-	--input-border-accent-alt: #d8a3b3; 
+	--input-bg-accent-alt: #f9eef1;
+	--input-text-accent-alt: #8c2c4c;
+	--input-marker-accent-alt: #8c2c4c;
+	--input-border-accent-alt: #d8a3b3;
 	--input-focus-border-accent-alt: #b34c6d;
 
 	/* === menu colors === */
@@ -417,16 +420,17 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 		/* input in normal text */
 		--input-bg-default: #2c3e50;
-		--input-text-default: #ecf0f1; 
-		--input-marker-default: #ecf0f1; 
-		--input-border-default: #7f8c8d; 
+		--input-text-default: #ecf0f1;
+		--input-marker-default: #ecf0f1;
+		--input-border-default: #7f8c8d;
 		--input-focus-border-default: #1abc9c;
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: #2c2c2c;
+		--color-box-gray-bg-overlay: #2c2c2ca0;
 		--color-box-gray-text: #dddddd;
 		--color-box-gray-marker: #dddddd;
-		--color-box-gray-header: #ecf0f1; 
+		--color-box-gray-header: #ecf0f1;
 		--color-box-gray-divider: #7f8c8d;
 
 		/* input colors in gray boxes */
@@ -441,6 +445,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 		/* colors in accent-colored boxes */
 		--color-box-accent-bg: #145c4c;
+		--color-box-accent-bg-overlay: #145c4ca0;
 		--color-box-accent-text: #e6f2f0;
 		--color-box-accent-marker: #e6f2f0;
 		--color-box-accent-header: #e6f2f0;
@@ -453,10 +458,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-focus-border-accent: #1abc9c;
 
 		/* colours for the coloured boxes with alternative accent */
-		--color-box-accent-alt-bg: #4c1432; 
-		--color-box-accent-alt-text: #f2e6ec; 
-		--color-box-accent-alt-marker: #f2e6ec; 
-		--color-box-accent-alt-header: #f2e6ec; 
+		--color-box-accent-alt-bg: #4c1432;
+		--color-box-accent-alt-bg-overlay: #4c1432a0;
+		--color-box-accent-alt-text: #f2e6ec;
+		--color-box-accent-alt-marker: #f2e6ec;
+		--color-box-accent-alt-header: #f2e6ec;
 		--color-box-accent-alt-divider: #8c2c5c;
 
 		/* input-colors in altrnatively coloured boxes */
@@ -503,7 +509,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--link-color: var(--color-accent);
 		--color-box-gray-link-color: var(--color-accent);
 		--color-box-accent-link-color: var(--color-accent);
-		--color-box-accent-alt-link-color: var(--color-accent-alt);		
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
 	}
 }
 
@@ -531,6 +537,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: Canvas;
+		--color-box-gray-bg-overlay: Canvas;
 		--color-box-gray-text: CanvasText;
 		--color-box-gray-marker: CanvasText;
 		--color-box-gray-header: CanvasText;
@@ -549,6 +556,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 		/* colors in accent-colored boxes */
 		--color-box-accent-bg: Canvas;
+		--color-box-accent-bg-overlay: Canvas;
 		--color-box-accent-text: CanvasText;
 		--color-box-accent-marker: CanvasText;
 		--color-box-accent-header: CanvasText;
@@ -564,6 +572,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--color-box-accent-alt-header: CanvasText;
 		--color-box-accent-alt-divider: CanvasText;
 		--color-box-accent-alt-bg: Canvas;
+		--color-box-accent-alt-bg-overlay: Canvas;
 		--color-box-accent-alt-text: CanvasText;
 		--color-box-accent-alt-marker: CanvasText;
 
@@ -2035,6 +2044,10 @@ nav.menu li ul a:hover {
 	margin-bottom: 0;
 }
 
+.image-box,
+.image-content {
+	display: block;
+}
 
 .image-content:has(.image-credits)::after {
 	content: "";
@@ -2044,8 +2057,10 @@ nav.menu li ul a:hover {
 	right: 0;
 	height: 30%;
 	z-index: 1;
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent);
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
 }
+
+
 
 @media print {
 	.image-content:has(.image-credits)::after {
@@ -2066,6 +2081,8 @@ nav.menu li ul a:hover {
 	font-style: italic;
 }
 
+
+
 /* Adaptation to dark scheme */
 @media (prefers-color-scheme: Dark) {
 
@@ -2082,6 +2099,50 @@ nav.menu li ul a:hover {
 	}
 }
 
+@media screen {
+	.image-box:has(.image-caption-gray) .image-content:has(.image-credits)::after {
+		background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
+		color: var(--color-box-gray-text);
+	}
+
+	.image-box:has(.image-caption-accent) .image-content:has(.image-credits)::after {
+		background: linear-gradient(to top, var(--color-box-accent-bg-overlay), transparent);
+		color: var(--color-box-accent-text);
+	}
+
+	.image-box:has(.image-caption-accent-alt) .image-content:has(.image-credits)::after {
+		background: linear-gradient(to top, var(--color-box-accent-alt-bg-overlay), transparent);
+		color: var(--color-box-accent-alt-text);
+	}
+
+	.image-box:has(.image-caption-gray) .image-content .image-credits {
+		background-color: var(--color-box-gray-bg-overlay);
+		color: var(--color-box-gray-text);
+	}
+
+	.image-box:has(.image-caption-accent) .image-content .image-credits {
+		background-color: var(--color-box-accent-bg-overlay);
+		color: var(--color-box-accent-text);
+	}
+
+	.image-box:has(.image-caption-accent-alt) .image-content .image-credits {
+		background-color: var(--color-box-accent-alt-bg-overlay);
+		color: var(--color-box-accent-alt-text);
+	}
+}
+/* remove margin at the bottom if after colored caption there is also a box in samme color */
+.image-box:has(> .image-caption-gray):has(+ .box-gray),
+.image-box:has(> .image-caption-accent):has(+ .box-accent),
+.image-box:has(> .image-caption-accent-alt):has(+ .box-accent-alt) {
+	margin-bottom: 0;
+}
+
+.image-box:has(> .image-caption-gray) + .box-gray,
+.image-box:has(> .image-caption-accent) + .box-accent,
+.image-box:has(> .image-caption-accent-alt) + .box-accent-alt {
+	padding-top: 0.5em;
+	margin-top: 0;
+}
 
 /* image credits, if under the picture */
 .image-credits:not(.image-content .image-credits) {
@@ -2109,8 +2170,49 @@ nav.menu li ul a:hover {
 	padding: 0;
 }
 
+.image-caption-gray:not(.image-content .image-caption-gray) {
+	margin-bottom: 0;
+	inset-inline-start: var(--padding-box);
+	padding: 0.2em var(--padding-box);
+	background-color: var(--color-box-gray-bg);
+	color: var(--color-box-gray-text);
+}
+
+.image-caption-gray:not(.image-content .image-caption-gray) * {
+	margin: 0;
+	padding: 0;
+}
+
+.image-caption-accent:not(.image-content .image-caption-accent) {
+	margin-bottom: 0;
+	inset-inline-start: var(--padding-box);
+	padding: 0.2em var(--padding-box);
+	background-color: var(--color-box-accent-bg);
+	color: var(--color-box-accent-text);
+}
+
+.image-caption-accent:not(.image-content .image-caption-accent) * {
+	margin: 0;
+	padding: 0;
+}
+
+
+.image-caption-accent-alt:not(.image-content .image-caption-accent-alt) {
+	margin-bottom: 0;
+	inset-inline-start: var(--padding-box);
+	padding: 0.2em var(--padding-box);
+	background-color: var(--color-box-accent-alt-bg);
+	color: var(--color-box-accent-alt-text);
+}
+
+.image-caption-accent-alt:not(.image-content .image-caption-accent-alt) * {
+	margin: 0;
+	padding: 0;
+}
+
+
 /* image caption, if over the picture */
-.image-content > .image-caption {
+.image-content .image-caption {
 	background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
 	z-index: 10;
 	position: absolute;
@@ -2139,6 +2241,12 @@ nav.menu li ul a:hover {
 
 	.image-caption:not(.image-content .image-caption),
 	.image-content .image-caption,
+	.image-caption-accent:not(.image-content .image-caption-accent),
+	.image-content .image-caption-accent,
+	.image-caption-accent-alt:not(.image-content .image-caption-accent-alt),
+	.image-content .image-caption-accent-alt,
+	.image-caption-gray:not(.image-content .image-caption-gray),
+	.image-content .image-caption-gray,
 	.image-credits:not(.image-content .image-credits),
 	.image-content .image-credits {
 		font-size: unset;
