@@ -513,6 +513,9 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	}
 }
 
+/* ================================
+   Forced colors: No variations
+   ================================ */
 @media (forced-colors: active) {
 	:root {
 		/* main colors: the text and the background of text */
@@ -913,6 +916,10 @@ blockquote li::marker {
 	color: var(--color-marker-main);
 }
 
+/* =========================
+   Tables
+   ========================= */
+
 /* Style the header row */
 table thead tr {
 	background-color: var(--table-header-bg);
@@ -1234,10 +1241,7 @@ pre.box-accent-alt-right {
 		padding-left: var(--spacing-element);
 		padding-right: var(--spacing-element);
 	}
-}
 
-/* screen-media optimization */
-@media screen and (forced-colors: none) {
 	.box-accent-wide,
 	.box-accent-alt-wide,
 	.box-gray-wide {
@@ -1290,7 +1294,7 @@ pre.box-accent-alt-right {
 .box-accent-wide li::marker,
 .box-accent-left li::marker,
 .box-accent-right li::marker {
-	color: var(--color-box-accent-text);
+	color: var(--color-box-accent-marker);
 }
 
 /* markers in colored boxes with accent alt color */
@@ -1299,7 +1303,7 @@ pre.box-accent-alt-right {
 .box-accent-alt-wide li::marker,
 .box-accent-alt-left li::marker,
 .box-accent-alt-right li::marker {
-	color: var(--color-box-accent-alt-text);
+	color: var(--color-box-accent-alt-marker);
 }
 
 
@@ -1373,6 +1377,7 @@ pre.box-accent-alt-right {
 		border: var(--line-thin) solid var(--color-text-main);
 	}
 }
+
 /* Prevent page break in and after headers */
 @media print {
 	h1, h2, h3, h4 {
@@ -1610,6 +1615,8 @@ pre.box-accent-alt-right {
 	margin-top: 0;
 	margin-bottom: var(--spacing-element);
 	clear: inline-start;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 
 .borderbox-right,
@@ -2045,6 +2052,8 @@ nav.menu li ul a:hover {
 }
 
 .image-box,
+.image-box-right,
+.image-box-left,
 .image-content {
 	display: block;
 }
@@ -2099,6 +2108,7 @@ nav.menu li ul a:hover {
 	}
 }
 
+/* screen media optimization for image boxes with colored caption below the image */
 @media screen {
 	.image-box:has(.image-caption-gray) .image-content:has(.image-credits)::after {
 		background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
@@ -2130,7 +2140,8 @@ nav.menu li ul a:hover {
 		color: var(--color-box-accent-alt-text);
 	}
 }
-/* remove margin at the bottom if after colored caption there is also a box in samme color */
+
+/* remove margin at the bottom of image box, if after colored caption there is also a box in samme color */
 .image-box:has(> .image-caption-gray):has(+ .box-gray),
 .image-box:has(> .image-caption-accent):has(+ .box-accent),
 .image-box:has(> .image-caption-accent-alt):has(+ .box-accent-alt) {
@@ -2159,61 +2170,47 @@ nav.menu li ul a:hover {
 
 
 /* image caption, if under the picture */
-.image-caption:not(.image-content .image-caption) {
-	margin-bottom: 0;
-	inset-inline-start: var(--padding-box);
-	padding: 0.2em var(--padding-box);
-}
-
-.image-caption:not(.image-content .image-caption) * {
-	margin: 0;
-	padding: 0;
-}
-
-.image-caption-gray:not(.image-content .image-caption-gray) {
-	margin-bottom: 0;
-	inset-inline-start: var(--padding-box);
-	padding: 0.2em var(--padding-box);
-	background-color: var(--color-box-gray-bg);
-	color: var(--color-box-gray-text);
-}
-
-.image-caption-gray:not(.image-content .image-caption-gray) * {
-	margin: 0;
-	padding: 0;
-}
-
-.image-caption-accent:not(.image-content .image-caption-accent) {
-	margin-bottom: 0;
-	inset-inline-start: var(--padding-box);
-	padding: 0.2em var(--padding-box);
-	background-color: var(--color-box-accent-bg);
-	color: var(--color-box-accent-text);
-}
-
-.image-caption-accent:not(.image-content .image-caption-accent) * {
-	margin: 0;
-	padding: 0;
-}
-
-
+.image-caption:not(.image-content .image-caption),
+.image-caption-gray:not(.image-content .image-caption-gray),
+.image-caption-accent:not(.image-content .image-caption-accent),
 .image-caption-accent-alt:not(.image-content .image-caption-accent-alt) {
 	margin-bottom: 0;
 	inset-inline-start: var(--padding-box);
 	padding: 0.2em var(--padding-box);
+}
+
+
+
+.image-caption-gray:not(.image-content .image-caption-gray) {
+	background-color: var(--color-box-gray-bg);
+	color: var(--color-box-gray-text);
+}
+
+
+.image-caption-accent:not(.image-content .image-caption-accent) {
+	background-color: var(--color-box-accent-bg);
+	color: var(--color-box-accent-text);
+}
+
+
+.image-caption-accent-alt:not(.image-content .image-caption-accent-alt) {
 	background-color: var(--color-box-accent-alt-bg);
 	color: var(--color-box-accent-alt-text);
 }
 
-.image-caption-accent-alt:not(.image-content .image-caption-accent-alt) * {
+.image-caption:not(.image-content .image-caption) *,
+.image-caption-gray:not(.image-content .image-caption-gray) *,
+.image-caption-accent:not(.image-content .image-caption-accent) *,
+.image-caption-accent-alt:not(.image-content .image-caption-accent-alt) *{
 	margin: 0;
 	padding: 0;
 }
 
 
+
 /* image caption, if over the picture */
 .image-content .image-caption {
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
 	z-index: 10;
 	position: absolute;
 	left: 0;
@@ -2226,13 +2223,12 @@ nav.menu li ul a:hover {
 
 @media (prefers-color-scheme: Dark) {
 	.image-content .image-caption {
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 	}
 }
 
 /* print-media optimization */
 @media print {
-
 	.image-overlay {
 		position: static;
 		background: none;
@@ -2272,17 +2268,20 @@ nav.menu li ul a:hover {
 	margin-bottom: var(--spacing-element);
 }
 
-.box-grid-item {
+.box-grid-item,
+.box-grid-item-bg,
+.box-grid-item-gray,
+.box-grid-item-accent,
+.box-grid-item-accent-alt,
+.box-grid-item-image {
 	padding: var(--grid-box-padding);
 	box-sizing: border-box;
+	border-radius: var(--grid-box-radius);
 }
 
 .box-grid-item-bg {
 	background-color: var(--color-bg-main);
 	border: var(--line-thin) solid var(--color-bg-main);
-	padding: var(--grid-box-padding);
-	border-radius: var(--grid-box-radius);
-	box-sizing: border-box;
 }
 
 
@@ -2290,36 +2289,27 @@ nav.menu li ul a:hover {
 	background-color: var(--grid-box-bg);
 	border: var(--line-thin) solid var(--grid-box-border);
 	color: var(--grid-box-text);
-	padding: var(--grid-box-padding);
-	border-radius: var(--grid-box-radius);
-	box-sizing: border-box;
 }
 
 .box-grid-item-accent {
 	background-color: var(--grid-box-accent-bg);
 	border: var(--line-thin) solid var(--grid-box-accent-border);
 	color: var(--grid-box-accent-text);
-	padding: var(--grid-box-padding);
-	border-radius: var(--grid-box-radius);
-	box-sizing: border-box;
 }
 
 .box-grid-item-accent-alt {
 	background-color: var(--grid-box-accent-alt-bg);
 	border: var(--line-thin) solid var(--grid-box-accent-alt-border);
 	color: var(--grid-box-accent-alt-text);
-	padding: var(--grid-box-padding);
-	border-radius: var(--grid-box-radius);
-	box-sizing: border-box;
+	
 }
 
 .box-grid-item-image {
-	border-radius: var(--grid-box-radius);
-	box-sizing: border-box;
+	padding: 0;
 }
 
 .box-grid-item-image img {
-	border-radius: var(--rounded-radius);
+	border-radius: var(--grid-box-radius);
 	margin: 0;
 }
 
