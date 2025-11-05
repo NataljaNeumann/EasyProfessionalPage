@@ -381,6 +381,7 @@ Saizi na rangi huhifadhiwa katika anuwai, kwa hivyo hauitaji kuzibainisha kwenye
 Zaidi ya hayo CSS inasaidia mpango wa rangi kwa watu wanaohitaji rangi maalum, ikiwa hii imewekwa katika kivinjari.
 
 Ina maelezo ambayo ni rahisi kujifunza.
+‏
 # صفحة احترافية سهلة
 يساعدك هذا المشروع على إنشاء صفحات ويب احترافية بسهولة، من خلال توفير لغة CSS تُدمج في صفحات الويب، وتُنسق عناصرها. تتميز لغة CSS بمخطط ألوان هادئ. ما عليك سوى تحديد ألوان صفحتك بنفسك. بالطبع، يمكنك الاستعانة بالذكاء الاصطناعي لتزويدك بمخطط ألوان مُخصص لاحتياجاتك.
 
@@ -431,7 +432,7 @@ Ina maelezo ambayo ni rahisi kujifunza.
 מכיל תיאור קל ללמידה.
 
 <hr/>
-
+‎
 # Keywords in other languages:
 
 - Skep maklik professioneel-uitsienende webblaaie. HTML + CSS. Met maklik-om-te-leer beskrywings in alle tale.
@@ -497,12 +498,13 @@ Ina maelezo ambayo ni rahisi kujifunza.
 - Dễ dàng tạo trang web chuyên nghiệp. HTML + CSS. Với phần mô tả dễ học bằng mọi ngôn ngữ.
 - Yomb naa sos xëti web yu nuru profesioneel. HTML + CSS. Ak ay leeral yu yomb jàng ci làkk yépp.
 - Ni irọrun ṣẹda awọn oju-iwe wẹẹbu ti n wo ọjọgbọn. HTML + CSS. Pẹlu ijuwe-rọrun lati kọ ẹkọ ni gbogbo awọn ede.
+‏
 - موده بوات لامن ويب يڠ كليهاتن ڤروفيسيونل. HTML + CSS. دڠن هورايان يڠ موده دڤلاجري دالم سموا بهاس.
 - په اسانۍ سره مسلکي ښکاري ویب پاڼې جوړې کړئ. HTML + CSS. په ټولو ژبو کې د زده کړې اسانه توضیحاتو سره.
-آسانی نال پیشہ ورانہ نظر آن آلے ویب صفحے بناؤ۔ ایچ ٹی ایم ایل + سی ایس ایس۔ ساریاں زباناں چ سکھن چ سوکھی تفصیل دے نال۔
+- آسانی نال پیشہ ورانہ نظر آن آلے ویب صفحے بناؤ۔ ایچ ٹی ایم ایل + سی ایس ایس۔ ساریاں زباناں چ سکھن چ سوکھی تفصیل دے نال۔
 - آساني سان پيشيورانه نظر ايندڙ ويب صفحا ٺاهيو. HTML + CSS. سڀني ٻولين ۾ سکڻ ۾ آسان وضاحت سان.
-كەسپىي كۆرۈنىدىغان تور بەتلەرنى ئاسانلا قۇرالايسىز. HTML + CSS. بارلىق تىللاردا ئاسان ئۆگىنىش تەسۋىرى بىلەن.
-بە ئاسانی وێب پەیجی پیشەیی دروست بکە. HTML + CSS. لەگەڵ وەسفێکی ئاسان بۆ فێربوون بە هەموو زمانەکان.
+- كەسپىي كۆرۈنىدىغان تور بەتلەرنى ئاسانلا قۇرالايسىز. HTML + CSS. بارلىق تىللاردا ئاسان ئۆگىنىش تەسۋىرى بىلەن.
+- بە ئاسانی وێب پەیجی پیشەیی دروست بکە. HTML + CSS. لەگەڵ وەسفێکی ئاسان بۆ فێربوون بە هەموو زمانەکان.
 
 
 
