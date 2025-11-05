@@ -433,6 +433,7 @@ Ina maelezo ambayo ni rahisi kujifunza.
 
 <hr/>
 ‎
+
 # Keywords in other languages:
 
 - Skep maklik professioneel-uitsienende webblaaie. HTML + CSS. Met maklik-om-te-leer beskrywings in alle tale.
@@ -498,6 +499,8 @@ Ina maelezo ambayo ni rahisi kujifunza.
 - Dễ dàng tạo trang web chuyên nghiệp. HTML + CSS. Với phần mô tả dễ học bằng mọi ngôn ngữ.
 - Yomb naa sos xëti web yu nuru profesioneel. HTML + CSS. Ak ay leeral yu yomb jàng ci làkk yépp.
 - Ni irọrun ṣẹda awọn oju-iwe wẹẹbu ti n wo ọjọgbọn. HTML + CSS. Pẹlu ijuwe-rọrun lati kọ ẹkọ ni gbogbo awọn ede.
+
+# Right-To-Left ‏
 
 - ‏موده بوات لامن ويب يڠ كليهاتن ڤروفيسيونل. HTML + CSS. دڠن هورايان يڠ موده دڤلاجري دالم سموا بهاس.
 - ‏په اسانۍ سره مسلکي ښکاري ویب پاڼې جوړې کړئ. HTML + CSS. په ټولو ژبو کې د زده کړې اسانه توضیحاتو سره.
