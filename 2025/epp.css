@@ -2144,12 +2144,12 @@ nav.menu li ul a:hover {
 .image-caption:not(.image-content .image-caption):has(+ .image-credits) {
 	font-weight: bold;
 	display: inline;
-	margin-right: 0.5em;
+	margin-inline-end: 0.5em;
 }
 
 .image-caption:not(.image-content .image-caption) + .image-credits {
 	display: inline-block;
-	padding-left: 0;
+	padding-inline-start: 0;
 }
 
 .image-credits:not(.image-content .image-credits) + .image-caption {
@@ -2157,7 +2157,7 @@ nav.menu li ul a:hover {
 }
 
 .image-credits:not(.image-content .image-credits):has(+ .image-caption) {
-	float: right;
+	float: inline-end;
 }
 
 /* remove margin at the bottom of image box, if after colored caption there is also a box in samme color */
