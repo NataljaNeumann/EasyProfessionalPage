@@ -2109,36 +2109,55 @@ nav.menu li ul a:hover {
 }
 
 /* screen media optimization for image boxes with colored caption below the image */
-@media screen {
-	.image-box:has(.image-caption-gray) .image-content:has(.image-credits)::after {
-		background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
-		color: var(--color-box-gray-text);
-	}
+.image-box:has(.image-caption-gray) .image-content:has(.image-credits)::after {
+	background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
+	color: var(--color-box-gray-text);
+}
 
-	.image-box:has(.image-caption-accent) .image-content:has(.image-credits)::after {
-		background: linear-gradient(to top, var(--color-box-accent-bg-overlay), transparent);
-		color: var(--color-box-accent-text);
-	}
+.image-box:has(.image-caption-accent) .image-content:has(.image-credits)::after {
+	background: linear-gradient(to top, var(--color-box-accent-bg-overlay), transparent);
+	color: var(--color-box-accent-text);
+}
 
-	.image-box:has(.image-caption-accent-alt) .image-content:has(.image-credits)::after {
-		background: linear-gradient(to top, var(--color-box-accent-alt-bg-overlay), transparent);
-		color: var(--color-box-accent-alt-text);
-	}
+.image-box:has(.image-caption-accent-alt) .image-content:has(.image-credits)::after {
+	background: linear-gradient(to top, var(--color-box-accent-alt-bg-overlay), transparent);
+	color: var(--color-box-accent-alt-text);
+}
 
-	.image-box:has(.image-caption-gray) .image-content .image-credits {
-		background-color: var(--color-box-gray-bg-overlay);
-		color: var(--color-box-gray-text);
-	}
+.image-box:has(.image-caption-gray) .image-content .image-credits {
+	background-color: var(--color-box-gray-bg-overlay);
+	color: var(--color-box-gray-text);
+}
 
-	.image-box:has(.image-caption-accent) .image-content .image-credits {
-		background-color: var(--color-box-accent-bg-overlay);
-		color: var(--color-box-accent-text);
-	}
+.image-box:has(.image-caption-accent) .image-content .image-credits {
+	background-color: var(--color-box-accent-bg-overlay);
+	color: var(--color-box-accent-text);
+}
 
-	.image-box:has(.image-caption-accent-alt) .image-content .image-credits {
-		background-color: var(--color-box-accent-alt-bg-overlay);
-		color: var(--color-box-accent-alt-text);
-	}
+.image-box:has(.image-caption-accent-alt) .image-content .image-credits {
+	background-color: var(--color-box-accent-alt-bg-overlay);
+	color: var(--color-box-accent-alt-text);
+}
+
+
+
+.image-caption:not(.image-content .image-caption):has(+ .image-credits) {
+	font-weight: bold;
+	display: inline;
+	margin-right: 0.5em;
+}
+
+.image-caption:not(.image-content .image-caption) + .image-credits {
+	display: inline-block;
+	padding-left: 0;
+}
+
+.image-credits:not(.image-content .image-credits) + .image-caption {
+	font-weight: bold;
+}
+
+.image-credits:not(.image-content .image-credits):has(+ .image-caption) {
+	float: right;
 }
 
 /* remove margin at the bottom of image box, if after colored caption there is also a box in samme color */
@@ -2155,6 +2174,14 @@ nav.menu li ul a:hover {
 	margin-top: 0;
 }
 
+@media print {
+	.image-box:has(> .image-caption-gray) + .box-gray,
+	.image-box:has(> .image-caption-accent) + .box-accent,
+	.image-box:has(> .image-caption-accent-alt) + .box-accent-alt {
+		border-top: 0;
+	}
+}
+
 /* image credits, if under the picture */
 .image-credits:not(.image-content .image-credits) {
 	margin-bottom: 0;
@@ -2166,6 +2193,7 @@ nav.menu li ul a:hover {
 	margin: 0;
 	padding: 0;
 }
+
 
 
 
@@ -2253,6 +2281,54 @@ nav.menu li ul a:hover {
 		margin: 0;
 	}
 
+	/* Styling of credits + colored caption that are right before colored box */
+	.image-box:has(.image-caption-gray) .image-content .image-credits {
+		background-color: var(--color-box-gray-bg);
+		border-left: var(--color-box-gray-bg) solid var(--line-thin);
+		border-right: var(--color-box-gray-bg) solid var(--line-thin);
+	}
+
+	.image-box:has(.image-caption-accent) .image-content .image-credits {
+		background-color: var(--color-box-accent-bg);
+		border-left: var(--color-box-accent-bg) solid var(--line-thin);
+		border-right: var(--color-box-accent-bg) solid var(--line-thin);
+	}
+
+	.image-box:has(.image-caption-accent-alt) .image-content .image-credits {
+		background-color: var(--color-box-accent-alt-bg);
+		border-left: var(--color-box-accent-alt-bg) solid var(--line-thin);
+		border-right: var(--color-box-accent-alt-bg) solid var(--line-thin);
+	}
+
+	.image-box .image-caption-gray:not(.image-content .image-caption-gray) {
+		background-color: var(--color-box-gray-bg);
+		border-left: var(--color-box-gray-bg) solid var(--line-thin);
+		border-right: var(--color-box-gray-bg) solid var(--line-thin);
+	}
+
+	.image-box .image-caption-accent:not(.image-content .image-caption-accent) {
+		background-color: var(--color-box-accent-bg);
+		border-left: var(--color-box-accent-bg) solid var(--line-thin);
+		border-right: var(--color-box-accent-bg) solid var(--line-thin);
+	}
+
+	.image-box .image-caption-accent-alt:not(.image-content .image-caption-accent-alt) {
+		background-color: var(--color-box-accent-alt-bg);
+		border-left: var(--color-box-accent-alt-bg) solid var(--line-thin);
+		border-right: var(--color-box-accent-alt-bg) solid var(--line-thin);
+	}
+
+
+	.image-box:has(.image-caption-gray) .image-content .image-credits,
+	.image-box:has(.image-caption-accent) .image-content .image-credits,
+	.image-box:has(.image-caption-accent-alt) .image-content .image-credits,
+	.image-box .image-caption-gray:not(.image-content .image-caption-gray),
+	.image-box .image-caption-accent:not(.image-content .image-caption-accent),
+	.image-box .image-caption-accent-alt:not(.image-content .image-caption-accent-alt) {
+		border-radius: 0;
+		padding-left: var(--padding-box);
+		padding-right: var(--padding-box);
+	}
 }
 
 
