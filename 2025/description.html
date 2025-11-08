@@ -721,7 +721,7 @@
                 <img src="../Images/LightImage1.jpg" />
                 <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             </div>
-            <div class="image-caption-gray">Sample image in a box with credits and gray-colored caption, followed by an gray-colored box.</div>
+            <div class="image-caption-gray">Sample image in a box with credits and gray-colored caption, followed by a gray-colored box.</div>
         </div>
         <pre class="box-gray rounded-bottom" lang="" dir="ltr">
 &lt;!-- <bdi lang="en">Image box with credits</bdi> -->
@@ -762,7 +762,7 @@
         <pre class="box-accent-full" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-full"></bdo><bdi lang="en">..some content..</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo></pre>
 
         <p lang="en">
-            In this page you have seen many gray boxes, that are centered, aligned to left or right. This is how it looks like.
+            In this page you have seen many gray boxes that are centered, aligned to left or right. This is what it looks like.
         </p>
         <pre class="borderbox-strong-right" lang="" dir="ltr">
 <bdo dir="ltr" translate="no" lang="">&lt;div class="borderbox-strong-right"></bdo><bdi lang="en">Some text with strong border</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
@@ -780,7 +780,7 @@
 
         <h2 id="elements-notches" lang="en">Notches</h2>
         <p lang="en">
-            Notches are boxes with a visible border on two sides of a corner. For western raders that have left-to-right writing direction the notch will be in left-upper corner.
+            Notches are visible borders on two sides of a corner of a box. For western raders that have left-to-right writing direction the notch will be in left-upper corner.
         </p>
         <pre class="notch" lang="" dir="ltr">
 <bdo dir="ltr" translate="no" lang="">&lt;div class="notch"></bdo><bdi lang="en">Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
@@ -794,10 +794,10 @@
             You can put some content on smaller cards and let the browser place the cards on a grid, responsive to the size of visitor's viewport. In this special example it doesn't work, when you make the width of the window very small, because of other elements that prevent the page to become smaller, but you get a feeling of how it works.
         </p>
 
-        <div class="box-grid">
-            <div class="box-grid-item" lang="en"><h3 lang="en">Box 1</h3>some text</div>
-            <div class="box-grid-item" lang="en">Box 2</div>
-            <div class="box-grid-item-accent" lang="en">Box 3</div>
+        <div class="box-grid box-accent-full">
+            <div class="box-grid-item-bg" lang="en"><h3 lang="en">Box 1</h3>some text</div>
+            <div class="box-grid-item" lang="en"><h4>Box 2</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p></div>
+            <div class="box-grid-item-gray" lang="en">Box 3</div>
             <div class="box-grid-item-accent-alt" lang="en"><h3 lang="en">Box 4</h3>other text</div>
             <div class="box-grid-item-image">
                 <div class="image-content">
@@ -808,13 +808,18 @@
                     </div>
                 </div>
             </div>
+            <div class="box-grid-item-bg" lang="en"><h3>Box 5</h3></div>
+            <div class="box-grid-item"><img src="../Images/LightImage1.jpg" class="img-full"/>
+            <h4>Box6</h4>
+            <p>Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+            </div>
         </div>
         <pre class="box-gray" dir="ltr" lang="">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="box-grid">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-grid box-accent-full">
     &lt;div class="box-grid-item" lang="en" >
        &lt;h3 lang="en"></bdo>Box 1<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>some text<bdo dir="ltr" translate="no" lang="">&lt;/div>
     &lt;div class="box-grid-item" lang="en" ></bdo>Box 2<bdo dir="ltr" translate="no" lang="">&lt;/div>
-    &lt;div class="box-grid-item-accent" lang="en" ></bdo>Box 3<bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="box-grid-item-gray" lang="en" ></bdo>Box 3<bdo dir="ltr" translate="no" lang="">&lt;/div>
     &lt;div class="box-grid-item-accent-alt" lang="en" >
        &lt;h3 lang="en" ></bdo>Box 4<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no" lang="">&lt;/div>
 &lt;/div></bdo>
