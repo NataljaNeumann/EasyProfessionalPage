@@ -580,6 +580,11 @@
         <p lang="en">
             Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
         </p>
+        <h2 id="elements-image-links">Image links</h2>
+        <p>To make an image clickable—so that it acts as a hyperlink—you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
+        <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
+        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>&lt;a/&gt;</bdo></pre>
+
         <h2 id="elements-images">Image classes</h2>
         <p lang="en">
             The CSS defines classes for image elements that you can use for modification of the appearance of image elements. After the discussion of image classes we will also discuss image boxes that allow you to lay other content over the image. Image classes aren't compatible with image boxes. For each picture you need to use the one or the other.
@@ -795,7 +800,7 @@
         </p>
 
         <div class="box-grid box-accent-full">
-            <div class="box-grid-item-bg" lang="en"><h3 lang="en">Box 1</h3>some text</div>
+            <div class="box-grid-item-bg" lang="en"><h3 lang="en">Box 1</h3><p>some text</p></div>
             <div class="box-grid-item" lang="en"><h4>Box 2</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p></div>
             <div class="box-grid-item-gray" lang="en">Box 3</div>
             <div class="box-grid-item-accent-alt" lang="en"><h3 lang="en">Box 4</h3>other text</div>
@@ -809,9 +814,10 @@
                 </div>
             </div>
             <div class="box-grid-item-bg" lang="en"><h3>Box 5</h3></div>
-            <div class="box-grid-item"><img src="../Images/LightImage1.jpg" />
-            <h4>Box6</h4>
-            <p>Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+            <div class="box-grid-item">
+                <img src="../Images/LightImage1.jpg" />
+                <h4>Box6</h4>
+                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
             </div>
         </div>
         <pre class="box-gray" dir="ltr" lang="">

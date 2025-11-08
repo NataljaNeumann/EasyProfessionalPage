@@ -2334,7 +2334,7 @@ nav.menu li ul a:hover {
 
 
 
-/* ==== box grid ====== */
+/* ==== box grid, cards ====== */
 
 .box-grid {
 	display: grid;
@@ -2356,6 +2356,7 @@ nav.menu li ul a:hover {
 	padding: var(--grid-box-padding);
 	box-sizing: border-box;
 	border-radius: var(--grid-box-radius);
+	overflow: hidden;
 }
 
 .box-grid-item > .img-full
@@ -2381,9 +2382,17 @@ nav.menu li ul a:hover {
 
 .box-grid-item-bg {
 	background-color: var(--color-bg-main);
+	color: var(--color-text-main);
 	border: var(--line-thin) solid var(--color-bg-main);
 }
 
+/* for bog grid item with the page-bg color use */
+.box-grid-item-bg h1, .box-grid-item-bg h2, .box-grid-item-bg h3, .box-grid-item-bg h4 {
+	font-family: var(--font-secondary);
+	color: var(--color-accent);
+	margin-top: var(--spacing-element);
+	margin-bottom: 0.5em;
+}
 
 .box-grid-item-gray {
 	background-color: var(--grid-box-bg);
@@ -2427,7 +2436,6 @@ nav.menu li ul a:hover {
 
 
 
-
 /* print-media optimization */
 @media print {
 	.box-grid {
@@ -2443,6 +2451,40 @@ nav.menu li ul a:hover {
 		break-inside: avoid;
 		margin-bottom: var(--grid-box-gap);
 	}
+}
+
+
+/* Image as link content */
+a img {
+	border: none;
+	transition: transform 0.3s ease;
+}
+
+a img:hover {
+	transform: scale(1.01);
+}
+
+.box-accent-alt-left a img:hover,
+.box-accent-left a img:hover,
+.box-gray-left a img:hover,
+.box-accent-alt-right a img:hover,
+.box-accent-right a img:hover,
+.box-gray-right a img:hover,
+.callout-box-alt-left a img:hover,
+.callout-box-alt-right a img:hover,
+.callout-box-left a img:hover,
+.callout-box-right a img:hover
+{
+	transform: scale(1.02);
+}
+
+.box-grid-item a img:hover,
+.box-grid-item-accent a img:hover,
+.box-grid-item-accent-alt a img:hover,
+.box-grid-item-bg a img:hover,
+.box-grid-item-gray a img:hover,
+.box-grid-item-image a img:hover {
+	transform: scale(1.05);
 }
 
 /* Correct margins for left- and right- boxes, based on
