@@ -2346,8 +2346,6 @@ nav.menu li ul a:hover {
 
 .box-grid-item {
 	box-sizing: border-box;
-	border-top-left-radius: var(--grid-box-radius);
-	border-top-right-radius: var(--grid-box-radius);
 }
 
 .box-grid-item-bg,
@@ -2376,7 +2374,10 @@ nav.menu li ul a:hover {
 	max-width: calc( 100% + 2 * var(--grid-box-padding));
 }
 
-
+.box-grid-item-image .image-overlay .image-overlay-content:last-child {
+	border-bottom-left-radius: var(--grid-box-radius);
+	border-bottom-right-radius: var(--grid-box-radius);
+}
 
 .box-grid-item-bg {
 	background-color: var(--color-bg-main);
