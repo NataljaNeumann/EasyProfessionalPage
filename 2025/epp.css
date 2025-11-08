@@ -2364,7 +2364,7 @@ nav.menu li ul a:hover {
 {
 	padding: 0;
 	max-width: 100%;
-	margin-left: 0;
+	margin-inline-start: 0;
 }
 
 .box-grid-item-bg > .img-full,
@@ -2372,7 +2372,7 @@ nav.menu li ul a:hover {
 .box-grid-item-accent > .img-full,
 .box-grid-item-accent-alt > .img-full,
 .box-grid-item-image > .img-full {
-	margin-left: calc( 0px - var(--grid-box-padding));
+	margin-inline-start: calc( 0px - var(--grid-box-padding));
 	max-width: calc( 100% + 2 * var(--grid-box-padding));
 }
 
