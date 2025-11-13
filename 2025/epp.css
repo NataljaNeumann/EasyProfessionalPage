@@ -2487,6 +2487,45 @@ a img:hover {
 	transform: scale(1.05);
 }
 
+/* two full boxes one after the other */
+.box-gray-full:has(+ .box-accent-full),
+.box-gray-full:has(+ .box-accent-alt-full),
+.box-accent-alt-full:has(+ .box-accent-full),
+.box-accent-alt-full:has(+ .box-gray-full),
+.box-accent-full:has(+ .box-accent-alt-full),
+.box-accent-full:has(+ .box-gray-full) {
+	margin-bottom: 0;
+}
+
+.box-gray-full + .box-accent-full,
+.box-gray-full + .box-accent-alt-full,
+.box-accent-alt-full + .box-accent-full,
+.box-accent-alt-full + .box-gray-full,
+.box-accent-full + .box-accent-alt-full,
+.box-accent-full + .box-gray-full {
+	margin-top: 0;
+}
+
+/* two wide boxes one after the other */
+.box-gray-wide:has(+ .box-accent-wide),
+.box-gray-wide:has(+ .box-accent-alt-wide),
+.box-accent-alt-wide:has(+ .box-accent-wide),
+.box-accent-alt-wide:has(+ .box-gray-wide),
+.box-accent-wide:has(+ .box-accent-alt-wide),
+.box-accent-wide:has(+ .box-gray-wide) {
+	margin-bottom: 0;
+}
+
+.box-gray-wide + .box-accent-wide,
+.box-gray-wide + .box-accent-alt-wide,
+.box-accent-alt-wide + .box-accent-wide,
+.box-accent-alt-wide + .box-gray-wide,
+.box-accent-wide + .box-accent-alt-wide,
+.box-accent-wide + .box-gray-wide {
+	margin-top: 0;
+}
+
+
 /* Correct margins for left- and right- boxes, based on
 	enclosing text, not on the direction of the text inside
 */
