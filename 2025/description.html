@@ -7,25 +7,227 @@
     <script>  
         window.onload = function () {
             setTimeout(function () {
-                // Detect page language from <html> or <body>
                 const pageLang = document.documentElement.lang || document.body.lang || 'en';
-
-                // Detect user's browser language
                 const userLang = navigator.language || navigator.userLanguage;
                 const userLangCode = userLang.split('-')[0];
 
-                // Redirect to Google Translate if languages differ
+                // Liste unterstützter Sprachen mit menschenlesbaren Namen und lokalisierten Fragen
+                const translations = {
+                    de: {
+                        message: 'Diese Seite ist auf Englisch. Möchten Sie sie auf Deutsch übersetzen?'
+                    },
+                    fr: {
+                        message: 'Cette page est en anglais. Voulez-vous la traduire en français ?'
+                    },
+                    es: {
+                        message: 'Esta página está en inglés. ¿Desea traducirla al español?'
+                    },
+                    it: {
+                        message: 'Questa pagina è in inglese. Vuoi tradurla in italiano?'
+                    },
+                    nl: {
+                        message: 'Deze pagina is in het Engels. Wilt u deze naar het Nederlands vertalen?'
+                    },
+                    pl: {
+                        message: 'Ta strona jest w języku angielskim. Czy chcesz ją przetłumaczyć na polski?'
+                    },
+                    pt: {
+                        message: 'Esta página está em inglês. Deseja traduzi-la para português?'
+                    },
+                    zh: {
+                        message: '此页面为英文。是否要将其翻译为中文？'
+                    },
+                    ja: {
+                        message: 'このページは英語です。日本語に翻訳しますか？'
+                    },
+                    ru: {
+                        message: 'Эта страница на английском. Хотите перевести её на русский?'
+                    },
+                    ko: {
+                        message: '이 페이지는 영어로 되어 있습니다. 한국어로 번역하시겠습니까?'
+                    },
+                    af: {
+                        message: 'Hierdie bladsy is in Engels. Wil jy dit in Afrikaans vertaal?'
+                    },
+                    am: {
+                        message: 'ይህ ገጽ በእንግሊዝኛ ነው። ወደ አማርኛ መተርጎም ትፈልጋለህ?'
+                    },
+                    ar: {
+                        message: 'هذه الصفحة باللغة الإنجليزية. هل ترغب بترجمتها إلى الأمهرية؟'
+                    },
+                    hy: {
+                        message: 'Այս էջը անգլերեն լեզվով է։ Կցանկանայի՞ք այն թարգմանել հայերեն։'
+                    },
+                    az: {
+                        message: 'Bu səhifə ingilis dilindədir. Azərbaycan dilinə tərcümə etmək istərdinizmi?'
+                    },
+                    bs: {
+                        message: 'Ova stranica je na engleskom jeziku. Želite li je prevesti na bosanski?'
+                    },
+                    bg: {
+                        message: 'Тази страница е на английски. Искате ли да я преведете на български?'
+                    },
+                    be: {
+                        message: 'Гэтая старонка на англійскай мове. Вы хочаце перакласці яе на беларускую мову?'
+                    },
+                    bo: {
+                        message: 'ཤོག་ངོས་འདི་ནི་དབྱིན་ཡིག་ཡིན། བོད་ཡིག་ཏུ་བསྒྱུར་ན་འགྲིག་གམ།'
+                    },
+                    ca: {
+                        message: 'Aquesta pàgina està en anglès. Voleu traduir-la al català?'
+                    },
+                    cs: {
+                        message: 'Tato stránka je v angličtině. Chcete ji přeložit do češtiny?'
+                    },
+                    da: {
+                        message: 'Denne side er på engelsk. Vil du oversætte den til dansk?'
+                    },
+                    el: {
+                        message: 'Αυτή η σελίδα είναι στα Αγγλικά. Θα θέλατε να τη μεταφράσετε στα Ελληνικά?'
+                    },
+                    et: {
+                        message: 'See leht on inglise keeles. Kas soovite selle eesti keelde tõlkida?'
+                    },
+                    fa: {
+                        message: 'این صفحه به زبان انگلیسی است. آیا مایلید آن را به فارسی ترجمه کنید؟'
+                    },
+                    fi: {
+                        message: 'Tämä sivu on englanniksi. Haluatko kääntää sen suomeksi?'
+                    },
+                    he: {
+                        message: 'דף זה באנגלית. האם תרצה לתרגם אותו לעברית?'
+                    },
+                    hi: {
+                        message: 'यह पृष्ठ अंग्रेज़ी में है। क्या आप इसका हिंदी में अनुवाद करना चाहेंगे?'
+                    },
+                    hr: {
+                        message: 'Ova stranica je na engleskom. Želite li je prevesti na hrvatski?'
+                    },
+                    hu: {
+                        message: 'Ez az oldal angol nyelvű. Szeretné lefordítani magyarra?'
+                    },
+                    id: {
+                        message: 'Halaman ini berbahasa Inggris. Apakah Anda ingin menerjemahkannya ke bahasa Indonesia?'
+                    },
+                    ig: {
+                        message: 'Ibe a dị na Bekee. Ọ ga-amasị gị ịtụgharị ya n\'asụsụ Igbo?'
+                    },
+                    is: {
+                        message: 'Þessi síða er á ensku. Viltu þýða hana yfir á ígbó?'
+                    },
+                    ka: {
+                        message: 'ეს გვერდი ინგლისურ ენაზეა. გსურთ მისი თარგმნა ქართულად?'
+                    },
+                    kk: {
+                        message: 'Бұл бет ағылшын тілінде. Оны қазақ тіліне аударғыңыз келе ме?'
+                    },
+                    km: {
+                        message: 'ទំព័រនេះជាភាសាអង់គ្លេស។ តើអ្នកចង់បកប្រែជាភាសាខ្មែរទេ?'
+                    },
+                    ku: {
+                        message: 'ئەم پەیجە بە زمانی ئینگلیزییە. حەز دەکەیت وەریبگێڕیت بۆ کوردی ناوەڕاست؟'
+                    },
+                    ckb: {
+                        message: 'ئەم پەیجە بە زمانی ئینگلیزییە. حەز دەکەیت وەریبگێڕیت بۆ کوردی ناوەڕاست؟'
+                    },
+                    ky: {
+                        message: 'Бул барак англис тилинде. Аны кыргызчага которгуңуз келеби?'
+                    },
+                    lt: {
+                        message: 'Šis puslapis yra anglų kalba. Ar norėtumėte jį išversti į lietuvių kalbą?'
+                    },
+                    lv: {
+                        message: 'Šī lapa ir angļu valodā. Vai vēlaties to tulkot latviešu valodā?'
+                    },
+                    mk: {
+                        message: 'Оваа страница е на англиски јазик. Дали сакате да ја преведете на македонски?'
+                    },
+                    mn: {
+                        message: 'Энэ хуудас англи хэл дээр байна. Та үүнийг монгол хэл рүү орчуулахыг хүсч байна уу?'
+                    },
+                    ms: {
+                        message: 'Halaman ini dalam bahasa Inggeris. Adakah anda ingin menterjemahkannya ke dalam bahasa Melayu?'
+                    },
+                    no: {
+                        message: 'Denne siden er på engelsk. Vil du oversette den til norsk?'
+                    },
+                    pa: {
+                        message: 'اے صفحہ انگریزی چ اے۔ پنجابی وچ ترجمہ کرنا چاہو گے؟'
+                    },
+                    ps: {
+                        message: 'دا پاڼه په انګلیسي ژبه ده. ایا تاسو غواړئ چې دا په پښتو ژبه وژباړل شي؟'
+                    },
+                    ro: {
+                        message: 'Această pagină este în limba engleză. Doriți să o traduceți în limba română?'
+                    },
+                    rw: {
+                        message: 'Uru rupapuro ruri mucyongereza. Urashaka kubisobanura muri Kinyarwanda?'
+                    },
+                    sa: {
+                        message: 'एतत् पृष्ठं आङ्ग्लभाषायां अस्ति। संस्कृते अनुवादं कर्तुम् इच्छसि वा ?'
+                    },
+                    sk: {
+                        message: 'Táto stránka je v angličtine. Chcete ju preložiť do slovenčiny?'
+                    },
+                    sl: {
+                        message: 'Ta stran je v angleščini. Bi jo radi prevedli v slovenščino?'
+                    },
+                    so: {
+                        message: 'Boggan waa Ingiriis. Ma jeclaan lahayd inaad u turjunto Somali?'
+                    },
+                    sr: {
+                        message: 'Ова страница је на енглеском језику. Да ли желите да је преведете на српски?'
+                    },
+                    sv: {
+                        message: 'Den här sidan är på engelska. Vill du översätta den till svenska?'
+                    },
+                    tg: {
+                        message: 'Ин саҳифа ба забони англисӣ аст. Оё мехоҳед онро ба тоҷикӣ тарҷума кунед?'
+                    },
+                    th: {
+                        message: 'หน้านี้เป็นภาษาอังกฤษ คุณต้องการแปลเป็นภาษาไทยไหม'
+                    },
+                    ti: {
+                        message: 'እዚ ገጽ ብቋንቋ ትግርኛ እዩ። ናብ ትግርኛ ክትትርጉሞ ትደሊ ዶ?'
+                    },
+                    tk: {
+                        message: 'Bu sahypa iňlis dilinde. Turmen diline terjime etmek isleýärsiňizmi?'
+                    },
+                    tr: {
+                        message: "Bu sayfa İngilizce'dir.Türkçe'ye çevirmek ister misiniz?"
+                    },
+                    uk: {
+                        message: 'Ця сторінка англійською мовою. Бажаєте перекласти її українською?'
+                    },
+                    uz: {
+                        message: "Bu sahifa ingliz tilida. Uni o'zbek tiliga tarjima qilmoqchimisiz?"
+                    },
+                    vi: {
+                        message: 'Trang này bằng tiếng Anh. Bạn có muốn dịch sang tiếng Việt không?'
+                    },
+                    wo: {
+                        message: 'Xët wii ci nasaraan la. Bëgg ngeen ko tekki ci wolof?'
+                    },
+                    yo: {
+                        message: 'Oju-iwe yii wa ni Gẹẹsi. Ṣe o fẹ lati tumọ si ede Yoruba?'
+                    }
+                };
+
                 if (userLangCode !== pageLang) {
                     const currentUrl = window.location.href;
                     const translateUrl = `https://translate.google.com/translate?sl=${pageLang}&tl=${userLangCode}&u=${encodeURIComponent(currentUrl)}`;
 
-                    // Ask for confirmation before redirecting
-                    const shouldTranslate = confirm(`This page is in "${pageLang}". Would you like to translate it to "${userLangCode}"?`);
+                    const localized = translations[userLangCode];
+                    const message = localized && pageLang == "en"
+                        ? localized.message
+                        : `This page is in '"${pageLang}"'. Would you like to translate it to '"${userLangCode}"'?`;
+
+                    const shouldTranslate = confirm(message);
                     if (shouldTranslate) {
                         window.location.href = translateUrl;
                     }
                 }
-            }, 2000); // Delay by 2000 milliseconds (2 seconds)
+            }, 2000);
 
             // Init images in a random way
             const aImages = [
@@ -583,7 +785,7 @@
         <h2 id="elements-image-links">Image links</h2>
         <p>To make an image clickable—so that it acts as a hyperlink—you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
         <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
-        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>&lt;a/&gt;</bdo></pre>
+        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>&lt;/a&gt;</bdo></pre>
 
         <h2 id="elements-images">Image classes</h2>
         <p lang="en">
