@@ -2344,9 +2344,13 @@ nav.menu li ul a:hover {
 	margin-bottom: var(--spacing-element);
 }
 
+
 .box-grid-item {
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
 }
+
 
 .box-grid-item-bg,
 .box-grid-item-gray,
@@ -2357,6 +2361,8 @@ nav.menu li ul a:hover {
 	box-sizing: border-box;
 	border-radius: var(--grid-box-radius);
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
 .box-grid-item > .img-full
@@ -2417,9 +2423,45 @@ nav.menu li ul a:hover {
 	padding: 0;
 }
 
+@media screen {
+	.box-grid-item-image {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.box-grid-item-image .image-content {
+		flex: 1;
+		display: flex;
+	}
+}
+
 .box-grid-item-image img {
 	border-radius: var(--grid-box-radius);
 	margin: 0;
+}
+
+@media screen {
+	.box-grid-item-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+@media print {
+	.box-grid-item-image .image-content {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.box-grid-item-image .image-overlay {
+		display: block;
+	}
+
+	.box-grid-item-image .image-overlay-content {
+		display: block;
+	}
 }
 
 .box-grid-item-gray li::marker {
@@ -2434,6 +2476,19 @@ nav.menu li ul a:hover {
 	color: var(--grid-box-accent-alt-marker);
 }
 
+/* allowing an item to float at the bottom of grid items*/
+.box-grid * * {
+	margin-top: 0;
+}
+
+.box-grid * p {
+	margin-bottom: var(--padding-box);
+}
+
+.box-grid * .float-bottom {
+	margin-top: auto;
+	margin-bottom: 0;
+}
 
 
 /* print-media optimization */
@@ -2449,7 +2504,6 @@ nav.menu li ul a:hover {
 	.box-grid-item-accent-alt {
 		page-break-inside: avoid;
 		break-inside: avoid;
-		margin-bottom: var(--grid-box-gap);
 	}
 }
 
