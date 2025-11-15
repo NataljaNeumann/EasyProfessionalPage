@@ -1,0 +1,1082 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructions for epp.css</title>
+    <link rel="stylesheet" href="epp.css" />
+    <script>  
+        window.onload = function () {
+            setTimeout(function () {
+                const pageLang = document.documentElement.lang || document.body.lang || 'en';
+                const userLang = navigator.language || navigator.userLanguage;
+                const userLangCode = userLang.split('-')[0];
+
+                // Liste unterstützter Sprachen mit menschenlesbaren Namen und lokalisierten Fragen
+                const translations = {
+                    de: {
+                        message: 'Diese Seite ist auf Englisch. Möchten Sie sie auf Deutsch übersetzen?'
+                    },
+                    fr: {
+                        message: 'Cette page est en anglais. Voulez-vous la traduire en français ?'
+                    },
+                    es: {
+                        message: 'Esta página está en inglés. ¿Desea traducirla al español?'
+                    },
+                    it: {
+                        message: 'Questa pagina è in inglese. Vuoi tradurla in italiano?'
+                    },
+                    nl: {
+                        message: 'Deze pagina is in het Engels. Wilt u deze naar het Nederlands vertalen?'
+                    },
+                    pl: {
+                        message: 'Ta strona jest w języku angielskim. Czy chcesz ją przetłumaczyć na polski?'
+                    },
+                    pt: {
+                        message: 'Esta página está em inglês. Deseja traduzi-la para português?'
+                    },
+                    zh: {
+                        message: '此页面为英文。是否要将其翻译为中文？'
+                    },
+                    ja: {
+                        message: 'このページは英語です。日本語に翻訳しますか？'
+                    },
+                    ru: {
+                        message: 'Эта страница на английском. Хотите перевести её на русский?'
+                    },
+                    ko: {
+                        message: '이 페이지는 영어로 되어 있습니다. 한국어로 번역하시겠습니까?'
+                    },
+                    af: {
+                        message: 'Hierdie bladsy is in Engels. Wil jy dit in Afrikaans vertaal?'
+                    },
+                    am: {
+                        message: 'ይህ ገጽ በእንግሊዝኛ ነው። ወደ አማርኛ መተርጎም ትፈልጋለህ?'
+                    },
+                    ar: {
+                        message: 'هذه الصفحة باللغة الإنجليزية. هل ترغب بترجمتها إلى الأمهرية؟'
+                    },
+                    hy: {
+                        message: 'Այս էջը անգլերեն լեզվով է։ Կցանկանայի՞ք այն թարգմանել հայերեն։'
+                    },
+                    az: {
+                        message: 'Bu səhifə ingilis dilindədir. Azərbaycan dilinə tərcümə etmək istərdinizmi?'
+                    },
+                    bs: {
+                        message: 'Ova stranica je na engleskom jeziku. Želite li je prevesti na bosanski?'
+                    },
+                    bg: {
+                        message: 'Тази страница е на английски. Искате ли да я преведете на български?'
+                    },
+                    be: {
+                        message: 'Гэтая старонка на англійскай мове. Вы хочаце перакласці яе на беларускую мову?'
+                    },
+                    bo: {
+                        message: 'ཤོག་ངོས་འདི་ནི་དབྱིན་ཡིག་ཡིན། བོད་ཡིག་ཏུ་བསྒྱུར་ན་འགྲིག་གམ།'
+                    },
+                    ca: {
+                        message: 'Aquesta pàgina està en anglès. Voleu traduir-la al català?'
+                    },
+                    cs: {
+                        message: 'Tato stránka je v angličtině. Chcete ji přeložit do češtiny?'
+                    },
+                    da: {
+                        message: 'Denne side er på engelsk. Vil du oversætte den til dansk?'
+                    },
+                    el: {
+                        message: 'Αυτή η σελίδα είναι στα Αγγλικά. Θα θέλατε να τη μεταφράσετε στα Ελληνικά?'
+                    },
+                    et: {
+                        message: 'See leht on inglise keeles. Kas soovite selle eesti keelde tõlkida?'
+                    },
+                    fa: {
+                        message: 'این صفحه به زبان انگلیسی است. آیا مایلید آن را به فارسی ترجمه کنید؟'
+                    },
+                    fi: {
+                        message: 'Tämä sivu on englanniksi. Haluatko kääntää sen suomeksi?'
+                    },
+                    he: {
+                        message: 'דף זה באנגלית. האם תרצה לתרגם אותו לעברית?'
+                    },
+                    hi: {
+                        message: 'यह पृष्ठ अंग्रेज़ी में है। क्या आप इसका हिंदी में अनुवाद करना चाहेंगे?'
+                    },
+                    hr: {
+                        message: 'Ova stranica je na engleskom. Želite li je prevesti na hrvatski?'
+                    },
+                    hu: {
+                        message: 'Ez az oldal angol nyelvű. Szeretné lefordítani magyarra?'
+                    },
+                    id: {
+                        message: 'Halaman ini berbahasa Inggris. Apakah Anda ingin menerjemahkannya ke bahasa Indonesia?'
+                    },
+                    ig: {
+                        message: 'Ibe a dị na Bekee. Ọ ga-amasị gị ịtụgharị ya n\'asụsụ Igbo?'
+                    },
+                    is: {
+                        message: 'Þessi síða er á ensku. Viltu þýða hana yfir á ígbó?'
+                    },
+                    ka: {
+                        message: 'ეს გვერდი ინგლისურ ენაზეა. გსურთ მისი თარგმნა ქართულად?'
+                    },
+                    kk: {
+                        message: 'Бұл бет ағылшын тілінде. Оны қазақ тіліне аударғыңыз келе ме?'
+                    },
+                    km: {
+                        message: 'ទំព័រនេះជាភាសាអង់គ្លេស។ តើអ្នកចង់បកប្រែជាភាសាខ្មែរទេ?'
+                    },
+                    ku: {
+                        message: 'ئەم پەیجە بە زمانی ئینگلیزییە. حەز دەکەیت وەریبگێڕیت بۆ کوردی ناوەڕاست؟'
+                    },
+                    ckb: {
+                        message: 'ئەم پەیجە بە زمانی ئینگلیزییە. حەز دەکەیت وەریبگێڕیت بۆ کوردی ناوەڕاست؟'
+                    },
+                    ky: {
+                        message: 'Бул барак англис тилинде. Аны кыргызчага которгуңуз келеби?'
+                    },
+                    lt: {
+                        message: 'Šis puslapis yra anglų kalba. Ar norėtumėte jį išversti į lietuvių kalbą?'
+                    },
+                    lv: {
+                        message: 'Šī lapa ir angļu valodā. Vai vēlaties to tulkot latviešu valodā?'
+                    },
+                    mk: {
+                        message: 'Оваа страница е на англиски јазик. Дали сакате да ја преведете на македонски?'
+                    },
+                    mn: {
+                        message: 'Энэ хуудас англи хэл дээр байна. Та үүнийг монгол хэл рүү орчуулахыг хүсч байна уу?'
+                    },
+                    ms: {
+                        message: 'Halaman ini dalam bahasa Inggeris. Adakah anda ingin menterjemahkannya ke dalam bahasa Melayu?'
+                    },
+                    no: {
+                        message: 'Denne siden er på engelsk. Vil du oversette den til norsk?'
+                    },
+                    pa: {
+                        message: 'اے صفحہ انگریزی چ اے۔ پنجابی وچ ترجمہ کرنا چاہو گے؟'
+                    },
+                    ps: {
+                        message: 'دا پاڼه په انګلیسي ژبه ده. ایا تاسو غواړئ چې دا په پښتو ژبه وژباړل شي؟'
+                    },
+                    ro: {
+                        message: 'Această pagină este în limba engleză. Doriți să o traduceți în limba română?'
+                    },
+                    rw: {
+                        message: 'Uru rupapuro ruri mucyongereza. Urashaka kubisobanura muri Kinyarwanda?'
+                    },
+                    sa: {
+                        message: 'एतत् पृष्ठं आङ्ग्लभाषायां अस्ति। संस्कृते अनुवादं कर्तुम् इच्छसि वा ?'
+                    },
+                    sk: {
+                        message: 'Táto stránka je v angličtine. Chcete ju preložiť do slovenčiny?'
+                    },
+                    sl: {
+                        message: 'Ta stran je v angleščini. Bi jo radi prevedli v slovenščino?'
+                    },
+                    so: {
+                        message: 'Boggan waa Ingiriis. Ma jeclaan lahayd inaad u turjunto Somali?'
+                    },
+                    sr: {
+                        message: 'Ова страница је на енглеском језику. Да ли желите да је преведете на српски?'
+                    },
+                    sv: {
+                        message: 'Den här sidan är på engelska. Vill du översätta den till svenska?'
+                    },
+                    tg: {
+                        message: 'Ин саҳифа ба забони англисӣ аст. Оё мехоҳед онро ба тоҷикӣ тарҷума кунед?'
+                    },
+                    th: {
+                        message: 'หน้านี้เป็นภาษาอังกฤษ คุณต้องการแปลเป็นภาษาไทยไหม'
+                    },
+                    ti: {
+                        message: 'እዚ ገጽ ብቋንቋ ትግርኛ እዩ። ናብ ትግርኛ ክትትርጉሞ ትደሊ ዶ?'
+                    },
+                    tk: {
+                        message: 'Bu sahypa iňlis dilinde. Turmen diline terjime etmek isleýärsiňizmi?'
+                    },
+                    tr: {
+                        message: "Bu sayfa İngilizce'dir.Türkçe'ye çevirmek ister misiniz?"
+                    },
+                    uk: {
+                        message: 'Ця сторінка англійською мовою. Бажаєте перекласти її українською?'
+                    },
+                    uz: {
+                        message: "Bu sahifa ingliz tilida. Uni o'zbek tiliga tarjima qilmoqchimisiz?"
+                    },
+                    vi: {
+                        message: 'Trang này bằng tiếng Anh. Bạn có muốn dịch sang tiếng Việt không?'
+                    },
+                    wo: {
+                        message: 'Xët wii ci nasaraan la. Bëgg ngeen ko tekki ci wolof?'
+                    },
+                    yo: {
+                        message: 'Oju-iwe yii wa ni Gẹẹsi. Ṣe o fẹ lati tumọ si ede Yoruba?'
+                    }
+                };
+
+                if (userLangCode !== pageLang) {
+                    const currentUrl = window.location.href;
+                    const translateUrl = `https://translate.google.com/translate?sl=${pageLang}&tl=${userLangCode}&u=${encodeURIComponent(currentUrl)}`;
+
+                    const localized = translations[userLangCode];
+                    const message = localized && pageLang == "en"
+                        ? localized.message
+                        : `This page is in '"${pageLang}"'. Would you like to translate it to '"${userLangCode}"'?`;
+
+                    const shouldTranslate = confirm(message);
+                    if (shouldTranslate) {
+                        window.location.href = translateUrl;
+                    }
+                }
+            }, 2000);
+
+            // Init images in a random way
+            const aImages = [
+                '../Images/DarkImage1.jpg',
+                '../Images/DarkImage2.jpg',
+                '../Images/LightImage1.jpg',
+                '../Images/LightImage2.jpg',
+                '../Images/LightImage3.jpg',
+                '../Images/ColorImage1.jpg',
+                '../Images/ColorImage2.jpg',
+                '../Images/ColorImage3.jpg',
+            ];
+
+            const dtmNow = new Date();
+            const dtmStartOfDay = new Date(dtmNow.getFullYear(), dtmNow.getMonth(), dtmNow.getDate(), 0, 0, 0, 0);
+            let nSeconds = Math.floor((dtmNow.getTime() - dtmStartOfDay.getTime()) / 1000);
+            while (--nSeconds > 0) {
+                let dblIgnore = Math.random();
+            }
+
+
+            const aAllImages = document.querySelectorAll('img');
+            let strPrevImage = "";
+            let strRandomImage = "";
+
+            aAllImages.forEach(imgElement => {
+                do {
+                    strRandomImage = aImages[Math.floor(Math.random() * aImages.length)];
+                    dblIgnore = Math.random();
+                    dblIgnore = Math.random();
+                } while (strRandomImage === strPrevImage);
+
+                imgElement.src = strRandomImage;
+                strPrevImage = strRandomImage;
+            });
+
+
+
+        };
+    </script>
+    <script>
+        /**
+         * This script uses a MutationObserver to detect when the `lang` attribute on the `<html>` element changes.
+         * This is a reliable way to catch browser-initiated translations, especially in browsers like Firefox.
+         * When a change is detected, it checks if the new language is one of the known RTL languages
+         * and sets the `dir` attribute on the `<html>` tag accordingly.
+         */
+
+        // A comprehensive list of RTL language codes
+        const rtlLanguages = [
+            'ar', 'ara',   // Arabic
+            'azb',         // South Azerbaijani (often uses Arabic script in Iran)
+            'dv', 'div',   // Dhivehi
+            'fa', 'fas',   // Persian / Farsi
+            'he', 'iw',    // Hebrew
+            'ku', 'kur',   // Kurdish (Sorani dialect)
+            'ckb',         // Central Kurdish (Sorani)
+            'nqo',         // N'Ko
+            'ps', 'pus',   // Pashto
+            'rhg',         // Rohingya
+            'sd', 'snd',   // Sindhi
+            'syr',         // Syriac
+            'ug', 'uig',   // Uyghur
+            'ur', 'urd',   // Urdu
+            'yi', 'yid'    // Yiddish
+        ];
+
+        const html = document.documentElement;
+        const originalLang = html.lang;
+
+        // Create a new MutationObserver instance
+        const observer = new MutationObserver(() => {
+            // Check if the language has changed from the original
+            if (html.lang && html.lang !== originalLang) {
+                const langCode = html.lang.substring(0, 2); // Get the two-letter language code
+
+                // Check if the current language is in our RTL list
+                if (rtlLanguages.includes(langCode)) {
+                    html.dir = 'rtl';
+                } else {
+                    html.dir = 'ltr';
+                }
+            }
+        });
+
+        // Start observing the <html> element for changes to its attributes, specifically 'lang'
+        observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <p class="box-accent-alt">
+            This is variant of the CSS is work in progress. Everything can change without prior notice.
+            If you need a stable version please refer to the variant of the year <a href="../2025/description.html">2025</a>.
+        </p>
+        <h1>Instructions for an easy web page creation with help of <bdo lang="" translate="no" dir="ltr">epp.css</bdo></h1>
+        <nav class="menu" lang="en">
+            <ul lang="en">
+                <li lang="en"><a href="#start" lang="en">Html</a></li>
+                <li lang="en">
+                    <a href="#vars" lang="en">Variables</a>
+                    <ul lang="en">
+                        <li lang="en"><a href="#vars-fonts" lang="en">Fonts</a></li>
+                        <li lang="en"><a href="#vars-sizes" lang="en">Sizes</a></li>
+                        <li lang="en"><a href="#vars-colors" lang="en">Colors</a></li>
+                    </ul>
+                </li>
+                <li lang="en">
+                    <a href="#elements" lang="en">Elements</a>
+                    <ul lang="en">
+                        <li lang="en"><a href="#elements-std" lang="en">Standard</a></li>
+                        <li lang="en"><a href="#elements-images" lang="en">Images</a></li>
+                        <li lang="en"><a href="#elements-boxes" lang="en">Boxes</a></li>
+                        <li lang="en"><a href="#elements-notches" lang="en">Notches</a></li>
+                        <li lang="en"><a href="#elements-cards" lang="en">Cards</a></li>
+                    </ul>
+                </li>
+                <li lang="en"><a href="#licence" lang="en">License</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="start" lang="en">Basic Structure of HTML Document</h2>
+        <pre class="box-gray-right" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" class="notranslate" lang="">&lt;!DOCTYPE html>
+&lt;html lang="</bdo><bdi lang="en">..your language abbreviation..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">"
+       dir="</bdo><bdi lang="en">..your text writing direction..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title></bdo><bdi lang="en">..Your title for the page..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">/title>
+    &lt;link rel="stylesheet" href="epp.css" />
+&lt;/head>
+&lt;body>
+    &lt;div class="main">
+
+    &lt;/div>
+&lt;/body>
+&lt;/html></bdo>
+</pre>
+        <p lang="en">To create an empty HTML document with the needed structure and styles, follow these steps:</p>
+        <ul lang="en">
+            <li lang="en">Start with the doctype declaration to define the document as HTML5</li>
+            <li lang="en">
+                tag and specify the language (e.g.,
+                <ul lang="en">
+                    <li><bdo dir="ltr" translate="no">en</bdo> <span lang="en">for English</span></li>
+                    <li><bdo dir="ltr" translate="no">fr</bdo> <span lang="en">for French</span></li>
+                    <li><bdo dir="ltr" translate="no">es</bdo> <span lang="en">for Spanish</span></li>
+                    <li><bdo dir="ltr" translate="no">pt</bdo> <span lang="en">for Portuguese</span></li>
+                    <li><bdo dir="ltr" translate="no">de</bdo> <span lang="en">for German</span></li>
+                    <li><bdo dir="ltr" translate="no">it</bdo> <span lang="en">for Italian</span></li>
+                    <li><bdo dir="ltr" translate="no">zh</bdo> <span lang="en">for Chinese</span></li>
+                    <li><bdo dir="ltr" translate="no">ja</bdo> <span lang="en">for Japanese</span></li>
+                    <li><bdo dir="ltr" translate="no">ru</bdo> <span lang="en">for Russian</span></li>
+                    <li><bdo dir="ltr" translate="no">ar</bdo> <span lang="en">for Arabic</span></li>
+                    <li><bdo dir="ltr" translate="no">hi</bdo> <span lang="en">for Hindi</span></li>
+                    <li lang="en">and so on, you can find a complete list in Internet...</li>
+                </ul>
+            </li>
+            <li lang="en">Set the text direction in the dir attribute, e.g.  <bdo lang="" dir="ltr">"ltr"</bdo> for left-to-right or  <bdo lang="" dir="ltr">"rtl"</bdo> for right-to-left</li>
+            <li lang="en">
+                Include a header specification, including following elements:
+                <ul lang="en">
+                    <li lang="en">Character encoding (usually <bdo lang="" translate="no" dir="ltr">UTF-8</bdo>)</li>
+                    <li lang="en">Title for the page</li>
+                    <li lang="en">Link to an external CSS file named <bdo lang="" translate="no" dir="ltr">epp.css</bdo></li>
+                </ul>
+            <li lang="en">
+                Include a <bdo dir="ltr" translate="no">body</bdo> section with:
+                <ul lang="en">
+                    <li lang="en">Include a <bdo lang="" dir="ltr">&lt;div&gt;</bdo> element with <bdo dir="ltr" translate="no">class="main"</bdo> to contain the main content of the page</li>
+                </ul>
+            </li>
+            <li lang="en">Close the HTML document by writing <bdo lang="" translate="no" dir="ltr">&lt;/div>&lt;body>&lt;html></bdo></li>
+        </ul>
+        <h3>What the Page Will Look Like</h3>
+        With the provided CSS variables and styles, here's how the page will appear:
+        <ul>
+            <li>Body uses the primary font defined by "<bdo dir="ltr" translate="no">--font-primary</bdo>" variable</li>
+            <li>Background color that is to the left and right of the main area is set to "<bdo dir="ltr" translate="no">--color-box-gray-bg</bdo>"</li>
+            <li>Text color is "<bdo dir="ltr" translate="no">-color-text-main</bdo>"</li>
+            <li>No default margin or padding (clean edge-to-edge layout)</li>
+        </ul>
+
+        Main Content Area has
+        <ul>
+            <li>Background color is set to "<bdo dir="ltr" translate="no">--color-bg-main</bdo>"</li>
+            <li>Width is limited to "<bdo dir="ltr" translate="no">--width-desktop</bdo>" (e.g., 1200 pixel or similar)</li>
+            <li>Horizontally centered</li>
+            <li>Padding inside the main area is defined by "<bdo dir="ltr" translate="no">--spacing-element</bdo>" variable</li>
+            <li>Takes up at least the full height of the viewport, ensuring it fills the screen even with no content</li>
+        </ul>
+        <h2 id="vars-fonts" lang="en" id="vars">Font Variables</h2>
+        <pre class="box-gray-left" lang="" dir="ltr">
+/* <bdi lang="en">Font Variables</bdi> */
+<bdo dir="ltr" translate="no" class="notranslate" lang="">--font-merriweather: 'Merriweather', Georgia, serif;
+--font-playfair: 'Playfair Display', 'Times New Roman', serif;
+--font-lora: 'Lora', Cambria, serif;
+--font-crimson: 'Crimson Pro', 'Palatino Linotype', serif;
+--font-cormorant: 'Cormorant Garamond', Garamond, serif;
+--font-roboto: 'Roboto', Arial, sans-serif;
+--font-open-sans: 'Open Sans', Helvetica, sans-serif;
+--font-inter: 'Inter', 'Segoe UI', sans-serif;
+--font-poppins: 'Poppins', 'Trebuchet MS', sans-serif;
+--font-work-sans: 'Work Sans', Verdana, sans-serif;
+--font-pacifico: 'Pacifico', cursive, sans-serif;
+--font-dancing-script: 'Dancing Script', cursive, sans-serif;
+--font-amatic: 'Amatic SC', cursive, sans-serif;
+--font-shadows: 'Shadows Into Light', cursive, sans-serif;
+--font-satisfy: 'Satisfy', cursive, sans-serif;
+--font-fira-code: 'Fira Code', 'Courier New', monospace;
+--font-source-code: 'Source Code Pro', Consolas, monospace;
+--font-jetbrains: 'JetBrains Mono', Menlo, monospace;
+--font-bebas: 'Bebas Neue', Impact, sans-serif;
+--font-oswald: 'Oswald', 'Franklin Gothic Medium', sans-serif;</bdo>
+
+/* <bdi lang="en">Primary and Secondary Fonts for the web page</bdi> */
+<bdo dir="ltr" translate="no">--font-primary: 'Segoe UI', 'Roboto', sans-serif;
+--font-secondary: 'Georgia', serif;</bdo>
+</pre>
+        <p lang="en">
+            You can customize the fonts used in your web page by modifying CSS variables in the <bdo lang="" dir="ltr">epp.css</bdo> file.
+            If you include <bdo lang="" translate="no" dir="ltr">@font-face</bdo> rules in your CSS, you can use custom fonts as well.
+            The page uses the following font variables:
+        </p>
+        <p lang="en">
+            <bdo dir="ltr" translate="no" class="notranslate">--font-primary</bdo> Main font for body text and most elements.<br />
+            <bdo dir="ltr" translate="no">--font-secondary</bdo> Secondary font for headings and special elements.
+        </p>
+        <p lang="en">
+            By defining these variables, you can easily change the overall typography of your web page, however you can also change
+            fonts of specific elements, by specification of the fonts in the styles of these elements. You can also define a font
+            by using another font variable. The stylesheet already defines some fonts that you can use, when you include and
+            install the corresponding fonts. Please have a look at the licence of the fonts.
+        </p>
+        <p lang="en">Finally you can use the font variables on the elements themselves, by adding <cite lang="" dir="ltr">style</cite> attribute</p>
+<pre class="box-gray-right" lang="" dir="ltr">
+/* <bdi lang="en">Using a variable for defining another variable in CSS</bdi> */
+        <bdo dir="ltr" translate="no">--font-primary: var(--font-playfair);</bdo>
+</pre>
+<pre class="box-gray-right" lang="" dir="ltr">
+/* <bdi lang="en">specification of specific font for main header in CSS</bdi> */
+<bdo dir="ltr" translate="no">h1 {
+  font-family: var(--font-playfair);
+  font-weight: bold;
+}</bdo>
+</pre>
+<pre class="box-gray-right" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">specification of specific font for a div in HTML,
+    in this case the primary font </bdi> -->
+
+<bdo dir="ltr" translate="no">&lt;div style="font-family: var(--font-primary);"&gt;</bdo>
+    This text uses the primary font.
+&lt;/div>
+</pre>
+        <h2 id="vars-sizes" lang="en">Size variables</h2>
+        <p lang="en">In CSS, em and <bdo lang="" translate="no" dir="ltr">rem</bdo> are relative units used for sizing elements like fonts, margins, and padding. Both are scalable, making them ideal for responsive design.</p>
+        <p lang="en">The em unit is relative to the font size of the element’s parent. For example, if a parent element has a font size of 16px, then 1em equals 16px, and 2em equals 32px. However, since em is relative to its parent, nested elements can compound sizes, which may lead to unexpected results if not managed carefully.</p>
+        <p lang="en">
+            The <bdo lang="" translate="no" dir="ltr">rem</bdo> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html>
+            element. If the root font size is 16px (the browser default), then <bdo lang="" translate="no" dir="ltr">1rem</bdo> equals 16px regardless of nesting. This makes <bdo lang="" translate="no" dir="ltr">rem</bdo> more predictable and easier to maintain in large projects.
+        </p>
+
+        <h3 lang="en">Typical Sizes by Device (assuming 1rem = 16px):</h3>
+        <ul lang="en">
+            <li lang="en">Mobile phones: <bdo lang="" translate="no" dir="ltr">14–16px (0.875rem–1rem)</bdo></li>
+            <li lang="en">Tablets: <bdo lang="" translate="no" dir="ltr">16–18px (1rem–1.125rem)</bdo></li>
+            <li lang="en">Desktops: <bdo lang="" translate="no" dir="ltr">16–20px (1rem–1.25rem)</bdo></li>
+        </ul>
+
+        <p lang="en">
+            Using rem for base font sizes and em for spacing or component-specific scaling is a common best practice.
+            This approach ensures consistency while allowing flexibility across different screen sizes and user settings, however the CSS uses mostly
+            <bdo lang="" translate="no" dir="ltr">rem</bdo> units for spacings, so the spacings don't change with font size
+        </p>
+
+        <h3 lang="en">Layout & Spacing Variables</h3>
+        <ul lang="en">
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--spacing-element</bdo> - General spacing between elements (e.g. margins, vertical rhythm). 2 rem is equivalent to 32 px if root font size is 16px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--padding-box</bdo> - Internal padding for containers or boxes. 1.5rem is about 24px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-padding</bdo> - Padding inside grid items or cards. 1rem is about 16px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between grid items. Helps define spacing between grid cards.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-desktop</bdo> - Max width for desktop layouts. 60rem ~ 960px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-tablet</bdo>	- Max width for tablet layouts. 40rem ~ 640px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-box-grid</bdo> - Width of a grid cards container or content box. 29rem ~ 464px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-half-column</bdo> - Used for half-width elements, aligned left or right.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-thin</bdo> - Thin border or divider line. 0.125rem ~ 2px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-medium</bdo> - Medium-weight line. 0.187rem ~ 3px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-radius</bdo> - Border-radius for grid boxes or cards. 0.5rem ~ 8px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--rounded-radius</bdo> - Generic rounded corners for UI elements. Likely reused across buttons, inputs, etc. 0.5rem ~ 8px</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-width</bdo> - Fixed width for individual grid cards. 15rem ~ 240px</li>
+        </ul>
+        <p lang="en">You can change the spacings, as you want, as well as any other content, since this CSS is provided under MIT license.</p>
+        <h2 lang="en" id="vars-colors">Color variables</h2>
+        <p lang="en">Modern CSS supports automatic adaptation to the user's preferred color scheme using the <bdo lang="" translate="no" dir="ltr">prefers-color-scheme</bdo> media query. This allows developers to define separate styles for light and dark modes.</p>
+        <pre class="box-gray-right" lang="" translate="no" dir="ltr">
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+</pre>
+        <h3 lang="en">Light Mode</h3>
+        <p lang="en">In light mode, the background is typically light (e.g., white or soft gray), and text is dark for readability. It's the default for most websites and resembles usual experience with black text on white paper that users have in everyday life.</p>
+        <pre class="box-gray-left" lang="" translate="no" dir="ltr">
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+</pre>
+        <h3 lang="en">Dark Mode</h3>
+        <p lang="en">
+            Dark mode uses dark backgrounds (e.g., black or deep gray) with light text. It reduces eye strain in low-light environments and saves battery on OLED screens.
+            Some users also prefer dark color schemes.
+        </p>
+        <pre class="box-gray-right" lang="" translate="no" dir="ltr">
+@media print {
+  body {
+    background: none;
+    color: black;
+    font-size: 0.75rem;
+  }
+
+  nav, footer {
+    display: none;
+  }
+}
+</pre>
+        <h3 lang="en">Print Media Styling</h3>
+        <p lang="en">
+            CSS also allows customization for printed output using the @media print query. This ensures that pages look clean and readable when printed.<br />
+            Backgrounds: Many browsers ignore background colors/images when printing unless explicitly enabled. Use background: none; or avoid heavy backgrounds.<br />
+            Color to Grayscale: Colors may be converted to grayscale when printing. Avoid relying on color alone to convey meaning (e.g., red for errors).<br />
+            Ink Efficiency: Use high-contrast, ink-friendly colors. Avoid saturated backgrounds or gradients.
+        </p>
+        <p lang="en">The CSS allows you to define following color variables that are automatically used throughot the page:</p>
+        <h3 lang="en">Main Text and Background Colors</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-main</td><td lang="en">The default background color for the main content area</td></tr>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-text-main</td><td lang="en">The primary text color</td></tr>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-marker-main</td><td lang="en">The color used for markers (e.g., bullets, highlights) in main content</td></tr>
+        </table>
+        <h4 lang="en">Input Fields (Default Context)</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-default</td><td lang="en">Background color of standard input fields</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-default</td><td lang="en">Text color inside inputs</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-default</td><td lang="en">Default border color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-default</td><td lang="en">Border color when input is focused</td></tr>
+            </tbody>
+        </table>
+        <h3>Gray Box Styling</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en" lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-bg</td><td lang="en">Background of gray-themed boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-text</td><td lang="en">Text color inside gray boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-marker</td><td lang="en">Marker color in gray boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-header</td><td lang="en">Header color in gray boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-divider</td><td lang="en">Divider line color</td></tr>
+            </tbody>
+        </table>
+        <h4 lang="en">Colors of Input Field Elements in Gray Boxes</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-gray</td><td lang="en">Input background in gray boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-gray</td><td lang="en">Input text color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-gray</td><td lang="en">Marker color in inputs</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-gray</td><td lang="en">Border color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-gray</td><td lang="en">Focus border</td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Accent Colors</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-accent</td><td lang="en">Primary accent for highlights.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-accent-alt</td><td lang="en">Alternative accent for variation or thematic contrast.</td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Colors of Accent-Colored Boxes</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-bg</td><td lang="en">Background of accent boxes</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-text</td><td lang="en">Text color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-marker</td><td lang="en">Marker color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-header</td><td lang="en">Header color</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-divider</td><td lang="en">Divider color</td></tr>
+            </tbody>
+        </table>
+        <h4 lang="en">Colors of Input Field Elements in Accent Boxes</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-accent:</td><td lang="en">Input background.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-accent:</td><td lang="en">Input text</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-accent:</td><td lang="en">Border</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent:</td><td lang="en">Focus border</td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Colors of Alternatively Accent-Colored Boxes</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-bg</td><td lang="en">Background</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-text</td><td lang="en">Text.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-marker</td><td lang="en">Marker</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-header</td><td lang="en">Header</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-divider</td><td lang="en">Divider</td></tr>
+            </tbody>
+        </table>
+        <h4 lang="en">Colors of Input Field Elements in Alternative Accent Boxes</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-accent-alt</td><td lang="en">Input background</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-accent-alt</td><td lang="en">Input text</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-accent-alt</td><td lang="en">Marker</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-accent-alt</td><td lang="en">Border</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent-alt</td><td lang="en">Focus border</td></tr>
+            </tbody>
+        </table>
+        <h2 id="elements-std" lang="en">Standard HTML Elements</h2>
+        <p lang="en">
+            Below you can find a standard list of html tags that you can use in your pages
+            without specification of classes and styles. These will be automatically styled to the theme of the page.
+            More examples of HTML tags can be found at
+            <bdo lang="" translate="no" dir="ltr"><a href="https://www.w3schools.com/html/html_examples.asp">w3schools</a></bdo>
+        </p>
+        <h3 lang="en">Headings and Text Structure</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;h1> .. &lt;h4></td><td lang="en">Headings used to structure content hierarchically. <bdo dir="ltr" lang="" translate="no">&lt;h1></bdo> is the most important (e.g., page title), followed by <bdo dir="ltr" lang="" translate="no">&lt;h2></bdo> to <bdo dir="ltr" lang="" translate="no">&lt;h4></bdo> for subheadings.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;p></td><td lang="en">Paragraph element for blocks of text.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;b></td><td lang="en">Bold text for emphasis (visual only, no semantic meaning).</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;i></td><td>Italic text for emphasis or stylistic use (also visual only).</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;pre></td><td lang="en">Preformatted text block that preserves whitespace and line breaks — often used for code or ASCII art.</td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Lists</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;ul></td><td lang="en">Unordered list — displays items with bullets.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;ol></td><td lang="en">Ordered list — displays items with numbers.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;li></td><td lang="en">List item — used inside &lt;ul> or &lt;ol></td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Tables</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;table></td><td lang="en">Defines a table structure.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;colgroup></td><td lang="en">Table column specification section</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;col></td><td lang="en">Table columns specification, used inside <bdo dir="ltr">&lt;colgroup></bdo></td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;thead></td><td lang="en">Table header section — usually contains column titles.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;tbody></td><td lang="en">Table body — contains the main rows of data.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;tr></td><td lang="en">Table row — used inside <bdo dir="ltr">&lt;thead></bdo> or <bdo dir="ltr">&lt;tbody></bdo></td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;td></td><td lang="en">Table cell — holds data within a row.</td></tr>
+            </tbody>
+        </table>
+        <h3 lang="en">Links and Media</h3>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;a></td><td lang="en">Anchor tag — creates hyperlinks to other pages, sections, or files.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;img></td><td lang="en">Image tag — embeds images using the src attribute.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;hr></td><td lang="en">Horizontal rule — creates a visual divider line across the page.</td></tr>
+            </tbody>
+        </table>
+        <p lang="en">
+            Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
+        </p>
+        <h2 id="elements-image-links">Image links</h2>
+        <p>To make an image clickable—so that it acts as a hyperlink—you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
+        <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
+        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>&lt;/a&gt;</bdo></pre>
+
+        <h2 id="elements-images">Image classes</h2>
+        <p lang="en">
+            The CSS defines classes for image elements that you can use for modification of the appearance of image elements. After the discussion of image classes we will also discuss image boxes that allow you to lay other content over the image. Image classes aren't compatible with image boxes. For each picture you need to use the one or the other.
+        </p>
+
+        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Full width image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-full"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-full</bdo></h3>
+        <p lang="en">Purpose: Displays the image at full width, extending slightly beyond the container’s padding.</p>
+        <p lang="en">
+            <b>Behavior:</b><br />
+            Expands the image to be slightly wider than its container to the border of the outer area.<br />
+            Removes horizontal margins to align with the container edges.<br />
+            Automatically adjusts height to maintain aspect ratio.<br />
+        </p>
+
+        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Left-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-left"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-left</bdo></h3>
+        <p lang="en">Purpose: Displays a half-width image floated to the left (or start of the inline direction).</p>
+
+        <p lang="en">
+            <b>Behavior:</b><br />
+            Floats the image to the left side of the container.<br />
+            Sets the width to a predefined half-column value.<br />
+            Adds spacing to the right <bdo lang="" translate="no" dir="ltr">(margin-inline-end)</bdo> and bottom.<br />
+        </p>
+
+        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Right-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-right"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-right</bdo></h3>
+        <p lang="en">Purpose: Displays a half-width image floated to the right (or end of the inline direction).</p>
+
+        <p lang="en">
+            <b>Behavior:</b><br />
+            Floats the image to the right side of the container.<br />
+            Sets the width to the same half-column value.<br />
+            Adds spacing to the left (margin-inline-start) and bottom.<br />
+        </p>
+
+        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Main image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-main"/></bdo></pre>
+        <h3 lang="" translate="no"><bdo dir="ltr">.img-main</bdo></h3>
+        <p lang="en">Purpose: Displays a centered main image with a border and responsive sizing.</p>
+
+        <p lang="en">
+            <b>Behavior:</b><br />
+            Centers the image horizontally.<br />
+            Adds bottom spacing.<br />
+            Limits width to container size.<br />
+            Adds a thin border with a gray background color.<br />
+            Maintains aspect ratio.<br />
+        </p>
+        <h2 id="elements-boxes">Boxes</h2>
+        <p lang="en">
+            The CSS provides several boxes: Callout boxes, gray boxes, colored boxes with 2 possible accent colors. Furtherore the CSS allows to put the boxes to the right side, to the left side and at normal size. Some boxes can also be expanded to the full width, so to the borders of the outer area. But let's start with image boxes.
+        </p>
+        <h3 lang="en">Image boxes</h3>
+        <p lang="en">
+            Image boxes are available in two main configurations that are incompatible to each other. One configuration can have image credits and title, the other can have any content, but it looks differently.
+        </p>
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+            </div>
+            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-caption">Sample image in a box with credits</div>
+        </div>
+
+        <pre class="box-gray" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no" lang="">
+&lt;div class="image-box">
+    &lt;div class="image-content">
+        &lt;img src="image.jpg" />
+    &lt;/div>
+    &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;/div></bdo>
+</pre>
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            </div>
+            <div class="image-caption">Sample image in a box with credits</div>
+        </div>
+
+        <pre class="box-gray" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no" lang="">
+&lt;div class="image-box">
+    &lt;div class="image-content">
+        &lt;img src="image.jpg" />
+        &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;/div>
+    &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;/div></bdo>
+</pre>
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-caption">Sample image in a box with credits</div>
+            </div>
+            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+        </div>
+
+        <pre class="box-gray" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no" lang="">
+&lt;div class="image-box">
+    &lt;div class="image-content">
+        &lt;img src="image.jpg" />
+        &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;/div>
+    &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe </bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;/div></bdo>
+</pre>
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-overlay">
+                    <div class="image-overlay-content" style="font-size: 2rem;">Sample image with content laid over it</div>
+                    <div class="image-overlay-content">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                </div>
+            </div>
+        </div>
+        <pre class="box-gray" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">Image box with generic content</bdi> -->
+<bdo dir="ltr" translate="no" lang="">&lt;div class="image-box">
+    &lt;div class="image-content">
+        &lt;img src="image.jpg" />
+        &lt;div class="image-overlay">
+            &lt;div class="image-overlay-content" 
+                    style="font-size: 2rem;"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+            &lt;div class="image-overlay-content"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div></bdo>
+</pre>
+        <div class="image-box rounded-top">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            </div>
+            <div class="image-caption-gray">Sample image in a box with credits and gray-colored caption, followed by a gray-colored box.</div>
+        </div>
+        <pre class="box-gray rounded-bottom" lang="" dir="ltr">
+&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no" lang="">
+&lt;div class="image-box rounded-top">
+    &lt;div class="image-content">
+        &lt;img src="image.jpg" />
+        &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;/div>
+    &lt;div class="image-caption-gray"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;/div>
+&lt;div class="box-gray rounded-bottom"></bdo><bdi lang="en">Some text in a gray box</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+</bdo>
+</pre>
+
+        <h2 lang="en">Callout boxes</h2>
+        <p lang="en">If you want to draw attention to a specific paragraph, you can put it into a callout box</p>
+        <pre class="callout-box" lang="" dir="ltr">
+&lt;div class="callout-box"><bdi lang="en">There some important text</bdi>&lt;/div>
+</pre>
+        <h2 lang="en">Gray and accent-colored boxes</h2>
+        <p lang="en">
+            There are also other variants of boxes with a background color, either in gray or in accent colors. You can specify the used gray and accent colors in the CSS.
+        </p>
+        <pre class="box-accent" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent"></bdo><bdi lang="en">Some text with accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <pre class="box-accent-alt" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-alt"></bdo><bdi lang="en">Some text with alternative accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <p lang="en">
+            Additionally there are different variants of the boxes, e.g. normal that have no appendix in name, there are boxes that are aligned to the left with <bdo dir="ltr" lang="" translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr" lang="" translate="no">-right</bdo> in the name that are alligned to the right.
+        </p>
+        <p lang="en">
+            A variant with <bdo dir="ltr" lang="">-full</bdo> in the name will take the full width up to the outer area of the page. Not all boxes support the full variant, e.g. callout boxes don't.
+            A variant with <bdo dir="ltr" lang="">-wide</bdo> in the name will take a wider width than normal boxes, trying to fill the complete area up to the window borders.
+        </p>
+        <pre class="box-accent-full" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-full"></bdo><bdi lang="en">..some content..</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo></pre>
+
+        <p lang="en">
+            In this page you have seen many gray boxes that are centered, aligned to left or right. This is what it looks like.
+        </p>
+        <pre class="borderbox-strong-right" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="borderbox-strong-right"></bdo><bdi lang="en">Some text with strong border</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <h2 lang="en">Border-boxes</h2>
+        <p lang="en">
+            There are also boxes with a border either in gray or in accent colors.
+        </p>
+        <pre class="borderbox-gray" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="borderbox-gray"></bdo><bdi lang="en">Some text in a gray border-box</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <p lang="en">
+            There are border-boxes that are aligned to the left with <bdo dir="ltr" lang="" translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr" lang="" translate="no">-right</bdo> in the name that are alligned to the right.
+        </p>
+
+        <h2 id="elements-notches" lang="en">Notches</h2>
+        <p lang="en">
+            Notches are visible borders on two sides of a corner of a box. For western raders that have left-to-right writing direction the notch will be in left-upper corner.
+        </p>
+        <pre class="notch" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="notch"></bdo><bdi lang="en">Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <p lang="en">There is also a notch with a thick border you can see it there:</p>
+        <pre class="notch-strong" lang="" dir="ltr">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="notch-strong"></bdo><bdi lang="en">Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+</pre>
+        <h2 id="elements-cards" lang="en">Grid cards</h2>
+        <p lang="en">
+            You can put some content on smaller cards and let the browser place the cards on a grid, responsive to the size of visitor's viewport. In this special example it doesn't work, when you make the width of the window very small, because of other elements that prevent the page to become smaller, but you get a feeling of how it works.
+        </p>
+
+        <div class="box-grid box-accent-full">
+            <div class="box-grid-item-bg" lang="en"><h3 lang="en">Box 1</h3><p>some text</p></div>
+            <div class="box-grid-item" lang="en">
+                <h4>Box 2</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+            </div>
+            <div class="box-grid-item-gray" lang="en"><h4>Box 3</h4><p class="float-bottom">Text at bottom</p></div>
+            <div class="box-grid-item-accent-alt" lang="en"><h3 lang="en">Box 4</h3><p>other text</p></div>
+            <div class="box-grid-item-image">
+                <div class="image-content">
+                    <img src="../Images/LightImage1.jpg" />
+                    <div class="image-overlay">
+                        <div class="image-overlay-content">Grid card with an image</div>
+                        <div class="image-overlay-content">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-grid-item-bg" lang="en"><h3>Box 5</h3></div>
+            <div class="box-grid-item">
+                <img src="../Images/LightImage1.jpg" />
+                <h4>Box6</h4>
+                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+            </div>
+            <div class="box-grid-item" lang="en">
+                <h4>Box 7</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+                <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+                <p class="float-bottom">Text at bottom</p>
+            </div>
+        </div>
+        <pre class="box-gray" dir="ltr" lang="">
+<bdo dir="ltr" translate="no" lang="">&lt;div class="box-grid box-accent-full">
+    &lt;div class="box-grid-item-bg" lang="en" >
+       &lt;h3 lang="en"></bdo>Box 1<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>some text<bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="box-grid-item" lang="en" ></bdo>Box 2<bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="box-grid-item-gray" lang="en" >&lt;h4></bdo>Box 3<bdo dir="ltr" translate="no" lang="">&lt/h4>
+       &lt;p class="float-bottom"></bdo>Text aligned at bottom<bdo dir="ltr" translate="no" lang="">&lt;/p>&lt;/div>
+    &lt;div class="box-grid-item-accent-alt" lang="en" >
+       &lt;h3 lang="en" ></bdo>Box 4<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;/div></bdo>
+</pre>
+
+        <div class="clearfix"></div>
+        <h2 lang="en" id="licence">MIT License</h2>
+
+        <p lang="en">Copyright <bdo lang="" dir="ltr" translate="no">&copy; 2025 NataljaNeumann@gmx.de</bdo></p>
+
+        <p lang="en">
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+        </p>
+
+        <p lang="en">
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+        </p>
+
+        <p lang="en">
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+        </p>
+
+
+    </div>
+</body>
+</html>
+
