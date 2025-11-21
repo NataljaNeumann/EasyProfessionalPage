@@ -264,8 +264,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--spacing-element: 2rem;
 	--padding-box: 1.5rem;
 	--width-desktop: 60rem;
-	--width-tablet: 40rem;
-	--width-mobile: 100%;
+	--width-main: calc(var(--width-desktop) - 6* var(--spacing-element));
 	--width-box-grid: 29rem;
 	--width-half-column: 45%;
 	--width-half-column2: 50%;
@@ -764,6 +763,8 @@ li::marker {
 @media print {
 	body {
 		background-color: white;
+		max-width: 100%;
+		width: 100%;
 	}
 }
 
@@ -773,22 +774,47 @@ li::marker {
 /* ============================= */
 .main {
 	background-color: var(--color-bg-main);
+	min-width: min(100%, var(--width-desktop));
 	max-width: var(--width-desktop);
 	margin-left: auto;
 	margin-right: auto;
-	padding: var(--spacing-element);
+	/*padding-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+	padding-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));*/
+	/* padding: calc(max(0, min((100% - var(--width-main))/2, (var(--width-desktop) - var(--width-main))/2))); */
 	min-height: 100vh;
 	content: "";
 	display: table;
 	clear: both;
 }
 
+@media screen {
+	.main > * {
+		max-width: min(100%, var(--width-main));
+		margin-left: auto;
+		margin-right: auto;
+		box-sizing: border-box;
+	}
+}
+
+
+/* mobile optimization */
+@media (max-width: 35rem) {
+	.main {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
 /* print-media optimization */
 @media print {
 	.main {
 		background-color: white;
 		max-width: 100%;
+		min-width: unset;
 		font-size: 0.75rem;
+		padding-left: calc(var(--spacing-element)); 
+		padding-right: calc(var(--spacing-element));
 	}
 }
 
@@ -818,6 +844,17 @@ h1 {
 
 h2 {
 	font-size: 2rem;
+}
+
+/* mobile optimization */
+@media (max-width: 35rem) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
 }
 
 h3 {
@@ -1229,18 +1266,45 @@ pre.box-accent-alt-right {
 	width: auto;
 }
 
+@media (max-width: 40rem) {
+	pre.borderbox-gray-left,
+	pre.borderbox-gray-right,
+	pre.borderbox-alt-left,
+	pre.borderbox-alt-right,
+	pre.borderbox-left,
+	pre.borderbox-right,
+	pre.borderbox-gray-strong-left,
+	pre.borderbox-gray-strong-right,
+	pre.borderbox-alt-strong-left,
+	pre.borderbox-alt-strong-right,
+	pre.borderbox-strong-left,
+	pre.borderbox-strong-right,
+	pre.box-gray-left,
+	pre.box-gray-right,
+	pre.box-accent-left,
+	pre.box-accent-right,
+	pre.box-accent-alt-left,
+	pre.box-accent-alt-right {
+		width:100%;
+		min-width: max-content;
+		max-width: 100%;
+	}
+}
+
+
 /* screen-media optimization */
 @media screen and (forced-colors: none) {
-	.box-accent-full,
-	.box-accent-alt-full,
-	.box-gray-full {
-		margin-left: calc(-1 * var(--spacing-element));
-		margin-right: calc(-1 * var(--spacing-element));
-		max-width: calc(100% + 2 * var(--spacing-element));
-		padding-left: var(--spacing-element);
-		padding-right: var(--spacing-element);
+	.main > .box-accent-full,
+	.main > .box-accent-alt-full,
+	.main > .box-gray-full {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: min(100%, var(--width-desktop));
+		padding-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+		padding-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 
+	/*
 	.box-accent-wide,
 	.box-accent-alt-wide,
 	.box-gray-wide {
@@ -1250,7 +1314,9 @@ pre.box-accent-alt-right {
 		padding-left: calc( 100% + var(--spacing-element));
 		padding-right: calc( 100% + var(--spacing-element));
 	}
+	*/
 }
+
 
 
 /* ================================
@@ -1658,46 +1724,6 @@ pre.box-accent-alt-right {
 }
 
 
-/* ================================
-   Responsive design (≤1024px)
-   ================================ */
-@media screen and (max-width: 40rem) {
-	.box-gray-left,
-	.box-gray-right,
-	.box-accent-left,
-	.box-accent-right,
-	.box-accent-alt-left,
-	.box-accent-alt-right,
-	.img-left,
-	.img-right,
-	.borderbox-left,
-	.borderbox-strong-left,
-	.borderbox-alt-left,
-	.borderbox-alt-strong-left,
-	.borderbox-gray-left,
-	.borderbox-gray-strong-left,
-	.borderbox-right,
-	.borderbox-strong-right,
-	.borderbox-alt-right,
-	.borderbox-alt-strong-right,
-	.borderbox-gray-right,
-	.borderbox-gray-strong-right {
-		float: none;
-		width: auto;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-/* ================================
-   Responsive design: mobile devices (≤768px)
-   ================================ */
-@media screen and (max-width: 30rem) {
-	/* optional change of the font size */
-	body {
-		font-size: 1rem;
-	}
-}
 
 /* ================================
    Notches – boxes with a notch
@@ -1977,6 +2003,16 @@ nav.menu li ul a:hover {
 	overflow: hidden;
 	margin-bottom: var(--spacing-element);
 }
+
+@media screen {
+	.main > .image-box {
+		max-width: min(100%, var(--width-main));
+		margin-left: auto;
+		margin-right: auto;
+		box-sizing: border-box;
+	}
+}
+
 
 .image-content {
 	position: relative;
@@ -2564,6 +2600,15 @@ a img {
 	transition: transform 0.3s ease;
 }
 
+@media screen {
+	.main > a img {
+		max-width: min(100%, var(--width-main));
+		margin-left: auto;
+		margin-right: auto;
+		box-sizing: border-box;
+	}
+}
+
 a img:hover {
 	transform: scale(1.01);
 }
@@ -2657,7 +2702,7 @@ a img:hover {
 :dir(ltr) > .callout-box-left,
 :dir(ltr) > .callout-box-alt-left
 :dir(ltr) > .image-box-left {
-	margin-left: 0;
+	margin-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	margin-right: var(--spacing-element);
 }
 
@@ -2686,10 +2731,60 @@ a img:hover {
 :dir(rtl) > .callout-box-alt-left
 :dir(rtl) > .image-box-left {
 	margin-left: var(--spacing-element);
-	margin-right: 0;
+	margin-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 }
 
 
+/* ================================
+   Responsive design (≤1024px)
+   ================================ */
+@media screen and (max-width: 40rem) {
+	:dir(ltr) > .box-gray-left,
+	:dir(ltr) > .box-gray-right,
+	:dir(ltr) > .box-accent-left,
+	:dir(ltr) > .box-accent-right,
+	:dir(ltr) > .box-accent-alt-left,
+	:dir(ltr) > .box-accent-alt-right,
+	:dir(ltr) > .img-left,
+	:dir(ltr) > .img-right,
+	:dir(ltr) > .borderbox-left,
+	:dir(ltr) > .borderbox-strong-left,
+	:dir(ltr) > .borderbox-alt-left,
+	:dir(ltr) > .borderbox-alt-strong-left,
+	:dir(ltr) > .borderbox-gray-left,
+	:dir(ltr) > .borderbox-gray-strong-left,
+	:dir(ltr) > .borderbox-right,
+	:dir(ltr) > .borderbox-strong-right,
+	:dir(ltr) > .borderbox-alt-right,
+	:dir(ltr) > .borderbox-alt-strong-right,
+	:dir(ltr) > .borderbox-gray-right,
+	:dir(ltr) > .borderbox-gray-strong-right,
+	:dir(rtl) > .box-gray-left,
+	:dir(rtl) > .box-gray-right,
+	:dir(rtl) > .box-accent-left,
+	:dir(rtl) > .box-accent-right,
+	:dir(rtl) > .box-accent-alt-left,
+	:dir(rtl) > .box-accent-alt-right,
+	:dir(rtl) > .img-left,
+	:dir(rtl) > .img-right,
+	:dir(rtl) > .borderbox-left,
+	:dir(rtl) > .borderbox-strong-left,
+	:dir(rtl) > .borderbox-alt-left,
+	:dir(rtl) > .borderbox-alt-strong-left,
+	:dir(rtl) > .borderbox-gray-left,
+	:dir(rtl) > .borderbox-gray-strong-left,
+	:dir(rtl) > .borderbox-right,
+	:dir(rtl) > .borderbox-strong-right,
+	:dir(rtl) > .borderbox-alt-right,
+	:dir(rtl) > .borderbox-alt-strong-right,
+	:dir(rtl) > .borderbox-gray-right,
+	:dir(rtl) > .borderbox-gray-strong-right {
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
 
 
 /* removes top margin from heading when it is the first element in boxes */
