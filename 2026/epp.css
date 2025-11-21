@@ -238,30 +238,29 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 :root {
 	/* Common font definitions. fonts need to be downloaded
 	   and font-faces need to be defined */
-	--font-merriweather: 'Merriweather', Georgia, serif;
-	--font-playfair: 'Playfair Display', 'Times New Roman', serif;
-	--font-lora: 'Lora', Cambria, serif;
-	--font-crimson: 'Crimson Pro', 'Palatino Linotype', serif;
-	--font-cormorant: 'Cormorant Garamond', Garamond, serif;
-	--font-roboto: 'Roboto', Arial, sans-serif;
-	--font-open-sans: 'Open Sans', Helvetica, sans-serif;
-	--font-inter: 'Inter', 'Segoe UI', sans-serif;
-	--font-poppins: 'Poppins', 'Trebuchet MS', sans-serif;
-	--font-work-sans: 'Work Sans', Verdana, sans-serif;
-	--font-pacifico: 'Pacifico', cursive, sans-serif;
-	--font-dancing-script: 'Dancing Script', cursive, sans-serif;
-	--font-amatic: 'Amatic SC', cursive, sans-serif;
-	--font-shadows: 'Shadows Into Light', cursive, sans-serif;
-	--font-satisfy: 'Satisfy', cursive, sans-serif;
-	--font-fira-code: 'Fira Code', 'Courier New', monospace;
-	--font-source-code: 'Source Code Pro', Consolas, monospace;
-	--font-jetbrains: 'JetBrains Mono', Menlo, monospace;
-	--font-bebas: 'Bebas Neue', Impact, sans-serif;
-	--font-oswald: 'Oswald', 'Franklin Gothic Medium', sans-serif;
-
+	--font-merriweather: 'Merriweather', Georgia, 'Times New Roman', 'Noto Serif', 'Liberation Serif', serif;
+	--font-playfair: 'Playfair Display', 'Times New Roman', Georgia, 'Noto Serif', 'Liberation Serif', serif;
+	--font-lora: 'Lora', Cambria, Georgia, 'Noto Serif', 'Liberation Serif', serif;
+	--font-crimson: 'Crimson Pro', 'Palatino Linotype', Palatino, Georgia, 'Noto Serif', 'Liberation Serif', serif;
+	--font-cormorant: 'Cormorant Garamond', Garamond, Georgia, 'Noto Serif', 'Liberation Serif', serif;
+	--font-roboto: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-open-sans: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-inter: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-poppins: 'Poppins', 'Trebuchet MS', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-work-sans: 'Work Sans', Verdana, Tahoma, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-pacifico: 'Pacifico', 'Brush Script MT', cursive, sans-serif;
+	--font-dancing-script: 'Dancing Script', 'Comic Sans MS', cursive, sans-serif;
+	--font-amatic: 'Amatic SC', 'Comic Sans MS', cursive, sans-serif;
+	--font-shadows: 'Shadows Into Light', 'Comic Sans MS', cursive, sans-serif;
+	--font-satisfy: 'Satisfy', 'Brush Script MT', cursive, sans-serif;
+	--font-fira-code: 'Fira Code', 'Courier New', Consolas, Menlo, 'Noto Mono', 'Liberation Mono', monospace;
+	--font-source-code: 'Source Code Pro', Consolas, 'Courier New', Menlo, 'Noto Mono', 'Liberation Mono', monospace;
+	--font-jetbrains: 'JetBrains Mono', Menlo, Consolas, 'Courier New', 'Noto Mono', 'Liberation Mono', monospace;
+	--font-bebas: 'Bebas Neue', Impact, 'Arial Black', 'Segoe UI', sans-serif;
+	--font-oswald: 'Oswald', 'Franklin Gothic Medium', 'Arial Black', 'Segoe UI', sans-serif;
 	/* Page specific fonts and sizes */
-	--font-primary: 'Segoe UI', 'Roboto', sans-serif;
-	--font-secondary: 'Georgia', serif;
+	--font-primary: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--font-secondary: 'Georgia', 'Times New Roman', 'Cambria', 'Noto Serif', 'Liberation Serif', serif;
 	--spacing-element: 2rem;
 	--padding-box: 1.5rem;
 	--width-desktop: 60rem;
