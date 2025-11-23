@@ -2674,6 +2674,61 @@ a img:hover {
 	margin-top: 0;
 }
 
+:dir(rtl) > .box-gray-right,
+:dir(rtl) > .box-accent-right,
+:dir(rtl) > .box-accent-alt-right,
+:dir(rtl) > .callout-box-right,
+:dir(rtl) > .callout-box-alt-right,
+:dir(rtl) > .image-box-right,
+:dir(rtl) > .borderbox-gray-right,
+:dir(rtl) > .borderbox-gray-strong-right,
+:dir(rtl) > .borderbox-right,
+:dir(rtl) > .borderbox-strong-right,
+:dir(rtl) > .borderbox-alt-right,
+:dir(rtl) > .borderbox-alt-strong-right,
+:dir(ltr) > .borderbox-gray-left,
+:dir(ltr) > .borderbox-gray-strong-left,
+:dir(ltr) > .borderbox-left,
+:dir(ltr) > .borderbox-strong-left,
+:dir(ltr) > .borderbox-alt-left,
+:dir(ltr) > .borderbox-alt-strong-left,
+:dir(ltr) > .box-gray-left,
+:dir(ltr) > .box-accent-left,
+:dir(ltr) > .box-accent-alt-left,
+:dir(ltr) > .callout-box-left,
+:dir(ltr) > .callout-box-alt-left
+:dir(ltr) > .image-box-left {
+	margin-right: var(--spacing-element);
+}
+
+:dir(ltr) > .box-gray-right,
+:dir(ltr) > .box-accent-right,
+:dir(ltr) > .box-accent-alt-right,
+:dir(ltr) > .callout-box-right,
+:dir(ltr) > .callout-box-alt-right,
+:dir(ltr) > .image-box-right,
+:dir(ltr) > .borderbox-gray-right,
+:dir(ltr) > .borderbox-gray-strong-right,
+:dir(ltr) > .borderbox-right,
+:dir(ltr) > .borderbox-strong-right,
+:dir(ltr) > .borderbox-alt-right,
+:dir(ltr) > .borderbox-alt-strong-right,
+:dir(rtl) > .borderbox-gray-left,
+:dir(rtl) > .borderbox-gray-strong-left,
+:dir(rtl) > .borderbox-left,
+:dir(rtl) > .borderbox-strong-left,
+:dir(rtl) > .borderbox-alt-left,
+:dir(rtl) > .borderbox-alt-strong-left,
+:dir(rtl) > .box-gray-left,
+:dir(rtl) > .box-accent-left,
+:dir(rtl) > .box-accent-alt-left,
+:dir(rtl) > .callout-box-left,
+:dir(rtl) > .callout-box-alt-left
+:dir(rtl) > .image-box-left {
+	margin-left: var(--spacing-element);
+}
+
+
 @media screen {
 	/* Correct margins for left- and right- boxes, based on
 	enclosing text, not on the direction of the text inside
@@ -2703,7 +2758,6 @@ a img:hover {
 	:dir(ltr) > .callout-box-alt-left
 	:dir(ltr) > .image-box-left {
 		margin-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
-		margin-right: var(--spacing-element);
 	}
 
 	:dir(ltr) > .box-gray-right,
@@ -2730,7 +2784,6 @@ a img:hover {
 	:dir(rtl) > .callout-box-left,
 	:dir(rtl) > .callout-box-alt-left
 	:dir(rtl) > .image-box-left {
-		margin-left: var(--spacing-element);
 		margin-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 }
