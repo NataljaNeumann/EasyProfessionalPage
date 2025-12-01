@@ -343,6 +343,7 @@
                         <li lang="en"><a href="#elements-boxes" lang="en">Boxes</a></li>
                         <li lang="en"><a href="#elements-notches" lang="en">Notches</a></li>
                         <li lang="en"><a href="#elements-cards" lang="en">Cards</a></li>
+                        <li lang="en"><a href="#elements-forms" lang="en">Forms</a></li>
                     </ul>
                 </li>
                 <li lang="en"><a href="#licence" lang="en">License</a></li>
@@ -576,7 +577,10 @@
                 <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
             </thead>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-main</td><td lang="en">The default background color for the main content area</td></tr>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--brush-bg-main</td><td lang="en">The brush for background of the main content area. You can override the color specified in the line before by using repeating images, gradients, repeating patterns<pre lang="" dir="ltr" translate="no">:root {
+            <tr lang="en">
+                <td lang="" translate="no" dir="ltr">--brush-bg-main</td>
+                <td lang="en">
+                    The brush for background of the main content area. You can override the color specified in the line before by using repeating images, gradients, repeating patterns<pre lang="" dir="ltr" translate="no">:root {
   /* Solid color */
   --brush-bg-main: #f5f7fa;
 
@@ -591,7 +595,9 @@
         #e0e6ed 10px,
         #e0e6ed 20px
      ); */
-}</pre></td></tr>
+}</pre>
+                </td>
+            </tr>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-outside</td><td lang="en">The default background color for the area to the left and right of main area</td></tr>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--brush-bg-outside</td><td lang="en">The brush for background of the area to the left and right of the main area. You can override the color specified in the line above by using repeating images, gradients, repeating patterns</td></tr>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-text-main</td><td lang="en">The primary text color</td></tr>
@@ -1065,7 +1071,34 @@
        &lt;h3 lang="en" ></bdo>Box 4<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no" lang="">&lt;/div>
 &lt;/div></bdo>
 </pre>
+        <h2 lang="en" id="elements-forms">Forms</h2>
+        <form class="form-grid box-centered">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
 
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+
+            <label>&nbsp;</label>
+            <button type="submit">Submit</button>
+        </form>
+        <pre class="box-gray" dir="ltr" lang="" translate="no">&lt;form class="form-grid box-centered">
+  &lt;label for="name">Name:&lt;/label>
+  &lt;input type="text" id="name">
+
+  &lt;label for="email">Email:&lt;/label>
+  &lt;input type="email" id="email">
+
+  &lt;label for="password">Password:&lt;/label>
+  &lt;input type="password" id="password">
+
+  &lt;label/>
+  &lt;button type="submit">Submit&lt;/button>
+
+&lt;/form></pre>
         <div class="clearfix"></div>
         <h2 lang="en" id="licence">MIT License</h2>
 

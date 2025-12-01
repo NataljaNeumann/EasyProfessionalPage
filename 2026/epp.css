@@ -275,6 +275,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--grid-box-gap: 1rem;
 	--grid-box-radius: 0.5rem;
 	--rounded-radius: 0.5rem;
+	--button-radius: 0.3em;
 }
 
 /* force stacking grid cards on small screens */
@@ -310,6 +311,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--input-border-default: #cccccc;
 	--input-focus-border-default: #666666;
 
+	/* button in normal text */
+	--button-bg-default: var(--input-bg-default);
+	--button-text-default: var(--input-text-default);
+    --button-bg-default-hover: #dce3eb;
+
 	/* colors in gray boxes */
 	--color-box-gray-bg: #e0e6ed;
 	--color-box-gray-bg-overlay: #e0e6eda0;
@@ -324,6 +330,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--input-marker-gray: #2c3e50;
 	--input-border-gray: #bdc3c7;
 	--input-focus-border-gray: #7f8c8d;
+
+    --button-bg-gray: var(--input-bg-gray);
+    --button-text-gray: var(--input-text-gray);
+    --button-bg-gray-hover: #cfd6dc;
 
 	/* accent colors */
 	--color-accent: #6c9a8b;
@@ -343,6 +353,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--input-border-accent: #8fb9b3;
 	--input-focus-border-accent: #2c8c7c;
 
+    --button-bg-accent: var(--input-bg-accent);
+    --button-text-accent: var(--input-text-accent);
+    --button-bg-accent-hover: #3b82f6;
+
 	/* colours for the coloured boxes with alternative accent */
 	--color-box-accent-alt-header: #8c2c4c;
 	--color-box-accent-alt-divider: #d8a3b3;
@@ -357,6 +371,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--input-marker-accent-alt: #8c2c4c;
 	--input-border-accent-alt: #d8a3b3;
 	--input-focus-border-accent-alt: #b34c6d;
+
+    --button-bg-accent-alt: var(--input-bg-accent-alt);
+    --button-text-accent-alt: var(--input-text-accent-alt);
+    --button-bg-accent-alt-hover: #f97316;
 
 	/* === menu colors === */
 	--menu-bg: #2c3e50;
@@ -427,6 +445,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-default: #7f8c8d;
 		--input-focus-border-default: #1abc9c;
 
+	    /* button in normal text */
+	    --button-bg-default: var(--input-bg-default);
+	    --button-text-default: var(--input-text-default);
+        --button-bg-default-hover: #dce3eb;
+
 		/* colors in gray boxes */
 		--color-box-gray-bg: #2c2c2c;
 		--color-box-gray-bg-overlay: #2c2c2ca0;
@@ -440,6 +463,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-text-gray: #ecf0f1;
 		--input-border-gray: #95a5a6;
 		--input-focus-border-gray: #1abc9c;
+
+        --button-bg-gray: var(--input-bg-gray);
+        --button-text-gray: var(--input-text-gray);
+        --button-bg-gray-hover: #cfd6dc;
 
 		/* accent colors */
 		--color-accent: #8fb9b3;
@@ -459,6 +486,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent: #2c8c7c;
 		--input-focus-border-accent: #1abc9c;
 
+        --button-bg-accent: var(--input-bg-accent);
+        --button-text-accent: var(--input-text-accent);
+        --button-bg-accent-hover: #3b82f6;
+
 		/* colours for the coloured boxes with alternative accent */
 		--color-box-accent-alt-bg: #4c1432;
 		--color-box-accent-alt-bg-overlay: #4c1432a0;
@@ -472,6 +503,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-text-accent-alt: #ffffff;
 		--input-border-accent-alt: #8c2c5c;
 		--input-focus-border-accent-alt: #c94c7f;
+
+        --button-bg-accent-alt: var(--input-bg-accent-alt);
+        --button-text-accent-alt: var(--input-text-accent-alt);
+        --button-bg-accent-alt-hover: #f97316;
 
 		/* menu colors */
 		--menu-bg: #1f2d3a;
@@ -542,6 +577,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-default: CanvasText;
 		--input-focus-border-default: CanvasText;
 
+	    /* button in normal text */
+	    --button-bg-default: var(--input-bg-default);
+	    --button-text-default: var(--input-text-default);
+        --button-bg-default-hover: #dce3eb;
+
 		/* colors in gray boxes */
 		--color-box-gray-bg: Canvas;
 		--color-box-gray-bg-overlay: Canvas;
@@ -556,6 +596,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-marker-gray: CanvasText;
 		--input-border-gray: CanvasText;
 		--input-focus-border-gray: CanvasText;
+
+        --button-bg-gray: var(--input-bg-gray);
+        --button-text-gray: var(--input-text-gray);
+        --button-bg-gray-hover: #cfd6dc;
 
 		/* accent colors */
 		--color-accent: CanvasText;
@@ -575,6 +619,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent: CanvasText;
 		--input-focus-border-accent: CanvasText;
 
+        --button-bg-accent: var(--input-bg-accent);
+        --button-text-accent: var(--input-text-accent);
+        --button-bg-accent-hover: #3b82f6;
+
 		/* colours for the coloured boxes with alternative accent */
 		--color-box-accent-alt-header: CanvasText;
 		--color-box-accent-alt-divider: CanvasText;
@@ -589,6 +637,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-marker-accent-alt: CanvasText;
 		--input-border-accent-alt: CanvasText;
 		--input-focus-border-accent-alt: CanvasText;
+
+        --button-bg-accent-alt: var(--input-bg-accent-alt);
+        --button-text-accent-alt: var(--input-text-accent-alt);
+        --button-bg-accent-alt-hover: #f97316;
+
 
 		/* menu colors */
 		--menu-bg: CanvasText;
@@ -659,6 +712,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-default: #cccccc;
 		--input-focus-border-default: #666666;
 
+	    /* button in normal text */
+	    --button-bg-default: var(--input-bg-default);
+	    --button-text-default: var(--input-text-default);
+        --button-bg-default-hover: #dce3eb;
+
 		/* colors in gray boxes */
 		--color-box-gray-bg: #f0f0f0;
 		--color-box-gray-text: #333333;
@@ -671,6 +729,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-text-gray: #2c3e50;
 		--input-border-gray: #bdc3c7;
 		--input-focus-border-gray: #7f8c8d;
+
+        --button-bg-gray: var(--input-bg-gray);
+        --button-text-gray: var(--input-text-gray);
+        --button-bg-gray-hover: #cfd6dc;
 
 		/* accent colors */
 		--color-accent: #6c9a8b;
@@ -689,6 +751,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent: #8fb9b3;
 		--input-focus-border-accent: #2c8c7c;
 
+        --button-bg-accent: var(--input-bg-accent);
+        --button-text-accent: var(--input-text-accent);
+        --button-bg-accent-hover: #3b82f6;
+
 		/* colors in accent-colored boxes with alternative accent */
 		--color-box-accent-alt-bg: #f5eaf0; 
 		--color-box-accent-alt-text: #4c1f2e;
@@ -701,6 +767,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-text-accent-alt: #4c1f2e;
 		--input-border-accent-alt: #a36c8c;
 		--input-focus-border-accent-alt: #c94c7f;
+
+        --button-bg-accent-alt: var(--input-bg-accent-alt);
+        --button-text-accent-alt: var(--input-text-accent-alt);
+        --button-bg-accent-alt-hover: #f97316;
 
 		/* === menu colors === */
 		--menu-bg: #2c3e50;
@@ -1136,6 +1206,15 @@ table tbody tr:nth-child(even) {
 		page-break-inside: avoid;
 		break-inside: avoid;
 	}
+}
+
+/* =======================
+   Centered box
+   ======================= */
+.box-centered {
+	max-width: calc(3 / 4 * var(--width-main));
+	clear: both;
+	content: "";
 }
 
 /* =======================
@@ -1775,6 +1854,86 @@ pre.box-accent-alt-right {
 	clear: both;
 }
 
+/* ================================ 
+	Forms
+   ================================ */
+
+.form-grid {
+	display: grid;
+	grid-template-columns: auto 1fr; 
+	gap: 0.5em var(--padding-box); 
+	align-items: center; 
+}
+
+.form-grid label {
+	text-align: end; 
+}
+
+.form-grid button {
+  justify-self: start;
+  padding: 0.5em 0.75em;
+  border-radius: var(--button-radius);
+  background-color: var(--button-bg-default);
+  color: var(--button-text-default);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+.box-gray .form-grid button,
+.box-gray-full .form-grid button,
+.box-gray-wide .form-grid button,
+.box-gray-left .form-grid button,
+.box-gray-right .form-grid button {
+	background-color: var(--button-bg-gray);
+	color: var(--button-text-gray);
+	border-color: var(--input-border-gray)
+}
+
+
+.box-accent .form-grid button,
+.box-accent-full .form-grid button,
+.box-accent-wide .form-grid button,
+.box-accent-left .form-grid button,
+.box-accent-right .form-grid button {
+	background-color: var(--button-bg-accent);
+	color: var(--button-text-accent);
+	border-color: var(--input-border-accent)
+}
+
+.box-accent-alt .form-grid button,
+.box-accent-alt-full .form-grid button,
+.box-accent-alt-wide .form-grid button,
+.box-accent-alt-left .form-grid button,
+.box-accent-alt-right .form-grid button {
+	background-color: var(--button-bg-accent-alt);
+	color: var(--button-text-accent-alt);
+	border-color: var(--input-border-accent-alt)
+}
+
+.form-grid button:hover,
+.form-grid button:focus {
+  background-color: var(--button-bg-default-hover);
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* Gray variant */
+.box-gray .form-grid button:hover,
+.box-gray .form-grid button:focus {
+  background-color: var(--button-bg-gray-hover);
+}
+
+/* Accent variant */
+.box-accent .form-grid button:hover,
+.box-accent .form-grid button:focus {
+  background-color: var(--button-bg-accent-hover);
+}
+
+/* Accent-alt variant */
+.box-accent-alt .form-grid button:hover,
+.box-accent-alt .form-grid button:focus {
+  background-color: var(--button-bg-accent-alt-hover);
+}
 
 /* ================================
    input styles	
