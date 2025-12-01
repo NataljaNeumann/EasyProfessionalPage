@@ -290,7 +290,9 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 :root {
 	/* main colors: the text and the background of text */
 	--color-bg-main: #f5f7fa;
+	--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
 	--color-bg-outside: #e0e6ed;
+	--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
 	--color-text-main: #2c3e50;
 	--color-marker-main: var(--color-text-main);
 
@@ -404,7 +406,9 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: #1e1e1e;
+		--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
 		--color-bg-outside: #2c2c2c;
+		--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
 		--color-text-main: #e0e0e0;
 		--color-marker-main: #e0e0e0;
 
@@ -518,7 +522,9 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: Canvas;
+		--brush-bg-main: Canvas;
 		--color-bg-outside: Canvas;
+		--brush-bg-outside: Canvas;
 		--color-text-main: CanvasText;
 		--color-marker-main: var(--color-text-main);
 
@@ -633,7 +639,9 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	:root {
 		/* main colors: the text and the background of text */
 		--color-bg-main: #ffffff;
+		--brush-bg-main: #ffffff;
 		--color-bg-outside: #ffffff;
+		--brush-bg-outside: #ffffff;
 		--color-text-main: #000000;
 		--color-marker-main: #000000;
 
@@ -749,7 +757,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 /* ============================= */
 body {
 	font-family: var(--font-primary);
-	background-color: var(--color-bg-outside);
+	background: var(--brush-bg-outside);
 	color: var(--color-text-main);
 	margin: 0;
 	padding: 0;
@@ -773,7 +781,7 @@ li::marker {
 /* main area (centered)          */
 /* ============================= */
 .main {
-	background-color: var(--color-bg-main);
+	background: var(--brush-bg-main);
 	min-width: min(100%, var(--width-desktop));
 	max-width: var(--width-desktop);
 	margin-left: auto;
@@ -917,7 +925,8 @@ table {
 
 th, td {
 	padding: 0.75em;
-	border: 0px solid var(--color-bg-main);
+	border-width: 0;
+	border-style: solid;
 	text-align: inline-start;
 }
 
@@ -2424,7 +2433,7 @@ nav.menu li ul a:hover {
 }
 
 .box-grid-item-bg {
-	background-color: var(--color-bg-main);
+	background: var(--brush-bg-main);
 	color: var(--color-text-main);
 	border: var(--line-thin) solid var(--color-bg-main);
 }

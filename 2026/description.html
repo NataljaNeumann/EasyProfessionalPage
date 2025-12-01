@@ -576,6 +576,24 @@
                 <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
             </thead>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-main</td><td lang="en">The default background color for the main content area</td></tr>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--brush-bg-main</td><td lang="en">The brush for background of the main content area. You can override the color specified in the line before by using repeating images, gradients, repeating patterns<pre lang="" dir="ltr" translate="no">:root {
+  /* Solid color */
+  --brush-bg-main: #f5f7fa;
+
+  /* Or repeating image */
+  /* --brush-bg-main: url('pattern.png') repeat; */
+
+  /* Or gradient / two-colored pattern */
+  /* --brush-bg-main: repeating-linear-gradient(
+        45deg,
+        #f5f7fa,
+        #f5f7fa 10px,
+        #e0e6ed 10px,
+        #e0e6ed 20px
+     ); */
+}</pre></td></tr>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-outside</td><td lang="en">The default background color for the area to the left and right of main area</td></tr>
+            <tr lang="en"><td lang="" translate="no" dir="ltr">--brush-bg-outside</td><td lang="en">The brush for background of the area to the left and right of the main area. You can override the color specified in the line above by using repeating images, gradients, repeating patterns</td></tr>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-text-main</td><td lang="en">The primary text color</td></tr>
             <tr lang="en"><td lang="" translate="no" dir="ltr">--color-marker-main</td><td lang="en">The color used for markers (e.g., bullets, highlights) in main content</td></tr>
         </table>
