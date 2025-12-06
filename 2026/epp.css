@@ -315,6 +315,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--button-bg-default: var(--input-bg-default);
 	--button-text-default: var(--input-text-default);
     --button-bg-default-hover: #dce3eb;
+	--button-text-default-hover: var(--input-text-default);
 
 	/* colors in gray boxes */
 	--color-box-gray-bg: #e0e6ed;
@@ -334,6 +335,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
     --button-bg-gray: var(--input-bg-gray);
     --button-text-gray: var(--input-text-gray);
     --button-bg-gray-hover: #cfd6dc;
+    --button-text-gray-hover: var(--input-text-gray);
 
 	/* accent colors */
 	--color-accent: #6c9a8b;
@@ -356,6 +358,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
     --button-bg-accent: var(--input-bg-accent);
     --button-text-accent: var(--input-text-accent);
     --button-bg-accent-hover: #3b82f6;
+    --button-text-accent--hover: var(--input-text-accent);
 
 	/* colours for the coloured boxes with alternative accent */
 	--color-box-accent-alt-header: #8c2c4c;
@@ -375,6 +378,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
     --button-bg-accent-alt: var(--input-bg-accent-alt);
     --button-text-accent-alt: var(--input-text-accent-alt);
     --button-bg-accent-alt-hover: #f97316;
+    --button-text-accent-alt-hover: var(--input-text-accent-alt);
 
 	/* === menu colors === */
 	--menu-bg: #2c3e50;
@@ -449,6 +453,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	    --button-bg-default: var(--input-bg-default);
 	    --button-text-default: var(--input-text-default);
         --button-bg-default-hover: #dce3eb;
+	    --button-text-default-hover: var(--input-text-default);
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: #2c2c2c;
@@ -467,6 +472,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-gray: var(--input-bg-gray);
         --button-text-gray: var(--input-text-gray);
         --button-bg-gray-hover: #cfd6dc;
+        --button-text-gray-hover: var(--input-text-gray);
 
 		/* accent colors */
 		--color-accent: #8fb9b3;
@@ -489,6 +495,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-accent: var(--input-bg-accent);
         --button-text-accent: var(--input-text-accent);
         --button-bg-accent-hover: #3b82f6;
+        --button-text-accent-hover: var(--input-text-accent);
 
 		/* colours for the coloured boxes with alternative accent */
 		--color-box-accent-alt-bg: #4c1432;
@@ -507,6 +514,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-accent-alt: var(--input-bg-accent-alt);
         --button-text-accent-alt: var(--input-text-accent-alt);
         --button-bg-accent-alt-hover: #f97316;
+        --button-text-accent-alt-hover: var(--input-text-accent-alt);
 
 		/* menu colors */
 		--menu-bg: #1f2d3a;
@@ -580,7 +588,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	    /* button in normal text */
 	    --button-bg-default: var(--input-bg-default);
 	    --button-text-default: var(--input-text-default);
-        --button-bg-default-hover: #dce3eb;
+        --button-bg-default-hover: var(--input-text-default);
+	    --button-text-default-hover: var(--input-bg-default);
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: Canvas;
@@ -599,7 +608,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
         --button-bg-gray: var(--input-bg-gray);
         --button-text-gray: var(--input-text-gray);
-        --button-bg-gray-hover: #cfd6dc;
+        --button-bg-gray-hover: var(--input-text-gray);
+	    --button-text-gray-hover: var(--input-bg-gray);
 
 		/* accent colors */
 		--color-accent: CanvasText;
@@ -621,7 +631,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
         --button-bg-accent: var(--input-bg-accent);
         --button-text-accent: var(--input-text-accent);
-        --button-bg-accent-hover: #3b82f6;
+        --button-bg-accent-hover: var(--input-text-accent);
+        --button-text-accent-hover: var(--input-bg-accent);
 
 		/* colours for the coloured boxes with alternative accent */
 		--color-box-accent-alt-header: CanvasText;
@@ -640,8 +651,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
         --button-bg-accent-alt: var(--input-bg-accent-alt);
         --button-text-accent-alt: var(--input-text-accent-alt);
-        --button-bg-accent-alt-hover: #f97316;
-
+        --button-bg-accent-alt-hover: var(--input-text-accent-alt);
+        --button-text-accent-alt-hover: var(--input-bg-accent-alt);
 
 		/* menu colors */
 		--menu-bg: CanvasText;
@@ -716,6 +727,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	    --button-bg-default: var(--input-bg-default);
 	    --button-text-default: var(--input-text-default);
         --button-bg-default-hover: #dce3eb;
+	    --button-text-hover: var(--input-text-default);
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: #f0f0f0;
@@ -733,6 +745,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-gray: var(--input-bg-gray);
         --button-text-gray: var(--input-text-gray);
         --button-bg-gray-hover: #cfd6dc;
+        --button-text-hover: var(--input-text-gray);
 
 		/* accent colors */
 		--color-accent: #6c9a8b;
@@ -754,6 +767,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-accent: var(--input-bg-accent);
         --button-text-accent: var(--input-text-accent);
         --button-bg-accent-hover: #3b82f6;
+        --button-text-accent-hover: var(--input-text-accent);
 
 		/* colors in accent-colored boxes with alternative accent */
 		--color-box-accent-alt-bg: #f5eaf0; 
@@ -771,6 +785,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-bg-accent-alt: var(--input-bg-accent-alt);
         --button-text-accent-alt: var(--input-text-accent-alt);
         --button-bg-accent-alt-hover: #f97316;
+        --button-text-accent-alt-hover: var(--input-text-accent-alt);
 
 		/* === menu colors === */
 		--menu-bg: #2c3e50;
@@ -1912,27 +1927,30 @@ pre.box-accent-alt-right {
 
 .form-grid button:hover,
 .form-grid button:focus {
-  background-color: var(--button-bg-default-hover);
-  outline: none; 
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+	background-color: var(--button-bg-default-hover);
+	color: var(--button-text-default-hover);
+	outline: none;
 }
 
 /* Gray variant */
 .box-gray .form-grid button:hover,
 .box-gray .form-grid button:focus {
-  background-color: var(--button-bg-gray-hover);
+	background-color: var(--button-bg-gray-hover);
+	color: var(--button-text-gray-hover);
 }
 
 /* Accent variant */
 .box-accent .form-grid button:hover,
 .box-accent .form-grid button:focus {
-  background-color: var(--button-bg-accent-hover);
+	background-color: var(--button-bg-accent-hover);
+	color: var(--button-text-accent-hover);
 }
 
 /* Accent-alt variant */
 .box-accent-alt .form-grid button:hover,
 .box-accent-alt .form-grid button:focus {
-  background-color: var(--button-bg-accent-alt-hover);
+	background-color: var(--button-bg-accent-alt-hover);
+	color: var(--button-text-accent-alt-hover);
 }
 
 /* ================================
