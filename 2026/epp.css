@@ -258,9 +258,12 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--font-jetbrains: 'JetBrains Mono', Menlo, Consolas, 'Courier New', 'Noto Mono', 'Liberation Mono', monospace;
 	--font-bebas: 'Bebas Neue', Impact, 'Arial Black', 'Segoe UI', sans-serif;
 	--font-oswald: 'Oswald', 'Franklin Gothic Medium', 'Arial Black', 'Segoe UI', sans-serif;
+
 	/* Page specific fonts and sizes */
 	--font-primary: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 	--font-secondary: 'Georgia', 'Times New Roman', 'Cambria', 'Noto Serif', 'Liberation Serif', serif;
+	--font-title: var(--font-secondary);
+
 	--spacing-element: 2rem;
 	--padding-box: 1.5rem;
 	--width-desktop: 60rem;
@@ -273,6 +276,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--grid-box-width: 15rem;
 	--grid-box-padding: 1rem;
 	--grid-box-gap: 1rem;
+
 	--grid-box-radius: 0.5rem;
 	--rounded-radius: 0.5rem;
 	--button-radius: 0.3em;
@@ -932,6 +936,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
+	font-family: var(--font-title);
 	font-size: 3rem;
 }
 
