@@ -267,7 +267,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--spacing-element: 2rem;
 	--padding-box: 1.5rem;
 	--width-desktop: 60rem;
-	--width-main: calc(var(--width-desktop) - 6* var(--spacing-element));
+	--width-main: calc(var(--width-desktop) - 6 * var(--spacing-element));
 	--width-box-grid: 29rem;
 	--width-half-column: 45%;
 	--width-half-column2: 50%;
@@ -886,7 +886,7 @@ li::marker {
 
 @media screen {
 	.main > * {
-		max-width: min(100%, var(--width-main));
+		max-width: min(calc(100% - 1rem), var(--width-main));
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
@@ -1232,7 +1232,7 @@ table tbody tr:nth-child(even) {
    Centered box
    ======================= */
 .box-centered {
-	max-width: calc(3 / 4 * var(--width-main));
+	max-width: min(calc(100%-1rem), calc(3 / 4 * var(--width-main)));
 	clear: both;
 	content: "";
 }
@@ -1408,8 +1408,8 @@ pre.box-accent-alt-right {
 		margin-left: 0;
 		margin-right: 0;
 		max-width: min(100%, var(--width-desktop));
-		padding-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
-		padding-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+		padding-left: max(0.5rem, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+		padding-right: max(0.5rem, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 
 	/*
@@ -2197,7 +2197,7 @@ nav.menu li ul a:hover {
 
 @media screen {
 	.main > .image-box {
-		max-width: min(100%, var(--width-main));
+		max-width: min(calc(100% - 1rem), var(--width-main));
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
@@ -2793,7 +2793,7 @@ a img {
 
 @media screen {
 	.main > a img {
-		max-width: min(100%, var(--width-main));
+		max-width: min(calc(100% - 1rem), var(--width-main));
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
@@ -2948,7 +2948,7 @@ a img:hover {
 	:dir(ltr) > .callout-box-left,
 	:dir(ltr) > .callout-box-alt-left
 	:dir(ltr) > .image-box-left {
-		margin-left: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+		margin-left: max(0.5rem, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 
 	:dir(ltr) > .box-gray-right,
@@ -2975,7 +2975,7 @@ a img:hover {
 	:dir(rtl) > .callout-box-left,
 	:dir(rtl) > .callout-box-alt-left
 	:dir(rtl) > .image-box-left {
-		margin-right: max(0px, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
+		margin-right: max(0.5rem, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 }
 
