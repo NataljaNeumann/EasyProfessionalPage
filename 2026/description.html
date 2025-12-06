@@ -264,8 +264,6 @@
                 strPrevImage = strRandomImage;
             });
 
-
-
         };
     </script>
     <script>
@@ -446,7 +444,8 @@
 
 /* <bdi lang="en">Primary and Secondary Fonts for the web page</bdi> */
 <bdo dir="ltr" translate="no">--font-primary: 'Segoe UI', 'Roboto', sans-serif;
---font-secondary: 'Georgia', serif;</bdo>
+--font-secondary: 'Georgia', serif;
+--font-title: 'Georgia', serif;</bdo>
 </pre>
         <p lang="en">
             You can customize the fonts used in your web page by modifying CSS variables in the <bdo lang="" dir="ltr">epp.css</bdo> file.
@@ -456,6 +455,7 @@
         <p lang="en">
             <bdo dir="ltr" translate="no" class="notranslate">--font-primary</bdo> Main font for body text and most elements.<br />
             <bdo dir="ltr" translate="no">--font-secondary</bdo> Secondary font for headings and special elements.
+            <bdo dir="ltr" translate="no">--font-title</bdo> Font for the main title of the page.
         </p>
         <p lang="en">
             By defining these variables, you can easily change the overall typography of your web page, however you can also change
@@ -516,9 +516,11 @@
             <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-half-column</bdo> - Used for half-width elements, aligned left or right.</li>
             <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-thin</bdo> - Thin border or divider line. 0.125rem ~ 2px.</li>
             <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-medium</bdo> - Medium-weight line. 0.187rem ~ 3px.</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-width</bdo> - Fixed width for individual grid cards. 15rem ~ 240px</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between individual grid cards.</li>
             <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-radius</bdo> - Border-radius for grid boxes or cards. 0.5rem ~ 8px.</li>
             <li lang="en"><bdo lang="" translate="no" dir="ltr">--rounded-radius</bdo> - Generic rounded corners for UI elements. Likely reused across buttons, inputs, etc. 0.5rem ~ 8px</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-width</bdo> - Fixed width for individual grid cards. 15rem ~ 240px</li>
+            <li lang="en"><bdo lang="" translate="no" dir="ltr">--button-radius</bdo> - Radius for rounded corners of buttons</li>
         </ul>
         <p lang="en">You can change the spacings, as you want, as well as any other content, since this CSS is provided under MIT license.</p>
         <h2 lang="en" id="vars-colors">Color variables</h2>
@@ -619,6 +621,22 @@
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-default</td><td lang="en">Border color when input is focused</td></tr>
             </tbody>
         </table>
+        <h4 lang="en">Form Buttons (Default Context)</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-default</td><td lang="en">Background color of buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-default</td><td lang="en">Text color inside the buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-default-hover</td><td lang="en">Background color for focused buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-default-hover</td><td lang="en">Text color for focused buttons</td></tr>
+            </tbody>
+        </table>
         <h3>Gray Box Styling</h3>
         <table lang="en">
             <colgroup>
@@ -651,6 +669,22 @@
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-gray</td><td lang="en">Marker color in inputs</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-gray</td><td lang="en">Border color</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-gray</td><td lang="en">Focus border</td></tr>
+            </tbody>
+        </table>
+        <h4 lang="en">Form Buttons (in Gray-Colored Boxes)</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-gray</td><td lang="en">Background color of buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-gray</td><td lang="en">Text color inside the buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-gray-hover</td><td lang="en">Background color for focused buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-gray-hover</td><td lang="en">Text color for focused buttons</td></tr>
             </tbody>
         </table>
         <h3 lang="en">Accent Colors</h3>
@@ -700,6 +734,22 @@
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent:</td><td lang="en">Focus border</td></tr>
             </tbody>
         </table>
+        <h4 lang="en">Form Buttons (in Accent-Colored Boxes)</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent</td><td lang="en">Background color of buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent</td><td lang="en">Text color inside the buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-hover</td><td lang="en">Background color for focused buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-hover</td><td lang="en">Text color for focused buttons</td></tr>
+            </tbody>
+        </table>
         <h3 lang="en">Colors of Alternatively Accent-Colored Boxes</h3>
         <table lang="en">
             <colgroup>
@@ -732,6 +782,22 @@
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-accent-alt</td><td lang="en">Marker</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-accent-alt</td><td lang="en">Border</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent-alt</td><td lang="en">Focus border</td></tr>
+            </tbody>
+        </table>
+        <h4 lang="en">Form Buttons (in Boxes with Alternative Accent Color)</h4>
+        <table lang="en">
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead lang="en">
+                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            </thead>
+            <tbody lang="en">
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-alt</td><td lang="en">Background color of buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-alt</td><td lang="en">Text color inside the buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-alt-hover</td><td lang="en">Background color for focused buttons</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-alt-hover</td><td lang="en">Text color for focused buttons</td></tr>
             </tbody>
         </table>
         <h2 id="elements-std" lang="en">Standard HTML Elements</h2>
@@ -1100,9 +1166,9 @@
 
 &lt;/form></pre>
         <div class="clearfix"></div>
-        <h2 lang="en" id="licence">MIT License</h2>
+        <h2 lang="en" id="licence"><bdo dir="ltr" translate="no" lang="en">MIT</bdo> License</h2>
 
-        <p lang="en">Copyright <bdo lang="" dir="ltr" translate="no">&copy; 2025 NataljaNeumann@gmx.de</bdo></p>
+        <p lang="en">Copyright &copy; 2025 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
 
         <p lang="en">
             Permission is hereby granted, free of charge, to any person obtaining a copy
