@@ -293,6 +293,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
    Standard: Light color scheme
    ================================ */
 :root {
+	/* accent colors */
+	--color-accent: #6c9a8b;
+	--color-accent-alt: #d8a3b3;
+
 	/* main colors: the text and the background of text */
 	--color-bg-main: #f5f7fa;
 	--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
@@ -300,6 +304,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
 	--color-text-main: #2c3e50;
 	--color-marker-main: var(--color-text-main);
+	--color-title: var(--color-accent);
 
 	/* tables in normal text */
 	--table-header-bg: #d0d6dd;
@@ -340,10 +345,6 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
     --button-text-gray: var(--input-text-gray);
     --button-bg-gray-hover: #cfd6dc;
     --button-text-gray-hover: var(--input-text-gray);
-
-	/* accent colors */
-	--color-accent: #6c9a8b;
-	--color-accent-alt: #d8a3b3;
 
 	/* colors in accent-colored boxes */
 	--color-box-accent-bg: #dbece6;
@@ -430,6 +431,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
    ================================ */
 @media (prefers-color-scheme: Dark) {
 	:root {
+		/* accent colors */
+		--color-accent: #8fb9b3;
+		--color-accent-alt: #b38fa3;
+
 		/* main colors: the text and the background of text */
 		--color-bg-main: #1e1e1e;
 		--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
@@ -437,6 +442,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
 		--color-text-main: #e0e0e0;
 		--color-marker-main: #e0e0e0;
+		--color-title: var(--color-accent);
 
 		/* colors for tables in the normal text */
 		--table-header-bg: #2c2c2c;
@@ -477,10 +483,6 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
         --button-text-gray: var(--input-text-gray);
         --button-bg-gray-hover: #cfd6dc;
         --button-text-gray-hover: var(--input-text-gray);
-
-		/* accent colors */
-		--color-accent: #8fb9b3;
-		--color-accent-alt: #b38fa3;
 
 		/* colors in accent-colored boxes */
 		--color-box-accent-bg: #145c4c;
@@ -567,6 +569,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
    ================================ */
 @media (forced-colors: active) {
 	:root {
+		/* accent colors */
+		--color-accent: AccentColor;
+		--color-accent-alt: LinkText;
+
 		/* main colors: the text and the background of text */
 		--color-bg-main: Canvas;
 		--brush-bg-main: Canvas;
@@ -574,10 +580,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--brush-bg-outside: Canvas;
 		--color-text-main: CanvasText;
 		--color-marker-main: var(--color-text-main);
+		--color-title: var(--color-accent);
 
 		/* tables in normal text */
-		--table-header-bg: CanvasText; 
-		--table-header-text: Canvas;
+		--table-header-bg: Canvas; 
+		--table-header-text: CanvasText;
 		--table-body-odd-bg: Canvas;
 		--table-body-odd-text:CanvasText;
 		--table-body-even-bg: Canvas;
@@ -592,8 +599,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	    /* button in normal text */
 	    --button-bg-default: var(--input-bg-default);
 	    --button-text-default: var(--input-text-default);
-        --button-bg-default-hover: var(--input-text-default);
-	    --button-text-default-hover: var(--input-bg-default);
+        --button-bg-default-hover: var(--input-bg-default);
+	    --button-text-default-hover: var(--input-text-default);
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: Canvas;
@@ -612,31 +619,27 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
         --button-bg-gray: var(--input-bg-gray);
         --button-text-gray: var(--input-text-gray);
-        --button-bg-gray-hover: var(--input-text-gray);
-	    --button-text-gray-hover: var(--input-bg-gray);
-
-		/* accent colors */
-		--color-accent: CanvasText;
-		--color-accent-alt: CanvasText;
+        --button-bg-gray-hover: var(--input-bg-gray);
+	    --button-text-gray-hover: var(--input-text-gray);
 
 		/* colors in accent-colored boxes */
 		--color-box-accent-bg: Canvas;
 		--color-box-accent-bg-overlay: Canvas;
-		--color-box-accent-text: CanvasText;
-		--color-box-accent-marker: CanvasText;
+		--color-box-accent-text: AccentColor;
+		--color-box-accent-marker: AccentColor;
 		--color-box-accent-header: CanvasText;
 		--color-box-accent-divider: CanvasText;
 
 		/* input-colors in accent-coloured boxes */
 		--input-bg-accent: Canvas;
-		--input-text-accent: CanvasText;
+		--input-text-accent: AccentColorText;
 		--input-border-accent: CanvasText;
-		--input-focus-border-accent: CanvasText;
+		--input-focus-border-accent: AccentColorText;
 
         --button-bg-accent: var(--input-bg-accent);
         --button-text-accent: var(--input-text-accent);
-        --button-bg-accent-hover: var(--input-text-accent);
-        --button-text-accent-hover: var(--input-bg-accent);
+        --button-bg-accent-hover: var(--input-bg-accent);
+        --button-text-accent-hover: var(--input-text-accent);
 
 		/* colours for the coloured boxes with alternative accent */
 		--color-box-accent-alt-header: CanvasText;
@@ -653,14 +656,14 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent-alt: CanvasText;
 		--input-focus-border-accent-alt: CanvasText;
 
-        --button-bg-accent-alt: var(--input-bg-accent-alt);
-        --button-text-accent-alt: var(--input-text-accent-alt);
-        --button-bg-accent-alt-hover: var(--input-text-accent-alt);
-        --button-text-accent-alt-hover: var(--input-bg-accent-alt);
+		--button-bg-accent-alt: var(--input-bg-accent-alt);
+		--button-text-accent-alt: var(--input-text-accent-alt);
+		--button-bg-accent-alt-hover: var(--input-bg-accent-alt);
+		--button-text-accent-alt-hover: var(--input-text-accent-alt);
 
 		/* menu colors */
-		--menu-bg: CanvasText;
-		--menu-text: Canvas;
+		--menu-bg: Canvas;
+		--menu-text: CanvasText;
 		--menu-hover-bg: Canvas;
 		--menu-hover-text: CanvasText;
 		--menu-active-bg: Canvas;
@@ -668,8 +671,8 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--menu-border: CanvasText;
 
 		/* Submenu colors */
-		--submenu-bg: CanvasText;
-		--submenu-text: Canvas;
+		--submenu-bg: Canvas;
+		--submenu-text: CanvasText;
 		--submenu-hover-bg: Canvas;
 		--submenu-hover-text: CanvasText;
 		--submenu-border: CanvasText;
@@ -693,18 +696,81 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
 
 		/* link-colors */
-		--link-color: var(--color-accent);
-		--color-box-gray-link-color: var(--color-accent);
-		--color-box-accent-link-color: var(--color-accent);
-		--color-box-accent-alt-link-color: var(--color-accent-alt);
+		--link-color: LinkTet;
+		--color-box-gray-link-color: LinkText;
+		--color-box-accent-link-color: LinkText;
+		--color-box-accent-alt-link-color: LinkText;
 	}
 }
 
+@supports (-moz-appearance: none) {
+	@media (forced-colors: active) {
+		:root {
+
+		/* forced color headers for firefox */
+		--table-header-bg: CanvasText; 
+		--table-header-text: Canvas;
+
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-header: Canvas;
+		--color-box-accent-alt-divider: Canvas;
+		--color-box-accent-alt-bg: CanvasText;
+		--color-box-accent-alt-bg-overlay: CanvasText;
+		--color-box-accent-alt-text: Canvas;
+		--color-box-accent-alt-marker: Canvas;
+
+		/* Input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: Canvas;
+		--input-text-accent-alt: CanvasText;
+		--input-marker-accent-alt: CanvasText;
+		--input-border-accent-alt: CanvasText;
+		--input-focus-border-accent-alt: CanvasText;
+
+        --button-bg-accent-alt: var(--input-bg-accent-alt);
+        --button-text-accent-alt: var(--input-text-accent-alt);
+        --button-bg-accent-alt-hover: var(--input-text-accent-alt);
+        --button-text-accent-alt-hover: var(--input-bg-accent-alt);
+
+		/* Link color in alternatively colored boxes in forced colors */
+		--color-box-accent-alt-link-color: AccentColor;
+
+		/* menu colors */
+		--menu-bg: CanvasText;
+		--menu-text: Canvas;
+		--menu-hover-bg: Canvas;
+		--menu-hover-text: CanvasText;
+		--menu-active-bg: Canvas;
+		--menu-active-text: CanvasText;
+		--menu-border: CanvasText;
+
+		/* Submenu colors */
+		--submenu-bg: CanvasText;
+		--submenu-text: Canvas;
+		--submenu-hover-bg: Canvas;
+		--submenu-hover-text: CanvasText;
+		--submenu-border: CanvasText;
+
+
+			/* highlighted button for firefox in forced colors*/
+        --button-bg-default-hover: var(--input-text-default);
+	    --button-text-default-hover: var(--input-bg-default);
+        --button-bg-gray-hover: var(--input-text-gray);
+	    --button-text-gray-hover: var(--input-bg-gray);
+        --button-bg-accent-hover: var(--input-text-accent);
+        --button-text-accent-hover: var(--input-bg-accent);
+
+		}
+	}
+}
 /* ================================
    Specify colors for printing
    ================================ */
 @media print {
 	:root {
+		/* accent colors */
+		--color-accent: #6c9a8b;
+		--color-accent-alt: #d8a7b1;
+
 		/* main colors: the text and the background of text */
 		--color-bg-main: #ffffff;
 		--brush-bg-main: #ffffff;
@@ -712,14 +778,15 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--brush-bg-outside: #ffffff;
 		--color-text-main: #000000;
 		--color-marker-main: #000000;
+		--color-title: var(--color-accent);
 
 		/* tables in normal text */
-		--table-header-bg: #e0e0e0; 
+		--table-header-bg: #e0e0e0;
 		--table-header-text: var(--color-text-main);
 		--table-body-odd-bg: #f5f5f5;
-		--table-body-odd-text:var(--color-text-main);
+		--table-body-odd-text: var(--color-text-main);
 		--table-body-even-bg: #eaeaea;
-		--table-body-even-text:var(--color-text-main);
+		--table-body-even-text: var(--color-text-main);
 
 		/* input in normal text */
 		--input-bg-default: #ffffff;
@@ -727,11 +794,11 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-default: #cccccc;
 		--input-focus-border-default: #666666;
 
-	    /* button in normal text */
-	    --button-bg-default: var(--input-bg-default);
-	    --button-text-default: var(--input-text-default);
-        --button-bg-default-hover: #dce3eb;
-	    --button-text-hover: var(--input-text-default);
+		/* button in normal text */
+		--button-bg-default: var(--input-bg-default);
+		--button-text-default: var(--input-text-default);
+		--button-bg-default-hover: #dce3eb;
+		--button-text-hover: var(--input-text-default);
 
 		/* colors in gray boxes */
 		--color-box-gray-bg: #f0f0f0;
@@ -746,14 +813,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-gray: #bdc3c7;
 		--input-focus-border-gray: #7f8c8d;
 
-        --button-bg-gray: var(--input-bg-gray);
-        --button-text-gray: var(--input-text-gray);
-        --button-bg-gray-hover: #cfd6dc;
-        --button-text-hover: var(--input-text-gray);
-
-		/* accent colors */
-		--color-accent: #6c9a8b;
-		--color-accent-alt: #d8a7b1;
+		--button-bg-gray: var(--input-bg-gray);
+		--button-text-gray: var(--input-text-gray);
+		--button-bg-gray-hover: #cfd6dc;
+		--button-text-hover: var(--input-text-gray);
 
 		/* colors in accent-colored boxes */
 		--color-box-accent-bg: #e6f2f0;
@@ -768,13 +831,13 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent: #8fb9b3;
 		--input-focus-border-accent: #2c8c7c;
 
-        --button-bg-accent: var(--input-bg-accent);
-        --button-text-accent: var(--input-text-accent);
-        --button-bg-accent-hover: #3b82f6;
-        --button-text-accent-hover: var(--input-text-accent);
+		--button-bg-accent: var(--input-bg-accent);
+		--button-text-accent: var(--input-text-accent);
+		--button-bg-accent-hover: #3b82f6;
+		--button-text-accent-hover: var(--input-text-accent);
 
 		/* colors in accent-colored boxes with alternative accent */
-		--color-box-accent-alt-bg: #f5eaf0; 
+		--color-box-accent-alt-bg: #f5eaf0;
 		--color-box-accent-alt-text: #4c1f2e;
 		--color-box-accent-alt-marker: #4c1f2e;
 		--color-box-accent-alt-header: #4c1f2e;
@@ -786,10 +849,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--input-border-accent-alt: #a36c8c;
 		--input-focus-border-accent-alt: #c94c7f;
 
-        --button-bg-accent-alt: var(--input-bg-accent-alt);
-        --button-text-accent-alt: var(--input-text-accent-alt);
-        --button-bg-accent-alt-hover: #f97316;
-        --button-text-accent-alt-hover: var(--input-text-accent-alt);
+		--button-bg-accent-alt: var(--input-bg-accent-alt);
+		--button-text-accent-alt: var(--input-text-accent-alt);
+		--button-bg-accent-alt-hover: #f97316;
+		--button-text-accent-alt-hover: var(--input-text-accent-alt);
 
 		/* === menu colors === */
 		--menu-bg: #2c3e50;
@@ -821,7 +884,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
 		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
 		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
-		
+
 		/* link colors */
 		--link-color: var(--color-accent);
 		--color-box-gray-link-color: var(--color-accent);
@@ -1937,6 +2000,22 @@ pre.box-accent-alt-right {
 	outline: none;
 }
 
+/* optimization for forced colors */
+@media (forced-colors: active) {
+	.form-grid button:hover,
+	.form-grid button:focus {
+		outline: 2px solid Highlight;
+	}
+
+	@supports (-moz-appearance: none) {
+		.form-grid button:hover,
+		.form-grid button:focus {
+			outline: none;
+		}
+	}
+}
+
+
 /* Gray variant */
 .box-gray .form-grid button:hover,
 .box-gray .form-grid button:focus {
@@ -1981,6 +2060,15 @@ textarea:focus,
 select:focus {
 	border-color: var(--input-focus-border-default);
 	outline: none;
+}
+
+/* optimization for forced colors */
+@media (forced-colors: active) {
+	input:focus,
+	textarea:focus,
+	select:focus {
+		outline: var(--line-thin) solid Highlight;
+	}
 }
 
 
