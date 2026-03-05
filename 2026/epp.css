@@ -280,6 +280,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--grid-box-radius: 0.5rem;
 	--rounded-radius: 0.5rem;
 	--button-radius: 0.3em;
+
+	--header-link-thickness: 0.128em;
+	--header-link-height: 90%;
+	--header-link-transition: 0.5s;
 }
 
 /* force stacking grid cards on small screens */
@@ -1062,6 +1066,36 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+@media screen and (forced-colors: none) {
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a {
+		text-decoration: none;
+		padding-bottom: var(--header-link-thickness);
+		background-image: linear-gradient(180deg, transparent calc(100% - var(--header-link-thickness)), currentColor 0);
+		background-size: 0 var(--header-link-height);
+		background-repeat: no-repeat;
+		transition: background-size var(--header-link-transition) ease;
+	}
+
+	h1 a:dir(rtl),
+	h2 a:dir(rtl),
+	h3 a:dir(rtl),
+	h4 a:dir(rtl) {
+		background-position-x: right;
+	}
+
+	h1 a:hover,
+	h2 a:hover,
+	h3 a:hover,
+	h4 a:hover {
+		text-decoration: none;
+		background-size: 100% var(--header-link-height);
+		outline: none;
+	}
 }
 
 hr {
