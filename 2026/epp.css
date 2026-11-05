@@ -491,144 +491,144 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 @media (forced-colors: none) {
 	/* ================================
-   Standard: Light color scheme
+	   Standard: Light color scheme
 	   after forced colors, since this
 	   is should be the usual way to 
 	   overwrite forced colors
-   ================================ */
-:root {
-	/* accent colors */
-	--color-accent: #6c9a8b;
-	--color-accent-alt: #d8a3b3;
+	   ================================ */
+	:root {
+		/* accent colors */
+		--color-accent: #6c9a8b;
+		--color-accent-alt: #d8a3b3;
 
-	/* main colors: the text and the background of text */
-	--color-bg-main: #f5f7fa;
-	--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
-	--color-bg-outside: #e0e6ed;
-	--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
-	--color-text-main: #2c3e50;
-	--color-marker-main: var(--color-text-main);
-	--color-title: var(--color-accent);
+		/* main colors: the text and the background of text */
+		--color-bg-main: #f5f7fa;
+		--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
+		--color-bg-outside: #e0e6ed;
+		--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
+		--color-text-main: #2c3e50;
+		--color-marker-main: var(--color-text-main);
+		--color-title: var(--color-accent);
 
-	/* tables in normal text */
-	--table-header-bg: #d0d6dd;
-	--table-header-text: var(--color-text-main);
-	--table-body-odd-bg: #f5f7fa;
-	--table-body-odd-text: var(--color-text-main);
-	--table-body-even-bg: #e0e6ed;
-	--table-body-even-text: var(--color-text-main);
+		/* tables in normal text */
+		--table-header-bg: #d0d6dd;
+		--table-header-text: var(--color-text-main);
+		--table-body-odd-bg: #f5f7fa;
+		--table-body-odd-text: var(--color-text-main);
+		--table-body-even-bg: #e0e6ed;
+		--table-body-even-text: var(--color-text-main);
 
-	/* input in normal text */
-	--input-bg-default: #ffffff;
-	--input-text-default: #333333;
-	--input-border-default: #cccccc;
-	--input-focus-border-default: #666666;
+		/* input in normal text */
+		--input-bg-default: #ffffff;
+		--input-text-default: #333333;
+		--input-border-default: #cccccc;
+		--input-focus-border-default: #666666;
 
-	/* button in normal text */
-	--button-bg-default: var(--input-bg-default);
-	--button-text-default: var(--input-text-default);
-    --button-bg-default-hover: #dce3eb;
-	--button-text-default-hover: var(--input-text-default);
+		/* button in normal text */
+		--button-bg-default: var(--input-bg-default);
+		--button-text-default: var(--input-text-default);
+		--button-bg-default-hover: #dce3eb;
+		--button-text-default-hover: var(--input-text-default);
 
-	/* colors in gray boxes */
-	--color-box-gray-bg: #e0e6ed;
-	--color-box-gray-bg-overlay: #e0e6eda0;
-	--color-box-gray-text: #2c3e50;
-	--color-box-gray-marker: #2c3e50;
-	--color-box-gray-header: #34495e;
-	--color-box-gray-divider: #95a5a6;
+		/* colors in gray boxes */
+		--color-box-gray-bg: #e0e6ed;
+		--color-box-gray-bg-overlay: #e0e6eda0;
+		--color-box-gray-text: #2c3e50;
+		--color-box-gray-marker: #2c3e50;
+		--color-box-gray-header: #34495e;
+		--color-box-gray-divider: #95a5a6;
 
-	/* input colors in gray boxes */
-	--input-bg-gray: #f9f9f9;
-	--input-text-gray: #2c3e50;
-	--input-marker-gray: #2c3e50;
-	--input-border-gray: #bdc3c7;
-	--input-focus-border-gray: #7f8c8d;
+		/* input colors in gray boxes */
+		--input-bg-gray: #f9f9f9;
+		--input-text-gray: #2c3e50;
+		--input-marker-gray: #2c3e50;
+		--input-border-gray: #bdc3c7;
+		--input-focus-border-gray: #7f8c8d;
 
-    --button-bg-gray: var(--input-bg-gray);
-    --button-text-gray: var(--input-text-gray);
-    --button-bg-gray-hover: #cfd6dc;
-    --button-text-gray-hover: var(--input-text-gray);
+		--button-bg-gray: var(--input-bg-gray);
+		--button-text-gray: var(--input-text-gray);
+		--button-bg-gray-hover: #cfd6dc;
+		--button-text-gray-hover: var(--input-text-gray);
 
-	/* colors in accent-colored boxes */
-	--color-box-accent-bg: #dbece6;
-	--color-box-accent-bg-overlay: #dbece6a0;
-	--color-box-accent-text: #1c3d2e;
-	--color-box-accent-marker: #1c3d2e;
-	--color-box-accent-header: #145c4c;
-	--color-box-accent-divider: #8fb9b3;
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: #dbece6;
+		--color-box-accent-bg-overlay: #dbece6a0;
+		--color-box-accent-text: #1c3d2e;
+		--color-box-accent-marker: #1c3d2e;
+		--color-box-accent-header: #145c4c;
+		--color-box-accent-divider: #8fb9b3;
 
-	/* input-colors in accent-coloured boxes */
-	--input-bg-accent: #e6f2f0;
-	--input-text-accent: #145c4c;
-	--input-border-accent: #8fb9b3;
-	--input-focus-border-accent: #2c8c7c;
+		/* input-colors in accent-coloured boxes */
+		--input-bg-accent: #e6f2f0;
+		--input-text-accent: #145c4c;
+		--input-border-accent: #8fb9b3;
+		--input-focus-border-accent: #2c8c7c;
 
-    --button-bg-accent: var(--input-bg-accent);
-    --button-text-accent: var(--input-text-accent);
-    --button-bg-accent-hover: #3b82f6;
-    --button-text-accent--hover: var(--input-text-accent);
+		--button-bg-accent: var(--input-bg-accent);
+		--button-text-accent: var(--input-text-accent);
+		--button-bg-accent-hover: #3b82f6;
+		--button-text-accent--hover: var(--input-text-accent);
 
-	/* colours for the coloured boxes with alternative accent */
-	--color-box-accent-alt-header: #8c2c4c;
-	--color-box-accent-alt-divider: #d8a3b3;
-	--color-box-accent-alt-bg: #f5e3e8;
-	--color-box-accent-alt-bg-overlay: #f5e3e8a0;
-	--color-box-accent-alt-text: #4c1f2c;
-	--color-box-accent-alt-marker: #4c1f2c;
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-header: #8c2c4c;
+		--color-box-accent-alt-divider: #d8a3b3;
+		--color-box-accent-alt-bg: #f5e3e8;
+		--color-box-accent-alt-bg-overlay: #f5e3e8a0;
+		--color-box-accent-alt-text: #4c1f2c;
+		--color-box-accent-alt-marker: #4c1f2c;
 
-	/* Input-colors in altrnatively coloured boxes */
-	--input-bg-accent-alt: #f9eef1;
-	--input-text-accent-alt: #8c2c4c;
-	--input-marker-accent-alt: #8c2c4c;
-	--input-border-accent-alt: #d8a3b3;
-	--input-focus-border-accent-alt: #b34c6d;
+		/* Input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: #f9eef1;
+		--input-text-accent-alt: #8c2c4c;
+		--input-marker-accent-alt: #8c2c4c;
+		--input-border-accent-alt: #d8a3b3;
+		--input-focus-border-accent-alt: #b34c6d;
 
-    --button-bg-accent-alt: var(--input-bg-accent-alt);
-    --button-text-accent-alt: var(--input-text-accent-alt);
-    --button-bg-accent-alt-hover: #f97316;
-    --button-text-accent-alt-hover: var(--input-text-accent-alt);
+		--button-bg-accent-alt: var(--input-bg-accent-alt);
+		--button-text-accent-alt: var(--input-text-accent-alt);
+		--button-bg-accent-alt-hover: #f97316;
+		--button-text-accent-alt-hover: var(--input-text-accent-alt);
 
-	/* === menu colors === */
-	--menu-bg: #2c3e50;
-	--menu-text: #ecf0f1;
-	--menu-hover-bg: #34495e;
-	--menu-hover-text: #ffffff;
-	--menu-active-bg: #1abc9c;
-	--menu-active-text: #ffffff;
-	--menu-border: #1f2d3a;
+		/* === menu colors === */
+		--menu-bg: #2c3e50;
+		--menu-text: #ecf0f1;
+		--menu-hover-bg: #34495e;
+		--menu-hover-text: #ffffff;
+		--menu-active-bg: #1abc9c;
+		--menu-active-text: #ffffff;
+		--menu-border: #1f2d3a;
 
-	/* Submenu colors */
-	--submenu-bg: #3b4a59;
-	--submenu-text: #ecf0f1;
-	--submenu-hover-bg: #4b5a69;
-	--submenu-hover-text: #ffffff;
-	--submenu-border: #2c3e50;
+		/* Submenu colors */
+		--submenu-bg: #3b4a59;
+		--submenu-text: #ecf0f1;
+		--submenu-hover-bg: #4b5a69;
+		--submenu-hover-text: #ffffff;
+		--submenu-border: #2c3e50;
 
-	/* grid-boxess */
-	--grid-box-bg: var(--color-box-gray-bg);
-	--grid-box-border: var(--color-box-gray-bg);
-	--grid-box-text: var(--color-box-accent-text);
-	--grid-box-marker: var(--color-box-accent-text);
-	--grid-box-header: var(--color-box-gray-header);
-	--grid-box-accent-bg: var(--color-box-accent-bg);
-	--grid-box-accent-border: var(--color-box-accent-bg);
-	--grid-box-accent-text: var(--color-box-accent-text);
-	--grid-box-accent-marker: var(--color-box-accent-text);
-	--grid-box-accent-header: var(--color-box-accent-header);
-	--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
-	--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
-	--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
-	--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
-	--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
-	--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+		/* grid-boxess */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-marker: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-marker: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
 	
-	/* link-colors */
-	--link-color: var(--color-accent);
-	--color-box-gray-link-color: var(--color-accent);
-	--color-box-accent-link-color: var(--color-accent);
-	--color-box-accent-alt-link-color: var(--color-accent-alt);
-}
+		/* link-colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
+	}
 }
 
 /* ================================
@@ -2485,6 +2485,43 @@ nav.menu li ul a:hover {
 }
 
 .image-box:has(.image-caption-accent-alt) .image-content .image-credits {
+	background-color: var(--color-box-accent-alt-bg-overlay);
+	color: var(--color-box-accent-alt-text);
+}
+
+/* screen media optimization for image boxes within colored boxes */
+.box-gray .image-box .image-content:has(.image-credits)::after,
+.box-gray-full .image-box .image-content:has(.image-credits)::after{
+	background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
+	color: var(--color-box-gray-text);
+}
+
+.box-accent .image-box .image-content:has(.image-credits)::after,
+.box-accent-full .image-box .image-content:has(.image-credits)::after{
+	background: linear-gradient(to top, var(--color-box-accent-bg-overlay), transparent);
+	color: var(--color-box-accent-text);
+}
+
+.box-accent-alt .image-box .image-content:has(.image-credits)::after,
+.box-accent-alt-full .image-box .image-content:has(.image-credits)::after{
+	background: linear-gradient(to top, var(--color-box-accent-alt-bg-overlay), transparent);
+	color: var(--color-box-accent-alt-text);
+}
+
+.box-gray .image-box .image-content .image-credits,
+.box-gray-full .image-box .image-content .image-credits {
+	background-color: var(--color-box-gray-bg-overlay);
+	color: var(--color-box-gray-text);
+}
+
+.box-accent .image-box .image-content .image-credits,
+.box-accent-full .image-box .image-content .image-credits {
+	background-color: var(--color-box-accent-bg-overlay);
+	color: var(--color-box-accent-text);
+}
+
+.box-accent-alt .image-box .image-content .image-credits,
+.box-accent-alt-full .image-box .image-content .image-credits {
 	background-color: var(--color-box-accent-alt-bg-overlay);
 	color: var(--color-box-accent-alt-text);
 }
