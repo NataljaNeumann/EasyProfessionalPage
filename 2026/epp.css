@@ -1385,6 +1385,35 @@ table tbody tr:nth-child(even) {
 	clear: both;
 }
 
+/* formatting of the first box of the page */
+.main > .box-gray:first-child:has(> nav:first-child),
+.main > .box-gray-full:first-child:has(> nav:first-child),
+.main > .box-gray-wide:first-child:has(> nav:first-child),
+.main > .box-gray-left:first-child:has(> nav:first-child),
+.main > .box-gray-right:first-child:has(> nav:first-child),
+.main > .box-accent:first-child:has(> nav:first-child),
+.main > .box-accent-wide:first-child:has(> nav:first-child),
+.main > .box-accent-full:first-child:has(> nav:first-child),
+.main > .box-accent-left:first-child:has(> nav:first-child),
+.main > .box-accent-right:first-child:has(> nav:first-child),
+.main > .box-accent-alt:first-child:has(> nav:first-child),
+.main > .box-accent-alt-wide:first-child:has(> nav:first-child),
+.main > .box-accent-alt-full:first-child:has(> nav:first-child),
+.main > .box-accent-alt-left:first-child:has(> nav:first-child),
+.main > .box-accent-alt-right:first-child:has(> nav:first-child) {
+	padding-top: 0;
+}
+
+/* formatting of the menu in first box of the page */
+.main > .box-gray-full:first-child > nav:first-child:not(nav *),
+.main > .box-accent-full:first-child > nav:first-child:not(nav *),
+.main > .box-accent-alt-full:first-child > nav:first-child:not(nav *)
+{
+	padding-left: calc( 3 * var(--spacing-element));
+	padding-right: calc( 3 * var(--spacing-element));
+	margin-left: calc( -3 * var(--spacing-element));
+	margin-right: calc( -3 * var(--spacing-element));
+}
 
 
 /* half-width gray box at left side */
