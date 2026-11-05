@@ -458,10 +458,10 @@
             <bdo dir="ltr" translate="no">--font-title</bdo> Font for the main title of the page.
         </p>
         <p lang="en">
-            By defining these variables, you can easily change the overall typography of your web page, however you can also change
-            fonts of specific elements, by specification of the fonts in the styles of these elements. You can also define a font
-            by using another font variable. The stylesheet already defines some fonts that you can use, when you include and
-            install the corresponding fonts. Please have a look at the licence of the fonts.
+            By defining these variables, you can easily change the overall typography of your web page, however you can also change fonts of specific elements, by specification of the fonts in the styles of these elements. You can also define a font by using another font variable. The stylesheet already defines some fonts that you can use, when you include and install the corresponding fonts. Please have a look at the licence of the fonts.
+        </p>
+        <p lang="en">
+            ATTENTION! I ADDED ONLY ONE FONT WEIGHT OF EACH OF THE FONTS TO THE CSS AND ONLY ONE FONT STYLE. IF YOU USE THESE FONTS YOU NEED TO ADD OTHER WEIGHTS AND OTHER FONT STYLE.
         </p>
         <p lang="en">Finally you can use the font variables on the elements themselves, by adding <cite lang="" dir="ltr">style</cite> attribute</p>
 <pre class="box-gray-right" lang="" dir="ltr">
@@ -487,8 +487,8 @@
         <p lang="en">In CSS, em and <bdo lang="" translate="no" dir="ltr">rem</bdo> are relative units used for sizing elements like fonts, margins, and padding. Both are scalable, making them ideal for responsive design.</p>
         <p lang="en">The em unit is relative to the font size of the element’s parent. For example, if a parent element has a font size of 16px, then 1em equals 16px, and 2em equals 32px. However, since em is relative to its parent, nested elements can compound sizes, which may lead to unexpected results if not managed carefully.</p>
         <p lang="en">
-            The <bdo lang="" translate="no" dir="ltr">rem</bdo> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html>
-            element. If the root font size is 16px (the browser default), then <bdo lang="" translate="no" dir="ltr">1rem</bdo> equals 16px regardless of nesting. This makes <bdo lang="" translate="no" dir="ltr">rem</bdo> more predictable and easier to maintain in large projects.
+            The <bdo lang="" translate="no" dir="ltr">rem</bdo> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html> element.
+            If the root font size is 16px (the browser default), then <bdo lang="" translate="no" dir="ltr">1rem</bdo> equals 16px regardless of nesting. This makes <bdo lang="" translate="no" dir="ltr">rem</bdo> more predictable and easier to maintain in large projects.
         </p>
 
         <h3 lang="en">Typical Sizes by Device (assuming 1rem = 16px):</h3>
@@ -802,9 +802,7 @@
         </table>
         <h2 id="elements-std" lang="en">Standard HTML Elements</h2>
         <p lang="en">
-            Below you can find a standard list of html tags that you can use in your pages
-            without specification of classes and styles. These will be automatically styled to the theme of the page.
-            More examples of HTML tags can be found at
+            Below you can find a standard list of html tags that you can use in your pages without specification of classes and styles. These will be automatically styled to the theme of the page. More examples of HTML tags can be found at
             <bdo lang="" translate="no" dir="ltr"><a href="https://www.w3schools.com/html/html_examples.asp">w3schools</a></bdo>
         </p>
         <h3 lang="en">Headings and Text Structure</h3>
@@ -818,7 +816,7 @@
             </thead>
             <tbody lang="en">
                 <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;h1> .. &lt;h4></td><td lang="en">Headings used to structure content hierarchically. <bdo dir="ltr" lang="" translate="no">&lt;h1></bdo> is the most important (e.g., page title), followed by <bdo dir="ltr" lang="" translate="no">&lt;h2></bdo> to <bdo dir="ltr" lang="" translate="no">&lt;h4></bdo> for subheadings.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;p></td><td lang="en">Paragraph element for blocks of text.</td></tr>
+                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;p></td><td lang="en">Paragraph element for blocks of text. Translation services create better translations, if a paragraph is stored completely in one line. If there are line breaks in the HTML source, even not visible to visitors of the page, it disturbs translator engines. If line breaks are needed, these should be done after a complete sentence, so between sentences.</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;b></td><td lang="en">Bold text for emphasis (visual only, no semantic meaning).</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;i></td><td>Italic text for emphasis or stylistic use (also visual only).</td></tr>
                 <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;pre></td><td lang="en">Preformatted text block that preserves whitespace and line breaks — often used for code or ASCII art.</td></tr>
@@ -876,8 +874,12 @@
         <p lang="en">
             Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
         </p>
-        <h2 id="elements-image-links">Image links</h2>
-        <p>To make an image clickable—so that it acts as a hyperlink—you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
+        <h2 id="elements-image-links"><a href="#elements-std">Links in headers</a></h2>
+        <p>
+            A link in a header has speacial appearance in modern browsers, you can try it out!
+        </p>
+        <h2 id="elements-image-links">Image Links</h2>
+        <p>To make an image clickable — so that it acts as a hyperlink — you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
         <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
         <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;
     &lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>
@@ -1171,27 +1173,15 @@
         <p lang="en">Copyright &copy; 2025-2026 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
 
         <p lang="en">
-            Permission is hereby granted, free of charge, to any person obtaining a copy
-            of this software and associated documentation files (the "Software"), to deal
-            in the Software without restriction, including without limitation the rights
-            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-            copies of the Software, and to permit persons to whom the Software is
-            furnished to do so, subject to the following conditions:
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
         </p>
 
         <p lang="en">
-            The above copyright notice and this permission notice shall be included in all
-            copies or substantial portions of the Software.
+            The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
         </p>
 
         <p lang="en">
-            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-            SOFTWARE.
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </p>
 
 
