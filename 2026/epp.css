@@ -272,7 +272,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 
 	/* Page specific fonts and sizes */
-	--font-primary-size: clamp(1rem, 0.85rem + 0.75vw, 3rem);
+	--font-primary-size: clamp(1rem, 0.5rem + 0.8vw, 3rem);
 	@media print {
 		--font-primary-size: 0.75rem;
 	}
@@ -284,7 +284,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 	--spacing-element: calc( 2 * var(--font-primary-size));
 	--padding-box: calc(1.5 * var(--font-primary-size));
-	--width-desktop: calc(60 * var(--font-primary-size));
+	--width-desktop: calc(70 * var(--font-primary-size));
 	--width-main: calc(var(--width-desktop) - 6 * var(--spacing-element));
 	--width-box-grid: calc(29 * var(--font-primary-size));
 	--width-half-column: 45%;
