@@ -270,18 +270,51 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--font-oswald: 'Oswald', 'Franklin Gothic Medium', 'Arial Black', 'Segoe UI', sans-serif;
 
 
-
 	/* Page specific fonts and sizes */
+	/* primary font size for the latin, cyrillic, greek, hebrew letters */
 	--font-primary-size: clamp(1rem, 0.5rem + 0.8vw, 3rem);
+	/* other primary font sizes for other cultures, so the glyphs are visible well */
+	:lang(zh-TW),
+	:lang(or),
+	:lang(si)
+	{
+		--font-primary-size: clamp(1.5rem, 0.75rem + 0.8vw, 3rem);
+	}
+	:lang(zh-CN),
+	:lang(ar),
+	:lang(mr),
+	:lang(ur),
+	:lang(ps),
+	:lang(sd),
+	:lang(ug),
+	:lang(pa-PK),
+	:lang(fa),
+	:lang(ja),
+	:lang(as),
+	:lang(bn),
+	:lang(km),
+	:lang(lo),
+	:lang(th),
+	:lang(kn) {
+		--font-primary-size: clamp(1.2rem, 0.6rem + 0.8vw, 3rem);
+	}
+	:lang(dz),
+	:lang(bo) {
+		--font-primary-size: clamp(2rem, 1rem + 0.8vw, 4rem);
+	}
 	@media print {
 		--font-primary-size: 0.75rem;
 	}
 	--font-primary: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+	--letter-spacing-primary: 0em;
+	--line-height-primary: 1.2;
 	--font-secondary: 'Georgia', 'Times New Roman', 'Cambria', 'Noto Serif', 'Liberation Serif', serif;
+	--letter-spacing-secondary: 0em;
+	--line-height-secondary: 1.2;
 	--font-title: var(--font-secondary);
+	--letter-spacing-title: 0em;
+	--line-height-title: var(--line-height-secondary);
 	
-
-
 	--spacing-element: calc( 2 * var(--font-primary-size));
 	--padding-box: calc(1.5 * var(--font-primary-size));
 	--width-desktop: calc(70 * var(--font-primary-size));
@@ -975,6 +1008,27 @@ li::marker {
 	display: table;
 	clear: both;
 	font-size: var(--font-primary-size);
+	letter-spacing: var(--letter-spacing-primary);
+	line-height: calc(var(--font-primary-size) * var(--line-height-primary));
+}
+
+
+html,
+html:lang(he),
+html:lang(ja),
+html:lang(zh),
+html:lang(dz),
+html:lang(bo),
+html:lang(ko),
+html:lang(hi),
+html:lang(pa),
+html:lang(ar),
+html:lang(fa), 
+html:lang(ps),
+html:lang(mt),
+html:lang(pa-PK),
+html:lang(ur) {
+	font-size: 1rem;
 }
 
 @media screen {
@@ -1021,39 +1075,48 @@ p:not(p *) {
 }
 
 
-h1, h2, h3, h4 {
+.main h1, .main h2, .main h3, .main h4 {
 	font-family: var(--font-secondary);
 	color: var(--color-accent);
 	margin-top: var(--spacing-element);
 	margin-bottom: 0.5em;
+	letter-spacing: var(--letter-spacing-secondary);
 }
 
-h1 {
+.main h1 {
 	font-family: var(--font-title);
 	font-size: calc(3 * var(--font-primary-size));
+	line-height: calc(var(--line-height-title) * 3 * var(--font-primary-size));
+	letter-spacing: var(--letter-spacing-title);
 }
 
-h2 {
+.main h2 {
 	font-size: calc(2 * var(--font-primary-size));
+	line-height: calc(var(--line-height-secondary) * 2 * var(--font-primary-size));
 }
 
 /* mobile optimization */
 @media (max-width: 35rem) {
-	h1 {
+	.main h1 {
 		font-size: calc(2 * var(--font-primary-size));
+		line-height: calc(var(--line-height-title) * 2 * var(--font-primary-size));
 	}
 
-	h2 {
+	.main h2 {
 		font-size: calc(1.75 * var(--font-primary-size));
+		line-height: calc(var(--line-height-secondary) * 1.75 * var(--font-primary-size));
 	}
 }
 
-h3 {
+.main h3 {
 	font-size: calc(1.5 * var(--font-primary-size));
+	line-height: calc(var(--line-height-secondary) * 1.75 * var(--font-primary-size));
 }
 
-h4 {
+
+.main h4 {
 	font-size: calc(1.25 * var(--font-primary-size));
+	line-height: calc(var(--line-height-secondary) * 1.25 * var(--font-primary-size));
 }
 
 ul, ol {
