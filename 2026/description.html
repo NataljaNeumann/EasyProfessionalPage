@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <title>Instructions for epp.css</title>
     <link rel="stylesheet" href="epp.css" />
-    <style type="text/css">
-        :root {
-            --font-primary-size: clamp(1rem, 0.85rem + 0.5vw, 2rem);
-        }
-    </style>
     <script>  
         window.onload = function () {
             setTimeout(function () {
@@ -323,44 +318,45 @@
 <body>
     <div class="main">
         <p class="box-accent-alt">
-            This variant of the <bdo lang="" translate="no" dir="ltr">epp.css</bdo> is work in progress. Everything can change without prior notice.
+            This variant of the <bdo translate="no" dir="ltr">epp.css</bdo> is work in progress. Everything can change without prior notice.
             If you need a stable version please refer to the variant of the year <a href="../2025/description.html">2025</a>.
         </p>
-        <h1>Instructions for an easy web page creation with help of <bdo lang="" translate="no" dir="ltr">epp.css</bdo></h1>
-        <nav class="menu" lang="en">
-            <ul lang="en">
-                <li lang="en"><a href="#start" lang="en">Html</a></li>
-                <li lang="en">
-                    <a href="#vars" lang="en">Variables</a>
-                    <ul lang="en">
-                        <li lang="en"><a href="#vars-fonts" lang="en">Fonts</a></li>
-                        <li lang="en"><a href="#vars-sizes" lang="en">Sizes</a></li>
-                        <li lang="en"><a href="#vars-colors" lang="en">Colors</a></li>
+        <h1>Instructions for an easy web page creation with help of <bdo  translate="no" dir="ltr">epp.css</bdo></h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="#start">Html</a></li>
+                <li>
+                    <a href="#vars">Variables</a>
+                    <ul>
+                        <li><a href="#vars-scaling">Scaling</a></li>
+                        <li><a href="#vars-fonts">Fonts</a></li>
+                        <li><a href="#vars-sizes">Sizes</a></li>
+                        <li><a href="#vars-colors">Colors</a></li>
                     </ul>
                 </li>
-                <li lang="en">
-                    <a href="#elements" lang="en">Elements</a>
-                    <ul lang="en">
-                        <li lang="en"><a href="#elements-std" lang="en">Standard</a></li>
-                        <li lang="en"><a href="#elements-images" lang="en">Images</a></li>
-                        <li lang="en"><a href="#elements-boxes" lang="en">Boxes</a></li>
-                        <li lang="en"><a href="#elements-notches" lang="en">Notches</a></li>
-                        <li lang="en"><a href="#elements-cards" lang="en">Cards</a></li>
-                        <li lang="en"><a href="#elements-forms" lang="en">Forms</a></li>
+                <li>
+                    <a href="#elements">Elements</a>
+                    <ul>
+                        <li><a href="#elements-std">Standard</a></li>
+                        <li><a href="#elements-images">Images</a></li>
+                        <li><a href="#elements-boxes">Boxes</a></li>
+                        <li><a href="#elements-notches">Notches</a></li>
+                        <li><a href="#elements-cards">Cards</a></li>
+                        <li><a href="#elements-forms">Forms</a></li>
                     </ul>
                 </li>
-                <li lang="en"><a href="#licence" lang="en">License</a></li>
+                <li><a href="#licence">License</a></li>
             </ul>
         </nav>
 
-        <h2 id="start" lang="en">Basic Structure of HTML Document</h2>
-        <pre class="box-gray-right" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" class="notranslate" lang="">&lt;!DOCTYPE html>
-&lt;html lang="</bdo><bdi lang="en">..your language abbreviation..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">"
-       dir="</bdo><bdi lang="en">..your text writing direction..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">">
+        <h2 id="start">Basic Structure of HTML Document</h2>
+        <pre class="box-gray-right" dir="ltr">
+<bdo dir="ltr" translate="no">&lt;!DOCTYPE html>
+&lt;html lang="</bdo><bdi tranalate="yes">..your language abbreviation..</bdi><bdo dir="ltr" translate="no">"
+       dir="</bdo><bdi tranalate="yes">..your text writing direction..</bdi><bdo dir="ltr" translate="no" class="notranslate">">
 &lt;head>
     &lt;meta charset="UTF-8">
-    &lt;title></bdo><bdi lang="en">..Your title for the page..</bdi><bdo dir="ltr" translate="no" class="notranslate" lang="">/title>
+    &lt;title></bdo><bdi tranalate="yes">..Your title for the page..</bdi><bdo dir="ltr" translate="no" class="notranslate">/title>
     &lt;link rel="stylesheet" href="epp.css" />
 &lt;/head>
 &lt;body>
@@ -370,41 +366,41 @@
 &lt;/body>
 &lt;/html></bdo>
 </pre>
-        <p lang="en">To create an empty HTML document with the needed structure and styles, follow these steps:</p>
-        <ul lang="en">
-            <li lang="en">Start with the doctype declaration to define the document as HTML5</li>
-            <li lang="en">
+        <p>To create an empty HTML document with the needed structure and styles, follow these steps:</p>
+        <ul>
+            <li>Start with the doctype declaration to define the document as HTML5</li>
+            <li>
                 tag and specify the language (e.g.,
-                <ul lang="en">
-                    <li><bdo dir="ltr" translate="no">en</bdo> <span lang="en">for English</span></li>
-                    <li><bdo dir="ltr" translate="no">fr</bdo> <span lang="en">for French</span></li>
-                    <li><bdo dir="ltr" translate="no">es</bdo> <span lang="en">for Spanish</span></li>
-                    <li><bdo dir="ltr" translate="no">pt</bdo> <span lang="en">for Portuguese</span></li>
-                    <li><bdo dir="ltr" translate="no">de</bdo> <span lang="en">for German</span></li>
-                    <li><bdo dir="ltr" translate="no">it</bdo> <span lang="en">for Italian</span></li>
-                    <li><bdo dir="ltr" translate="no">zh</bdo> <span lang="en">for Chinese</span></li>
-                    <li><bdo dir="ltr" translate="no">ja</bdo> <span lang="en">for Japanese</span></li>
-                    <li><bdo dir="ltr" translate="no">ru</bdo> <span lang="en">for Russian</span></li>
-                    <li><bdo dir="ltr" translate="no">ar</bdo> <span lang="en">for Arabic</span></li>
-                    <li><bdo dir="ltr" translate="no">hi</bdo> <span lang="en">for Hindi</span></li>
-                    <li lang="en">and so on, you can find a complete list in Internet...</li>
+                <ul>
+                    <li><bdo dir="ltr" translate="no">"en"</bdo> for English</li>
+                    <li><bdo dir="ltr" translate="no">"fr"</bdo> for French</li>
+                    <li><bdo dir="ltr" translate="no">"es"</bdo> for Spanish</li>
+                    <li><bdo dir="ltr" translate="no">"pt"</bdo> for Portuguese</li>
+                    <li><bdo dir="ltr" translate="no">"de"</bdo> for German</li>
+                    <li><bdo dir="ltr" translate="no">"it"</bdo> for Italian</li>
+                    <li><bdo dir="ltr" translate="no">"zh"</bdo> for Chinese</li>
+                    <li><bdo dir="ltr" translate="no">"ja"</bdo> for Japanese</li>
+                    <li><bdo dir="ltr" translate="no">"ru"</bdo> for Russian</li>
+                    <li><bdo dir="ltr" translate="no">"ar"</bdo> for Arabic</li>
+                    <li><bdo dir="ltr" translate="no">"hi"</bdo> for Hindi</li>
+                    <li>and so on, you can find a complete list in Internet...</li>
                 </ul>
             </li>
-            <li lang="en">Set the text direction in the dir attribute, e.g.  <bdo lang="" dir="ltr">"ltr"</bdo> for left-to-right or  <bdo lang="" dir="ltr">"rtl"</bdo> for right-to-left</li>
-            <li lang="en">
+            <li>Set the text direction in the dir attribute, e.g.  <bdo  dir="ltr">"ltr"</bdo> for left-to-right or  <bdo  dir="ltr">"rtl"</bdo> for right-to-left</li>
+            <li>
                 Include a header specification, including following elements:
-                <ul lang="en">
-                    <li lang="en">Character encoding (usually <bdo lang="" translate="no" dir="ltr">UTF-8</bdo>)</li>
-                    <li lang="en">Title for the page</li>
-                    <li lang="en">Link to an external CSS file named <bdo lang="" translate="no" dir="ltr">epp.css</bdo></li>
+                <ul>
+                    <li>Character encoding (usually <bdo  translate="no" dir="ltr">UTF-8</bdo>)</li>
+                    <li>Title for the page</li>
+                    <li>Link to an external CSS file named <bdo  translate="no" dir="ltr">epp.css</bdo></li>
                 </ul>
-            <li lang="en">
+            <li>
                 Include a <bdo dir="ltr" translate="no">body</bdo> section with:
-                <ul lang="en">
-                    <li lang="en">Include a <bdo lang="" dir="ltr">&lt;div&gt;</bdo> element with <bdo dir="ltr" translate="no">class="main"</bdo> to contain the main content of the page</li>
+                <ul>
+                    <li>Include a <bdo  dir="ltr">&lt;div&gt;</bdo> element with <bdo dir="ltr" translate="no">class="main"</bdo> to contain the main content of the page</li>
                 </ul>
             </li>
-            <li lang="en">Close the HTML document by writing <bdo lang="" translate="no" dir="ltr">&lt;/div>&lt;body>&lt;html></bdo></li>
+            <li>Close the HTML document by writing <bdo  translate="no" dir="ltr">&lt;/div>&lt;body>&lt;html></bdo></li>
         </ul>
         <h3>What the Page Will Look Like</h3>
         <p>With the provided CSS variables and styles, here's how the page will appear:</p>
@@ -423,10 +419,10 @@
             <li>Padding inside the main area is defined by "<bdo dir="ltr" translate="no">--spacing-element</bdo>" variable</li>
             <li>Takes up at least the full height of the viewport, ensuring it fills the screen even with no content</li>
         </ul>
-        <h2 id="vars-fonts" lang="en" id="vars">Font Variables</h2>
-        <pre class="box-gray-left" lang="" dir="ltr">
-/* <bdi lang="en">Font Variables</bdi> */
-<bdo dir="ltr" translate="no" class="notranslate" lang="">--font-merriweather: 'Merriweather', Georgia, serif;
+        <h2 id="vars-fonts"  id="vars">Font Variables</h2>
+        <pre class="box-gray-left"  dir="ltr">
+/* <bdi>Font Variables</bdi> */
+<bdo dir="ltr" translate="no" class="notranslate">--font-merriweather: 'Merriweather', Georgia, serif;
 --font-playfair: 'Playfair Display', 'Times New Roman', serif;
 --font-lora: 'Lora', Cambria, serif;
 --font-crimson: 'Crimson Pro', 'Palatino Linotype', serif;
@@ -447,90 +443,93 @@
 --font-bebas: 'Bebas Neue', Impact, sans-serif;
 --font-oswald: 'Oswald', 'Franklin Gothic Medium', sans-serif;</bdo>
 
-/* <bdi lang="en">Primary and Secondary Fonts for the web page</bdi> */
+/* <bdi>Primary and Secondary Fonts for the web page</bdi> */
 <bdo dir="ltr" translate="no">--font-primary: 'Segoe UI', 'Roboto', sans-serif;
 --font-secondary: 'Georgia', serif;
 --font-title: 'Georgia', serif;</bdo>
 </pre>
-        <p lang="en">
-            You can customize the fonts used in your web page by modifying CSS variables in the <bdo lang="" dir="ltr">epp.css</bdo> file.
-            If you include <bdo lang="" translate="no" dir="ltr">@font-face</bdo> rules in your CSS, you can use custom fonts as well.
+        <p>
+            You can customize the fonts used in your web page by modifying CSS variables in the <bdo  dir="ltr">epp.css</bdo> file.
+            If you include <bdo  translate="no" dir="ltr">@font-face</bdo> rules in your CSS, you can use custom fonts as well.
             The page uses the following font variables:
         </p>
-        <p lang="en">
+        <p>
             <bdo dir="ltr" translate="no" class="notranslate">--font-primary</bdo> Main font for body text and most elements.<br />
             <bdo dir="ltr" translate="no">--font-secondary</bdo> Secondary font for headings and special elements.
             <bdo dir="ltr" translate="no">--font-title</bdo> Font for the main title of the page.
         </p>
-        <p lang="en">
+        <p>
             By defining these variables, you can easily change the overall typography of your web page, however you can also change fonts of specific elements, by specification of the fonts in the styles of these elements. You can also define a font by using another font variable. The stylesheet already defines some fonts that you can use, when you include and install the corresponding fonts. Please have a look at the licence of the fonts.
         </p>
-        <p lang="en">
+        <p>
             ATTENTION! I ADDED ONLY ONE FONT WEIGHT OF EACH OF THE FONTS TO THE CSS AND ONLY ONE FONT STYLE. IF YOU USE THESE FONTS YOU NEED TO ADD OTHER WEIGHTS AND OTHER FONT STYLE.
         </p>
-        <p lang="en">Finally you can use the font variables on the elements themselves, by adding <cite lang="" dir="ltr">style</cite> attribute</p>
-<pre class="box-gray-right" lang="" dir="ltr">
-/* <bdi lang="en">Using a variable for defining another variable in CSS</bdi> */
+        <p>Finally you can use the font variables on the elements themselves, by adding <cite  dir="ltr">style</cite> attribute</p>
+        <h2 id="vars-scaling">Scaling variables</h2>
+        <p> There is a variable that scales the used font size, and along with it all other elements. You can choose the formula. If you set <bdo translate="no" dir="ltr">--font-primary-size</bdo> to 1rem, then the size of the font won't be changed.
+        You can choose a different formula. Current formula will scale the font size, based on the width of the viewport (windows)</p>
+<pre class="box-gray-right"  dir="ltr">
+/* <bdi>Using a variable for defining another variable in CSS</bdi> */
         <bdo dir="ltr" translate="no">--font-primary: var(--font-playfair);</bdo>
 </pre>
-<pre class="box-gray-right" lang="" dir="ltr">
-/* <bdi lang="en">specification of specific font for main header in CSS</bdi> */
+<pre class="box-gray-right"  dir="ltr">
+/* <bdi>specification of specific font for main header in CSS</bdi> */
 <bdo dir="ltr" translate="no">h1 {
   font-family: var(--font-playfair);
   font-weight: bold;
 }</bdo>
 </pre>
-<pre class="box-gray-right" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">specification of specific font for a div in HTML,
+<pre class="box-gray-right"  dir="ltr">
+&lt;!-- <bdi>specification of specific font for a div in HTML,
     in this case the primary font </bdi> -->
 
 <bdo dir="ltr" translate="no">&lt;div style="font-family: var(--font-primary);"&gt;</bdo>
     This text uses the primary font.
 &lt;/div>
 </pre>
-        <h2 id="vars-sizes" lang="en">Size variables</h2>
-        <p lang="en">In CSS, em and <bdo lang="" translate="no" dir="ltr">rem</bdo> are relative units used for sizing elements like fonts, margins, and padding. Both are scalable, making them ideal for responsive design.</p>
-        <p lang="en">The em unit is relative to the font size of the element’s parent. For example, if a parent element has a font size of 16px, then 1em equals 16px, and 2em equals 32px. However, since em is relative to its parent, nested elements can compound sizes, which may lead to unexpected results if not managed carefully.</p>
-        <p lang="en">
-            The <bdo lang="" translate="no" dir="ltr">rem</bdo> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html> element.
-            If the root font size is 16px (the browser default), then <bdo lang="" translate="no" dir="ltr">1rem</bdo> equals 16px regardless of nesting. This makes <bdo lang="" translate="no" dir="ltr">rem</bdo> more predictable and easier to maintain in large projects.
+        <h2 id="vars-sizes">Size variables</h2>
+        <p>In CSS, em and <bdo  translate="no" dir="ltr">rem</bdo> are relative units used for sizing elements like fonts, margins, and padding. Both are scalable, making them ideal for responsive design.</p>
+        <p>The em unit is relative to the font size of the element’s parent. For example, if a parent element has a font size of 16px, then 1em equals 16px, and 2em equals 32px. However, since em is relative to its parent, nested elements can compound sizes, which may lead to unexpected results if not managed carefully.</p>
+        <p>
+            The <bdo  translate="no" dir="ltr">rem</bdo> unit stands for “root em” and is always relative to the root element’s font size—typically the &lt;html> element.
+            If the root font size is 16px (the browser default), then <bdo  translate="no" dir="ltr">1rem</bdo> equals 16px regardless of nesting. This makes <bdo  translate="no" dir="ltr">rem</bdo> more predictable and easier to maintain in large projects.
         </p>
 
-        <h3 lang="en">Typical Sizes by Device (assuming 1rem = 16px):</h3>
-        <ul lang="en">
-            <li lang="en">Mobile phones: <bdo lang="" translate="no" dir="ltr">14–16px (0.875rem–1rem)</bdo></li>
-            <li lang="en">Tablets: <bdo lang="" translate="no" dir="ltr">16–18px (1rem–1.125rem)</bdo></li>
-            <li lang="en">Desktops: <bdo lang="" translate="no" dir="ltr">16–20px (1rem–1.25rem)</bdo></li>
+        <h3>Typical Sizes by Device (assuming 1rem = 16px):</h3>
+        <ul>
+            <li>Mobile phones: <bdo  translate="no" dir="ltr">14–16px (0.875rem–1rem)</bdo></li>
+            <li>Tablets: <bdo  translate="no" dir="ltr">16–18px (1rem–1.125rem)</bdo></li>
+            <li>Desktops: <bdo  translate="no" dir="ltr">16–20px (1rem–1.25rem)</bdo></li>
         </ul>
 
-        <p lang="en">
+        <p>
             Using rem for base font sizes and em for spacing or component-specific scaling is a common best practice.
             This approach ensures consistency while allowing flexibility across different screen sizes and user settings, however the CSS uses mostly
-            <bdo lang="" translate="no" dir="ltr">rem</bdo> units for spacings, so the spacings don't change with font size
+            <bdo  translate="no" dir="ltr">rem</bdo> units for spacings, so the spacings don't change with font size
         </p>
 
-        <h3 lang="en">Layout & Spacing Variables</h3>
-        <ul lang="en">
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--spacing-element</bdo> - General spacing between elements (e.g. margins, vertical rhythm). 2 rem is equivalent to 32 px if root font size is 16px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--padding-box</bdo> - Internal padding for containers or boxes. 1.5rem is about 24px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-padding</bdo> - Padding inside grid items or cards. 1rem is about 16px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between grid items. Helps define spacing between grid cards.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-desktop</bdo> - Max width for desktop layouts. 60rem ~ 960px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-tablet</bdo>	- Max width for tablet layouts. 40rem ~ 640px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-box-grid</bdo> - Width of a grid cards container or content box. 29rem ~ 464px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--width-half-column</bdo> - Used for half-width elements, aligned left or right.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-thin</bdo> - Thin border or divider line. 0.125rem ~ 2px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--line-medium</bdo> - Medium-weight line. 0.187rem ~ 3px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-width</bdo> - Fixed width for individual grid cards. 15rem ~ 240px</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between individual grid cards.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--grid-box-radius</bdo> - Border-radius for grid boxes or cards. 0.5rem ~ 8px.</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--rounded-radius</bdo> - Generic rounded corners for UI elements. Likely reused across buttons, inputs, etc. 0.5rem ~ 8px</li>
-            <li lang="en"><bdo lang="" translate="no" dir="ltr">--button-radius</bdo> - Radius for rounded corners of buttons</li>
+        <h3>Layout & Spacing Variables</h3>
+        <ul>
+            <li><bdo  translate="no" dir="ltr">--spacing-element</bdo> - General spacing between elements (e.g. margins, vertical rhythm). 2 rem is equivalent to 32 px if root font size is 16px.</li>
+            <li><bdo  translate="no" dir="ltr">--padding-box</bdo> - Internal padding for containers or boxes. 1.5rem is about 24px.</li>
+            <li><bdo  translate="no" dir="ltr">--grid-box-padding</bdo> - Padding inside grid items or cards. 1rem is about 16px.</li>
+            <li><bdo  translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between grid items. Helps define spacing between grid cards.</li>
+            <li><bdo  translate="no" dir="ltr">--width-desktop</bdo> - Max width for desktop layouts. 60rem ~ 960px.</li>
+            <li><bdo  translate="no" dir="ltr">--width-tablet</bdo>	- Max width for tablet layouts. 40rem ~ 640px.</li>
+            <li><bdo  translate="no" dir="ltr">--width-box-grid</bdo> - Width of a grid cards container or content box. 29rem ~ 464px.</li>
+            <li><bdo  translate="no" dir="ltr">--width-half-column</bdo> - Used for half-width elements, aligned left or right.</li>
+            <li><bdo  translate="no" dir="ltr">--line-thin</bdo> - Thin border or divider line. 0.125rem ~ 2px.</li>
+            <li><bdo  translate="no" dir="ltr">--line-medium</bdo> - Medium-weight line. 0.187rem ~ 3px.</li>
+            <li><bdo  translate="no" dir="ltr">--grid-box-width</bdo> - Fixed width for individual grid cards. 15rem ~ 240px</li>
+            <li><bdo  translate="no" dir="ltr">--grid-box-gap</bdo> - Gap between individual grid cards.</li>
+            <li><bdo  translate="no" dir="ltr">--grid-box-radius</bdo> - Border-radius for grid boxes or cards. 0.5rem ~ 8px.</li>
+            <li><bdo  translate="no" dir="ltr">--rounded-radius</bdo> - Generic rounded corners for UI elements. Likely reused across buttons, inputs, etc. 0.5rem ~ 8px</li>
+            <li><bdo  translate="no" dir="ltr">--button-radius</bdo> - Radius for rounded corners of buttons</li>
         </ul>
-        <p lang="en">You can change the spacings, as you want, as well as any other content, since this CSS is provided under MIT license.</p>
-        <h2 lang="en" id="vars-colors">Color variables</h2>
-        <p lang="en">Modern CSS supports automatic adaptation to the user's preferred color scheme using the <bdo lang="" translate="no" dir="ltr">prefers-color-scheme</bdo> media query. This allows developers to define separate styles for light and dark modes.</p>
-        <pre class="box-gray-right" lang="" translate="no" dir="ltr">
+        <p>You can change the spacings, as you want, as well as any other content, since this CSS is provided under MIT license.</p>
+        <h2  id="vars-colors">Color variables</h2>
+        <p>Modern CSS supports automatic adaptation to the user's preferred color scheme using the <bdo  translate="no" dir="ltr">prefers-color-scheme</bdo> media query. This allows developers to define separate styles for light and dark modes.</p>
+        <pre class="box-gray-right"  translate="no" dir="ltr">
 @media (prefers-color-scheme: light) {
   body {
     background-color: white;
@@ -538,9 +537,9 @@
   }
 }
 </pre>
-        <h3 lang="en">Light Mode</h3>
-        <p lang="en">In light mode, the background is typically light (e.g., white or soft gray), and text is dark for readability. It's the default for most websites and resembles usual experience with black text on white paper that users have in everyday life.</p>
-        <pre class="box-gray-left" lang="" translate="no" dir="ltr">
+        <h3>Light Mode</h3>
+        <p>In light mode, the background is typically light (e.g., white or soft gray), and text is dark for readability. It's the default for most websites and resembles usual experience with black text on white paper that users have in everyday life.</p>
+        <pre class="box-gray-left"  translate="no" dir="ltr">
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
@@ -548,12 +547,12 @@
   }
 }
 </pre>
-        <h3 lang="en">Dark Mode</h3>
-        <p lang="en">
+        <h3>Dark Mode</h3>
+        <p>
             Dark mode uses dark backgrounds (e.g., black or deep gray) with light text. It reduces eye strain in low-light environments and saves battery on OLED screens.
             Some users also prefer dark color schemes.
         </p>
-        <pre class="box-gray-right" lang="" translate="no" dir="ltr">
+        <pre class="box-gray-right"  translate="no" dir="ltr">
 @media print {
   body {
     background: none;
@@ -566,28 +565,28 @@
   }
 }
 </pre>
-        <h3 lang="en">Print Media Styling</h3>
-        <p lang="en">
+        <h3>Print Media Styling</h3>
+        <p>
             CSS also allows customization for printed output using the @media print query. This ensures that pages look clean and readable when printed.<br />
             Backgrounds: Many browsers ignore background colors/images when printing unless explicitly enabled. Use background: none; or avoid heavy backgrounds.<br />
             Color to Grayscale: Colors may be converted to grayscale when printing. Avoid relying on color alone to convey meaning (e.g., red for errors).<br />
             Ink Efficiency: Use high-contrast, ink-friendly colors. Avoid saturated backgrounds or gradients.
         </p>
-        <p lang="en">The CSS allows you to define following color variables that are automatically used throughot the page:</p>
-        <h3 lang="en">Main Text and Background Colors</h3>
-        <table lang="en">
+        <p>The CSS allows you to define following color variables that are automatically used throughot the page:</p>
+        <h3>Main Text and Background Colors</h3>
+        <table>
             <colgroup>
                 <col style="width: 30%;">
                 <col style="width: 70%;">
             </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
             </thead>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-main</td><td lang="en">The default background color for the main content area</td></tr>
-            <tr lang="en">
-                <td lang="" translate="no" dir="ltr">--brush-bg-main</td>
-                <td lang="en">
-                    The brush for background of the main content area. You can override the color specified in the line before by using repeating images, gradients, repeating patterns<pre lang="" dir="ltr" translate="no">:root {
+            <tr><td  translate="no" dir="ltr">--color-bg-main</td><td>The default background color for the main content area</td></tr>
+            <tr>
+                <td  translate="no" dir="ltr">--brush-bg-main</td>
+                <td>
+                    The brush for background of the main content area. You can override the color specified in the line before by using repeating images, gradients, repeating patterns<pre  dir="ltr" translate="no" style="text-align:left">:root {
   /* Solid color */
   --brush-bg-main: #f5f7fa;
 
@@ -605,278 +604,278 @@
 }</pre>
                 </td>
             </tr>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-bg-outside</td><td lang="en">The default background color for the area to the left and right of main area</td></tr>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--brush-bg-outside</td><td lang="en">The brush for background of the area to the left and right of the main area. You can override the color specified in the line above by using repeating images, gradients, repeating patterns</td></tr>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-text-main</td><td lang="en">The primary text color</td></tr>
-            <tr lang="en"><td lang="" translate="no" dir="ltr">--color-marker-main</td><td lang="en">The color used for markers (e.g., bullets, highlights) in main content</td></tr>
+            <tr><td  translate="no" dir="ltr">--color-bg-outside</td><td>The default background color for the area to the left and right of main area</td></tr>
+            <tr><td  translate="no" dir="ltr">--brush-bg-outside</td><td>The brush for background of the area to the left and right of the main area. You can override the color specified in the line above by using repeating images, gradients, repeating patterns</td></tr>
+            <tr><td  translate="no" dir="ltr">--color-text-main</td><td>The primary text color</td></tr>
+            <tr><td  translate="no" dir="ltr">--color-marker-main</td><td>The color used for markers (e.g., bullets, highlights) in main content</td></tr>
         </table>
-        <h4 lang="en">Input Fields (Default Context)</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-default</td><td lang="en">Background color of standard input fields</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-default</td><td lang="en">Text color inside inputs</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-default</td><td lang="en">Default border color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-default</td><td lang="en">Border color when input is focused</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Form Buttons (Default Context)</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-default</td><td lang="en">Background color of buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-default</td><td lang="en">Text color inside the buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-default-hover</td><td lang="en">Background color for focused buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-default-hover</td><td lang="en">Text color for focused buttons</td></tr>
-            </tbody>
-        </table>
-        <h3>Gray Box Styling</h3>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en" lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-bg</td><td lang="en">Background of gray-themed boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-text</td><td lang="en">Text color inside gray boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-marker</td><td lang="en">Marker color in gray boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-header</td><td lang="en">Header color in gray boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-gray-divider</td><td lang="en">Divider line color</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Colors of Input Field Elements in Gray Boxes</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-gray</td><td lang="en">Input background in gray boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-gray</td><td lang="en">Input text color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-gray</td><td lang="en">Marker color in inputs</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-gray</td><td lang="en">Border color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-gray</td><td lang="en">Focus border</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Form Buttons (in Gray-Colored Boxes)</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-gray</td><td lang="en">Background color of buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-gray</td><td lang="en">Text color inside the buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-gray-hover</td><td lang="en">Background color for focused buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-gray-hover</td><td lang="en">Text color for focused buttons</td></tr>
-            </tbody>
-        </table>
-        <h3 lang="en">Accent Colors</h3>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-accent</td><td lang="en">Primary accent for highlights.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-accent-alt</td><td lang="en">Alternative accent for variation or thematic contrast.</td></tr>
-            </tbody>
-        </table>
-        <h3 lang="en">Colors of Accent-Colored Boxes</h3>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-bg</td><td lang="en">Background of accent boxes</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-text</td><td lang="en">Text color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-marker</td><td lang="en">Marker color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-header</td><td lang="en">Header color</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-divider</td><td lang="en">Divider color</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Colors of Input Field Elements in Accent Boxes</h4>
+        <h4>Input Fields (Default Context)</h4>
         <table>
             <colgroup>
                 <col style="width: 30%;">
                 <col style="width: 70%;">
             </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-accent:</td><td lang="en">Input background.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-accent:</td><td lang="en">Input text</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-accent:</td><td lang="en">Border</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent:</td><td lang="en">Focus border</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Form Buttons (in Accent-Colored Boxes)</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent</td><td lang="en">Background color of buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent</td><td lang="en">Text color inside the buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-hover</td><td lang="en">Background color for focused buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-hover</td><td lang="en">Text color for focused buttons</td></tr>
-            </tbody>
-        </table>
-        <h3 lang="en">Colors of Alternatively Accent-Colored Boxes</h3>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
             </thead>
             <tbody>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-bg</td><td lang="en">Background</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-text</td><td lang="en">Text.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-marker</td><td lang="en">Marker</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-header</td><td lang="en">Header</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--color-box-accent-alt-divider</td><td lang="en">Divider</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-bg-default</td><td>Background color of standard input fields</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-text-default</td><td>Text color inside inputs</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-border-default</td><td>Default border color</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-focus-border-default</td><td>Border color when input is focused</td></tr>
             </tbody>
         </table>
-        <h4 lang="en">Colors of Input Field Elements in Alternative Accent Boxes</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-bg-accent-alt</td><td lang="en">Input background</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-text-accent-alt</td><td lang="en">Input text</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-marker-accent-alt</td><td lang="en">Marker</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-border-accent-alt</td><td lang="en">Border</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--input-focus-border-accent-alt</td><td lang="en">Focus border</td></tr>
-            </tbody>
-        </table>
-        <h4 lang="en">Form Buttons (in Boxes with Alternative Accent Color)</h4>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Variable</td><td lang="en">Meaning</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-alt</td><td lang="en">Background color of buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-alt</td><td lang="en">Text color inside the buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-bg-accent-alt-hover</td><td lang="en">Background color for focused buttons</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">--button-text-accent-alt-hover</td><td lang="en">Text color for focused buttons</td></tr>
-            </tbody>
-        </table>
-        <h2 id="elements-std" lang="en">Standard HTML Elements</h2>
-        <p lang="en">
-            Below you can find a standard list of html tags that you can use in your pages without specification of classes and styles. These will be automatically styled to the theme of the page. More examples of HTML tags can be found at
-            <bdo lang="" translate="no" dir="ltr"><a href="https://www.w3schools.com/html/html_examples.asp">w3schools</a></bdo>
-        </p>
-        <h3 lang="en">Headings and Text Structure</h3>
-        <table lang="en">
-            <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
-            </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
-            </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;h1> .. &lt;h4></td><td lang="en">Headings used to structure content hierarchically. <bdo dir="ltr" lang="" translate="no">&lt;h1></bdo> is the most important (e.g., page title), followed by <bdo dir="ltr" lang="" translate="no">&lt;h2></bdo> to <bdo dir="ltr" lang="" translate="no">&lt;h4></bdo> for subheadings.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;p></td><td lang="en">Paragraph element for blocks of text. Translation services create better translations, if a paragraph is stored completely in one line. If there are line breaks in the HTML source, even not visible to visitors of the page, it disturbs translator engines. If line breaks are needed, these should be done after a complete sentence, so between sentences.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;b></td><td lang="en">Bold text for emphasis (visual only, no semantic meaning).</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;i></td><td>Italic text for emphasis or stylistic use (also visual only).</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;pre></td><td lang="en">Preformatted text block that preserves whitespace and line breaks — often used for code or ASCII art.</td></tr>
-            </tbody>
-        </table>
-        <h3 lang="en">Lists</h3>
-        <table lang="en">
+        <h4>Form Buttons (Default Context)</h4>
+        <table>
             <colgroup>
                 <col style="width: 30%;">
                 <col style="width: 70%;">
             </colgroup>
             <thead>
-                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
             </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;ul></td><td lang="en">Unordered list — displays items with bullets.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;ol></td><td lang="en">Ordered list — displays items with numbers.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;li></td><td lang="en">List item — used inside &lt;ul> or &lt;ol></td></tr>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--button-bg-default</td><td>Background color of buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-default</td><td>Text color inside the buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-bg-default-hover</td><td>Background color for focused buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-default-hover</td><td>Text color for focused buttons</td></tr>
             </tbody>
         </table>
-        <h3 lang="en">Tables</h3>
-        <table lang="en">
+        <h3>Gray Box Styling</h3>
+        <table>
             <colgroup>
                 <col style="width: 30%;">
                 <col style="width: 70%;">
             </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
             </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;table></td><td lang="en">Defines a table structure.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;colgroup></td><td lang="en">Table column specification section</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;col></td><td lang="en">Table columns specification, used inside <bdo dir="ltr">&lt;colgroup></bdo></td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;thead></td><td lang="en">Table header section — usually contains column titles.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;tbody></td><td lang="en">Table body — contains the main rows of data.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;tr></td><td lang="en">Table row — used inside <bdo dir="ltr">&lt;thead></bdo> or <bdo dir="ltr">&lt;tbody></bdo></td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;td></td><td lang="en">Table cell — holds data within a row.</td></tr>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--color-box-gray-bg</td><td>Background of gray-themed boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-gray-text</td><td>Text color inside gray boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-gray-marker</td><td>Marker color in gray boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-gray-header</td><td>Header color in gray boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-gray-divider</td><td>Divider line color</td></tr>
             </tbody>
         </table>
-        <h3 lang="en">Links and Media</h3>
-        <table lang="en">
+        <h4>Colors of Input Field Elements in Gray Boxes</h4>
+        <table>
             <colgroup>
                 <col style="width: 30%;">
                 <col style="width: 70%;">
             </colgroup>
-            <thead lang="en">
-                <tr lang="en"><td lang="en" style="text-align:left">Tag</td><td lang="en">Description</td></tr>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
             </thead>
-            <tbody lang="en">
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;a></td><td lang="en">Anchor tag — creates hyperlinks to other pages, sections, or files.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;img></td><td lang="en">Image tag — embeds images using the src attribute.</td></tr>
-                <tr lang="en"><td lang="" translate="no" dir="ltr">&lt;hr></td><td lang="en">Horizontal rule — creates a visual divider line across the page.</td></tr>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--input-bg-gray</td><td>Input background in gray boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-text-gray</td><td>Input text color</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-marker-gray</td><td>Marker color in inputs</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-border-gray</td><td>Border color</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-focus-border-gray</td><td>Focus border</td></tr>
             </tbody>
         </table>
-        <p lang="en">
+        <h4>Form Buttons (in Gray-Colored Boxes)</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--button-bg-gray</td><td>Background color of buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-gray</td><td>Text color inside the buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-bg-gray-hover</td><td>Background color for focused buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-gray-hover</td><td>Text color for focused buttons</td></tr>
+            </tbody>
+        </table>
+        <h3>Accent Colors</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--color-accent</td><td>Primary accent for highlights.</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-accent-alt</td><td>Alternative accent for variation or thematic contrast.</td></tr>
+            </tbody>
+        </table>
+        <h3>Colors of Accent-Colored Boxes</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-bg</td><td>Background of accent boxes</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-text</td><td>Text color</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-marker</td><td>Marker color</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-header</td><td>Header color</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-divider</td><td>Divider color</td></tr>
+            </tbody>
+        </table>
+        <h4>Colors of Input Field Elements in Accent Boxes</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--input-bg-accent:</td><td>Input background.</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-text-accent:</td><td>Input text</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-border-accent:</td><td>Border</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-focus-border-accent:</td><td>Focus border</td></tr>
+            </tbody>
+        </table>
+        <h4>Form Buttons (in Accent-Colored Boxes)</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--button-bg-accent</td><td>Background color of buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-accent</td><td>Text color inside the buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-bg-accent-hover</td><td>Background color for focused buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-accent-hover</td><td>Text color for focused buttons</td></tr>
+            </tbody>
+        </table>
+        <h3>Colors of Alternatively Accent-Colored Boxes</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-alt-bg</td><td>Background</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-alt-text</td><td>Text.</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-alt-marker</td><td>Marker</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-alt-header</td><td>Header</td></tr>
+                <tr><td  translate="no" dir="ltr">--color-box-accent-alt-divider</td><td>Divider</td></tr>
+            </tbody>
+        </table>
+        <h4>Colors of Input Field Elements in Alternative Accent Boxes</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--input-bg-accent-alt</td><td>Input background</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-text-accent-alt</td><td>Input text</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-marker-accent-alt</td><td>Marker</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-border-accent-alt</td><td>Border</td></tr>
+                <tr><td  translate="no" dir="ltr">--input-focus-border-accent-alt</td><td>Focus border</td></tr>
+            </tbody>
+        </table>
+        <h4>Form Buttons (in Boxes with Alternative Accent Color)</h4>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">--button-bg-accent-alt</td><td>Background color of buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-accent-alt</td><td>Text color inside the buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-bg-accent-alt-hover</td><td>Background color for focused buttons</td></tr>
+                <tr><td  translate="no" dir="ltr">--button-text-accent-alt-hover</td><td>Text color for focused buttons</td></tr>
+            </tbody>
+        </table>
+        <h2 id="elements-std">Standard HTML Elements</h2>
+        <p>
+            Below you can find a standard list of html tags that you can use in your pages without specification of classes and styles. These will be automatically styled to the theme of the page. More examples of HTML tags can be found at
+            <bdo  translate="no" dir="ltr"><a href="https://www.w3schools.com/html/html_examples.asp">w3schools</a></bdo>
+        </p>
+        <h3>Headings and Text Structure</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">&lt;h1> .. &lt;h4></td><td>Headings used to structure content hierarchically. <bdo dir="ltr"  translate="no">&lt;h1></bdo> is the most important (e.g., page title), followed by <bdo dir="ltr"  translate="no">&lt;h2></bdo> to <bdo dir="ltr"  translate="no">&lt;h4></bdo> for subheadings.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;p></td><td>Paragraph element for blocks of text. Translation services create better translations, if a paragraph is stored completely in one line. If there are line breaks in the HTML source, even not visible to visitors of the page, it disturbs translator engines. If line breaks are needed, these should be done after a complete sentence, so between sentences.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;b></td><td>Bold text for emphasis (visual only, no semantic meaning).</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;i></td><td>Italic text for emphasis or stylistic use (also visual only).</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;pre></td><td>Preformatted text block that preserves whitespace and line breaks — often used for code or ASCII art.</td></tr>
+            </tbody>
+        </table>
+        <h3>Lists</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">&lt;ul></td><td>Unordered list — displays items with bullets.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;ol></td><td>Ordered list — displays items with numbers.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;li></td><td>List item — used inside &lt;ul> or &lt;ol></td></tr>
+            </tbody>
+        </table>
+        <h3>Tables</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">&lt;table></td><td>Defines a table structure.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;colgroup></td><td>Table column specification section</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;col></td><td>Table columns specification, used inside <bdo dir="ltr">&lt;colgroup></bdo></td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;thead></td><td>Table header section — usually contains column titles.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;tbody></td><td>Table body — contains the main rows of data.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;tr></td><td>Table row — used inside <bdo dir="ltr">&lt;thead></bdo> or <bdo dir="ltr">&lt;tbody></bdo></td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;td></td><td>Table cell — holds data within a row.</td></tr>
+            </tbody>
+        </table>
+        <h3>Links and Media</h3>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+                <tr><td  translate="no" dir="ltr">&lt;a></td><td>Anchor tag — creates hyperlinks to other pages, sections, or files.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;img></td><td>Image tag — embeds images using the src attribute.</td></tr>
+                <tr><td  translate="no" dir="ltr">&lt;hr></td><td>Horizontal rule — creates a visual divider line across the page.</td></tr>
+            </tbody>
+        </table>
+        <p>
             Those are the common elements that are used on pages and are recognized also by old browsers. Even if old browsers won't be able to present the page as it has been designed, still they will recognize the elements and will present them in a simplified way.
         </p>
         <h2 id="elements-image-links"><a href="#elements-std">Links in headers</a></h2>
@@ -884,54 +883,54 @@
             A link in a header has speacial appearance in modern browsers, you can try it out!
         </p>
         <h2 id="elements-image-links">Image Links</h2>
-        <p>To make an image clickable — so that it acts as a hyperlink — you simply place the <bdo dir="ltr" translate="no" lang="">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no" lang="">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
+        <p>To make an image clickable — so that it acts as a hyperlink — you simply place the <bdo dir="ltr" translate="no">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
         <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
-        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;a href="https://</bdo><bdi lang="en">...your url...</bdi><bdo dir="ltr" translate="no" lang="">"&gt;
-    &lt;img src="image.jpg" alt="</bdo><bdi lang="en">Some description</bdi><bdo dir="ltr" translate="no" lang="">"/>
+        <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no">&lt;a href="https://</bdo><bdi>...your url...</bdi><bdo dir="ltr" translate="no">"&gt;
+    &lt;img src="image.jpg" alt="</bdo><bdi tranalate="yes">Some description</bdi><bdo dir="ltr" translate="no">"/>
 &lt;/a&gt;</bdo></pre>
 
         <h2 id="elements-images">Image classes</h2>
-        <p lang="en">
+        <p>
             The CSS defines classes for image elements that you can use for modification of the appearance of image elements. After the discussion of image classes we will also discuss image boxes that allow you to lay other content over the image. Image classes aren't compatible with image boxes. For each picture you need to use the one or the other.
         </p>
 
-        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Full width image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-full"/></bdo></pre>
-        <h3 lang="" translate="no"><bdo dir="ltr">.img-full</bdo></h3>
-        <p lang="en">Purpose: Displays the image at full width, extending slightly beyond the container’s padding.</p>
-        <p lang="en">
+        <pre class="box-gray-right" dir="ltr"><bdo dir="ltr" translate="no">&lt;img src="image.jpg" alt="</bdo><bdi>Full width image</bdi><bdo dir="ltr" translate="no">" class="img-full"/></bdo></pre>
+        <h3  translate="no"><bdo dir="ltr">.img-full</bdo></h3>
+        <p>Purpose: Displays the image at full width, extending slightly beyond the container’s padding.</p>
+        <p>
             <b>Behavior:</b><br />
             Expands the image to be slightly wider than its container to the border of the outer area.<br />
             Removes horizontal margins to align with the container edges.<br />
             Automatically adjusts height to maintain aspect ratio.<br />
         </p>
 
-        <pre class="box-gray-right" dir="ltr" lang=""><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Left-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-left"/></bdo></pre>
-        <h3 lang="" translate="no"><bdo dir="ltr">.img-left</bdo></h3>
-        <p lang="en">Purpose: Displays a half-width image floated to the left (or start of the inline direction).</p>
+        <pre class="box-gray-right" dir="ltr"><bdo dir="ltr" translate="no">&lt;img src="image.jpg" alt="</bdo><bdi>Left-aligned image</bdi><bdo dir="ltr" translate="no">" class="img-left"/></bdo></pre>
+        <h3  translate="no"><bdo dir="ltr">.img-left</bdo></h3>
+        <p>Purpose: Displays a half-width image floated to the left (or start of the inline direction).</p>
 
-        <p lang="en">
+        <p>
             <b>Behavior:</b><br />
             Floats the image to the left side of the container.<br />
             Sets the width to a predefined half-column value.<br />
-            Adds spacing to the right <bdo lang="" translate="no" dir="ltr">(margin-inline-end)</bdo> and bottom.<br />
+            Adds spacing to the right <bdo  translate="no" dir="ltr">(margin-inline-end)</bdo> and bottom.<br />
         </p>
 
-        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Right-aligned image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-right"/></bdo></pre>
-        <h3 lang="" translate="no"><bdo dir="ltr">.img-right</bdo></h3>
-        <p lang="en">Purpose: Displays a half-width image floated to the right (or end of the inline direction).</p>
+        <pre class="box-gray-right"  dir="ltr"><bdo dir="ltr" translate="no">&lt;img src="image.jpg" alt="</bdo><bdi>Right-aligned image</bdi><bdo dir="ltr" translate="no">" class="img-right"/></bdo></pre>
+        <h3  translate="no"><bdo dir="ltr">.img-right</bdo></h3>
+        <p>Purpose: Displays a half-width image floated to the right (or end of the inline direction).</p>
 
-        <p lang="en">
+        <p>
             <b>Behavior:</b><br />
             Floats the image to the right side of the container.<br />
             Sets the width to the same half-column value.<br />
             Adds spacing to the left (margin-inline-start) and bottom.<br />
         </p>
 
-        <pre class="box-gray-right" lang="" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;img src="image.jpg" alt="</bdo><bdi lang="en">Main image</bdi><bdo dir="ltr" translate="no" lang="">" class="img-main"/></bdo></pre>
-        <h3 lang="" translate="no"><bdo dir="ltr">.img-main</bdo></h3>
-        <p lang="en">Purpose: Displays a centered main image with a border and responsive sizing.</p>
+        <pre class="box-gray-right"  dir="ltr"><bdo dir="ltr" translate="no">&lt;img src="image.jpg" alt="</bdo><bdi>Main image</bdi><bdo dir="ltr" translate="no">" class="img-main"/></bdo></pre>
+        <h3  translate="no"><bdo dir="ltr">.img-main</bdo></h3>
+        <p>Purpose: Displays a centered main image with a border and responsive sizing.</p>
 
-        <p lang="en">
+        <p>
             <b>Behavior:</b><br />
             Centers the image horizontally.<br />
             Adds bottom spacing.<br />
@@ -940,11 +939,11 @@
             Maintains aspect ratio.<br />
         </p>
         <h2 id="elements-boxes">Boxes</h2>
-        <p lang="en">
+        <p>
             The CSS provides several boxes: Callout boxes, gray boxes, colored boxes with 2 possible accent colors. Furtherore the CSS allows to put the boxes to the right side, to the left side and at normal size. Some boxes can also be expanded to the full width, so to the borders of the outer area. But let's start with image boxes.
         </p>
-        <h3 lang="en">Image boxes</h3>
-        <p lang="en">
+        <h3>Image boxes</h3>
+        <p>
             Image boxes are available in two main configurations that are incompatible to each other. One configuration can have image credits and title, the other can have any content, but it looks differently.
         </p>
         <div class="image-box">
@@ -955,15 +954,15 @@
             <div class="image-caption">Sample image in a box with credits</div>
         </div>
 
-        <pre class="box-gray" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
-<bdo dir="ltr" translate="no" lang="">
+        <pre class="box-gray"  dir="ltr">
+&lt;!-- <bdi>Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no">
 &lt;div class="image-box">
     &lt;div class="image-content">
         &lt;img src="image.jpg" />
     &lt;/div>
-    &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
-    &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="image-credits"></bdo><bdi tranalate="yes">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no">&lt;/div>
+    &lt;div class="image-caption"></bdo><bdi tranalate="yes">Caption of the image</bdi><bdo dir="ltr" translate="no">&lt;/div>
 &lt;/div></bdo>
 </pre>
         <div class="image-box">
@@ -974,15 +973,15 @@
             <div class="image-caption">Sample image in a box with credits</div>
         </div>
 
-        <pre class="box-gray" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
-<bdo dir="ltr" translate="no" lang="">
+        <pre class="box-gray"  dir="ltr">
+&lt;!-- <bdi>Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no">
 &lt;div class="image-box">
     &lt;div class="image-content">
         &lt;img src="image.jpg" />
-        &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+        &lt;div class="image-credits"></bdo><bdi>Image Credits: John Doe</bdi><bdo dir="ltr" translate="no">&lt;/div>
     &lt;/div>
-    &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="image-caption"></bdo><bdi>Caption of the image</bdi><bdo dir="ltr" translate="no">&lt;/div>
 &lt;/div></bdo>
 </pre>
         <div class="image-box">
@@ -993,15 +992,15 @@
             <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
         </div>
 
-        <pre class="box-gray" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
-<bdo dir="ltr" translate="no" lang="">
+        <pre class="box-gray"  dir="ltr">
+&lt;!-- <bdi>Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no">
 &lt;div class="image-box">
     &lt;div class="image-content">
         &lt;img src="image.jpg" />
-        &lt;div class="image-caption"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+        &lt;div class="image-caption"></bdo><bdi>Caption of the image</bdi><bdo dir="ltr" translate="no">&lt;/div>
     &lt;/div>
-    &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe </bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="image-credits"></bdo><bdi>Image Credits: John Doe </bdi><bdo dir="ltr" translate="no">&lt;/div>
 &lt;/div></bdo>
 </pre>
         <div class="image-box">
@@ -1013,15 +1012,15 @@
                 </div>
             </div>
         </div>
-        <pre class="box-gray" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">Image box with generic content</bdi> -->
-<bdo dir="ltr" translate="no" lang="">&lt;div class="image-box">
+        <pre class="box-gray"  dir="ltr">
+&lt;!-- <bdi>Image box with generic content</bdi> -->
+<bdo dir="ltr" translate="no">&lt;div class="image-box">
     &lt;div class="image-content">
         &lt;img src="image.jpg" />
         &lt;div class="image-overlay">
             &lt;div class="image-overlay-content" 
-                    style="font-size: 2rem;"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
-            &lt;div class="image-overlay-content"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+                    style="font-size: 2rem;"></bdo><bdi>Caption of the image</bdi><bdo dir="ltr" translate="no">&lt;/div>
+            &lt;div class="image-overlay-content"></bdo><bdi>Image Credits: John Doe</bdi><bdo dir="ltr" translate="no">&lt;/div>
         &lt;/div>
     &lt;/div>
 &lt;/div></bdo>
@@ -1033,85 +1032,85 @@
             </div>
             <div class="image-caption-gray">Sample image in a box with credits and gray-colored caption, followed by a gray-colored box.</div>
         </div>
-        <pre class="box-gray rounded-bottom" lang="" dir="ltr">
-&lt;!-- <bdi lang="en">Image box with credits</bdi> -->
-<bdo dir="ltr" translate="no" lang="">
+        <pre class="box-gray rounded-bottom"  dir="ltr">
+&lt;!-- <bdi>Image box with credits</bdi> -->
+<bdo dir="ltr" translate="no">
 &lt;div class="image-box rounded-top">
     &lt;div class="image-content">
         &lt;img src="image.jpg" />
-        &lt;div class="image-credits"></bdo><bdi lang="en">Image Credits: John Doe</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+        &lt;div class="image-credits"></bdo><bdi>Image Credits: John Doe</bdi><bdo dir="ltr" translate="no">&lt;/div>
     &lt;/div>
-    &lt;div class="image-caption-gray"></bdo><bdi lang="en">Caption of the image</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+    &lt;div class="image-caption-gray"></bdo><bdi>Caption of the image</bdi><bdo dir="ltr" translate="no">&lt;/div>
 &lt;/div>
-&lt;div class="box-gray rounded-bottom"></bdo><bdi lang="en">Some text in a gray box</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div>
+&lt;div class="box-gray rounded-bottom"></bdo><bdi>Some text in a gray box</bdi><bdo dir="ltr" translate="no">&lt;/div>
 </bdo>
 </pre>
 
-        <h2 lang="en">Callout boxes</h2>
-        <p lang="en">If you want to draw attention to a specific paragraph, you can put it into a callout box</p>
-        <pre class="callout-box" lang="" dir="ltr">
-&lt;div class="callout-box"><bdi lang="en">There some important text</bdi>&lt;/div>
+        <h2>Callout boxes</h2>
+        <p>If you want to draw attention to a specific paragraph, you can put it into a callout box</p>
+        <pre class="callout-box"  dir="ltr">
+&lt;div class="callout-box"><bdi>There some important text</bdi>&lt;/div>
 </pre>
-        <h2 lang="en">Gray and accent-colored boxes</h2>
-        <p lang="en">
+        <h2>Gray and accent-colored boxes</h2>
+        <p>
             There are also other variants of boxes with a background color, either in gray or in accent colors. You can specify the used gray and accent colors in the CSS.
         </p>
-        <pre class="box-accent" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent"></bdo><bdi lang="en">Some text with accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <pre class="box-accent"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="box-accent"></bdo><bdi>Some text with accent</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <pre class="box-accent-alt" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-alt"></bdo><bdi lang="en">Some text with alternative accent</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <pre class="box-accent-alt"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="box-accent-alt"></bdo><bdi>Some text with alternative accent</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <p lang="en">
-            Additionally there are different variants of the boxes, e.g. normal that have no appendix in name, there are boxes that are aligned to the left with <bdo dir="ltr" lang="" translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr" lang="" translate="no">-right</bdo> in the name that are alligned to the right.
+        <p>
+            Additionally there are different variants of the boxes, e.g. normal that have no appendix in name, there are boxes that are aligned to the left with <bdo dir="ltr"  translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr"  translate="no">-right</bdo> in the name that are alligned to the right.
         </p>
-        <p lang="en">
-            A variant with <bdo dir="ltr" lang="">-full</bdo> in the name will take the full width up to the outer area of the page. Not all boxes support the full variant, e.g. callout boxes don't.
-            A variant with <bdo dir="ltr" lang="">-wide</bdo> in the name will take a wider width than normal boxes, trying to fill the complete area up to the window borders.
+        <p>
+            A variant with <bdo dir="ltr">-full</bdo> in the name will take the full width up to the outer area of the page. Not all boxes support the full variant, e.g. callout boxes don't.
+            A variant with <bdo dir="ltr">-wide</bdo> in the name will take a wider width than normal boxes, trying to fill the complete area up to the window borders.
         </p>
-        <pre class="box-accent-full" dir="ltr"><bdo dir="ltr" translate="no" lang="">&lt;div class="box-accent-full"></bdo><bdi lang="en">..some content..</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo></pre>
+        <pre class="box-accent-full" dir="ltr"><bdo dir="ltr" translate="no">&lt;div class="box-accent-full"></bdo><bdi>..some content..</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo></pre>
 
-        <p lang="en">
+        <p>
             In this page you have seen many gray boxes that are centered, aligned to left or right. This is what it looks like.
         </p>
-        <pre class="borderbox-strong-right" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="borderbox-strong-right"></bdo><bdi lang="en">With strong border</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <pre class="borderbox-strong-right"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="borderbox-strong-right"></bdo><bdi>With strong border</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <h2 lang="en">Border-boxes</h2>
-        <p lang="en">
+        <h2>Border-boxes</h2>
+        <p>
             There are also boxes with a border either in gray or in accent colors.
         </p>
-        <pre class="borderbox-gray" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="borderbox-gray"></bdo><bdi lang="en">Some text in a gray border-box</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <pre class="borderbox-gray"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="borderbox-gray"></bdo><bdi>Some text in a gray border-box</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <p lang="en">
-            There are border-boxes that are aligned to the left with <bdo dir="ltr" lang="" translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr" lang="" translate="no">-right</bdo> in the name that are alligned to the right.
+        <p>
+            There are border-boxes that are aligned to the left with <bdo dir="ltr"  translate="no">-left</bdo> in the name, as well as with <bdo dir="ltr"  translate="no">-right</bdo> in the name that are alligned to the right.
         </p>
 
-        <h2 id="elements-notches" lang="en">Notches</h2>
-        <p lang="en">
+        <h2 id="elements-notches">Notches</h2>
+        <p>
             Notches are visible borders on two sides of a corner of a box. For western raders that have left-to-right writing direction the notch will be in left-upper corner.
         </p>
-        <pre class="notch" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="notch"></bdo><bdi lang="en">Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <pre class="notch"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="notch"></bdo><bdi>Some text that is set apart</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <p lang="en">There is also a notch with a thick border you can see it there:</p>
-        <pre class="notch-strong" lang="" dir="ltr">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="notch-strong"></bdo><bdi lang="en">Some text that is set apart</bdi><bdo dir="ltr" translate="no" lang="">&lt;/div></bdo>
+        <p>There is also a notch with a thick border you can see it there:</p>
+        <pre class="notch-strong"  dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="notch-strong"></bdo><bdi>Some text that is set apart</bdi><bdo dir="ltr" translate="no">&lt;/div></bdo>
 </pre>
-        <h2 id="elements-cards" lang="en">Grid cards</h2>
-        <p lang="en">
+        <h2 id="elements-cards">Grid cards</h2>
+        <p>
             You can put some content on smaller cards and let the browser place the cards on a grid, responsive to the size of visitor's viewport. In this special example it doesn't work, when you make the width of the window very small, because of other elements that prevent the page to become smaller, but you get a feeling of how it works.
         </p>
 
         <div class="box-grid box-accent-full">
-            <div class="box-grid-item-bg" lang="en"><h3 lang="en">Box 1</h3><p>some text</p></div>
-            <div class="box-grid-item" lang="en">
+            <div class="box-grid-item-bg"><h3>Box 1</h3><p>some text</p></div>
+            <div class="box-grid-item">
                 <h4>Box 2</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                 <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
             </div>
-            <div class="box-grid-item-gray" lang="en"><h4>Box 3</h4><p class="float-bottom">Text at bottom</p></div>
-            <div class="box-grid-item-accent-alt" lang="en"><h3 lang="en">Box 4</h3><p>other text</p></div>
+            <div class="box-grid-item-gray"><h4>Box 3</h4><p class="float-bottom">Text at bottom</p></div>
+            <div class="box-grid-item-accent-alt"><h3>Box 4</h3><p>other text</p></div>
             <div class="box-grid-item-image">
                 <div class="image-content">
                     <img src="../Images/LightImage1.jpg" />
@@ -1121,30 +1120,30 @@
                     </div>
                 </div>
             </div>
-            <div class="box-grid-item-bg" lang="en"><h3>Box 5</h3></div>
+            <div class="box-grid-item-bg"><h3>Box 5</h3></div>
             <div class="box-grid-item">
                 <img src="../Images/LightImage1.jpg" />
                 <h4>Box6</h4>
                 <p>Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
             </div>
-            <div class="box-grid-item" lang="en">
+            <div class="box-grid-item">
                 <h4>Box 7</h4><p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                 <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
                 <p class="float-bottom">Text at bottom</p>
             </div>
         </div>
-        <pre class="box-gray" dir="ltr" lang="">
-<bdo dir="ltr" translate="no" lang="">&lt;div class="box-grid box-accent-full">
-    &lt;div class="box-grid-item-bg" lang="en" >
-       &lt;h3 lang="en"></bdo>Box 1<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>some text<bdo dir="ltr" translate="no" lang="">&lt;/div>
-    &lt;div class="box-grid-item" lang="en" ></bdo>Box 2<bdo dir="ltr" translate="no" lang="">&lt;/div>
-    &lt;div class="box-grid-item-gray" lang="en" >&lt;h4></bdo>Box 3<bdo dir="ltr" translate="no" lang="">&lt/h4>
-       &lt;p class="float-bottom"></bdo>Text aligned at bottom<bdo dir="ltr" translate="no" lang="">&lt;/p>&lt;/div>
-    &lt;div class="box-grid-item-accent-alt" lang="en" >
-       &lt;h3 lang="en" ></bdo>Box 4<bdo dir="ltr" translate="no" lang="">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no" lang="">&lt;/div>
+        <pre class="box-gray" dir="ltr">
+<bdo dir="ltr" translate="no">&lt;div class="box-grid box-accent-full">
+    &lt;div class="box-grid-item-bg">
+       &lt;h3></bdo>Box 1<bdo dir="ltr" translate="no">&lt;/h3></bdo>some text<bdo dir="ltr" translate="no">&lt;/div>
+    &lt;div class="box-grid-item"></bdo>Box 2<bdo dir="ltr" translate="no">&lt;/div>
+    &lt;div class="box-grid-item-gray">&lt;h4></bdo>Box 3<bdo dir="ltr" translate="no">&lt/h4>
+       &lt;p class="float-bottom"></bdo>Text aligned at bottom<bdo dir="ltr" translate="no">&lt;/p>&lt;/div>
+    &lt;div class="box-grid-item-accent-alt">
+       &lt;h3></bdo>Box 4<bdo dir="ltr" translate="no">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no">&lt;/div>
 &lt;/div></bdo>
 </pre>
-        <h2 lang="en" id="elements-forms">Forms</h2>
+        <h2  id="elements-forms">Forms</h2>
         <form class="form-grid box-centered">
             <label for="name">Name:</label>
             <input type="text" id="name">
@@ -1158,7 +1157,7 @@
             <label>&nbsp;</label>
             <button type="submit">Submit</button>
         </form>
-        <pre class="box-gray" dir="ltr" lang="" translate="no">&lt;form class="form-grid box-centered">
+        <pre class="box-gray" dir="ltr"  translate="no">&lt;form class="form-grid box-centered">
   &lt;label for="name">Name:&lt;/label>
   &lt;input type="text" id="name">
 
@@ -1173,23 +1172,11 @@
 
 &lt;/form></pre>
         <div class="clearfix"></div>
-        <h2 lang="en" id="licence"><bdo dir="ltr" translate="no" lang="en">MIT</bdo> License</h2>
-
-        <p lang="en">Copyright &copy; 2025-2026 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
-
-        <p lang="en">
-            Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-        </p>
-
-        <p lang="en">
-            The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-        </p>
-
-        <p lang="en">
-            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        </p>
-
-
+        <h2  id="licence"><bdo dir="ltr" translate="no">MIT</bdo> License</h2>
+        <p>Copyright &copy; 2025-2026 <bdo  dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
     </div>
 </body>
 </html>
