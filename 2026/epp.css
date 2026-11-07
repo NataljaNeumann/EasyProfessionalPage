@@ -269,26 +269,34 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--font-bebas: 'Bebas Neue', Impact, 'Arial Black', 'Segoe UI', sans-serif;
 	--font-oswald: 'Oswald', 'Franklin Gothic Medium', 'Arial Black', 'Segoe UI', sans-serif;
 
+
+
 	/* Page specific fonts and sizes */
+	--font-primary-size: clamp(1rem, 0.85rem + 0.75vw, 3rem);
+	@media print {
+		--font-primary-size: 0.75rem;
+	}
 	--font-primary: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 	--font-secondary: 'Georgia', 'Times New Roman', 'Cambria', 'Noto Serif', 'Liberation Serif', serif;
 	--font-title: var(--font-secondary);
+	
 
-	--spacing-element: 2rem;
-	--padding-box: 1.5rem;
-	--width-desktop: 60rem;
+
+	--spacing-element: calc( 2 * var(--font-primary-size));
+	--padding-box: calc(1.5 * var(--font-primary-size));
+	--width-desktop: calc(60 * var(--font-primary-size));
 	--width-main: calc(var(--width-desktop) - 6 * var(--spacing-element));
-	--width-box-grid: 29rem;
+	--width-box-grid: calc(29 * var(--font-primary-size));
 	--width-half-column: 45%;
 	--width-half-column2: 50%;
-	--line-thin: 0.125rem;
-	--line-medium: 0.187rem;
-	--grid-box-width: 15rem;
-	--grid-box-padding: 1rem;
-	--grid-box-gap: 1rem;
+	--line-thin: calc(0.125 * var(--font-primary-size));
+	--line-medium: calc(0.187 * var(--font-primary-size));
+	--grid-box-width: calc(15 * var(--font-primary-size));
+	--grid-box-padding: calc(1 * var(--font-primary-size));
+	--grid-box-gap: calc(1 * var(--font-primary-size));
 
-	--grid-box-radius: 0.5rem;
-	--rounded-radius: 0.5rem;
+	--grid-box-radius: calc(0.5 * var(--font-primary-size));
+	--rounded-radius: calc(0.5 * var(--font-primary-size));
 	--button-radius: 0.3em;
 
 	--header-link-thickness: 0.128em;
@@ -926,7 +934,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 
 
 /* ============================= */
-/* BODY mit with outer area      */
+/* BODY with outer area          */
 /* ============================= */
 body {
 	font-family: var(--font-primary);
@@ -966,6 +974,7 @@ li::marker {
 	content: "";
 	display: table;
 	clear: both;
+	font-size: var(--font-primary-size);
 }
 
 @media screen {
@@ -1021,30 +1030,30 @@ h1, h2, h3, h4 {
 
 h1 {
 	font-family: var(--font-title);
-	font-size: 3rem;
+	font-size: calc(3 * var(--font-primary-size));
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: calc(2 * var(--font-primary-size));
 }
 
 /* mobile optimization */
 @media (max-width: 35rem) {
 	h1 {
-		font-size: 2rem;
+		font-size: calc(2 * var(--font-primary-size));
 	}
 
 	h2 {
-		font-size: 1.75rem;
+		font-size: calc(1.75 * var(--font-primary-size));
 	}
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: calc(1.5 * var(--font-primary-size));
 }
 
 h4 {
-	font-size: 1.25rem;
+	font-size: calc(1.25 * var(--font-primary-size));
 }
 
 ul, ol {
@@ -1346,7 +1355,7 @@ table tbody tr:nth-child(even) {
    Centered box
    ======================= */
 .box-centered {
-	max-width: min(calc(100% - 1rem), calc(3 / 4 * var(--width-main)));
+	max-width: min(calc(100% - var(--font-primary-size)), calc(3 / 4 * var(--width-main)));
 	clear: both;
 	content: "";
 }
@@ -2129,7 +2138,7 @@ select {
 	color: var(--input-text-default);
 	border: var(--line-thin) solid var(--input-border-default);
 	padding: 0.5rem;
-	font-size: 1rem;
+	font-size: var(--font-primary-size);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -2298,7 +2307,7 @@ nav.menu li {
 
 nav.menu a {
 	display: block;
-	padding: 0.75rem 1.25rem;
+	padding: calc(0.75 *  var(--font-primary-size)) calc(1.25 * var(--font-primary-size));
 	color: var(--menu-text);
 	text-decoration: none;
 	font-weight: bold;
@@ -2325,7 +2334,7 @@ nav.menu li ul {
 	inset-inline-start: 0;
 	background-color: var(--submenu-bg);
 	border: var(--line-thin) solid var(--submenu-border);
-	min-width: 12rem;
+	min-width: calc(12 * var(--font-primary-size));
 	z-index: 1000;
 	flex-direction: column;
 }
@@ -2339,7 +2348,7 @@ nav.menu li ul li {
 }
 
 nav.menu li ul a {
-	padding: 0.5rem 1rem;
+	padding: calc(0.5 *  var(--font-primary-size))  var(--font-primary-size);
 	color: var(--submenu-text);
 	background-color: var(--submenu-bg);
 	display: block;
@@ -2365,7 +2374,7 @@ nav.menu li ul a:hover {
 
 @media screen {
 	.main > .image-box {
-		max-width: min(calc(100% - 1rem), var(--width-main));
+		max-width: min(calc(100% - var(--font-primary-size)), var(--width-main));
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
@@ -2401,9 +2410,9 @@ nav.menu li ul a:hover {
 /* sub-elements with half-transparent backgrounds */
 .image-overlay-content {
 	background-color: rgba(255, 255, 255, 0.7);
-	padding: 0.4em var(--padding-box) 0.3rem var(--padding-box);
+	padding: 0.4em var(--padding-box) calc(0.3 * var(--font-primary-size)) var(--padding-box);
 	border-radius: 0;
-	font-size: 0.9rem;
+	font-size: calc(0.9 * var(--font-primary-size));
 	pointer-events: auto;
 }
 
@@ -2479,7 +2488,7 @@ nav.menu li ul a:hover {
 	background-color: rgba(255, 255, 255, 0.7);
 	padding: 0.2em 0.6em;
 	border-radius: 999em;
-	font-size: 0.8rem;
+	font-size: calc(0.8 * var(--font-primary-size));
 	z-index: 10;
 	font-style: italic;
 }
@@ -2677,7 +2686,7 @@ nav.menu li ul a:hover {
 	bottom: 0;
 	padding: var(--padding-box);
 	padding-top: 10%;
-	font-size: 2rem;
+	font-size: calc( 2 * var(--font-primary-size));
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -2998,7 +3007,7 @@ a img {
 
 @media screen {
 	.main > a img {
-		max-width: min(calc(100% - 1rem), var(--width-main));
+		max-width: min(calc(100% - var(--font-primary-size)), var(--width-main));
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
