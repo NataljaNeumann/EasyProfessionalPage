@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nemo amat dolorem</title>
+
+    <script>
+        /**
+         * This script uses a MutationObserver to detect when the `lang` attribute on the `<html>` element changes.
+         * This is a reliable way to catch browser-initiated translations, especially in browsers like Firefox.
+         * When a change is detected, it checks if the new language is one of the known RTL languages
+         * and sets the `dir` attribute on the `<html>` tag accordingly.
+         */
+
+        // A comprehensive list of RTL language codes
+        const rtlLanguages = [
+            'ar', 'ara',   // Arabic
+            'azb',         // South Azerbaijani (often uses Arabic script in Iran)
+            'dv', 'div',   // Dhivehi
+            'fa', 'fas',   // Persian / Farsi
+            'he', 'iw',    // Hebrew
+            'ku', 'kur',   // Kurdish (Sorani dialect)
+            'ckb',         // Central Kurdish (Sorani)
+            'nqo',         // N'Ko
+            'ps', 'pus',   // Pashto
+            'rhg',         // Rohingya
+            'sd', 'snd',   // Sindhi
+            'syr',         // Syriac
+            'ug', 'uig',   // Uyghur
+            'ur', 'urd',   // Urdu
+            'yi', 'yid'    // Yiddish
+        ];
+
+        const html = document.documentElement;
+        const originalLang = html.lang;
+
+        // Create a new MutationObserver instance
+        const observer = new MutationObserver(() => {
+            // Check if the language has changed from the original
+            if (html.lang && html.lang !== originalLang) {
+                const langCode = html.lang.substring(0, 2); // Get the two-letter language code
+
+                // Check if the current language is in our RTL list
+                if (rtlLanguages.includes(langCode)) {
+                    html.dir = 'rtl';
+                } else {
+                    html.dir = 'ltr';
+                }
+            }
+        });
+
+        // Start observing the <html> element for changes to its attributes, specifically 'lang'
+        observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
+    </script>
+
+    <!-- standard stylesheet -->
+    <link rel="stylesheet" href="epp.css" />
+
+    <!-- customizations, you can put yours into a separate file -->
+    <style type="text/css">
+@media (forced-colors: none) {
+	/* ================================
+	   Standard: Light color scheme
+	   after forced colors, since this
+	   is should be the usual way to 
+	   overwrite forced colors
+	   ================================ */
+	:root {
+		/* accent colors */
+		--color-accent: #8fb9b3;
+		--color-accent-alt: #b38fa3;
+
+		/* main colors: the text and the background of text */
+		--color-bg-main: #1e1e1e;
+		--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
+		--color-bg-outside: #1e1e1e;
+		--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
+		--color-text-main: #e0e0e0;
+		--color-marker-main: #e0e0e0;
+		--color-title: var(--color-accent);
+
+		/* colors for tables in the normal text */
+		--table-header-bg: #2c2c2c;
+		--table-header-text: #e0e0e0;
+		--table-body-odd-bg: #252525;
+		--table-body-odd-text: #e0e0e0;
+		--table-body-even-bg: #1e1e1e;
+		--table-body-even-text: #e0e0e0;
+
+		/* input in normal text */
+		--input-bg-default: #2c3e50;
+		--input-text-default: #ecf0f1;
+		--input-marker-default: #ecf0f1;
+		--input-border-default: #7f8c8d;
+		--input-focus-border-default: #1abc9c;
+
+	    /* button in normal text */
+	    --button-bg-default: var(--input-bg-default);
+	    --button-text-default: var(--input-text-default);
+        --button-bg-default-hover: #dce3eb;
+	    --button-text-default-hover: var(--input-text-default);
+
+		/* colors in gray boxes */
+		--color-box-gray-bg: #2c2c2c;
+		--color-box-gray-bg-overlay: #2c2c2ca0;
+		--color-box-gray-text: #dddddd;
+		--color-box-gray-marker: #dddddd;
+		--color-box-gray-header: #ecf0f1;
+		--color-box-gray-divider: #7f8c8d;
+
+		/* input colors in gray boxes */
+		--input-bg-gray: #34495e;
+		--input-text-gray: #ecf0f1;
+		--input-border-gray: #95a5a6;
+		--input-focus-border-gray: #1abc9c;
+
+        --button-bg-gray: var(--input-bg-gray);
+        --button-text-gray: var(--input-text-gray);
+        --button-bg-gray-hover: #cfd6dc;
+        --button-text-gray-hover: var(--input-text-gray);
+
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: #145c4c;
+		--color-box-accent-bg-overlay: #145c4ca0;
+		--color-box-accent-text: #e6f2f0;
+		--color-box-accent-marker: #e6f2f0;
+		--color-box-accent-header: #e6f2f0;
+		--color-box-accent-divider: #2c8c7c;
+
+		/* input colors in accent-colored boxes */
+		--input-bg-accent: #145c4c;
+		--input-text-accent: #ffffff;
+		--input-border-accent: #2c8c7c;
+		--input-focus-border-accent: #1abc9c;
+
+        --button-bg-accent: var(--input-bg-accent);
+        --button-text-accent: var(--input-text-accent);
+        --button-bg-accent-hover: #3b82f6;
+        --button-text-accent-hover: var(--input-text-accent);
+
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-bg: #4c1432;
+		--color-box-accent-alt-bg-overlay: #4c1432a0;
+		--color-box-accent-alt-text: #f2e6ec;
+		--color-box-accent-alt-marker: #f2e6ec;
+		--color-box-accent-alt-header: #f2e6ec;
+		--color-box-accent-alt-divider: #8c2c5c;
+
+		/* input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: #4c1432;
+		--input-text-accent-alt: #ffffff;
+		--input-border-accent-alt: #8c2c5c;
+		--input-focus-border-accent-alt: #c94c7f;
+
+        --button-bg-accent-alt: var(--input-bg-accent-alt);
+        --button-text-accent-alt: var(--input-text-accent-alt);
+        --button-bg-accent-alt-hover: #f97316;
+        --button-text-accent-alt-hover: var(--input-text-accent-alt);
+
+		/* menu colors */
+		--menu-bg: #1f2d3a;
+		--menu-text: #ecf0f1;
+		--menu-hover-bg: #34495e;
+		--menu-hover-text: #ffffff;
+		--menu-active-bg: #16a085;
+		--menu-active-text: #ffffff;
+		--menu-border: #34495e;
+
+		/* submenu colors */
+		--submenu-bg: #2c3e50;
+		--submenu-text: #ecf0f1;
+		--submenu-hover-bg: #3b4a59;
+		--submenu-hover-text: #ffffff;
+		--submenu-border: #1f2d3a;
+
+		/* grid-boxes */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-marker: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-marker: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+		
+		/* link colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
+	}
+}
+
+/* ================================
+   Dark-coloured scheme
+   ================================ */
+@media (prefers-color-scheme: Dark) and (forced-colors: none) {
+	:root {
+		/* accent colors */
+		--color-accent: #6c9a8b;
+		--color-accent-alt: #d8a3b3;
+
+		/* main colors: the text and the background of text */
+		--color-bg-main: #f5f7fa;
+		--brush-bg-main: var(--color-bg-main); /* solid color, repeating image or gradient/repeating pattern */
+		--color-bg-outside: #f5f7fa;
+		--brush-bg-outside: var(--color-bg-outside); /* solid color, repeating image or gradient/repeating pattern */
+		--color-text-main: #2c3e50;
+		--color-marker-main: var(--color-text-main);
+		--color-title: var(--color-accent);
+
+		/* tables in normal text */
+		--table-header-bg: #d0d6dd;
+		--table-header-text: var(--color-text-main);
+		--table-body-odd-bg: #f5f7fa;
+		--table-body-odd-text: var(--color-text-main);
+		--table-body-even-bg: #e0e6ed;
+		--table-body-even-text: var(--color-text-main);
+
+		/* input in normal text */
+		--input-bg-default: #ffffff;
+		--input-text-default: #333333;
+		--input-border-default: #cccccc;
+		--input-focus-border-default: #666666;
+
+		/* button in normal text */
+		--button-bg-default: var(--input-bg-default);
+		--button-text-default: var(--input-text-default);
+		--button-bg-default-hover: #dce3eb;
+		--button-text-default-hover: var(--input-text-default);
+
+		/* colors in gray boxes */
+		--color-box-gray-bg: #e0e6ed;
+		--color-box-gray-bg-overlay: #e0e6eda0;
+		--color-box-gray-text: #2c3e50;
+		--color-box-gray-marker: #2c3e50;
+		--color-box-gray-header: #34495e;
+		--color-box-gray-divider: #95a5a6;
+
+		/* input colors in gray boxes */
+		--input-bg-gray: #f9f9f9;
+		--input-text-gray: #2c3e50;
+		--input-marker-gray: #2c3e50;
+		--input-border-gray: #bdc3c7;
+		--input-focus-border-gray: #7f8c8d;
+
+		--button-bg-gray: var(--input-bg-gray);
+		--button-text-gray: var(--input-text-gray);
+		--button-bg-gray-hover: #cfd6dc;
+		--button-text-gray-hover: var(--input-text-gray);
+
+		/* colors in accent-colored boxes */
+		--color-box-accent-bg: #dbece6;
+		--color-box-accent-bg-overlay: #dbece6a0;
+		--color-box-accent-text: #1c3d2e;
+		--color-box-accent-marker: #1c3d2e;
+		--color-box-accent-header: #145c4c;
+		--color-box-accent-divider: #8fb9b3;
+
+		/* input-colors in accent-coloured boxes */
+		--input-bg-accent: #e6f2f0;
+		--input-text-accent: #145c4c;
+		--input-border-accent: #8fb9b3;
+		--input-focus-border-accent: #2c8c7c;
+
+		--button-bg-accent: var(--input-bg-accent);
+		--button-text-accent: var(--input-text-accent);
+		--button-bg-accent-hover: #3b82f6;
+		--button-text-accent--hover: var(--input-text-accent);
+
+		/* colours for the coloured boxes with alternative accent */
+		--color-box-accent-alt-header: #8c2c4c;
+		--color-box-accent-alt-divider: #d8a3b3;
+		--color-box-accent-alt-bg: #f5e3e8;
+		--color-box-accent-alt-bg-overlay: #f5e3e8a0;
+		--color-box-accent-alt-text: #4c1f2c;
+		--color-box-accent-alt-marker: #4c1f2c;
+
+		/* Input-colors in altrnatively coloured boxes */
+		--input-bg-accent-alt: #f9eef1;
+		--input-text-accent-alt: #8c2c4c;
+		--input-marker-accent-alt: #8c2c4c;
+		--input-border-accent-alt: #d8a3b3;
+		--input-focus-border-accent-alt: #b34c6d;
+
+		--button-bg-accent-alt: var(--input-bg-accent-alt);
+		--button-text-accent-alt: var(--input-text-accent-alt);
+		--button-bg-accent-alt-hover: #f97316;
+		--button-text-accent-alt-hover: var(--input-text-accent-alt);
+
+		/* === menu colors === */
+		--menu-bg: #2c3e50;
+		--menu-text: #ecf0f1;
+		--menu-hover-bg: #34495e;
+		--menu-hover-text: #ffffff;
+		--menu-active-bg: #1abc9c;
+		--menu-active-text: #ffffff;
+		--menu-border: #1f2d3a;
+
+		/* Submenu colors */
+		--submenu-bg: #3b4a59;
+		--submenu-text: #ecf0f1;
+		--submenu-hover-bg: #4b5a69;
+		--submenu-hover-text: #ffffff;
+		--submenu-border: #2c3e50;
+
+		/* grid-boxess */
+		--grid-box-bg: var(--color-box-gray-bg);
+		--grid-box-border: var(--color-box-gray-bg);
+		--grid-box-text: var(--color-box-accent-text);
+		--grid-box-marker: var(--color-box-accent-text);
+		--grid-box-header: var(--color-box-gray-header);
+		--grid-box-accent-bg: var(--color-box-accent-bg);
+		--grid-box-accent-border: var(--color-box-accent-bg);
+		--grid-box-accent-text: var(--color-box-accent-text);
+		--grid-box-accent-marker: var(--color-box-accent-text);
+		--grid-box-accent-header: var(--color-box-accent-header);
+		--grid-box-accent-alt-bg: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-border: var(--color-box-accent-alt-bg);
+		--grid-box-accent-alt-text: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-marker: var(--color-box-accent-alt-text);
+		--grid-box-accent-alt-header: var(--color-box-accent-alt-header);
+		--grid-box-accent-alt-divider: var(--color-box-accent-alt-divider);
+	
+		/* link-colors */
+		--link-color: var(--color-accent);
+		--color-box-gray-link-color: var(--color-accent);
+		--color-box-accent-link-color: var(--color-accent);
+		--color-box-accent-alt-link-color: var(--color-accent-alt);
+	}
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box-accent-alt-full">
+        <nav class="menu">
+            <ul>
+                <li><a href="#start">Ipsum</a></li>
+                <li><a href="#pain">Lorem</a></li>
+                <li><a href="#lower">Os ischii</a></li>
+                <li><a href="#arthritis">Osteo</a></li>
+                <li><a href="#licence">License</a></li>
+            </ul>
+        </nav>
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            </div>
+            <div class="image-caption">Nemo amat dolorem</div>
+        </div>
+        </div>
+        <h1 id="start">Lorem Ipsum</h1>
+        <div class="borderbox-right">
+            <p><cite lang="la" translate="no">lorem ipsum</cite> – these words, today mainly known as meaningless placeholder text, originally come from a philosophical passage by Cicero dealing with pleasure, pain, and human decision-making. In "De finibus bonorum et malorum", Cicero discusses the Epicurean idea that human beings naturally seek pleasure and avoid pain. The passage therefore raises a fundamental question: what actually makes an action good or desirable?</p>
+        </div>
+
+        <p><cite lang="la" translate="no">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</cite></p>
+        <p><cite lang="la" translate="no">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint.</cite></p>
+
+        <div class="borderbox-strong-left">
+            <p>A central idea of the text is that pleasure is not automatically good and pain is not automatically bad. Cicero explains that people do not reject pain simply because it is pain, nor do they always choose pleasure simply because it feels pleasant. Instead, they consider the consequences of their actions. Sometimes a person accepts temporary pain because it may lead to a greater benefit later. In the same way, a person may reject an immediate pleasure if it could cause greater suffering in the future. This shows that human decisions should not be based only on immediate feelings, but also on reason and judgement.</p>
+        </div>
+        <p><cite lang="la" translate="no">Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.</cite></p>
+        <p><cite lang="la" translate="no">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</cite></p>
+        <p>This becomes especially clear in the famous sentence stating that nobody loves pain simply because it is painful. Pain itself is not something people normally desire. However, difficult situations may still be worth accepting when they help a person achieve something valuable. For example, physical training can be exhausting and uncomfortable, but people still exercise because they expect long-term benefits such as strength or health. The same principle can be applied to studying, working, or making difficult personal decisions. Short-term discomfort can sometimes produce greater satisfaction in the future.</p>
+        <p>Cicero also presents human life as a process of balancing different forms of pleasure and suffering. The individual has to decide which pleasures are worth pursuing and which should be rejected. This makes reason extremely important. A wise person does not simply follow every desire but thinks about its possible consequences. Freedom therefore does not mean doing whatever feels good in the present moment. Instead, true freedom includes the ability to choose carefully and responsibly.</p>
+        <p>Another important aspect of the passage is Cicero’s description of situations in which circumstances limit human choice. People may normally prefer comfort and pleasure, but duties and necessities can force them to act differently. In such situations, a person may have to sacrifice personal satisfaction in order to fulfil an obligation. This suggests that morality cannot be reduced to the simple search for pleasure. Human life is more complicated because responsibility, duty, and long-term consequences also influence our choices.</p>
+        <img class="img-full" src="../Images/LightImage1.jpg" />
+        <p>Overall, Cicero’s text presents pleasure and pain as closely connected rather than complete opposites. The important question is not whether an experience is pleasant or painful at first, but what consequences it produces. A rational person must therefore judge each situation individually and choose the option that leads to the greatest overall benefit. Even though the passage was written more than two thousand years ago, its main idea is still relevant today: good decisions often require people to look beyond immediate satisfaction and consider what will truly benefit them in the long term.</p>
+        <p>Starting with lorem ipsum leads back to Cicero’s reflections on pleasure and pain and to the idea that pain is something people naturally try to avoid. While Cicero discussed pain mainly in a philosophical sense, the same question can also be considered from a practical and medical perspective. Not every kind of pain can be prevented, but many forms of chronic or recurring pain are influenced by lifestyle, movement, nutrition, posture, underlying diseases, and everyday habits. It is therefore useful to look more closely at different types of pain, their causes, and the factors that may help prevent them or reduce their severity.</p>
+        <div class="box-accent-alt">This is a test page for testing HTML-Layout and contains mostly A.I.-Generated content, as well as the opinions based on experience of the author who doesn't have a medical degree. A.I. can make mistakes, people too. Please take care!</div>
+        <h2 id="pain">Chronic Pain</h2>
+        <p>Chronic pain is usually defined as pain lasting 3 months or longer. The cause can be obvious, but sometimes there is no single identifiable cause, because apparently the nervous system enjoys making medicine unnecessarily complicated.</p>
+        <p>A useful broader classification is that chronic pain can be nociceptive (ongoing tissue damage or inflammation), neuropathic (nerve damage), or nociplastic (altered pain processing without clear tissue or nerve damage, as in fibromyalgia). In many people, several of these mechanisms overlap.</p>
+        <table>
+            <colgroup>
+                <col style="width: 30%;">
+                <col style="width: 70%;">
+            </colgroup>
+            <thead>
+                <tr><td>Common type/cause of chronic pain</td><td>Frequent underlying causes</td></tr>
+            </thead>
+            <tr><td>Chronic back pain</td><td>Muscle or ligament strain, herniated or bulging discs, osteoarthritis, spinal stenosis, osteoporosis, inflammatory spinal disease, poor posture or previous injury.</td></tr>
+            <tr><td>Arthritis / chronic joint pain</td><td>Most commonly osteoarthritis caused by progressive cartilage damage; also rheumatoid arthritis, gout, inflammatory diseases, previous joint injury or infection.</td></tr>
+            <tr><td>Neuropathic pain</td><td>Damage or dysfunction of nerves, often due to diabetes, shingles, autoimmune diseases, infections, nerve compression, trauma or certain inherited disorders.</td></tr>
+            <tr><td>Fibromyalgia</td><td>The exact cause is unclear. It is thought to involve altered pain processing in the nervous system and increased sensitivity to pain. Stress, trauma or other chronic pain conditions may contribute or trigger symptoms.</td></tr>
+            <tr><td>Chronic headaches / migraines</td><td>Migraine disorders, tension-type headaches, stress, sleep problems, hormonal factors, muscle tension and sometimes medication overuse.</td></tr>
+            <tr><td>Chronic neck pain</td><td>Muscle strain, poor posture, degenerative changes, arthritis, disc problems, previous injuries such as whiplash or nerve compression.</td></tr>
+            <tr><td>Chronic pelvic pain</td><td>Endometriosis, pelvic inflammatory disease, bladder disorders, nerve irritation, musculoskeletal problems or gastrointestinal conditions.</td></tr>
+            <tr><td>Chronic pain after injury or surgery</td><td>Persistent tissue damage, scar formation, inflammation or nerve injury after trauma or an operation.</td></tr>
+            <tr><td>Cancer-related chronic pain</td><td>Tumour pressure on nerves, bones or organs, bone metastases, inflammation, or effects of cancer treatments such as surgery, chemotherapy or radiotherapy.</td></tr>
+            <tr><td>Complex regional pain syndrome</td><td>Often develops after an injury, fracture or surgery and involves abnormal nervous-system and inflammatory responses.</td></tr>
+            <tr><td>Chronic musculoskeletal pain</td><td>Repetitive strain, tendon disorders, old injuries, joint degeneration, muscle imbalance or persistent inflammation.</td></tr>
+            <tr><td>Chronic visceral pain</td><td>Long-term disorders affecting internal organs, such as inflammatory bowel disease, irritable bowel syndrome, endometriosis, kidney disorders or bladder conditions.</td></tr>
+
+        </table>
+
+        <div class="box-accent-wide">
+        <h2 id="lower">Lower Back Pain</h2>
+        <p>Lower back pain is extremely common, and in many cases the best long-term approach is not complete rest, but gradual movement, muscle strengthening, good ergonomics, adequate sleep, and identifying medical factors that may contribute to pain. Long periods of bed rest are generally discouraged because they can weaken muscles and make recovery slower.</p>
+        <p>Hanging on a branch of a tree or high bar: Several people in the environment of the author reported they use hanging on a high bar to get rid of the lower back pain, especially not in clinical cases of lower back pain.</p>
+        <div class="box-gray">
+        <h3>Build the muscles that support the lower back</h3>
+        <p>The goal is not to train the lower back as hard as possible. The spine is supported by a whole system: abdominal muscles, deep core muscles, glutes, hips and back muscles. Stronger muscles help stabilize the trunk and distribute loads more effectively.</p>
+        <img class="img-right" src="../Images/LightImage3.jpg" />        
+        <p><b><u>Useful exercises include:</u></b></p>
+        <p><b>Leg Swing Exercise:</b> Stand with one foot on a slightly raised, stable surface, such as a low step. Hold on to a wall, chair, or railing for balance if necessary. Let the other leg hang freely beside the step. Keep your upper body upright and your standing knee slightly bent. Then gently swing the free leg forward and backward in a relaxed, controlled movement.</p>
+        <p><b>Walking:</b> Start with comfortable distances and increase gradually. Walking keeps the spine moving without placing extreme loads on it. While walking turn your chest slightly to left and right.</p>
+        <p><b>Glute bridge:</b> Lie on your back with your knees bent and feet flat. Tighten your stomach slightly, squeeze your buttocks and slowly lift your hips. Your shoulders, hips and knees should form roughly one line. Lower yourself slowly.</p>
+        <p><b>Dead bug:</b> Lie on your back with your hips and knees bent. Tighten your abdominal muscles gently. Slowly lower one heel toward the floor while keeping your lower back controlled, then return and alternate.</p>
+        <p><b>Sit-to-stand:</b> Sit on a firm chair. Place your feet underneath your knees and stand up without using your hands if possible. Sit down slowly again. This strengthens the thighs and glutes and also trains a movement used constantly in daily life.</p>
+        <p><b>Gentle hip-flexor stretch:</b> Kneel on one knee with the other foot in front. Keep your trunk upright and gently move your pelvis forward until you feel a stretch at the front of the hip.</p>
+        <p><b>Exercise should normally feel manageable. Mild muscular effort is expected, but exercises that clearly increase back pain, cause shooting pain down the leg, numbness or weakness should be stopped and assessed. The NHS also recommends remaining active and gradually building exercise rather than staying in bed.</b></p>
+        </div>
+        
+        <img class="img-left" src="../Images/LightImage2.jpg" />        
+        <h3>Sitting position</h3>
+        <p>There is no single magical posture that prevents back pain forever. The more important principle is supported sitting combined with regular changes of position. Humans unfortunately were not designed to become decorative office furniture for eight hours straight.</p>
+        <p><b><u>When sitting:</u></b></p>
+        <ul>
+            <li>Keep both feet supported on the floor or on a footrest.</li>
+            <li>Keep the knees approximately level with, or slightly below, the hips.</li>
+            <li>Sit far enough back that the backrest supports the lower back.</li>
+            <li>Keep the shoulders relaxed rather than pulled upward.</li>
+            <li>Keep the keyboard and mouse close enough that you do not constantly reach forward.</li>
+            <li>Place the screen roughly in front of you so you do not repeatedly rotate your neck and trunk.</li>
+            <li>Change position frequently. Standing, walking for a few minutes and moving the hips and spine are often more useful than trying to maintain one “perfect” posture indefinitely.</li>
+        </ul>
+        <p>The NHS specifically recommends maintaining good posture with the lower back supported when sitting.</p>
+        
+
+        <div class="box-gray">
+        <div class="image-box-right">
+            <div class="image-content">
+                <img src="../Images/LightImage1.jpg" />
+                <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            </div>
+            <div class="image-caption">Nemo amat dolorem</div>
+        </div>        
+        <h3>A suitable adjustable office chair</h3>
+        <p>A good office chair should adapt to the person rather than forcing the person to adapt to the chair.</p>
+        <p>Important features include an adjustable seat height, adjustable backrest, supportive lumbar region, sufficient seat depth, and stable armrests if they help with getting up and sitting down.</p>
+        <p>The lower part of the backrest should provide firm but comfortable lumbar support. It should support the natural inward curve of the lower spine rather than pushing the body sharply forward.</p>
+        <p>For someone who finds standing up painful, armrests can be useful because they allow part of the force required to stand to be transferred through the arms.</p>
+        <p>A chair that allows controlled reclining or dynamic movement can also be useful because the user can change spinal loading throughout the day. Some chairs allow limited lateral movement as well. A good goal is a chair that permits safe, small changes of position to any direction, while remaining stable.</p>
+        <p>Additionally a chair that assists in straightening up can help ease an already available lower back pain.</p> 
+        </div>
+
+        <div class="box-accent-alt-left">
+        <div class="image-box">
+            <div class="image-content">
+                <img src="../Images/DarkImage2.jpg" />
+            </div>
+            <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+        </div>        
+        <h3>An ergonomic desk that encourages back strength</h3>
+        <p>A height-adjustable desk can be especially useful because it allows a person to alternate between sitting and standing.</p>
+        <p>The key benefit is movement, not simply standing all day. Standing motionless for hours can create a different set of problems.</p>
+        <p>A practical pattern is to alternate regularly between:</p>
+        <ul>
+            <li>supported sitting,</li>
+            <li>standing,</li>
+            <li>short walking breaks,</li>
+            <li>brief mobility exercises.</li>
+        </ul>
+        <p>The desk should allow the forearms to rest comfortably with the shoulders relaxed. When standing, the screen and keyboard should remain at a comfortable height so that the person does not bend forward.</p>
+        <p>A desk itself does not directly “build back muscles”. However, a workstation that encourages frequent position changes and short activity breaks can reduce long periods of inactivity and makes it easier to incorporate movements such as sit-to-stands, walking and gentle strengthening into the day.</p>
+        </div>
+
+        <h3>Sleeping position and sleeping surface</h3>
+        <p>There is no universally correct sleeping position, but the spine should generally be supported comfortably without being forced into an extreme position.</p>
+        <p>On the back: A small pillow beneath the knees can reduce tension through the lower back.</p>
+        <p>On the side: Slightly bend the hips and knees and place a pillow between the knees if this feels comfortable.</p>
+        <p>A supportive mattress is usually preferable to sleeping regularly on a narrow or sagging sofa. On a sofa, movement can be restricted and the body may twist while turning during the night. The problem is not simply that “rolling over increases disc pressure”, but that an unsuitable surface may force the spine into awkward or asymmetric positions for long periods.</p>
+        <p>I have best results with a bed that has a footboard, because I can put some pillows between the feet and the footboard, this helps me to keep the knees bent. When I turn around in the bed with stretched legs this increases the pressure to the spine.</p>
+
+        
+        <h3>Metabolic and autoimmune conditions</h3>
+        <p>Back pain should not automatically be blamed on posture or weak muscles. Some medical conditions can contribute to widespread muscle or joint pain.</p>
+        <p>Hypothyroidism, including hypothyroidism caused by Hashimoto’s thyroiditis, can be associated with fatigue, muscle aches and joint discomfort. Hashimoto’s is an autoimmune condition that can gradually reduce thyroid hormone production.</p>
+        <p>The relationship between gluten and Hashimoto’s disease needs to be described carefully. Gluten is not considered a general cause of Hashimoto’s disease, and a gluten-free diet is not routinely recommended for everyone with Hashimoto’s. However, Hashimoto’s and celiac disease occur together more frequently than would be expected by chance because both are autoimmune diseases.</p>
+        <p>In people with celiac disease, gluten triggers intestinal inflammation and damages the small intestine. Celiac disease can also contribute to bone or joint pain and problems absorbing nutrients. A strict gluten-free diet is therefore essential for people who actually have celiac disease.</p>
+        <p>Other conditions worth considering in persistent pain include vitamin D deficiency, osteoporosis, inflammatory arthritis, iron deficiency, diabetes-related nerve problems and inflammatory spinal disorders.</p>
+       
+
+        <div class="box-gray">
+        <h3>Jobs That Can Be Hard on the Back</h3>
+        <div class="callout-box-left">
+            <p>Some jobs can increase the risk of back pain because they involve <b>too much physical strain</b>, while others can be problematic because they involve <b>too little movement</b>. Parcel delivery is a good example of the first group: repeated lifting, carrying, twisting, climbing stairs, getting in and out of a vehicle, and handling loads under time pressure can place considerable stress on the lower back. Similar risks occur in construction, warehouse work, nursing and elderly care, removal work, farming, cleaning, and some factory jobs. The risk is especially high when heavy objects are lifted with a bent or twisted back, when loads are carried far from the body, or when there is little time for recovery.</p>
+        </div>
+        <p>At the other end of the spectrum, jobs that involve <b>long periods of sitting</b> can also contribute to back problems. Office workers, drivers, call-centre employees, programmers, and people who spend many hours at a desk may develop stiffness, weak trunk and gluteal muscles, reduced hip mobility, and pain from staying in one position for too long. The problem is not sitting itself, but sitting for many hours without enough movement or position changes.</p>
+        <p>The best protection in physically demanding jobs is good lifting technique, strong leg and core muscles, suitable equipment, reasonable load limits, and regular recovery. In sedentary jobs, frequent movement breaks, an adjustable chair and desk, walking, and regular strength training are more important. In both cases, the back usually does best with regular, varied loading rather than either constant overload or near-complete inactivity.</p>
+        </div>
+
+        <div class="notch">
+        <h3>Other useful strategies</h3>
+        <p>One of the biggest mistakes with recurrent lower back pain is focusing on a single object, exercise or posture. Usually it is the overall daily pattern that matters more.</p>
+        <p>Useful measures include gradually increasing general physical activity, maintaining healthy body weight, avoiding smoking, lifting objects close to the body, improving hip and leg strength, avoiding long periods in one position, reducing weight, and managing poor sleep and chronic stress.</p>
+        <p>Heat can sometimes relax painful muscles. Physiotherapy can also be useful when pain continues, particularly when the therapist can identify movements that trigger symptoms and progressively rebuild strength and confidence.</p>
+        <p>Persistent pain should be medically assessed if it does not improve after several weeks or significantly interferes with normal life.</p>
+        <p>Urgent medical evaluation is important if back pain is accompanied by new loss of bladder or bowel control, numbness around the genitals or buttocks, rapidly increasing weakness in the legs, severe pain following significant trauma, fever with severe back pain, or other major neurological symptoms. These can occasionally indicate a condition requiring urgent treatment.</p>
+        <p>The overall principle is fairly simple: support the spine, but do not immobilize it; strengthen the body gradually; change positions often; sleep on a surface that allows comfortable alignment and movement; and investigate medical causes when the pattern of pain suggests that the problem is more than ordinary mechanical back pain.</p>
+        </div>
+        </div>
+
+        <div class="box-accent-alt-wide">
+        <div class="notch-alt-strong">
+        <h2 id="arthritis">Osteoarthritis</h2>
+        <p>...is a degenerative joint disease in which cartilage and other tissues within the joint gradually change and break down. It is not simply “wear and tear.” Age, previous injuries, body weight, joint mechanics, genetics, muscle strength and repeated stress on a joint can all influence how likely osteoarthritis is to develop or progress.</p>
+        <p><b><u>Factors that can worsen osteoarthritis</u></b></p>
+        <p>Excessive mechanical stress on the joints is one of the clearest risk factors. Repetitive heavy loading, frequent deep squatting, repeated impacts, physically demanding work and certain sports can increase the risk, especially when the same joint is stressed again and again. Previous injuries, such as ligament or meniscus injuries in the knee, can also make osteoarthritis more likely later in life.</p>
+        <p>Regular physical activity is generally beneficial. The problem is more often excessive, repetitive or poorly controlled loading, especially when combined with injury or inadequate recovery.</p>
+        <p>Overweight and obesity are also important. Extra body weight increases mechanical stress on weight-bearing joints such as the knees and hips. In addition, fat tissue is metabolically active and can contribute to systemic inflammation. Maintaining a healthy weight can therefore reduce both mechanical stress and inflammatory burden.</p>
+        <p>Other factors that may worsen osteoarthritis include smoking, poor sleep and chronic stress, which can increase pain sensitivity</p>
+        </div>
+
+
+        <div class="box-accent-full">
+        <h3>Nutrition and inflammation</h3>
+        <p>A diet based mainly on whole, minimally processed foods is usually the most sensible approach. Mediterranean-style diets are often recommended because they contain many foods associated with lower inflammatory activity.</p>
+        <div class="callout-box">
+        <p>Foods commonly considered helpful include:</p>
+        <ul>
+            <li>fatty fish<b>*</b> such as salmon, sardines, herring and mackerel, because they contain omega-3 fatty acids</li>
+            <li>vegetables, especially leafy greens and cruciferous vegetables</li>
+            <li>fruits and berries such as blueberries, raspberries and strawberries <b>*</b></li>
+            <li>olive oil</li> 
+            <li>nuts<b>*</b> and seeds</li> 
+            <li>beans and lentils</li> 
+            <li>whole grains<b>*</b></li>
+            <li>herbs and spices</li>
+            <li>foods rich in fibre<b>*</b></li>
+        </ul>
+        </div>
+        <div class="callout-box-right"><p><b>*</b> Please be aware that your body can react with an allergic reaction to some of these foods. If you want to be on the sure side, then you need to avoid all allergens, even if you don't know about an existing intolerance, or allergy. Usual tests can be false-negative, showing that there is no allergy, even if there is an allergic or autoimmune reaction.</p></div>
+        <p>These foods provide omega-3 fatty acids, antioxidants, polyphenols and other nutrients that may help reduce inflammatory processes.</p>
+        <p>Foods that are better limited include highly processed foods, excessive added sugar, large amounts of refined carbohydrates, processed meat and diets very high in saturated fat. These foods are not a direct cause of osteoarthritis, but dietary patterns dominated by them are associated with obesity, poorer metabolic health and higher inflammatory activity.</p>
+        </div>
+
+
+        <div class="box-gray-full">
+        <div class="box-centered">
+        <h3>Food intolerances and intestinal inflammation</h3>
+        <p>This area needs a better explanation because “food intolerance” gets used for several completely different things.</p>
+        <p>Some conditions genuinely cause intestinal inflammation. The clearest example is celiac disease, in which gluten triggers an autoimmune reaction and damages the lining of the small intestine. In people with celiac disease, gluten must be avoided.</p>
+        <p>By contrast, common intolerances such as lactose intolerance usually cause symptoms such as bloating, abdominal pain and diarrhoea because the food is poorly digested. They do not normally cause the same type of chronic intestinal inflammation seen in celiac disease.</p>
+        <p>Osteoarthritis is primarily a joint disease with mechanical, metabolic and inflammatory components, but there is growing scientific interest in the connection between the gut, systemic inflammation and joint disease.</p>
+        <p>For someone who notices clear gastrointestinal symptoms after certain foods, it may be useful to investigate conditions such as celiac disease, inflammatory bowel disease or genuine food allergy.</p>
+        <p>Physical activity: one of the best preventive measures, but you need to take care about possible food intolerances and allergies before activity.</p>
+        <p>Regular exercise helps maintain muscle strength, joint stability and mobility. Strong muscles reduce the load placed directly on the joint.</p>
+        </div>
+        </div>
+
+        <div class="borderbox-alt-left">
+        <p>Helpful activities often include:</p>
+        <ul>
+        <li>walking</li>
+        <li>cycling</li>
+        <li><b>swimming</b></li>
+        <li>resistance training</li>
+        <li>controlled strength exercises</li>
+        <li>mobility exercises</li>
+        <li>balance training</li>
+        </ul>
+        </div>
+
+        <p>Exercise should be increased gradually. Sudden very heavy training, repeated jumping (even on healthy joints) or continuing exercises through significant joint pain can be counterproductive.</p>
+        <p>The goal is load without overload. Quite annoyingly, body joints seem to demand moderation, which is rarely humanity’s favourite mindset.</p>
+
+        <div class="borderbox-alt-strong-right">
+        <h4>In short</h4>
+        <p>The main factors that can worsen osteoarthritis are repeated joint injury, excessive mechanical stress, obesity, muscle weakness, inactivity, poor joint mechanics and unhealthy metabolic conditions.</p>
+        <p>The main factors that can help protect the joints are regular moderate exercise, strong muscles, healthy body weight, adequate recovery, good nutrition and avoiding repeated injuries.</p>
+        </div>
+
+        <h4>Factors that may help prevent or slow progression</h4>
+        <p>The most useful measures include maintaining a healthy body weight, strengthening the muscles around the joints, exercising regularly without repeatedly overloading the same joint, treating injuries properly, varying activities, getting enough sleep, not smoking, not drinking alkohol and eating a balanced Mediterranean-style diet, avoiding allergens.</p>
+        <p>Good footwear can also help when lower-limb mechanics are a problem. In some people, physiotherapy may be useful to correct movement patterns, improve muscle strength and reduce abnormal joint loading.</p>
+        <p>It is also important not to become completely inactive because of mild pain. Reduced movement leads to muscle loss, and weaker muscles can increase stress on the affected joint. Muscles can also be trained in still body positions.</p>
+
+        </div>
+        
+
+        <h2>Rheumatism and Rheumatoid Arthritis</h2>
+        <div class="callout-box-alt-right">
+        <p>The word “rheumatism” is not a single diagnosis. It is a broad, older term used for many conditions that cause pain, stiffness or inflammation in joints, muscles and connective tissues. When people use the word today, they often mean rheumatoid arthritis (RA), a chronic autoimmune disease in which the immune system attacks the lining of the joints. This causes inflammation, swelling, pain and stiffness and, if it remains uncontrolled, can gradually damage cartilage and bone. RA can also affect other organs, including the lungs, heart, eyes and blood vessels.</p>
+        </div>
+        <h3>Causes and risk factors</h3>
+        <p>The exact cause of rheumatoid arthritis is not known. It appears to develop through a combination of genetic susceptibility and environmental influences. In people who are genetically predisposed, the immune system becomes misdirected and attacks healthy tissue. Smoking is one of the clearest modifiable risk factors. Family history, age, gender, hormonal factors and possibly certain infections or changes in the microbiome may also contribute.</p>
+        <p>Diet may influence inflammation, but it is important not to turn that into the claim that a single food “causes rheumatism.” Red meat is not considered a direct cause of rheumatoid arthritis. However, diets high in red and especially processed meat often contain more saturated fat and may form part of an overall dietary pattern associated with increased inflammation, obesity and poorer metabolic health. For that reason, many anti-inflammatory dietary approaches recommend limiting red and processed meat.</p>
+        <div class="borderbox-alt-strong">
+        <p>Foods that may worsen inflammation</p>
+        <ul>
+            <li>large amounts of processed and red meat</li>
+            <li>foods rich in saturated fat</li>
+            <li>sugary drinks, sweets and heavily refined carbohydrates</li>
+            <li>highly processed foods</li>
+            <li>alcohol</li>
+        </ul>
+        </div>
+        <p>Excess body fat can release inflammatory signaling substances and may make rheumatoid arthritis more difficult to control.</p>
+        <h4>Foods that may help reduce inflammation</h4>
+        <p>More useful choices include oily fish (if you aren't allergic), vegetables, berries (if you aren't allergic), legumes, seeds, and extra-virgin olive oil (don't heat it). These foods provide omega-3 fatty acids, fiber, antioxidants and polyphenols, which are associated with lower inflammatory activity. The overall dietary pattern matters far more than whether someone remembered to sprinkle turmeric on dinner.</p>
+        <h4>Exercise and movement</h4>
+        <p>During a strong inflammatory flare, painful and swollen joints may need temporary reduction in heavy loading, but complete immobilization is usually not the long-term goal. A physiotherapist can help adapt exercise to the affected joints.</p>
+        <h4>Weight management</h4>
+        <p>Maintaining a healthy body weight may reduce symptoms, especially when the knees, hips or feet are affected. This is not only because of mechanical loading. Fat tissue produces inflammatory substances called adipokines and cytokines, which may contribute to inflammatory activity.</p>
+        <h4>Medication is often essential</h4>
+        <p>Lifestyle changes can improve symptoms, but rheumatoid arthritis should not be treated with diet and exercise alone. Early medical treatment is important because ongoing inflammation can permanently damage joints even when symptoms sometimes appear manageable.</p>
+        <p>The central medications are disease-modifying antirheumatic drugs (DMARDs). These do more than relieve pain: they suppress the disease process and reduce the risk of permanent joint damage. Depending on the situation, doctors may also use NSAIDs, corticosteroids, biologic drugs or targeted therapies. Early DMARD treatment improves the chance of reaching remission or low disease activity</p>
+        <h4>Additional ways to reduce symptoms</h4>
+        <p>Helpful measures can include adequate sleep, stopping smoking, avoiding repetitive excessive joint stress, pacing demanding activities, using heat for stiffness or cold for acutely swollen joints, physiotherapy, occupational therapy and managing chronic stress. Suitable shoes or supportive aids can also reduce unnecessary mechanical strain on painful joints.</p>
+        <p>The basic principle is therefore: reduce inflammation medically, keep the body active, protect joints from unnecessary overload, maintain muscle strength and follow a generally anti-inflammatory dietary pattern. Red meat can be limited as part of that strategy, but blaming rheumatoid arthritis on red meat alone would dramatically oversimplify a complex autoimmune disease.</p>
+        <h2>Joint supplements from the pharmacy</h2>
+        <p>Some pharmacy supplements combine substances such as hyaluronic acid, glucosamine, chondroitin, collagen, vitamin C, copper and manganese. These ingredients are involved in normal connective-tissue and cartilage metabolism.</p>
+        <p>Glucosamine and chondroitin are natural components associated with cartilage structure. They are widely sold for osteoarthritis, but clinical studies have produced inconsistent results, and major guidelines do not regard them as a reliably effective treatment for pain or joint damages. Collagen supplements have somewhat more promising evidence: recent meta-analyses suggest modest improvements in pain and joint function in people with knee osteoarthritis, although they should still be considered supportive rather than primary treatment.</p>
+        <p>Oral hyaluronic acid is also marketed for joint health. Some studies report improvements in pain and stiffness, but the evidence is still limited compared with established measures such as exercise and weight management. Vitamin C is required for normal collagen formation, while copper and manganese contribute to normal connective-tissue and enzyme function. In people who already obtain enough of these nutrients from food, however, taking additional amounts is not known to rebuild worn joint cartilage.</p>
+        <p>These products should therefore be seen as secondary support. More important measures are maintaining healthy body weight, keeping the surrounding muscles strong, exercising regularly without repeatedly overloading the joints, avoiding injuries, stopping smoking, and controlling inflammatory or metabolic conditions.</p>
+        <p>Before starting to take any new supplement, exercise program, or major dietary change, it is advisable to discuss it with a doctor or other qualified healthcare professional. This is especially important if you have a chronic medical condition, regularly take medication, are pregnant, or have persistent or worsening pain. A doctor can help identify the underlying cause of symptoms, check for possible interactions or deficiencies, and recommend the most appropriate treatment based on your individual health situation.</p>
+        <h2>Food Intolerances and Food Allergies</h2>
+        <p>Food intolerances and food allergies are often confused, but they are not the same thing. A food intolerance usually affects digestion. The body has difficulty processing a certain substance, for example lactose. Typical symptoms are bloating, abdominal pain, gas, diarrhoea, nausea and sometimes constipation, fatigue or headaches. A food allergy, by contrast, involves the immune system. It can cause itching, hives, swelling of the lips or throat, wheezing, vomiting, abdominal symptoms or, in severe cases, anaphylaxis.</p>
+        <h3>Common food triggers and where they are found</h3>
+        <p>Milk and lactose: Lactose is the natural sugar in milk. It is found in milk, cream, sour cream, ice cream, fresh cheese, soft cheese and many processed foods containing milk, whey or milk powder. Lactose intolerance is not the same as a milk allergy: a milk allergy is a reaction to milk proteins, while lactose intolerance is caused by difficulty digesting lactose.</p>
+        <p>Many hard and matured cheeses contain much less lactose than milk and are often tolerated better. Examples include mature Cheddar and Swiss-type cheeses such as Emmental. Parmesan and other long-aged hard cheeses also tend to contain very little lactose, but “very low lactose” is not automatically identical to “guaranteed lactose-free.” If complete avoidance is necessary, the safest option is a product specifically labelled lactose-free.</p>
+        <p>Gluten: Gluten is naturally present in wheat, rye and barley. It is therefore commonly found in ordinary flour, bread, noodels, pizza, cakes, biscuits and many cereals. The amount of gluten in wheat multiplied in recent decades.</p>
+        <p>Oats require a bit more nuance. Oats themselves do not contain the same gluten proteins as wheat, rye and barley, and most people with celiac disease can tolerate specially produced gluten-free oats. However, normal oats and oat flour are very often contaminated with wheat, barley or rye during growing and processing. People with celiac disease should therefore use oats specifically labelled gluten-free, however the celiac disease is not the only illness that is connected with gluten.</p>
+        <p>Ordinary oat bread, muesli and porridge cannot simply be assumed to be gluten-free. The ingredient list and gluten-free certification matter. Even if many people with celliac disease can tolerate gluten-free oats this doesn't mean that all can tolerate.</p>
+        <p>Egg is a common allergen and can be present in obvious foods such as scrambled eggs, mayonnaise and omelettes, but also in cakes, pastries, biscuits, breaded products, desserts and some types of fresh pasta. Industrial dried pasta, however, is often made only from durum wheat and water, so the label has to be checked rather than assuming that all pasta contains egg.</p>
+        <p>Soy occurs in tofu, soy drinks, soy yoghurt, soy flour, textured vegetable protein and many meat substitutes. It can also occur in chocolate and processed foods as soy lecithin. Cocoa / Hot chocolate can be often bought without soj, while only expensive sorts of chocolate are free of all allergens, including soy. Whether a person with a soy allergy reacts to highly refined soy ingredients can vary, so this should be discussed with an allergist. Pea-based tofu or other legume products can be alternatives, if they do not contain soy.</p>
+        <p>Tree nuts: Common tree-nut allergens include almonds, hazelnuts, walnuts, cashews, pecans, Brazil nuts, pistachios and macadamia nuts. They may occur in chocolate, cakes, pastries, cereals, pesto, spreads, desserts and sauces. Nut allergy among others can cause itching or tingling in the mouth and throat, swelling, hives or breathing problems. A “sore throat” alone is not specific to a nut allergy, but throat tightness or swelling after eating a suspected allergen should be taken seriously.</p>
+        <p>Peanuts are not botanical nuts. They belong to the legume family, like peas and beans. They are nevertheless one of the most important food allergens and are treated separately from tree nuts in allergen labelling.</p>
+        <p>Strawberries are not nuts either. Botanically, they are an aggregate accessory fruit. The little structures on the outside contain the actual fruits. A person can also certainly be allergic to strawberries.</p>
+        <p>Other important allergens in the EU include fish, crustaceans, molluscs, sesame, mustard, celery, lupin and sulphites. The EU requires 14 major allergens to be clearly identified when they are ingredients in food.</p>
+        <h3>Small amounts and traces</h3>
+        <p>For a true food allergy, even a small amount can cause symptoms in some people. Cross-contact can occur when the same equipment, surfaces or utensils are used for foods with and without an allergen. This is why statements such as “may contain...” or “may contain traces of...” matter for people with allergies.</p>
+        <p>With celiac disease, very small amounts of gluten can also be relevant, even if they do not immediately cause obvious symptoms. Cross-contact can occur during manufacturing, storage, cooking or serving.</p>
+        <p>Food intolerances are somewhat different: many are dose-dependent. Someone with lactose intolerance, for example, may tolerate small quantities without symptoms, while another person may tolerate much less.</p>
+        <h3>Read the ingredient list</h3>
+        <p>If an allergen genuinely needs to be avoided, ingredient list of a food shall be initially checked, especially when you buy a new brand and when you try to build an allergen-free menu, and they should be re-checked from time to time. Manufacturers can change recipes. It is quite difficult to make an allergen free menu in the beginning. A checklist that contains a positive list of product for each of your stores may greatly facilitate the process.</p>
+        <p>It is worth checking not only obvious foods but also sauces, spice mixtures, stock cubes, sweets, chocolate, processed meat, dressings and ready meals.</p>
+        <p>Plain ground pepper or chilli is not automatically an allergen-containing food, but firms often process the pepper in same facilities as spice blends for economy. Spice blends can contain mustard, celery, wheat, milk or other ingredients, and pepper and chili can often be affected by cross-contact. Someone with allergy should therefore check the actual packaging rather than assuming that every ground spice is safe.</p>
+        <p>If you are trying to determine whether a particular food genuinely causes symptoms, a properly planned elimination and reintroduction process, ideally supervised by a doctor or dietitian, is much more useful than indefinitely avoiding ten different food groups. Complete avoidance may be necessary for a diagnosed allergy or celiac disease, but unnecessary restriction can create nutritional deficiencies.</p>
+        <h3>Acrylamide</h3>
+        <p>Acrylamide is a substance that forms naturally in some carbohydrate-rich foods when they are cooked at high temperatures, typically above about 120°C (250°F) under relatively dry conditions. It develops mainly through the Maillard reaction, the same chemical process that makes browned foods taste and smell appealing.</p>
+        <p>It can occur in following products:</p>
+        <ul>
+            <li>French fries and fried potatoes</li>
+            <li>potato crisps</li>
+            <li>roasted potatoes</li>
+            <li>bread</li>
+            <li>toast</li>
+            <li>biscuits and crackers</li>
+            <li>breakfast cereals</li>
+            <li>coffee</li>
+        </ul>
+        <p>Acrylamide also forms in bread and home baking. The darker and more strongly browned a starchy food becomes, the more acrylamide can generally form. Boiling and steaming generally produce much less acrylamide because the temperature of water-based cooking remains lower.</p>
+        
+        <h2>What should digestion feel like when food is well tolerated?</h2>
+        <p>In general, good digestive tolerance tends to mean that after repeated eating you do not repeatedly experience significant bloating, cramping, nausea, diarrhoea, constipation, urgency or unexplained discomfort, the stool should be rather hard than soft or watery (you have seen what an intolerances can look like in the famous dino park movie, however very hard stool can cause other problems), please consider that the food can remain up to 3 days within you, so you need to consider delayed effects on the food of past days. Stool frequency can vary widely, from several times per day to only a few times per week, without automatically being abnormal.</p>
+        <p>Repeatedly appearing watery diarrhoea, very hard pellet-like stools, greasy or floating stools that are difficult to flush, blood, black stools, unexplained weight loss, severe abdominal pain or repeated symptoms after certain foods are reasons to discuss the problem with a doctor. Proper diagnosis saves people from both unnecessary restrictions and accidentally continuing to eat something that genuinely causes harm.</p>
+        <p>Food can remain in the digestive tract for quite a long time. After eating, food usually spends several hours in the stomach and small intestine, while the remaining material may stay in the large intestine for much longer. The total transit time is often around 1 to 3 days, although it varies from person to person and can sometimes be shorter or longer. This means that symptoms such as bloating, abdominal discomfort or changes in bowel movements may appear many hours after a meal and are not always caused by the most recently eaten food.</p>
+        <p>The large intestine is where most of this delay occurs. Here, water is absorbed and intestinal bacteria ferment remaining food components, especially fibre and certain carbohydrates. If bowel movement is slow, stool may remain in the colon for several days, becoming firmer and drier. Because digestion is so delayed, identifying a food intolerance based only on immediate symptoms can be misleading, especially if symptoms aren't very strong. Keeping a food and symptom diary over several days is often more useful than blaming the last meal, tempting as that shortcut may be.</p>
+        
+        <h2>The Role of Inflammation in Cancer Development</h2>
+        <p>Inflammation is normally a <b>protective response</b>, it helps the body fight infections, repair damaged tissue, and remove injured cells. Once the problem has been resolved, the inflammatory response should stop. The situation becomes different when inflammation is <b>chronic</b>, meaning that it continues for months or years. Persistent inflammation can repeatedly damage tissue, stimulate cell division, and expose cells to reactive molecules that can damage DNA. Over time, this can increase the chance that mutations accumulate and contribute to cancer development.</p>
+        <p>Several well-known examples show this connection. Chronic inflammatory bowel diseases, such as ulcerative colitis and Crohn’s disease, increase the risk of colorectal cancer. Chronic infection with Helicobacter pylori can lead to long-lasting inflammation in the stomach and increase stomach-cancer risk, while chronic hepatitis B or C infection can promote inflammation and cancer in the liver.</p>
+        <p>Chronic inflammation can also create an environment that helps already altered cells survive and multiply. Inflammatory cells release signaling molecules that can encourage cell growth, formation of new blood vessels, and changes in surrounding tissues. However, inflammation does not automatically cause cancer, and short-term inflammation from an injury or infection is an essential and healthy part of the immune response. Cancer usually develops through a combination of genetic changes, environmental exposures, infections, lifestyle factors, and other biological processes.</p>
+        <p>Some lifestyle factors can indirectly contribute to chronic inflammation and cancer risk. Smoking, excess body weight, low physical activity, alcohol consumption, and unhealthy dietary patterns are established cancer risk factors, and obesity in particular is associated with persistent low-grade inflammation. Maintaining a healthy weight, exercising regularly, avoiding tobacco, limiting alcohol, following a balanced diet, and preventing or treating cancer-associated infections such as HPV and hepatitis B can therefore reduce cancer risk.</p>
+        <p>The key distinction is therefore between temporary inflammation, which protects the body, and persistent inflammation, which can contribute to tissue and DNA damage over time. Reducing unnecessary chronic inflammation is useful for general health, but there is no single “anti-inflammatory” food or supplement that can by itself prevent cancer.</p>
+        <h3>Colorectal Cancer: Risk Factors and Warning Signs</h3>
+        <p>Colorectal cancer develops in the colon or rectum, often from precancerous polyps that can grow slowly over many years. The risk increases with age, especially from about 45–50 years onward, but colorectal cancer can also occur in younger people. Important risk factors include a family history of colorectal cancer, previous colorectal polyps, inherited conditions such as Lynch syndrome or familial adenomatous polyposis (FAP), smoking, excessive alcohol consumption, frequently appearing diarrhea.</p>
+        <p>A particularly important risk factor is chronic inflammation in the intestine. People with long-standing inflammatory bowel diseases such as ulcerative colitis or Crohn’s disease have a clearly increased risk of colorectal cancer. Repeated inflammation and tissue repair can alter cells in the intestinal lining over time. Recent research has also shown how chronic gut inflammation may leave lasting changes in intestinal stem cells that promote tumour development.</p>
+        <p>Recurrent diarrhoea can be a sign of an underlying condition, including inflammatory bowel disease, infection, malabsorption, or other gastrointestinal disorders. Some of these conditions, particularly chronic inflammatory bowel disease, can increase cancer risk. So chronic diarrhoea should not simply be ignored or explained away indefinitely. A colonoscopy can help identify causes such as inflammatory bowel disease, polyps, bleeding sources, or colorectal cancer. It may also be advised earlier in people with a strong family history of colorectal cancer, previous polyps, or long-standing inflammatory bowel disease.</p>
+        <p>Possible warning signs of colorectal cancer include persistent changes in bowel habits, diarrhoea or constipation, blood in or on the stool, abdominal pain or cramping, the feeling that the bowel does not empty completely, unexplained weight loss, and iron-deficiency anaemia. Importantly, colorectal cancer and precancerous polyps may also cause no symptoms at all, which is why screening matters.</p>
+        <h2>Neuropathic Pain</h2>
+        <p>Neuropathic pain is pain caused by damage to, irritation of, or abnormal processing within the nerves themselves. Unlike pain from a strained muscle or injured joint, neuropathic pain often feels burning, electric, stabbing, tingling, numb, hypersensitive, or like “pins and needles.” Even light touch can sometimes feel painful.</p>
+        <p>Common causes include diabetes, autoimmune diseases, infections, nerve compression, trauma, vitamin deficiencies, alcohol-related nerve damage, chemotherapy, and some inherited neurological disorders.</p>
+        <h3>Diabetes</h3>
+        <p>Diabetes is one of the most common causes of peripheral neuropathy. Persistently high blood glucose can damage small blood vessels that supply the nerves and can also directly affect nerve function. Symptoms often begin in the feet and may gradually move upward.</p>
+        <p>The risk of type 2 diabetes can often be reduced by:</p>
+        <ul>
+            <li>maintaining a healthy body weight</b>
+            <li>exercising regularly</b>
+            <li>building muscle mass</b>
+            <li>limiting sugary drinks and highly processed foods</b>
+            <li>eating plenty of vegetables, fibre, legumes, whole grains and minimally processed foods</b>
+            <li>having blood glucose checked if there are risk factors</b>
+        </ul>
+        <p>People with prediabetes can sometimes significantly reduce their risk of progressing to type 2 diabetes through weight reduction and regular physical activity. Genetics still matter, so prevention lowers risk rather than making diabetes impossible.</p>
+        <h3>Autoimmune diseases</h3>
+        <p>Autoimmune conditions can damage nerves either directly or through inflammation. Examples include rheumatoid arthritis, lupus, Sjögren syndrome, vasculitis, celiac disease and Guillain-Barré syndrome.</p>
+        <h3>Infections</h3>
+        <p>Some infections can injure nerves. Examples include shingles, HIV, Lyme disease, hepatitis C and, more rarely, certain bacterial or viral infections affecting the nervous system.</p>
+        <p>Useful preventive measures include vaccination where appropriate, especially against shingles in eligible adults, reducing exposure to ticks, treating infections promptly and following safer-sex practices for infections such as HIV.</p>
+        <h3>Vitamin deficiencies</h3>
+        <p>Deficiencies in vitamin B12, folate, vitamin B1 or other nutrients can contribute to neuropathy. Vitamin B12 deficiency is particularly important because prolonged deficiency can cause neurological damage.</p>
+        <p>Risk is higher in people with malabsorption disorders, certain gastrointestinal diseases, previous stomach surgery, vegan diets without supplementation, and long-term use of some medications. Prevention means ensuring adequate intake and testing levels when there are relevant risk factors.</p>
+        <p>It is worth noting that too much vitamin B6 can also cause neuropathy, so supplements are not automatically harmless just because they arrived in a cheerful little pharmacy bottle.</p>
+        <h3>Alcohol</h3>
+        <p>Long-term heavy alcohol consumption can damage peripheral nerves directly and can also contribute to nutritional deficiencies. Reducing alcohol intake and correcting deficiencies can lower this risk.</p>
+        <h3>Nerve compression and injury</h3>
+        <p>Herniated discs, carpal tunnel syndrome, spinal stenosis, fractures and repetitive pressure on nerves can all cause neuropathic symptoms.</p>
+        <p>Factors that can worsen neuropathic pain, ommon aggravating factors include:</p>
+        <ul>
+            <li>poor blood glucose control</li>
+            <li>smoking</li>
+            <li>heavy alcohol consumption</li>
+            <li>nutritional deficiencies</li>
+            <li>untreated autoimmune inflammation</li>
+            <li>prolonged nerve compression</li>
+            <li>obesity and metabolic syndrome</li>
+            <li>inactivity</li>
+            <li>poor sleep</li>
+            <li>repeated injury</li>
+            <li>certain medications or toxic exposures</li>
+        </ul>
+        <p>Factors that may help prevent or reduce symptoms:</p>
+        <ul>
+            <li>regular exercise</li>
+            <li>stable blood glucose</li>
+            <li>good nutrition</li>
+            <li>maintaining a healthy weight</li>
+            <li>avoiding smoking</li>
+            <li>limiting alcohol</li>
+            <li>treating infections and autoimmune disease</li>
+            <li>correcting deficiencies</li>
+            <li>protecting nerves from prolonged pressure</li>
+        </ul>
+        <p>For people with diabetes, foot care is especially important because reduced sensation can allow injuries to go unnoticed. Feet should be checked regularly for cuts, blisters, pressure marks or infections.</p>
+        <h4>Treatment</h4>
+        <p>Treatment depends on the cause. Doctors may use medications specifically aimed at nerve pain, such as certain anticonvulsants or antidepressants, rather than ordinary painkillers alone. Physical therapy, treatment of the underlying disease, improved glucose control, vitamin replacement where needed and management of nerve compression can also help.</p>
+        <p>Neuropathic pain should be medically evaluated if it is persistent, progressive, associated with muscle weakness, balance problems, unexplained numbness, or loss of bladder or bowel control. Those symptoms deserve more attention than the classic human strategy of waiting until something becomes impossible to ignore.</p>
+        <h4>The Glycemic Index</h4>
+        <p>The glycemic index (GI) describes how quickly a carbohydrate-containing food raises blood glucose compared with pure glucose. It is especially useful for people with diabetes or prediabetes, although portion size and the total amount of carbohydrate still matter.</p>
+        <p>Foods are generally classified as:</p>
+        <ul>
+            <li>Low GI: 55 or below</li>
+            <li>Medium GI: 56–69</li>
+            <li>High GI: 70 or above</li>
+        </ul>
+        <p>Low glycemic index foods usually cause a slower and smaller rise in blood sugar. They often contain more fibre, protein, fat, or carbohydrates that are digested slowly.</p>
+        <h4>Foods with a low glycemic effect:</h4>
+        <p>Many non-starchy vegetables contain so little digestible carbohydrate that assigning them a meaningful glycemic index is barely useful. They are excellent choices because they generally have very little effect on blood glucose.</p>
+        <p>Examples include broccoli, cauliflower, spinach, cabbage, zucchini, cucumber, lettuce, mushrooms, peppers, tomatoes, asparagus, green beans and Brussels sprouts.</p>
+        <p>Other foods that commonly have a relatively low glycemic index include lentils, chickpeas, kidney beans and other legumes, as well as many nuts and seeds. Whole or minimally processed grains, such as barley and some types of oats, generally produce a slower blood glucose rise than highly refined grains. Please note that foods described in this passage may cause allergic reactions, see the corresponding section for more details.</p>
+        <p>Fruit can also fit into a lower glycemic index diet. Examples often include berries, apples, pears, oranges, peaches and cherries. Eating whole fruit is generally preferable to drinking fruit juice because the intact fruit contains fibre and is absorbed more slowly.</p>
+        <p>Dairy products such as unsweetened yoghurt and milk also tend to have relatively low glycemic index values, although sweetened versions can contain substantial amounts of added sugar.</p>
+        <h4>Foods that tend to have a higher glycemic index.</h4>
+        <p>Foods that can cause a faster rise in blood glucose include white bread, many refined breakfast cereals, sweets, sugary drinks, white rice, some forms of potatoes and highly processed bakery products.</p>
+        <p>However, glycemic index is not fixed like some sacred number engraved into a potato. The way food is prepared matters. Cooking starch for longer can make it more easily digestible, while combining carbohydrates with fibre, protein or fat can slow the overall rise in blood glucose.</p>
+        <h4>Glycemic load</h4>
+        <p>There is also a related concept called glycemic load (GL). Glycemic load takes both the glycemic index and the actual amount of carbohydrate in a serving into account. This can be more practical than glycemic index alone.</p>
+        <p>For example, watermelon has a relatively high glycemic index, but a normal portion contains comparatively little carbohydrate, so its glycemic load is relatively low.</p>
+        <p>For diabetes prevention and blood glucose control, the bigger picture matters most: plenty of vegetables, legumes and fibre; minimally processed foods; appropriate portions; regular physical activity; and avoiding excessive intake of sugary drinks and refined carbohydrates. GI can be an additional useful guide.</p>
+        <h2>Cooking different foods separately and timing them well</h2>
+        <p>A practical way to prepare a meal is to cook the different parts separately, because they need different cooking times. Potatoes usually take the longest, so they should be started first. Broccoli or cauliflower can be prepared separately, while fish or meat is cooked separately in a frying pan. This makes the meal easier to adapt for different people. A vegetarian person can leave out the meat or fish, while others can add it. Children who are not enthusiastic about vegetables can take a smaller portion, but it is still a good idea to offer them some vegetables rather than quietly avoiding the entire vegetable category.</p>
+        <p>The easiest method is to plan backwards from the time when the meal should be ready. For example, if potatoes need about 20 minutes, broccoli about 8–10 minutes in total, and fish about 8 minutes, start the potatoes first. For the broccoli, place it in a pot and pour boiling water over it from the kettle. Then put the pot on the stove and wait until the water comes back to the boil. Only from that point should the broccoli cook for about 5 minutes. This means the broccoli should be started several minutes before the final 5-minute cooking time, because the water needs time to return to the boil.</p>
+        <p>If the potatoes need 20 minutes, you could start the broccoli roughly 10 minutes before the potatoes are finished, depending on the amount and size of the pieces. The fish can be started at about the same time if it needs around 8 minutes. In this way, everything finishes at roughly the same time, the vegetables do not become too soft, and nobody has to eat perfectly cooked broccoli next to potatoes that are still basically decorative stones.</p>
+        <p>Below you can find a practical food-by-food guide.</p>
+        <h3>Potatoes</h3>
+        <p>Wash the potatoes first. Peel them if you prefer, although clean potatoes can also be cooked with the skin on. Cut larger potatoes into halves or quarters so that the pieces are similar in size and cook evenly. Put them into a pot, cover with water, add a little salt, and bring to the boil. Then reduce the heat and simmer until tender. Small pieces usually take about 15–20 minutes, while larger whole potatoes can take 20–30 minutes. Check them with a fork or knife.</p>
+        <h3>Broccoli</h3>
+        <p>Wash the broccoli and cut it into florets. The thick stalk can also be eaten: peel the tough outer layer and cut the inside into slices or small pieces. Put the broccoli into a pot and pour boiling water over it from a kettle. Bring the water back to the boil, then cook for about 5 minutes, depending on how soft you want it. Drain immediately so it does not continue cooking and become too soft.</p>
+        <h3>Cauliflower</h3>
+        <p>Remove the outer leaves, wash the cauliflower, and cut it into florets. The stalk can usually not be eaten because of taste. Put the pieces into boiling water and cook for around 6–8 minutes until tender but not mushy. Larger florets may need a little longer, or you cut them in halves.</p>
+        <h3>Carrots</h3>
+        <p>Wash and peel the carrots if necessary. Cut them into slices, sticks, or small pieces. Cook them in boiling water for about 8–12 minutes, depending on thickness. Thin slices cook faster than large pieces.</p>
+        <h3>Mushrooms</h3>
+        <p>Clean mushrooms carefully with a brush, damp cloth, or a little water if necessary, and remove any damaged parts. Cut larger mushrooms into halves, quarters, or slices. They can be fried in a pan for about 5–10 minutes, depending on their size and type, until they are cooked through and have released some of their moisture.</p>
+        <p>Cooked mushrooms can be reheated safely if they were cooled quickly, stored in the refrigerator, and reheated thoroughly. The risk from mushrooms comes from poor storage, not from reheating itself. Leftover mushrooms should be refrigerated soon after cooking, kept cold, and ideally eaten within a short time. If they have been left at room temperature for several hours, they should be discarded rather than reheated and hoping to stay healthy.</p>
+        <p>There we speak about mushrooms that can be bought in the store and presumably don't present the risk of poisoning by themselves.</p>
+        <h3>Green beans</h3>
+        <p>Raw or undercooked green beans are poisonous and should not be eaten. They contain natural lectins, especially phytohaemagglutinin, which can cause nausea, vomiting, abdominal pain, and diarrhoea.</p>
+        <p>Wash the beans, remove the ends, and cook them thoroughly in boiling water. Fresh green beans usually need about 8–12 minutes, depending on thickness. They should be fully cooked before serving.</p>
+        <p>This is especially important with kidney beans, which contain much higher levels of phytohaemagglutinin when raw or undercooked. Dried kidney beans should be soaked and then boiled properly before eating.</p>
+        <h3>Zucchini</h3>
+        <p>Wash the zucchini and cut it into slices, cubes, or strips. Peeling is usually unnecessary. Zucchini can be fried in a pan for about 5–8 minutes or cooked briefly in water or steam. It becomes soft quickly, so excessive cooking tends to turn it into vegetable sadness.</p>
+        <h3>Bell peppers</h3>
+        <p>Wash the pepper, remove the stalk, seeds, and white inner membranes, and cut it into strips or pieces. Peppers can be eaten raw or fried for around 5–10 minutes, depending on how soft you want them.</p>
+        <h3>Spinach</h3>
+        <p>Wash fresh spinach thoroughly because soil can remain between the leaves. Remove damaged leaves and thick stems if necessary. Put the spinach into a pan or pot with only a small amount of water and cook for about 2–4 minutes, until the leaves have wilted.</p>
+        <h3>Peas</h3>
+        <p>Fresh or frozen peas need very little preparation. Frozen peas can usually be added directly to boiling water and cooked for around 3–5 minutes. Drain the water promptly.</p>
+        <h3>Asparagus</h3>
+        <p>Wash the asparagus. White asparagus usually needs to be peeled from below the tip downward, and the woody end should be removed. Green asparagus normally only needs the lower woody part cut off, although thick stalks can be peeled at the bottom. Boil or steam for approximately 5–10 minutes, depending on thickness.</p>
+        <h3>Pumpkin</h3>
+        <p>Wash the pumpkin carefully, cut it in half, remove the seeds and fibrous centre with a spoon, and then cut the flesh into cubes or wedges. Hokkaido pumpkin can be cooked and eaten with the skin on, because the skin becomes soft during cooking. Other varieties, such as butternut squash, usually need to be peeled before cooking.</p>
+        <p>Pumpkin can be boiled, steamed, roasted, or used in soups. Small cubes usually need about 10–15 minutes in boiling water, while roasting in the oven often takes around 25–35 minutes, depending on the size of the pieces.</p>
+        <h3>Fish</h3>
+        <p>Fish should usually be kept refrigerated until shortly before cooking. If necessary, pat it dry with clean kitchen paper and season it. Fish can then be baked, steamed, or fried. Cooking time depends strongly on thickness, but thin fillets often need around 3–5 minutes per side in a pan.</p>
+        <p>Good kitchen hygiene is especially important with raw fish. Wash your hands before and after handling it. Use clean utensils and surfaces, and avoid allowing raw fish or its juices to touch vegetables, bread, or other foods that will be eaten without further cooking. Do not use the same cutting board or knife for raw fish and ready-to-eat dish unless it has been thoroughly cleaned in the meantime.</p>
+        <h3>Chicken</h3>
+        <p>Raw chicken requires particularly careful hygiene. Do not wash raw chicken, because splashing water can spread bacteria around the sink and work surface. Keep it separate from other ingredients, wash your hands thoroughly after touching it, and clean knives, boards, plates, and worktops immediately afterward.</p>
+        <p>Chicken should be cooked completely through, with no raw or translucent meat remaining. Poultry should reach a safe internal temperature.</p>
+        <h3>Beef</h3>
+        <p>Beef can be prepared in many different ways depending on the cut. Steaks may be fried or grilled, while tougher cuts often need longer cooking. Raw minced beef needs more careful handling than a whole steak because bacteria can be distributed throughout the meat. Ground or minced beef should therefore be cooked thoroughly.</p>
+        <p>As with other raw meats, use separate utensils where possible, wash hands afterward, and prevent raw juices from contaminating other foods.</p>
+        <h3>Pork</h3>
+        <p>Pork should be stored cold and handled with the same separation rules as other raw meat. It can be roasted, fried, or grilled. Cooking time depends on the cut and thickness. Using a thermometer is safer than judging only by colour.</p>
+        <p>Raw meat and fish should be kept separate from cooked or ready-to-eat foods. Use separate cutting boards if possible, wash hands with soap, clean work surfaces after contact with raw foods, and refrigerate perishable foods promptly. Never place cooked meat back onto the plate that previously held it raw unless the plate has been washed. Some foods, e.g. fish, can contain special warnings about kitchen hygiene and require more precautions.</p>
+        <h3>Traditional Rice Cooking</h3>
+        <p>A simple traditional method is to cook 1 cup of rice with about 2 cups of water. First, rinse the rice under cold water until the water becomes clearer. Put the rice and water into a pot, add a small pinch of salt if desired, and bring everything to the boil. Once it is boiling, reduce the heat to very low, cover the pot with a lid, and let the rice simmer gently for about 12–15 minutes, depending on the type of rice. Then turn off the heat and leave the rice covered for another 5–10 minutes so that it can absorb the remaining moisture. Finally, loosen it gently with a fork.</p>
+        <p>The exact water ratio can vary. Some types of white rice need less than 2 cups of water per cup of rice, while brown rice often needs more water and a longer cooking time. So the package instructions are still useful, irritatingly practical as that may be.</p>
+        <h3>Millet</h3>
+        <p>Rinse the millet thoroughly under cold water before cooking. For a simple basic method, use about 1 cup of millet to 2 cups of water. Put both into a pot, add a small pinch of salt if desired, and bring to the boil. Then reduce the heat, cover the pot, and let the millet simmer gently for about 15–20 minutes, until the water has been absorbed.</p>
+        <p>After cooking, remove the pot from the heat and leave it covered for another 5–10 minutes. Then loosen the millet with a fork.</p>
+        <p>Millet can be used as a side dish instead of rice or potatoes, or as a base for vegetable dishes. If you want it softer and more porridge-like, simply use a little more water and cook it slightly longer.</p>
+        <h2>Simple Soups</h2>
+        <h3>Pumpkin soup</h3>
+        <p>Use pumpkin and onion. Cut the pumpkin into cubes and chop the onion. Cook both in a pot with water or vegetable stock for about 15–20 minutes until soft. Blend until smooth. Add a little salt and, if desired, a small amount of cream or olive oil.</p>
+        <h3>Broccoli soup</h3>
+        <p>Use broccoli and potatoes. Cut the potatoes into small cubes and cook them first for about 10 minutes. Add the broccoli and continue cooking until both are soft. Blend with some of the cooking liquid. Season lightly with salt and pepper.</p>
+        <h3>Cauliflower soup</h3>
+        <p>Use cauliflower and potatoes. Cut both into small pieces and cook them in water or vegetable stock until tender. Blend until smooth. A little milk, cream, or olive oil can be added for a softer texture.</p>
+        <h3>Carrot soup</h3>
+        <p>Use carrots and potatoes. Peel and cut both into small pieces. Cook them for about 15–20 minutes until soft, then blend with the cooking liquid. A little ginger can be added if desired, but the soup also works perfectly well with just the two vegetables.</p>
+        <p></p>
+        <div class="clearfix"></div>
+        <h2 id="licence"><bdo dir="ltr" translate="no">MIT</bdo> License</h2>
+        <p>Copyright &copy; 2026 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </div>
+</body>
+</html>
+
