@@ -1630,17 +1630,17 @@ pre.box-accent-alt-right {
 		padding-right: max(0.5rem, min(calc((100% - var(--width-main)) / 2), calc((var(--width-desktop) - var(--width-main)) / 2)));
 	}
 
-	/*
+	
 	.box-accent-wide,
 	.box-accent-alt-wide,
 	.box-gray-wide {
-		margin-left: calc(-100% - var(--spacing-element));
-		margin-right: calc(-100% - var(--spacing-element));
-		max-width: calc(300% + 2 * var(--spacing-element));
-		padding-left: calc( 100% + var(--spacing-element));
-		padding-right: calc( 100% + var(--spacing-element));
+		margin-left: calc(-100% - 0 * var(--spacing-element));
+		margin-right: calc(-100% - 0 * var(--spacing-element));
+		max-width: calc(300% + 6 * var(--spacing-element));
+		padding-left: calc( 100% + 3 * var(--spacing-element));
+		padding-right: calc( 100% + 3 * var(--spacing-element));
 	}
-	*/
+	
 }
 
 
