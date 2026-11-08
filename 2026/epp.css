@@ -307,10 +307,10 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	}
 	--font-primary: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 	--letter-spacing-primary: 0em;
-	--line-height-primary: 1.2;
+	--line-height-primary: 1.4;
 	--font-secondary: 'Georgia', 'Times New Roman', 'Cambria', 'Noto Serif', 'Liberation Serif', serif;
 	--letter-spacing-secondary: 0em;
-	--line-height-secondary: 1.2;
+	--line-height-secondary: 1.4;
 	--font-title: var(--font-secondary);
 	--letter-spacing-title: 0em;
 	--line-height-title: var(--line-height-secondary);
