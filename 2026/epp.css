@@ -2610,37 +2610,91 @@ nav.menu li ul a:hover {
 
 /* screen media optimization for image boxes within colored boxes */
 .box-gray .image-box .image-content:has(.image-credits)::after,
-.box-gray-full .image-box .image-content:has(.image-credits)::after{
+.box-gray .image-box-left .image-content:has(.image-credits)::after,
+.box-gray .image-box-right .image-content:has(.image-credits)::after,
+.box-gray-left .image-box .image-content:has(.image-credits)::after,
+.box-gray-right .image-box .image-content:has(.image-credits)::after,
+.box-gray-wide .image-box .image-content:has(.image-credits)::after,
+.box-gray-wide .image-box-left .image-content:has(.image-credits)::after,
+.box-gray-wide .image-box-right .image-content:has(.image-credits)::after,
+.box-gray-full .image-box .image-content:has(.image-credits)::after,
+.box-gray-full .image-box-left .image-content:has(.image-credits)::after,
+.box-gray-full .image-box-right .image-content:has(.image-credits)::after{
 	background: linear-gradient(to top, var(--color-box-gray-bg-overlay), transparent);
 	color: var(--color-box-gray-text);
 }
 
 .box-accent .image-box .image-content:has(.image-credits)::after,
-.box-accent-full .image-box .image-content:has(.image-credits)::after{
+.box-accent .image-box-left .image-content:has(.image-credits)::after,
+.box-accent .image-box-right .image-content:has(.image-credits)::after,
+.box-accent-left .image-box .image-content:has(.image-credits)::after,
+.box-accent-right .image-box .image-content:has(.image-credits)::after,
+.box-accent-wide .image-box .image-content:has(.image-credits)::after,
+.box-accent-wide .image-box-left .image-content:has(.image-credits)::after,
+.box-accent-wide .image-box-right .image-content:has(.image-credits)::after,
+.box-accent-full .image-box .image-content:has(.image-credits)::after,
+.box-accent-full .image-box-left .image-content:has(.image-credits)::after
+.box-accent-full .image-box-right .image-content:has(.image-credits)::after {
 	background: linear-gradient(to top, var(--color-box-accent-bg-overlay), transparent);
 	color: var(--color-box-accent-text);
 }
 
 .box-accent-alt .image-box .image-content:has(.image-credits)::after,
-.box-accent-alt-full .image-box .image-content:has(.image-credits)::after{
+.box-accent-alt .image-box-left .image-content:has(.image-credits)::after,
+.box-accent-alt .image-box-right .image-content:has(.image-credits)::after,
+.box-accent-alt-right .image-box .image-content:has(.image-credits)::after,
+.box-accent-alt-left .image-box .image-content:has(.image-credits)::after,
+.box-accent-alt-wide .image-box .image-content:has(.image-credits)::after,
+.box-accent-alt-wide .image-box-left .image-content:has(.image-credits)::after,
+.box-accent-alt-wide .image-box-right .image-content:has(.image-credits)::after,
+.box-accent-alt-full .image-box .image-content:has(.image-credits)::after,
+.box-accent-alt-full .image-box-left .image-content:has(.image-credits)::after,
+.box-accent-alt-full .image-box-right .image-content:has(.image-credits)::after{
 	background: linear-gradient(to top, var(--color-box-accent-alt-bg-overlay), transparent);
 	color: var(--color-box-accent-alt-text);
 }
 
 .box-gray .image-box .image-content .image-credits,
-.box-gray-full .image-box .image-content .image-credits {
+.box-gray .image-box-left .image-content .image-credits,
+.box-gray .image-box-right .image-content .image-credits,
+.box-gray-right .image-box .image-content .image-credits,
+.box-gray-left .image-box .image-content .image-credits,
+.box-gray-wide .image-box .image-content .image-credits,
+.box-gray-wide .image-box-left .image-content .image-credits,
+.box-gray-wide .image-box-right .image-content .image-credits,
+.box-gray-full .image-box .image-content .image-credits,
+.box-gray-full .image-box-left .image-content .image-credits,
+.box-gray-full .image-box-right .image-content .image-credits {
 	background-color: var(--color-box-gray-bg-overlay);
 	color: var(--color-box-gray-text);
 }
 
 .box-accent .image-box .image-content .image-credits,
-.box-accent-full .image-box .image-content .image-credits {
+.box-accent .image-box-left .image-content .image-credits,
+.box-accent .image-box-right .image-content .image-credits,
+.box-accent-right .image-box .image-content .image-credits,
+.box-accent-left .image-box .image-content .image-credits,
+.box-accent-wide .image-box .image-content .image-credits,
+.box-accent-wide .image-box-left .image-content .image-credits,
+.box-accent-wide .image-box-right .image-content .image-credits,
+.box-accent-full .image-box .image-content .image-credits,
+.box-accent-full .image-box-left .image-content .image-credits,
+.box-accent-full .image-box-right .image-content .image-credits {
 	background-color: var(--color-box-accent-bg-overlay);
 	color: var(--color-box-accent-text);
 }
 
 .box-accent-alt .image-box .image-content .image-credits,
-.box-accent-alt-full .image-box .image-content .image-credits {
+.box-accent-alt .image-box-left .image-content .image-credits,
+.box-accent-alt .image-box-right .image-content .image-credits,
+.box-accent-alt-right .image-box .image-content .image-credits,
+.box-accent-alt-left .image-box .image-content .image-credits,
+.box-accent-alt-wide .image-box .image-content .image-credits,
+.box-accent-alt-wide .image-box-left .image-content .image-credits,
+.box-accent-alt-wide .image-box-right .image-content .image-credits,
+.box-accent-alt-full .image-box .image-content .image-credits,
+.box-accent-alt-full .image-box-left .image-content .image-credits,
+.box-accent-alt-full .image-box-right .image-content .image-credits {
 	background-color: var(--color-box-accent-alt-bg-overlay);
 	color: var(--color-box-accent-alt-text);
 }
