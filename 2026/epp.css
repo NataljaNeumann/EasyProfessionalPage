@@ -1417,8 +1417,11 @@ table tbody tr:nth-child(even) {
 /* =======================
    Centered box
    ======================= */
-.box-centered {
+.box-centered,
+.box-center {
 	max-width: min(calc(100% - var(--font-primary-size)), calc(3 / 4 * var(--width-main)));
+	margin-left:auto;
+	margin-right:auto;
 	clear: both;
 	content: "";
 }
