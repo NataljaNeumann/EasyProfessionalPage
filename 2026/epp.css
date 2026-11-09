@@ -1221,6 +1221,10 @@ img {
 	margin-bottom: var(--spacing-element);
 }
 
+.flip-in-rtl:dir(rtl) {
+  transform: scaleX(-1);
+}
+
 span {
 	display: inline;
 }
