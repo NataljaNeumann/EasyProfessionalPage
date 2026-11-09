@@ -1643,7 +1643,37 @@ pre.box-accent-alt-right {
 	
 }
 
+@media  screen and (forced-colors: none) and (max-width:70rem) {
+	.box-accent-wide,
+	.box-accent-alt-wide,
+	.box-gray-wide {
+		margin-left: auto;
+		margin-right: auto;
+		width:100%;
+		max-width: 100%;
+		padding-left: var(--spacing-element);
+		padding-right: var(--spacing-element);
+	}
+}
 
+@media  screen and (forced-colors: none) and (max-width:60rem) {
+	.box-accent-wide,
+	.box-accent-alt-wide,
+	.box-gray-wide {
+		margin-left: auto;
+		margin-right: auto;
+		width:100%;
+		max-width: 100%;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+}
+
+body:has(.box-accent-wide),
+body:has(.box-accent-alt-wide),
+body:has(.box-gray-wide) {
+	overflow-x: clip;
+}
 
 /* ================================
    Colored boxes in accent colors
@@ -3338,6 +3368,12 @@ a img:hover {
 	:dir(ltr) > .borderbox-alt-strong-right,
 	:dir(ltr) > .borderbox-gray-right,
 	:dir(ltr) > .borderbox-gray-strong-right,
+	:dir(ltr) > .image-box-right,
+	:dir(ltr) > .image-box-left,
+	:dir(ltr) > .callout-box-left,
+	:dir(ltr) > .callout-box-right,
+	:dir(ltr) > .callout-box-alt-left,
+	:dir(ltr) > .callout-box-alt-right,
 	:dir(rtl) > .box-gray-left,
 	:dir(rtl) > .box-gray-right,
 	:dir(rtl) > .box-accent-left,
@@ -3357,7 +3393,14 @@ a img:hover {
 	:dir(rtl) > .borderbox-alt-right,
 	:dir(rtl) > .borderbox-alt-strong-right,
 	:dir(rtl) > .borderbox-gray-right,
-	:dir(rtl) > .borderbox-gray-strong-right {
+	:dir(rtl) > .borderbox-gray-strong-right,
+	:dir(rtl) > .image-box-right,
+	:dir(rtl) > .image-box-left,
+	:dir(rtl) > .callout-box-left,
+	:dir(rtl) > .callout-box-right,
+	:dir(rtl) > .callout-box-alt-left,
+	:dir(rtl) > .callout-box-alt-right
+	{
 		float: none;
 		width: auto;
 		margin-left: 0;
