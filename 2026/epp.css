@@ -1236,6 +1236,11 @@ img {
   transform: scaleX(-1);
 }
 
+.flip-in-ltr:dir(ltr) {
+  transform: scaleX(-1);
+}
+
+
 span {
 	display: inline;
 }
