@@ -3812,3 +3812,17 @@ a img:hover {
 	display: block;
 	clear: both;
 }
+
+/* --------------------------
+   Hide the elements that are
+   only for one directeion, 
+   either rtl or ltr 
+   -------------------------- */
+
+.ltr-only:dir(rtl) {
+	display: none;
+}
+
+.rtl-only:dir(ltr) {
+	display: none;
+}
