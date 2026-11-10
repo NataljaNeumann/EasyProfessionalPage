@@ -315,6 +315,7 @@ Project home: https://github.com/NataljaNeumann/EasyProfessionalPage
 	--letter-spacing-title: 0em;
 	--line-height-title: var(--line-height-secondary);
 	
+	--column-width: calc( 15 * var(--font-primary-size));
 	--spacing-element: calc( 2 * var(--font-primary-size));
 	--padding-box: calc(1.5 * var(--font-primary-size));
 	--width-desktop: calc(70 * var(--font-primary-size));
@@ -1068,10 +1069,20 @@ html:lang(ur) {
    ================================ */
 
 p:not(p *) {
+	margin-top: 0;
 	margin-bottom: var(--spacing-element);
 	overflow-wrap: break-word;
 	word-break: break-word;
 	hyphens: auto;
+}
+
+.columns {
+	column-width: var(--column-width);
+}
+
+.columns p,
+.columns p:not(p *){
+	margin-bottom: 0.5em;
 }
 
 
@@ -2028,6 +2039,23 @@ body:has(.box-gray-wide) {
 	margin-bottom: var(--spacing-element);
 	clear: both;
 }
+
+/*
+.borderbox-left,
+.borderbox-right,
+.borderbox-gray-left,
+.borderbox-gray-right,
+.borderbox-alt-left,
+.borderbox-alt-right,
+.borderbox-strong-left,
+.borderbox-strong-right,
+.borderbox-gray-strong-left,
+.borderbox-gray-strong-right,
+.borderbox-alt-strong-left,
+.borderbox-alt-strong-right {
+	margin-top: var(--spacing-element);
+}
+*/
 
 .borderbox-left,
 .borderbox-strong-left,
