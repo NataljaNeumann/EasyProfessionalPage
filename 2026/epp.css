@@ -1078,6 +1078,7 @@ p:not(p *) {
 
 .columns {
 	column-width: var(--column-width);
+	margin-bottom: var(--spacing-element);
 }
 
 .columns p,
@@ -1092,6 +1093,30 @@ p:not(p *) {
 	margin-top: var(--spacing-element);
 	margin-bottom: 0.5em;
 	letter-spacing: var(--letter-spacing-secondary);
+}
+
+.main .callout-box-alt > h1,
+.main .callout-box-alt > h2,
+.main .callout-box-alt > h3,
+.main .callout-box-alt > h4,
+.main .borderbox-alt > h1,
+.main .borderbox-alt > h2,
+.main .borderbox-alt > h3,
+.main .borderbox-alt > h4,
+.main .borderbox-alt-strong > h1,
+.main .borderbox-alt-strong > h2,
+.main .borderbox-alt-strong > h3,
+.main .borderbox-alt-strong > h4,
+.main .notch-alt > h1,
+.main .notch-alt > h2,
+.main .notch-alt > h3,
+.main .notch-alt > h4,
+.main .notch-alt-strong > h1,
+.main .notch-alt-strong > h2,
+.main .notch-alt-strong > h3,
+.main .notch-alt-strong > h4
+{
+	color: var(--color-accent-alt);
 }
 
 .main h1 {
@@ -1328,13 +1353,14 @@ table tbody tr:nth-child(even) {
    ================================ */
 
 /* thin horizontal rule */
-.hr-thin {
+.hr-thin,
+.hr-thin-accent {
 	border: none;
 	border-top: var(--line-thin) solid var(--color-accent);
 	margin: var(--spacing-element) 0;
 }
 
-/* thin horizontal rule with alternative color */
+.hr-thin-accent-alt,
 .hr-thin-alt {
 	border: none;
 	border-top: var(--line-thin) solid var(--color-accent-alt);
@@ -1342,6 +1368,7 @@ table tbody tr:nth-child(even) {
 }
 
 /* medium horizontal rule */
+.hr-medium-accent,
 .hr-medium {
 	border: none;
 	border-top: var(--line-medium) solid var(--color-accent);
@@ -1349,6 +1376,7 @@ table tbody tr:nth-child(even) {
 }
 
 /* medium horizontal rule with alternative color */
+.hr-medium-accent-alt,
 .hr-medium-alt {
 	border: none;
 	border-top: var(--line-medium) solid var(--color-accent-alt);
@@ -1356,6 +1384,7 @@ table tbody tr:nth-child(even) {
 }
 
 /* half-width horizontal rule */
+.hr-half-accent,
 .hr-half {
 	border: none;
 	border-top: var(--line-medium) solid var(--color-accent);
@@ -1364,7 +1393,8 @@ table tbody tr:nth-child(even) {
 }
 
 /* half-width horizontal rule with alternative color */
-.hr-half-alt {
+.hr-half-alt,
+.hr-half-accent-alt {
 	border: none;
 	border-top: var(--line-medium) solid var(--color-accent-alt);
 	width: 50%;
@@ -1860,14 +1890,12 @@ body:has(.box-gray-wide) {
 
 /* horizontal rules in gray boxes */
 .box-grid-item hr,
-.box-gray-full hr,
-.box-gray-wide hr,
-.box-gray hr,
-.box-gray-left hr,
-.box-gray-right hr {
-	border: none;
-	border-top: var(--line-thin) solid var(--color-box-gray-divider);
-	margin: var(--spacing-element) 0;
+.box-gray-full hr:not(.box-gray-full hr.hr-thin-alt):not(.box-gray-full hr.hr-thin-accent-alt):not(.box-gray-full hr.hr-thin-accent):not(.box-gray-full hr.hr-medium-alt):not(.box-medium-full hr.hr-medium-accent-alt):not(.box-medium-full hr.hr-medium-accent):not(.box-medium-full hr.hr-half-accent-alt):not(.box-medium-full hr.hr-half-accent):not(.box-medium-full hr.hr-half-alt),
+.box-gray-wide hr:not(.box-gray-wide hr.hr-thin-alt):not(.box-gray-wide hr.hr-thin-accent-alt):not(.box-gray-wide hr.hr-thin-accent):not(.box-gray-wide hr.hr-medium-alt):not(.box-gray-wide hr.hr-medium-accent-alt):not(.box-gray-wide hr.hr-medium-accent):not(.box-gray-wide hr.hr-half-accent):not(.box-gray-wide hr.hr-half-accent-alt):not(.box-gray-wide hr.hr-half-alt),
+.box-gray hr:not(.box-gray hr.hr-thin-alt):not(.box-gray hr.hr-thin-accent-alt):not(.box-gray hr.hr-thin-accent):not(.box-gray hr.hr-medium-alt):not(.box-gray hr.hr-medium-accent-alt):not(.box-gray hr.hr-medium-accent):not(.box-gray hr.hr-half-accent):not(.box-gray hr.hr-accent-accent-alt):not(.box-gray hr.hr-hald-alt),
+.box-gray-left hr:not(.box-gray-left hr.hr-thin-alt):not(.box-gray-left hr.hr-thin-accent-alt):not(.box-gray-left hr.hr-medium-accent):not(.box-gray-left hr.hr-medium-alt):not(.box-gray-left hr.hr-thin-medium-alt):not(.box-gray-left hr.hr-medium-accent):not(.box-gray-left hr.hr-hald-accent):not(.box-gray-left hr.hr-half-accent-alt):not(.box-gray-left hr.hr-half-alt),
+.box-gray-right hr:not(.box-gray-right hr.hr-thin-alt):not(.box-gray-right hr.hr-thin-accent-alt):not(.box-gray-right hr.hr-thin-accent):not(.box-gray-right hr.hr-medium-alt):not(.box-gray-right hr.hr-thin-medium-alt):not(.box-gray-right hr.hr-medium-accent):not(.box-gray-right hr.hr-half-accent):not(.box-gray-right hr.hr-half-accent-alt):not(.box-gray-right hr.hr-half-alt) {
+	border-top-color: var(--color-box-gray-divider);
 }
 
 
@@ -1931,24 +1959,22 @@ body:has(.box-gray-wide) {
 
 /* horizontal rules in colored boxes */
 .box-grid-item-accent hr,
-.box-accent-full hr,
-.box-accent-wide hr,
-.box-accent hr,
-.box-accent-left hr,
-.box-accent-right hr {
+.box-accent-full hr:not(.box-accent hr.hr-thin-accent-alt):not(.box-accent hr.hr-thin-medium-alt):not(.box-accent hr.hr-half-accent-alt):not(.box-accent hr.hr-thin-alt):not(.box-accent hr.hr-medium-alt):not(.box-accent hr.hr-half-alt),
+.box-accent-wide hr:not(.box-accent-wide hr.hr-thin-accent-alt):not(.box-accent-wide hr.hr-medium-accent-alt):not(.box-accent-wide hr.hr-half-accent-alt):not(.box-accent-wide hr.hr-thin-alt):not(.box-accent-wide hr.hr-medium-alt):not(.box-accent-wide hr.hr-half-alt),
+.box-accent hr:not(.box-accent hr.hr-thin-accent-alt):not(.box-accent hr.hr-medium-accent-alt):not(.box-accent hr.hr-half-accent-alt):not(.box-accent hr.hr-thin-alt):not(.box-accent hr.hr-medium-alt):not(.box-accent hr.hr-half-alt),
+.box-accent-left hr:not(.box-accent-left hr.hr-thin-accent-alt):not(.box-accent-left hr.hr-medium-accent-alt):not(.box-accent-left hr.hr-half-accent-alt):not(.box-accent-left hr.hr-thin-alt):not(.box-accent-left hr.hr-medium-alt):not(.box-accent-left hr.hr-half-alt),
+.box-accent-right hr:not(.box-accent-right hr.hr-thin-accent-alt):not(.box-accent-right hr.hr-medium-accent-alt):not(.box-accent-right hr.hr-half-accent-alt):not(.box-accent-right hr.hr-thin-alt):not(.box-accent-right hr.hr-medium-alt):not(.box-accent-right hr.hr-half-alt) {
 	border-top-color: var(--color-box-accent-divider);
-	margin: var(--spacing-element) 0;
 }
 
 /* horizontal rules in colored boxes with accent alt color */
 .box-grid-item-accent-alt hr,
-.box-accent-alt hr,
-.box-accent-alt-wide hr,
-.box-accent-alt-full hr,
-.box-accent-alt-left hr,
-.box-accent-alt-right hr {
+.box-accent-alt hr:not(.box-accent-alt hr.hr-thin-accent):not(.box-accent-alt hr.hr-medium-accent):not(.box-accent-alt hr.hr-half-accent),
+.box-accent-alt-wide hr:not(.box-accent-alt-wide hr.hr-thin-accent):not(.box-accent-alt-wide hr.hr-medium-accent):not(.box-accent-alt-wide hr.hr-half-accent),
+.box-accent-alt-full hr:not(.box-accent-alt-full hr.hr-thin-accent):not(.box-accent-alt-wide hr.hr-medium-accent):not(.box-accent-alt-wide hr.hr-half-accent),
+.box-accent-alt-left hr:not(.box-accent-alt-left hr.hr-thin-accent):not(.box-accent-alt-left hr.hr-medium-accent):not(.box-accent-alt-left hr.hr-half-accent),
+.box-accent-alt-right hr:not(.box-accent-alt-right hr.hr-thin-accent):not(.box-accent-alt-right hr.hr-medium-accent):not(.box-accent-alt-right hr.hr-half-accent) {
 	border-top-color: var(--color-box-accent-alt-divider);
-	margin: var(--spacing-element) 0;
 }
 
 
