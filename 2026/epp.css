@@ -3314,7 +3314,7 @@ a img:hover {
 :dir(ltr) > .box-accent-left,
 :dir(ltr) > .box-accent-alt-left,
 :dir(ltr) > .callout-box-left,
-:dir(ltr) > .callout-box-alt-left
+:dir(ltr) > .callout-box-alt-left,
 :dir(ltr) > .image-box-left {
 	margin-right: var(--spacing-element);
 }
@@ -3341,7 +3341,7 @@ a img:hover {
 :dir(rtl) > .box-accent-left,
 :dir(rtl) > .box-accent-alt-left,
 :dir(rtl) > .callout-box-left,
-:dir(rtl) > .callout-box-alt-left
+:dir(rtl) > .callout-box-alt-left,
 :dir(rtl) > .image-box-left {
 	margin-left: var(--spacing-element);
 }
