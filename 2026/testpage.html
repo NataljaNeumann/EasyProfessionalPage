@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Nemo amat dolorem</title>
 
-    <script>
+    <script type="text/javascript" >
+		//<![CDATA[
         /**
          * This script uses a MutationObserver to detect when the `lang` attribute on the `<html>` element changes.
          * This is a reliable way to catch browser-initiated translations, especially in browsers like Firefox.
@@ -14,21 +15,21 @@
 
         // A comprehensive list of RTL language codes
         const rtlLanguages = [
-            'ar', 'ara',   // Arabic
-            'azb',         // South Azerbaijani (often uses Arabic script in Iran)
-            'dv', 'div',   // Dhivehi
-            'fa', 'fas',   // Persian / Farsi
-            'he', 'iw',    // Hebrew
-            'ku', 'kur',   // Kurdish (Sorani dialect)
-            'ckb',         // Central Kurdish (Sorani)
-            'nqo',         // N'Ko
-            'ps', 'pus',   // Pashto
-            'rhg',         // Rohingya
-            'sd', 'snd',   // Sindhi
-            'syr',         // Syriac
-            'ug', 'uig',   // Uyghur
-            'ur', 'urd',   // Urdu
-            'yi', 'yid'    // Yiddish
+            'ar', 'ara',        // Arabic
+            'azb',              // South Azerbaijani (often uses Arabic script in Iran)
+            'dv', 'div',        // Dhivehi
+            'fa', 'fas', 'prs', // Persian / Farsi
+            'he', 'iw',         // Hebrew
+            'ku', 'kur',        // Kurdish (Sorani dialect)
+            'ckb',              // Central Kurdish (Sorani)
+            'nqo',              // N'Ko
+            'ps', 'pus',        // Pashto
+            'rhg',              // Rohingya
+            'sd', 'snd',        // Sindhi
+            'syr',              // Syriac
+            'ug', 'uig',        // Uyghur
+            'ur', 'urd',        // Urdu
+            'yi', 'yid'         // Yiddish
         ];
 
         const html = document.documentElement;
@@ -51,7 +52,8 @@
 
         // Start observing the <html> element for changes to its attributes, specifically 'lang'
         observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
-    </script>
+        //]]>
+	</script>
 
     <!-- standard stylesheet -->
     <link rel="stylesheet" href="epp.css" />
@@ -355,7 +357,7 @@
         <div class="image-box">
             <div class="image-content">
                 <img src="../Images/KneeDark.svg" class="flip-in-rtl"/>
-                <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                <div class="image-credits" >Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             </div>
             <div class="image-caption">Nemo amat dolorem</div>
         </div>
@@ -385,8 +387,8 @@
         <p>A useful broader classification is that chronic pain can be nociceptive (ongoing tissue damage or inflammation), neuropathic (nerve damage), or nociplastic (altered pain processing without clear tissue or nerve damage, as in fibromyalgia). In many people, several of these mechanisms overlap.</p>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td>Common type/cause of chronic pain</td><td>Frequent underlying causes</td></tr>
@@ -445,7 +447,7 @@
         <div class="image-box-right">
             <div class="image-content">
                 <img src="../Images/OfficeChair.jpg" class="flip-in-rtl"/>
-                <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                <div class="image-credits" >Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             </div>
             <div class="image-caption">An office chair that can be set up individually, supports lower back, supports straightening up, and can tilt in each direction.</div>
         </div>        
@@ -463,7 +465,7 @@
             <div class="image-content">
                 <img src="../Images/DarkImage2.jpg" class="flip-in-rtl"/>
             </div>
-            <div class="image-credits" >Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-credits" >Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
         </div>        
         <h3>An ergonomic desk that encourages back strength</h3>
         <p>A height-adjustable desk can be especially useful because it allows a person to alternate between sitting and standing.</p>
@@ -639,6 +641,7 @@
         <p>Oral hyaluronic acid is also marketed for joint health. Some studies report improvements in pain and stiffness, but the evidence is still limited compared with established measures such as exercise and weight management. Vitamin C is required for normal collagen formation, while copper and manganese contribute to normal connective-tissue and enzyme function. In people who already obtain enough of these nutrients from food, however, taking additional amounts is not known to rebuild worn joint cartilage.</p>
         <p>These products should therefore be seen as secondary support. More important measures are maintaining healthy body weight, keeping the surrounding muscles strong, exercising regularly without repeatedly overloading the joints, avoiding injuries, stopping smoking, and controlling inflammatory or metabolic conditions.</p>
         <p>Before starting to take any new supplement, exercise program, or major dietary change, it is advisable to discuss it with a doctor or other qualified healthcare professional. This is especially important if you have a chronic medical condition, regularly take medication, are pregnant, or have persistent or worsening pain. A doctor can help identify the underlying cause of symptoms, check for possible interactions or deficiencies, and recommend the most appropriate treatment based on your individual health situation.</p>
+	    <p>Please note that some supplements can contain titan dioxide. Manufacturers sometimes use it as white paint for making products appear more appealing. Titan dioxide is carcinogenic when eaten, people should avoid eating it.</p>
         </div>
         <div class="notch">
         <h2>Food Intolerances and Food Allergies</h2>
@@ -665,7 +668,7 @@
             <div class="image-content">
                 <img src="../Images/SmallMill.jpg" alt="A small mill for the kitchen" class="flip-in-rtl"/>
             </div>
-            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
         </div>
         <p>With celiac disease, very small amounts of gluten can also be relevant, even if they do not immediately cause obvious symptoms. Cross-contact can occur during manufacturing, storage, cooking or serving.</p>
         <p>Food intolerances are somewhat different: many are dose-dependent. Someone with lactose intolerance, for example, may tolerate small quantities without symptoms, while another person may tolerate much less.</p>
@@ -724,7 +727,7 @@
             <div class="image-content">
                 <img src="../Images/CookingStrudli.jpg" alt="Cooking Strudli"/>
             </div>
-            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
         </div>
         
         </div>
@@ -762,33 +765,33 @@
         <p>Diabetes is one of the most common causes of peripheral neuropathy. Persistently high blood glucose can damage small blood vessels that supply the nerves and can also directly affect nerve function. Symptoms often begin in the feet and may gradually move upward.</p>
         <p>The risk of type 2 diabetes can often be reduced by:</p>
         <ul>
-            <li>maintaining a healthy body weight</b>
-            <li>exercising regularly</b>
-            <li>building muscle mass</b>
-            <li>limiting sugary drinks and highly processed foods</b>
-            <li>eating plenty of vegetables, fibre, legumes, whole grains and minimally processed foods</b>
-            <li>having blood glucose checked if there are risk factors</b>
+            <li>maintaining a healthy body weight</li>
+            <li>exercising regularly</li>
+            <li>building muscle mass</li>
+            <li>limiting sugary drinks and highly processed foods</li>
+            <li>eating plenty of vegetables, fibre, legumes, whole grains and minimally processed foods</li>
+            <li>having blood glucose checked if there are risk factors</li>
         </ul>
         <p>People with prediabetes can sometimes significantly reduce their risk of progressing to type 2 diabetes through weight reduction and regular physical activity. Genetics still matter, so prevention lowers risk rather than making diabetes impossible.</p>
-        <hr class="hr-medium">
+        <hr class="hr-medium"/>
         <h3>Autoimmune diseases</h3>
         <p>Autoimmune conditions can damage nerves either directly or through inflammation. Examples include rheumatoid arthritis, lupus, Sjögren syndrome, vasculitis, celiac disease and Guillain-Barré syndrome.</p>
-        <hr class="hr-medium-alt">
+        <hr class="hr-medium-alt"/>
         <h3>Infections</h3>
         <p>Some infections can injure nerves. Examples include shingles, HIV, Lyme disease, hepatitis C and, more rarely, certain bacterial or viral infections affecting the nervous system.</p>
         <p>Useful preventive measures include vaccination where appropriate, especially against shingles in eligible adults, reducing exposure to ticks, treating infections promptly and following safer-sex practices for infections such as HIV.</p>
-        <hr class="hr-medium-accent">
+        <hr class="hr-medium-accent"/>
         <h3>Vitamin deficiencies</h3>
         <p>Deficiencies in vitamin B12, folate, vitamin B1 or other nutrients can contribute to neuropathy. Vitamin B12 deficiency is particularly important because prolonged deficiency can cause neurological damage.</p>
         <p>Risk is higher in people with malabsorption disorders, certain gastrointestinal diseases, previous stomach surgery, vegan diets without supplementation, and long-term use of some medications. Prevention means ensuring adequate intake and testing levels when there are relevant risk factors.</p>
         <p>It is worth noting that too much vitamin B6 can also cause neuropathy, so supplements are not automatically harmless just because they arrived in a cheerful little pharmacy bottle.</p>
-        <hr class="hr-half">
+        <hr class="hr-half"/>
         <h3>Alcohol</h3>
         <p>Long-term heavy alcohol consumption can damage peripheral nerves directly and can also contribute to nutritional deficiencies. Reducing alcohol intake and correcting deficiencies can lower this risk.</p>
-        <hr class="hr-half-accent">
+        <hr class="hr-half-accent"/>
         <h3>Nerve compression and injury</h3>
         <p>Herniated discs, carpal tunnel syndrome, spinal stenosis, fractures and repetitive pressure on nerves can all cause neuropathic symptoms.</p>
-        <div class="callout-box-alt">
+        <div class="callout-box-alt"/>
         <h4>Factors that can worsen neuropathic pain, ommon aggravating factors include:</h4>
         <ul>
             <li>poor blood glucose control</li>
@@ -819,7 +822,7 @@
         </ul>
         </div>
         <p>For people with diabetes, foot care is especially important because reduced sensation can allow injuries to go unnoticed. Feet should be checked regularly for cuts, blisters, pressure marks or infections.</p>
-        <hr class="hr-half-alt">
+        <hr class="hr-half-alt"/>
         <div class="box-accent-alt">
         <h4>Treatment</h4>
         <p>Treatment depends on the cause. Doctors may use medications specifically aimed at nerve pain, such as certain anticonvulsants or antidepressants, rather than ordinary painkillers alone. Physical therapy, treatment of the underlying disease, improved glucose control, vitamin replacement where needed and management of nerve compression can also help.</p>
@@ -922,9 +925,9 @@
         <h3>Carrot soup</h3>
         <p>Use carrots and potatoes. Peel and cut both into small pieces. Cook them for about 15–20 minutes until soft, then blend with the cooking liquid. A little ginger can be added if desired, but the soup also works perfectly well with just the two vegetables.</p>
         <p></p>
-        <div class="clearfix"></div>
+        <div class="clearfix">
         <h2 id="licence"><bdo dir="ltr" translate="no">MIT</bdo> License</h2>
-        <p>Copyright &copy; 2026 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
+        <p>Copyright &#169; 2026 <bdo lang="" dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
         <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
         <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
         <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>

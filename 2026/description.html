@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Instructions for epp.css</title>
     <link rel="stylesheet" href="epp.css" />
-    <script>  
+	<script type="text/javascript" >
+		//<![CDATA[  
         window.onload = function () {
             setTimeout(function () {
                 const pageLang = document.documentElement.lang || document.body.lang || 'en';
@@ -265,8 +266,10 @@
             });
 
         };
+		//]]>
     </script>
-    <script>
+    <script type="text/javascript" >
+		//<![CDATA[
         /**
          * This script uses a MutationObserver to detect when the `lang` attribute on the `<html>` element changes.
          * This is a reliable way to catch browser-initiated translations, especially in browsers like Firefox.
@@ -313,6 +316,7 @@
 
         // Start observing the <html> element for changes to its attributes, specifically 'lang'
         observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
+		//]]>
     </script>
 </head>
 <body>
@@ -387,13 +391,18 @@
                 </ul>
             </li>
             <li>Set the text direction in the dir attribute, e.g.  <bdo  dir="ltr">"ltr"</bdo> for left-to-right or  <bdo  dir="ltr">"rtl"</bdo> for right-to-left</li>
-            <li>
-                Include a header specification, including following elements:
-                <ul>
-                    <li>Character encoding (usually <bdo  translate="no" dir="ltr">UTF-8</bdo>)</li>
-                    <li>Title for the page</li>
-                    <li>Link to an external CSS file named <bdo  translate="no" dir="ltr">epp.css</bdo></li>
-                </ul>
+			<li>
+				Include a header specification, including following elements:
+				<ul>
+					<li>
+						Character encoding (usually <bdo  translate="no" dir="ltr">UTF-8</bdo>)
+					</li>
+					<li>Title for the page</li>
+					<li>
+						Link to an external CSS file named <bdo  translate="no" dir="ltr">epp.css</bdo>
+					</li>
+				</ul>
+			</li>
             <li>
                 Include a <bdo dir="ltr" translate="no">body</bdo> section with:
                 <ul>
@@ -419,7 +428,7 @@
             <li>Padding inside the main area is defined by "<bdo dir="ltr" translate="no">--spacing-element</bdo>" variable</li>
             <li>Takes up at least the full height of the viewport, ensuring it fills the screen even with no content</li>
         </ul>
-        <h2 id="vars-fonts"  id="vars">Font Variables</h2>
+        <h2 id="vars">Font Variables</h2>
         <pre class="box-gray-left"  dir="ltr">
 /* <bdi>Font Variables</bdi> */
 <bdo dir="ltr" translate="no" class="notranslate">--font-merriweather: 'Merriweather', Georgia, serif;
@@ -517,7 +526,7 @@
             <bdo  translate="no" dir="ltr">rem</bdo> units for spacings, so the spacings don't change with font size
         </p>
 
-        <h3>Layout & Spacing Variables</h3>
+        <h3>Layout &amp; Spacing Variables</h3>
         <ul>
             <li><bdo  translate="no" dir="ltr">--spacing-element</bdo> - General spacing between elements (e.g. margins, vertical rhythm). 2 rem is equivalent to 32 px if root font size is 16px.</li>
             <li><bdo  translate="no" dir="ltr">--padding-box</bdo> - Internal padding for containers or boxes. 1.5rem is about 24px.</li>
@@ -585,8 +594,8 @@
         <h3>Main Text and Background Colors</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -621,8 +630,8 @@
         <h4>Input Fields (Default Context)</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -637,8 +646,8 @@
         <h4>Form Buttons (Default Context)</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -653,8 +662,8 @@
         <h3>Gray Box Styling</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -670,8 +679,8 @@
         <h4>Colors of Input Field Elements in Gray Boxes</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -687,8 +696,8 @@
         <h4>Form Buttons (in Gray-Colored Boxes)</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -703,8 +712,8 @@
         <h3>Accent Colors</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -717,8 +726,8 @@
         <h3>Colors of Accent-Colored Boxes</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -734,8 +743,8 @@
         <h4>Colors of Input Field Elements in Accent Boxes</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -750,8 +759,8 @@
         <h4>Form Buttons (in Accent-Colored Boxes)</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -766,8 +775,8 @@
         <h3>Colors of Alternatively Accent-Colored Boxes</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -783,8 +792,8 @@
         <h4>Colors of Input Field Elements in Alternative Accent Boxes</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -800,8 +809,8 @@
         <h4>Form Buttons (in Boxes with Alternative Accent Color)</h4>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Variable</td><td>Meaning</td></tr>
@@ -821,8 +830,8 @@
         <h3>Headings and Text Structure</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
@@ -838,8 +847,8 @@
         <h3>Lists</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
@@ -853,8 +862,8 @@
         <h3>Tables</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
@@ -872,8 +881,8 @@
         <h3>Links and Media</h3>
         <table>
             <colgroup>
-                <col style="width: 30%;">
-                <col style="width: 70%;">
+                <col style="width: 30%;"/>
+                <col style="width: 70%;"/>
             </colgroup>
             <thead>
                 <tr><td  style="text-align:left">Tag</td><td>Description</td></tr>
@@ -893,7 +902,7 @@
         </p>
         <h2 id="elements-image-links">Image Links</h2>
         <p>To make an image clickable — so that it acts as a hyperlink — you simply place the <bdo dir="ltr" translate="no">&lt;img&gt;</bdo> tag inside an <bdo dir="ltr" translate="no">&lt;a&gt;</bdo> (anchor) tag. This is commonly used for clickable logos, banners, or image-based navigation.</p>
-        <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1" /></a>
+        <a href="#elements-images"><img alt="image link example" src="../Images/LightImage1.jpg" /></a>
         <pre class="box-gray" dir="ltr"><bdo dir="ltr" translate="no">&lt;a href="https://</bdo><bdi>...your url...</bdi><bdo dir="ltr" translate="no">"&gt;
     &lt;img src="image.jpg" alt="</bdo><bdi tranalate="yes">Some description</bdi><bdo dir="ltr" translate="no">"/>
 &lt;/a&gt;</bdo></pre>
@@ -959,7 +968,7 @@
             <div class="image-content">
                 <img src="../Images/LightImage1.jpg" />
             </div>
-            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             <div class="image-caption">Sample image in a box with credits</div>
         </div>
 
@@ -977,7 +986,7 @@
         <div class="image-box">
             <div class="image-content">
                 <img src="../Images/LightImage1.jpg" />
-                <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             </div>
             <div class="image-caption">Sample image in a box with credits</div>
         </div>
@@ -998,7 +1007,7 @@
                 <img src="../Images/LightImage1.jpg" />
                 <div class="image-caption">Sample image in a box with credits</div>
             </div>
-            <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+            <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
         </div>
 
         <pre class="box-gray"  dir="ltr">
@@ -1017,7 +1026,7 @@
                 <img src="../Images/LightImage1.jpg" />
                 <div class="image-overlay">
                     <div class="image-overlay-content" style="font-size: 2rem;">Sample image with content laid over it</div>
-                    <div class="image-overlay-content">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                    <div class="image-overlay-content">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
                 </div>
             </div>
         </div>
@@ -1037,7 +1046,7 @@
         <div class="image-box rounded-top">
             <div class="image-content">
                 <img src="../Images/LightImage1.jpg" />
-                <div class="image-credits">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                <div class="image-credits">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
             </div>
             <div class="image-caption-gray">Sample image in a box with credits and gray-colored caption, followed by a gray-colored box.</div>
         </div>
@@ -1125,7 +1134,7 @@
                     <img src="../Images/LightImage1.jpg" />
                     <div class="image-overlay">
                         <div class="image-overlay-content">Grid card with an image</div>
-                        <div class="image-overlay-content">Image: &copy; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
+                        <div class="image-overlay-content">Image: &#169; <bdo dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></div>
                     </div>
                 </div>
             </div>
@@ -1146,7 +1155,7 @@
     &lt;div class="box-grid-item-bg">
        &lt;h3></bdo>Box 1<bdo dir="ltr" translate="no">&lt;/h3></bdo>some text<bdo dir="ltr" translate="no">&lt;/div>
     &lt;div class="box-grid-item"></bdo>Box 2<bdo dir="ltr" translate="no">&lt;/div>
-    &lt;div class="box-grid-item-gray">&lt;h4></bdo>Box 3<bdo dir="ltr" translate="no">&lt/h4>
+    &lt;div class="box-grid-item-gray">&lt;h4></bdo>Box 3<bdo dir="ltr" translate="no">&lt;/h4>
        &lt;p class="float-bottom"></bdo>Text aligned at bottom<bdo dir="ltr" translate="no">&lt;/p>&lt;/div>
     &lt;div class="box-grid-item-accent-alt">
        &lt;h3></bdo>Box 4<bdo dir="ltr" translate="no">&lt;/h3></bdo>other text<bdo dir="ltr" translate="no">&lt;/div>
@@ -1155,13 +1164,13 @@
         <h2  id="elements-forms">Forms</h2>
         <form class="form-grid box-centered">
             <label for="name">Name:</label>
-            <input type="text" id="name">
+            <input type="text" id="name"/>
 
             <label for="email">Email:</label>
-            <input type="email" id="email">
+            <input type="email" id="email"/>
 
             <label for="password">Password:</label>
-            <input type="password" id="password">
+            <input type="password" id="password"/>
 
             <label>&nbsp;</label>
             <button type="submit">Submit</button>
@@ -1182,7 +1191,7 @@
 &lt;/form></pre>
         <div class="clearfix"></div>
         <h2  id="licence"><bdo dir="ltr" translate="no">MIT</bdo> License</h2>
-        <p>Copyright &copy; 2025-2026 <bdo  dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
+        <p>Copyright &#169; 2025-2026 <bdo  dir="ltr" translate="no">NataljaNeumann@gmx.de</bdo></p>
         <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
         <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
         <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
