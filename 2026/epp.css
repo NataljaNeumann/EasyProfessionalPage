@@ -2202,11 +2202,14 @@ body:has(.box-gray-wide) {
 
 .form-grid button {
   justify-self: start;
-  padding: 0.5em 0.75em;
+  padding: 0.5rem 0.75rem 0.4rem;
   border-radius: var(--button-radius);
   background-color: var(--button-bg-default);
   color: var(--button-text-default);
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  font-size: var(--font-primary-size);
+  letter-spacing: var(--letter-spacing-primary);
+  line-height: unset;
 }
 
 
